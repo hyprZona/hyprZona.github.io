@@ -1,13 +1,31 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  "Source Code Pro", monospace
   padding: 0;
+    color: black;
+background-image: repeating-radial-gradient(red, #211c98 100px)
 }
 
 header {
   background-color: #f0f0f0;
   padding: 20px;
   text-align: center;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Add a gap of 20px between logo and heading */
+}
+
+.header-container img {
+  /* Existing styles... */
+  border-radius: 50%;
+}
+* {
+font-family: "Source Code Pro", monospace;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 h1 {
@@ -45,8 +63,8 @@ section {
   margin-bottom: 20px;
 }
 
-h2 {
-  font-size: 1.5em;
+h2 {  /* Combined styles for h2 */
+  font-size: 1.8em;
   margin-bottom: 10px;
 }
 
@@ -61,4 +79,46 @@ footer {
   background-color: #f0f0f0;
   text-align: center;
   padding: 10px;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 0;
+  }
+
+.hero h1 {
+  color: white;  /* Adjust text color for contrast */
+  font-size: 2.5em;
+  margin: 0;  /* Place text on top of image */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+  color: white;  /* Adjust text color for contrast */
+  font-size: 1.2em;
+  margin: 20px 0;
+  z-index: 1;  /* Place text on top of image */
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.about-us,
+.featured-games,
+.news-updates {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.social-media {
+  text-align: center;
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+.social-media a {
+  margin: 0 10px; /* Add spacing between icons */
+}
+
+.social-media img {
+  width: 30px; /* Adjust icon size as needed */
+  height: 30px;
 }
