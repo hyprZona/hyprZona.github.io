@@ -1,11 +1,46 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hyprZona - Lost in Hyperspace</title>
-<link rel="stylesheet" href="404.css">
+  <link rel="stylesheet" href="404.css">
+  <style>
+    /* Add any additional CSS for the modal here */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -21,12 +56,50 @@
     <div class="error-container">
       <h1>Warning: Lost in Hyperspace!</h1>
       <p>Looks like you've taken a wrong turn in hyperspace. The page you requested is currently unavailable.</p>
-      <a href="index.html" class="error-button">Take me back to Homepage</a>
+      <button onclick="openModal()" class="error-button">Take me back</button>
+      <!-- Modal -->
+      <div id="mazeModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p>Do you want play solve a maze to go back or be a coward & return without challenage? 😈</p>
+          <a href="404/maze.html" class="error-button">Yes, let's go!</a>
+<a href="index.html" class="error-button">I've other things to do.</a>
+        </div>
+      </div>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2024 hyprZona</p>
   </footer>
+
+  <script>
+    // Get the modal
+    var modal = document.getElementById("mazeModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("playMazeBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    function openModal() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    function closeModal() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
