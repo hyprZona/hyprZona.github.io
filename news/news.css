@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: #7e7e7e;
+    text-align-last: center;
 }
 section {
       margin-bottom: 30px;
@@ -11,7 +12,7 @@ section {
 }
 .social-media {
   text-align: center;
-  margin-top: 88px; /* Increased margin top */
+  margin-top: 85px; /* Increased margin top */
 }
 
 .social-media a {
@@ -23,61 +24,30 @@ section {
   height: 40px;
 }
 
-
 .container {
     max-width: 800px;
-    margin: 90px auto 20px; /* Adjusted top margin to accommodate header */
+    margin: 90px auto 120px; /* Adjusted top and bottom margins to accommodate header and footer */
     padding: 0 20px;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #00ffde;
-}
-
-.news-card {
-    background-image: linear-gradient(223deg, #000000, #004cff);
+.news-content {
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgb(235 30 30);
+    box-shadow: inset 0px 0px 20px 8px rgb(2 2 2);
     padding: 20px;
     margin-bottom: 20px;
-    transition: transform 0.3s;
-    text-decoration: none;
-    color: #4efc00;
-    display: block;
-    border: 1px solid #000;
 }
 
-.news-card:hover {
-    transform: translateY(-5px);
-}
-
-.news-header {
+.news-content h2 {
+    font-size: 1.5rem;
+    color: #333;
     margin-bottom: 10px;
 }
 
-.news-header h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    margin: 0;
-    color: #333;
-}
-
-.news-header p {
-    font-size: 0.9rem;
-    margin: 0;
+.news-content p {
+    font-size: 1rem;
     color: #666;
-}
-
-.news-body p {
-    margin: 0;
-}
-
-.news-footer p {
-    font-size: 0.9rem;
-    margin: 0;
-    color: #666;
+    line-height: 1.5;
 }
 
 a {

@@ -1,43 +1,49 @@
-window.onload = function() {
-    fetchNews();
-};
+// Define a function to create cards for each news item
+function createNewsCards() {
+    const newsContainer = document.getElementById('news-container');
 
-function fetchNews() {
-    fetch('news/')
-    .then(response => response.text())
-    .then(data => {
-        const newsFiles = data.split('\n').filter(file => file.trim().endsWith('.txt'));
-        generateNewsCards(newsFiles);
-    })
-    .catch(error => console.error('Error fetching news:', error));
-}
+    // Define news data for the first news item (you can add more as needed)
+    const newsData = [
+        {
+            title: "HyprZona Launch",
+            postedAt: "May 01, 2024",
+            content: "We're glad to start HyprZona, and .....",
+            modifiedAt: "May 01, 2024",
+            link: "news/thankyou.html"
+        }
+    ];
 
-function generateNewsCards(newsFiles) {
-    const newsContainer = document.getElementById('newsContainer');
+    // Iterate through each news item and create a card
+    newsData.forEach(newsItem => {
+        const card = document.createElement('div');
+        card.classList.add('news-card');
 
-    newsFiles.forEach(newsFile => {
-        fetch('news/' + newsFile)
-        .then(response => response.text())
-        .then(content => {
-            const card = document.createElement('div');
-            card.classList.add('news-card');
+        const header = document.createElement('div');
+        header.classList.add('news-header');
+        header.innerHTML = `<h2>${newsItem.title}</h2><p>Posted at: ${newsItem.postedAt}</p>`;
 
-            const heading = document.createElement('h2');
-            heading.textContent = newsFile.split('.')[0]; // Extract filename without extension
+        const body = document.createElement('div');
+        body.classList.add('news-body');
+        body.innerHTML = `<p>${newsItem.content}</p>`;
 
-            const contentPreview = document.createElement('p');
-            contentPreview.textContent = content.substring(0, 100) + '...'; // Display first 100 characters as preview
+        const footer = document.createElement('div');
+        footer.classList.add('news-footer');
+        footer.innerHTML = `<p>Modified at: ${newsItem.modifiedAt}</p>`;
 
-            const readMoreLink = document.createElement('a');
-            readMoreLink.href = 'news/' + newsFile;
-            readMoreLink.textContent = 'Read more';
+        card.appendChild(header);
+        card.appendChild(body);
+        card.appendChild(footer);
 
-            card.appendChild(heading);
-            card.appendChild(contentPreview);
-            card.appendChild(readMoreLink);
+        // Create an anchor element to link to the news page
+        const link = document.createElement('a');
+        link.href = newsItem.link;
+        link.classList.add('card-link');
+        link.appendChild(card);
 
-            newsContainer.appendChild(card);
-        })
-        .catch(error => console.error('Error fetching news content:', error));
+        // Append the card to the news container
+        newsContainer.appendChild(link);
     });
 }
+
+// Call the createNewsCards function when the window loads
+window.onload = createNewsCards;
