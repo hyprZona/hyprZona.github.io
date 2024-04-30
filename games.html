@@ -9,33 +9,10 @@
   <link rel="stylesheet" type="text/css" href="slick-1.8.1\slick\slick.css">
 </head>
 <body>
-<script src="jquery-3.7.1.min.js"></script>
-<script src="slick-1.8.1\slick\slick.min.js"></script>
-<script>
-$(document).ready(function(){
-  $('.slick-carousel').slick({
-slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-    centerMode: true,
-  centerPadding: '60px',
-  slidesToShow: 1,
-  infinite: true,
-  speed: 100,
-  adaptiveHeight: true,
-centerMode: true,
-  variableWidth: true,
-fade: true,
-  cssEase: 'linear',
-arrows: false // This disables the previous and next buttons
-    });
-});
-</script>
   <header>
     <div class="header-container">
       <a href="index.html">
-        <img src="logo.png" alt="hyprZona Logo" width='50' height='50'>
+        <img src="logo.png" alt="hyprZona Logo" width='80' height='80'>
       </a>
       <h1>hyprZona</h1>
     </div>
@@ -70,7 +47,7 @@ arrows: false // This disables the previous and next buttons
           <div class="card">
             <div class="card-body">
               <h4 class="card-title">Memories</h4>
-              <p>Unravel a conspiracy shrouded in darkness in this emotional adventure.</p>
+              <p class="card-text">Unravel a conspiracy shrouded in darkness in this emotional adventure.</p>
               <ul>
                 <li>Playtime: 2 - 3 hours</li>
                 <li>Price: Free (Proposed)</li>
@@ -79,12 +56,34 @@ arrows: false // This disables the previous and next buttons
             </div>
           </div>
         </div>
-        </div>
+      </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2024 hyprZona - Made in India</p>
+    <p>&copy; 2024 hyprZona</p>
   </footer>
+
+  <script src="jquery-3.7.1.min.js"></script>
+  <script src="slick-1.8.1\slick\slick.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.slick-carousel').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        centerMode: true,
+        centerPadding: '60px',
+        infinite: true,
+        speed: 100,
+        adaptiveHeight: true,
+        variableWidth: true,
+        fade: true,
+        cssEase: 'linear',
+        arrows: false // This disables the previous and next buttons
+      });
+    });
+  </script>
 </body>
 </html>
