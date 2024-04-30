@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hyprZona - Our Games</title>
+  <link rel="stylesheet" href="gstyle.css">
+  <link rel="icon" type="image/x-icon" href="logo.ico">
+  <link rel="stylesheet" type="text/css" href="slick-1.8.1\slick\slick.css">
+</head>
+<body>
+<script src="jquery-3.7.1.min.js"></script>
+<script src="slick-1.8.1\slick\slick.min.js"></script>
+<script>
+$(document).ready(function(){
+  $('.slick-carousel').slick({
+slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+    centerMode: true,
+  centerPadding: '60px',
+  slidesToShow: 1,
+  infinite: true,
+  speed: 100,
+  adaptiveHeight: true,
+centerMode: true,
+  variableWidth: true,
+fade: true,
+  cssEase: 'linear',
+arrows: false // This disables the previous and next buttons
+    });
+});
+</script>
+  <header>
+    <div class="header-container">
+      <a href="index.html">
+        <img src="logo.png" alt="hyprZona Logo" width='50' height='50'>
+      </a>
+      <h1>hyprZona</h1>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="news.html">News & Updates</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="container-fluid">
+      <h1 class="text-center mb-3">Our Games</h1>
+      <div class="slick-carousel">
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">The Mountain Cave Mystery</h4>
+              <p class="card-text">Explore a never-before-seen cave and uncover its secrets.</p>
+               <ul>
+                <li>Playtime: 20 - 30 minutes</li>
+                <li>Price: Free</li>
+                <li>Availability: Coming Soon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Memories</h4>
+              <p>Unravel a conspiracy shrouded in darkness in this emotional adventure.</p>
+              <ul>
+                <li>Playtime: 2 - 3 hours</li>
+                <li>Price: Free (Proposed)</li>
+                <li>Availability: Coming Soon</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 hyprZona - Made in India</p>
+  </footer>
+</body>
+</html>

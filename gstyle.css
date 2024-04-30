@@ -1,0 +1,140 @@
+/* Body & Header */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+  background-color: #2a66bf; /* Light gray background */
+}
+
+header {
+  background-color: #333; /* Dark gray header */
+  padding: 20px;
+  text-align: center;
+  color: white; /* Text color for header elements */
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space logo and navigation */
+  gap: 20px;
+}
+
+.header-container img {
+  border-radius: 50%;
+  width: 80px; /* Adjust logo size */
+  height: 80px; /* Adjust logo size */
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 0;
+  color: #fff; /* White heading text */
+}
+
+/* Navigation */
+
+nav {
+  background-color: #eee; /* Light gray navigation */
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px; /* Adjust navigation item spacing */
+}
+
+nav li a {
+  color: #333; /* Dark gray navigation link color */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+nav li a:hover {
+  color: #007bff; /* Black on hover */
+}
+
+/* Main Content */
+
+main {
+  background-image: radial-gradient(black, #2a54a2); /* White background */
+  padding: 50px; /* Consistent padding throughout */
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  color: #333; /* Dark gray heading text */
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5; /* Adjust line height for better readability */
+text-align-last: center;
+}
+
+/* Slick Carousel Styling */
+
+.slick-carousel {
+  display: flex;
+  justify-content: center; /* Center content horizontally */
+  width: 70%; /* Adjust width as needed */
+  margin: 0 auto; /* Center the carousel horizontally */
+  color: #333; /* Text color for carousel elements */
+}
+
+.slick-carousel:before,
+.slick-carousel:after {
+  content: ""; /* Add empty content to create pseudo-elements */
+  display: block;
+  width: 50%; /* Set width to half the carousel width */
+  height: 100%; /* Match carousel height */
+  position: absolute;
+  top: 0; /* Align to top */
+}
+
+.slick-carousel:before {
+  left: 0; /* Position left pseudo-element */
+}
+
+.slick-carousel:after {
+  right: 0; /* Position right pseudo-element */
+}
+.card {
+  background-color: #fff; /* White background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-radius: 5px; /* Rounded corners */
+  margin-bottom: 20px; /* Spacing between cards */
+  padding: 20px; /* Padding within cards */
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+text-align:center
+}
+
+.card-text {
+  line-height: 1.5; /* Adjust line height for readability */
+}
+
+.card ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 5px; /* Spacing between list items */
+}
