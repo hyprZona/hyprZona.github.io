@@ -5,18 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News</title>
-    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="logo.ico">
 </head>
 
-<body>
-    <header>
+<header>
         <div class="header-container">
             <a href="index.html">
                 <img src="logo.png" alt="hyprZona Logo" width='50' height='50'>
             </a>
             <h1>hyprZona</h1>
-            <nav>
+  </header>
+<body>
+    
+    <div class="container">
+        <h1>Latest News</h1>
+        <div class="news-cards" id="news-container">
+            <!-- News cards will be dynamically added here -->
+        </div>
+    </div>
+<nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="games.html">Our Games (Coming Soon)</a></li>
@@ -24,23 +32,16 @@
                 </ul>
             </nav>
         </div>
-    </header>
-<section class="social-media">
+    </header><section class="social-media">
     <a href="https://www.instagram.com/hyprzona">
         <img src="iglogo.svg" alt="Instagram Logo">
     </a>
     </section>
 
-    <div class="container">
-        <h1>Latest News</h1>
-        <div class="news-cards" id="news-container">
-            <!-- News cards will be dynamically added here -->
-        </div>
-    </div>
-
     <footer>
         <p>&copy; 2024 hyprZona</p>
     </footer>
+
 
     <script src="news.js"></script>
 </body>
