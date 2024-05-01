@@ -1,92 +1,70 @@
-body {
-  font-family: "Source Code Pro", monospace;
-  margin: 0;
-  padding: 0;
- background-image: radial-gradient(#099183, black);
-}
-
-header {
-  background-image: linear-gradient(to right, #333333, #29324a); /* Playful & Gritty Gradient */
-  padding: 20px;
-  text-align: center;
-}
-.header-container {
-  display: flex;
-  align-items: center;
-  gap: 20px; /* Add a gap of 20px between logo and heading */
-}
-
-.header-container img {
-  border-radius: 50%;
-}
-main {
-  background-image: radial-gradient(#099183, black); /* Playful & Gritty Gradient (adjust colors as needed) */
-  padding: 50px 0;
-}
-.container {
-    max-width: 800px;
-    margin: 90px auto 120px; /* Adjusted top and bottom margins to accommodate header and footer */
-    padding: 0 20px;
-}
-
-.slick-carousel {
-  display: flex;
-  justify-content: center; /* Center content horizontally */
-  margin: 0 auto; /* Center the carousel horizontally */
-  color: #333; /* Text color for carousel elements */
-}
-
-.slick-carousel .card {
-  background-color: #fff; /* White background */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  border-radius: 5px; /* Rounded corners */
-  margin: 0 10px; /* Add spacing between cards */
-  padding: 20px; /* Padding within cards */
-  max-width: 400px; /* Set a maximum width for the cards */
-  flex: 1; /* Allow cards to grow equally within the flex container */
-}
-
-h1 {
-  font-size: 3em; /* Larger heading size */
-  margin-bottom: 10px; /* Increased margin bottom */
-  color: #fff; /* White text color */
-}
-
-main {
-  padding: 50px 0;
-}
-
-section {
-  margin-bottom: 40px;
-  padding: 20px;
-  border-radius: 5px;
-}
-
-h2 {
-  font-size: 1.8em;
-  margin-bottom: 10px;
-  color: #90ee90; /* Text color for headings within sections */
-text-shadow: 2px 2px black;
-}
-
-p {
-  font-size: 20px;
-  line-height: 1.5; /* Adjust line height for better readability */
-      color: #000;
-    text-shadow: 2px 1px red;
-}
 a {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
     text-decoration: none;
-    color: #333;
+    transition: color 0.3s ease-in-out;
 }
+
+a:hover {
+    color: red;
+}
+
+body {
+    background-image: radial-gradient(#099183, black);
+    font-family: "Source Code Pro", monospace;
+    margin: 0;
+    padding: 0;
+}
+
 .call-to-action {
-  text-align: center;
+    text-align: center;
 }
 
 .call-to-action a img {
-  width: 30px;
-  height: 30px;
-  margin: 0 10px; /* Add spacing between icon */
+    height: 30px;
+    margin: 0 10px;
+    width: 30px;
+}
+
+.container {
+    margin: 90px auto 120px;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.error-button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.error-button:hover {
+    background-color: #0056b3;
+}
+
+.error-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 30px;
+}
+
+.error-container h1 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.error-container p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
 }
 
 footer {
@@ -95,134 +73,155 @@ footer {
   padding: 10px;
   color: #add8e6; /* Text color for footer */
 }
-nav {
-  background-color: #f5f5f5; /* Light gray background */
-  padding: 10px 0; /* Add some padding for spacing */
-  text-align: center; /* Center the navigation links */
-}
-
-nav ul {
-  margin: 0; /* Remove default list margins */
-  padding: 0; /* Remove default list padding */
-  list-style: none; /* Remove default bullet points */
-}
-
-section {
-  margin-bottom: 10px; /* Increased margin bottom */
-  padding: 20px;
-  border-radius: 10px;
-}
 
 .game-card {
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-}
-nav li {
-  display: inline-block; /* Make navigation items display horizontally */
-  margin: 0 10px; /* Add spacing between navigation items */
+    display: inline-block;
+    margin: 20px;
+    text-align: center;
 }
 
-nav li a {
-  color: #000; /* Text color for navigation links */
-  text-decoration: none; /* Remove underline from links */
-  font-weight: bold; /* Make navigation links bold */
-font-size: larger;
-  transition: color 0.3s ease-in-out; /* Add smooth color transition on hover */
+.header-container {
+    align-items: center;
+    display: flex;
+    gap: 20px;
 }
+
+.header-container img {
+    border-radius: 50%;
+}
+
+header {
+    background-image: linear-gradient(to right, #333333, #29324a);
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #90ee90;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px black;
+}
+
+.main {
+    background-image: radial-gradient(#099183, black);
+    padding: 50px 0;
+}
+
+nav {
+    background-color: #f5f5f5;
+    padding: 10px 0;
+    margin: 16px 0px;
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
 nav ul {
     list-style-type: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-.error-container {
-  background-color: #fff; /* White background for error message */
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow effect */
-  max-width: 600px; /* Limit width for better readability */
-  margin: 0 auto;
-}
-
-.error-container h1 {
-  color: #007bff; /* Blue heading */
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.error-container p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
-}
-
-.error-button {
-  background-color: #007bff; /* Blue button */
-  color: #fff; /* White text */
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.error-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-
-nav ul li a {
-    color: #000;
+.news-card {
+    background-image: linear-gradient(223deg, #000000, #004cff);
+    border: 1px solid #000;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(235 30 30);
+    color: #4efc00;
+    display: block;
+    margin-bottom: 20px;
+    padding: 20px;
     text-decoration: none;
-    font-size: 18px;
-}
-nav li a:hover {
-  color: red; /* Change link color on hover */
-}
-.social-media {
-  text-align: center;
-  margin-top: 0px; /* Increased margin top */
-margin-bottom: 0px;
+    transition: transform 0.3s;
 }
 
-.social-media a {
-  margin: 0 15px; /* Increased spacing between icons */
-}
-
-.social-media img {
-  width: 40px; /* Larger icon size */
-  height: 40px;
-}
 .news-content {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: inset 0px 0px 20px 8px rgb(2 2 2);
-    padding: 20px;
     margin-bottom: 20px;
+    padding: 20px;
 }
 
 .news-content h2 {
-    font-size: 1.5rem;
     color: #333;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
 .news-content p {
-    font-size: 1rem;
     color: #666;
+    font-size: 1rem;
     line-height: 1.5;
 }
-.news-card {
-    background-image: linear-gradient(223deg, #000000, #004cff);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgb(235 30 30);
+
+p {
+    color: #000;
+    font-size: 20px;
+    line-height: 1.5;
+    text-shadow: 2px 1px red;
+}
+
+section {
+    border-radius: 10px;
+    margin-bottom: 10px;
     padding: 20px;
+}
+
+sectionc {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
     margin-bottom: 20px;
+    padding: 20px;
     transition: transform 0.3s;
-    text-decoration: none;
-    color: #4efc00;
-    display: block;
-    border: 1px solid #000;
+}
+
+sectionc:hover {
+    transform: translateY(-5px);
+}
+
+.slick-carousel {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.slick-carousel .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 10px;
+    max-width: 400px;
+    padding: 20px;
+}
+
+.social-media {
+    margin-bottom: -21px;
+    margin-top: -32px;
+    text-align: center;
+}
+
+.social-media a {
+    margin: 0 15px;
+}
+
+.social-media img {
+    height: 40px;
+    width: 40px;
 }
