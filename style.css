@@ -1,3 +1,10 @@
+@media (max-width: 768px) {
+  .slick-carousel .card {
+    flex: 1 0 auto; /* Allow cards to shrink to fit smaller screens */
+    max-width: none; /* Remove the maximum width to allow cards to expand */
+  }
+}
+
 a {
     color: #000;
     font-size: 18px;
@@ -206,7 +213,7 @@ sectionc:hover {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     flex: 1;
-    margin: 0 10px;
+    margin: 0 5px;
     max-width: 400px;
     padding: 20px;
 }

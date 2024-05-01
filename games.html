@@ -71,24 +71,23 @@
 
   <script src="jquery-3.7.1.min.js"></script>
   <script src="slick-1.8.1\slick\slick.min.js"></script>
-  <script>
-    $(document).ready(function(){
-      $('.slick-carousel').slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 2000,
-        centerMode: true,
-        centerPadding: '60px',
-        infinite: true,
-        speed: 100,
-        adaptiveHeight: true,
-        variableWidth: true,
-        fade: true,
-        cssEase: 'linear',
-        arrows: false // This disables the previous and next buttons
-      });
-    });
-  </script>
+<script>
+$(document).ready(function(){
+  $('.slick-carousel').slick({
+    slidesToShow: 1, // Show one slide at a time on smaller screens
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    centerMode: true,
+    centerPadding: '60px',
+    infinite: true,
+    speed: 1000,
+    adaptiveHeight: true,
+    fade: true,
+    cssEase: 'linear',
+    arrows: false // This disables the previous and next buttons
+  });
+});
+</script>
 </body>
 </html>
