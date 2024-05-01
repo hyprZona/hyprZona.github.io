@@ -111,7 +111,6 @@ section {
   margin-bottom: 10px; /* Increased margin bottom */
   padding: 20px;
   border-radius: 10px;
- background-color: #073908;
 }
 
 .game-card {
@@ -183,23 +182,6 @@ nav ul li a {
 nav li a:hover {
   color: red; /* Change link color on hover */
 }
-.hero {
-  text-align: center;
-  padding: 100px 0; /* Increased padding */
-  background-color: #007bff; /* Blue hero background */
-  color: #fff; /* White text color */
-}
-
-.hero h1 {
-  font-size: 4em; /* Larger heading size */
-  margin: 20px 0; /* Increased margin */
-}
-
-.hero p {
-  font-size: 1.5em; /* Larger paragraph size */
-  margin-bottom: 30px; /* Increased margin bottom */
-}
-
 .social-media {
   text-align: center;
   margin-top: 0px; /* Increased margin top */
