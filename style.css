@@ -40,6 +40,23 @@ body {
     padding: 0 20px;
 }
 
+.ebook-carousel {
+    color: #333;
+    display: flex;
+    justify-content: left;
+    margin: 0 auto;
+}
+
+.ebook-carousel .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 5px;
+    max-width: 400px;
+    padding: 20px;
+}
+
 .error-button {
     background-color: #007bff;
     border: none;
@@ -85,6 +102,23 @@ footer {
     display: inline-block;
     margin: 20px;
     text-align: center;
+}
+
+.game-carousel {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.game-carousel .card {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    margin: 0 5px;
+    max-width: 400px;
+    padding: 20px;
 }
 
 .header-container {
@@ -199,23 +233,6 @@ sectionc {
 
 sectionc:hover {
     transform: translateY(-5px);
-}
-
-.slick-carousel {
-    color: #333;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-}
-
-.slick-carousel .card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    margin: 0 5px;
-    max-width: 400px;
-    padding: 20px;
 }
 
 .social-media {
