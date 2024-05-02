@@ -39,9 +39,9 @@ function createNewsCards() {
     },
     {
       title: "The T'N'T: Prologue Preview",
-      postedAt: "May 05, 2024",
+      postedAt: "May 03, 2024",
       content: "We're happy to announce that .....",
-      modifiedAt: "May 05, 2024",
+      modifiedAt: "May 03, 2024",
       link: "news/tntprev.html"
     }
   ];
