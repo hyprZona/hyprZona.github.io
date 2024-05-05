@@ -33,22 +33,22 @@ body {
     margin: 0 10px;
     width: 30px;
 }
-.chapter-carousel {
+.chapter-carousel,
+.ebook-carousel,
+.game-carousel {
     color: #333;
     display: flex;
-    justify-content: left;
+    justify-content: center; /* Center the carousel items */
     margin: 0 auto;
+    padding: 0; /* Remove any padding */
+    width: 100%; /* Ensure the carousel takes up the full width */
+    max-width: 800px; /* Limit the maximum width of the carousel */
+    overflow: hidden; /* Hide any overflow content */
 }
 
-.eb{
- transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
-}
-
-.eb:hover {
-  transform: scale(1.01); /* Increase the scale of the card on hover */
-}
-
-.chapter-carousel .card {
+.chapter-carousel .card,
+.ebook-carousel .card,
+.game-carousel .card {
     background-color: #fff;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -56,8 +56,22 @@ body {
     margin: 0 5px;
     max-width: 400px;
     padding: 20px;
+    width: 100%; /* Ensure each card takes up the full width */
+    transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
 }
 
+.chapter-carousel .card:hover,
+.ebook-carousel .card:hover,
+.game-carousel .card:hover {
+    transform: scale(1.01); /* Increase the scale of the card on hover */
+}
+.eb{
+ transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+}
+
+.eb:hover {
+  transform: scale(1.01); /* Increase the scale of the card on hover */
+}
  .close {
       color: #aaa;
       float: right;
@@ -76,32 +90,6 @@ body {
     max-width: 800px;
     padding: 0 20px;
 }
-
-.ebook-carousel {
-    color: #333;
-    display: flex;
-    justify-content: left;
-    margin: 0 auto;
-}
-
-.eb{
- transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
-}
-
-.eb:hover {
-  transform: scale(1.01); /* Increase the scale of the card on hover */
-}
-
-.ebook-carousel .card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    margin: 0 5px;
-    max-width: 400px;
-    padding: 20px;
-}
-
 .error-button {
     background-color: #007bff;
     border: none;
@@ -148,23 +136,6 @@ footer {
     display: inline-block;
     margin: 20px;
     text-align: center;
-}
-
-.game-carousel {
-    color: #333;
-    display: flex;
-    justify-content: left;
-    margin: 0 auto;
- }
-
-.game-carousel .card {
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    margin: 0 5px;
-    max-width: 400px;
-    padding: 20px;
 }
 
 .header-container {
