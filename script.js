@@ -38,10 +38,10 @@ function createNewsCards() {
       link: "news/thankyou.html"
     },
     {
-      title: "The T'N'T: Prologue Preview",
+      title: "The T'N'T: Prologue",
       postedAt: "May 03, 2024",
       content: "We're happy to announce that .....",
-      modifiedAt: "May 03, 2024",
+      modifiedAt: "May 12, 2024",
       link: "news/tntprev.html"
     }
   ];
