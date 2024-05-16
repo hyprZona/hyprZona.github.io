@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hyprZona - Chapter I: The Legacy of Shadows</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <link rel="icon" type="image/x-icon" href="../../../logo.ico">
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'self' https://drive.google.com">
+  <style>
+    body {
+      display: none;  /* Initially hide the content */
+    }
+  </style>
+</head>
+<body>
+
+<script>
+  const unlockDate = new Date("2024-05-12"); // Set the unlock date (May 12th, 2024)
+  const today = new Date();
+
+  if (today >= unlockDate) {
+    document.body.style.display = "block";  /* Show content if unlocked */
+  } else {
+    // Optionally display a message or redirect to a different page
+    document.body.innerHTML = "<p>Chapter I: Legacy of Shadows unlocks on May 12th, 2024. Stay tuned!</p>";
+  }
+</script>
+
+<div class="container">
+  <iframe id="ebook-reader" src="https://drive.google.com/file/d/1FXG4_Z4OESFEfdH-BcHolCWUCOQqeD0l/preview" width="100%" height="600px"></iframe>
+</div>
+
+</body>
+</html>

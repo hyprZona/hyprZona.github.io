@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hyprZona - The T'N'T: Prologue</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" type="image/x-icon" href="../../logo.ico">
+  <link rel="stylesheet" type="text/css" href="../../slick-1.8.1\slick\slick.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <a href="index.html">
+      <img src="../../logo.png" alt="hyprZona Logo" width='80' height='80'>
+    </a>
+    <h1>hyprZona</h1>
+  </div>
+</header>
+
+<main>
+  <div class="container-fluid">
+    <h1 class="text-center mb-3">The T'N'T: Prologue Chapters</h1>
+    <div class="chapter-carousel">
+      <!-- Chapters will be dynamically added here -->
+    </div>
+  </div>
+</main>
+
+<nav>
+  <ul>
+    <li><a href="../../index.html">Home</a></li>
+    <li><a href="../../about.html">About Us</a></li>
+    <li><a href="../../news.html">News & Updates</a></li>
+<li><a href="../../games.html">Our err... Offerings</a></li>
+  </ul>
+</nav>
+
+<section class="social-media">
+  <a href="https://www.instagram.com/hyprzona">
+    <img src="../../iglogo.svg" alt="Instagram Logo">
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2024 hyprZona</p>
+</footer>
+
+<script src="../../jquery-3.7.1.min.js"></script>
+<script src="../../slick-1.8.1\slick\slick.min.js"></script>
+<script>
+$(document).ready(function(){
+ const chapterData = [
+    {
+      title: "Chapter 5: The Bad Old Times",
+      description: "Delve into Tim's past, revealing the traumatic events that shaped his motivations and drive in the present. Through a series of flashbacks, learn about Tim's family background, and the tragic loss of his loved ones. As Tim reflects on these pivotal moments, the narrative explores his emotional journey and the factors that propel him forward in his current endeavors.",
+      link: "part 2/T'N'T ch V.html",
+      unlockDate: new Date("2024-06-02"),
+readtime: "~20 min" // Adjust unlock dates as needed
+    },
+    {
+      title: "Chapter 6: Shaping Up",
+      description: "Tim's return to his village after avenging his family's death by confronting the loan sharks responsible. The villagers view him as a hero for standing up to the oppressors. Tim reflects on his parents' letter, which urges him to seek justice and change the system peacefully. He recalls his friendship with Tom, a fellow student at the academy, and their shared desire to bring justice to immigrants.",
+      link: "part 2/T'N'T ch VI.html",
+      unlockDate: new Date("2024-06-09"),
+readtime: "~7 min"
+    },
+    // Add data for future chapters with unlock dates
+    {
+      title: "Chapter 7: The T'N'T",
+      description: "Tim hosts a barbecue party at his home, celebrating his son Bill's achievement in a robotics competition. Amidst the festivities, an unexpected visitor arrives.",
+      link: "part 2/T'N'T ch VII.html",
+      unlockDate: new Date("2024-06-16"),
+readtime: "~8 min"
+    },
+      ];
+
+  const today = new Date();
+
+  // Initialize the Slick carousel
+  $('.chapter-carousel').slick({
+    slidesToShow: 1.5, // Show two slides at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    speed: 1000,
+    adaptiveHeight: true,
+    cssEase: 'linear',
+    arrows: false // This disables the previous and next buttons
+  });
+
+  chapterData.forEach(chapter => {
+    if (today >= chapter.unlockDate) {
+      createChapterCard(chapter);
+    }
+  });
+
+  function createChapterCard(chapter) {
+  const card = document.createElement('div');
+  card.classList.add('card', 'eb');
+
+  const cardLink = document.createElement('a'); // Create <a> tag for linking
+  cardLink.href = chapter.link; // Set the href attribute to the chapter link
+  card.appendChild(cardLink); // Append the <a> tag to the card
+
+  const cardBody = document.createElement('div');
+  cardBody.classList.add('card-body');
+  cardLink.appendChild(cardBody); // Append cardBody to the cardLink
+
+  const img = document.createElement('img');
+  img.src = "Tim Pro.png";
+  img.alt = "The T'N'T: Prologue Cover Art";
+  img.style.width = '400px';
+  img.classList.add('card-img-top');
+  cardBody.appendChild(img); // Append img to the cardBody
+
+  const content = document.createElement('div');
+  content.classList.add('card-body');
+  cardBody.appendChild(content); // Append content to the cardBody
+
+  const title = document.createElement('h4');
+  title.classList.add('card-title');
+  title.textContent = chapter.title;
+  content.appendChild(title); // Append title to the content
+
+  const text = document.createElement('p');
+  text.classList.add('card-text');
+  text.textContent = chapter.description;
+  content.appendChild(text); // Append text to the content
+
+  const list = document.createElement('ul');
+  const listItem1 = document.createElement('li');
+ listItem1.textContent = "Readtime: " + chapter.readtime; // Display readtime for each part
+  const listItem2 = document.createElement('li');
+  listItem2.textContent = "Price: Free";
+  const listItem3 = document.createElement('li');
+  listItem3.textContent = "Availability: Available";
+  list.appendChild(listItem1);
+  list.appendChild(listItem2);
+  list.appendChild(listItem3);
+  content.appendChild(list); // Append list to the content
+
+  $('.chapter-carousel').slick('slickAdd', card);
+}
+});
+</script>
+</body>
+</html>

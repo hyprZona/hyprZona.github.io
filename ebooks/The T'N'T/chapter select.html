@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hyprZona - The T'N'T: Prologue</title>
+  <link rel="stylesheet" href="../../style.css">
+  <link rel="icon" type="image/x-icon" href="../../logo.ico">
+  <link rel="stylesheet" type="text/css" href="../../slick-1.8.1\slick\slick.css">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <a href="index.html">
+      <img src="../../logo.png" alt="hyprZona Logo" width='80' height='80'>
+    </a>
+    <h1>hyprZona</h1>
+  </div>
+</header>
+
+<main>
+  <div class="container-fluid">
+    <h1 class="text-center mb-3">The T'N'T: Prologue Chapters</h1>
+    <div class="chapter-carousel">
+      <!-- Chapters will be dynamically added here -->
+    </div>
+  </div>
+</main>
+
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="news.html">News & Updates</a></li>
+  </ul>
+</nav>
+
+<section class="social-media">
+  <a href="https://www.instagram.com/hyprzona">
+    <img src="../../iglogo.svg" alt="Instagram Logo">
+  </a>
+</section>
+
+<footer>
+  <p>&copy; 2024 hyprZona</p>
+</footer>
+
+<script src="../../jquery-3.7.1.min.js"></script>
+<script src="../../slick-1.8.1\slick\slick.min.js"></script>
+<script>
+$(document).ready(function(){
+  const chapterData = [
+    {
+      title: "The T'N'T: Prologue (Intro)",
+      description: "An introduction to the protagonists of the story.",
+      link: "T'N'T intro.html",
+      artwork: "../../The T'N'T Cover Art.png",
+      unlockDate: new Date("2024-05-05"), // Adjust unlock dates as needed
+readtime: "~2 min" // Adjust readtime for each part
+    },
+    {
+      title: "The T'N'T: Prologue (Tom's Prologue)",
+      description: "The Story of Tom Martin",
+      link: "T'N'T part I.html",
+      artwork: "Tom Pro.png",
+      unlockDate: new Date("2024-05-12"),
+      readtime: "~54 min" // Adjust readtime for each part
+    },
+    // Add data for future parts with unlock dates, artwork, and readtime
+    {
+      title: "The T'N'T: Prologue (Tim's Prologue)",
+      description: "Experience the past of Tim as he narrates it.",
+      link: "T'N'T part II.html",
+      artwork: "Tim Pro.png",
+      unlockDate: new Date("2024-06-02"),
+      readtime: "~25 min"
+    },
+    {
+      title: "The T'N'T: Prologue (Part III)",
+      description: "Description of Part III",
+      link: "T'N'T part III.html",
+      artwork: "Finale Pro.png",
+      unlockDate: new Date("2024-05-26"),
+      readtime: "~35 min"
+    },
+    // ...and so on for future parts
+  ];
+
+  const today = new Date();
+
+  // Initialize the Slick carousel
+  $('.chapter-carousel').slick({
+    slidesToShow: 1.5, // Show two slides at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    infinite: true,
+    speed: 1000,
+    adaptiveHeight: true,
+    cssEase: 'linear',
+    arrows: false // This disables the previous and next buttons
+  });
+
+  chapterData.forEach(chapter => {
+    if (today >= chapter.unlockDate) {
+      createChapterCard(chapter);
+    }
+  });
+
+  function createChapterCard(chapter) {
+    const card = document.createElement('div');
+    card.classList.add('card', 'eb');
+
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+
+    const img = document.createElement('img');
+    img.src = chapter.artwork;
+    img.alt = "The T'N'T: Prologue Cover Art";
+    img.style.width = '400px';
+    img.classList.add('card-img-top');
+
+    const content = document.createElement('div');
+    content.classList.add('card-body');
+
+    const title = document.createElement('h4');
+    title.classList.add('card-title');
+    title.textContent = chapter.title;
+
+    const text = document.createElement('p');
+    text.classList.add('card-text');
+    text.textContent = chapter.description;
+
+    const list = document.createElement('ul');
+    const listItem1 = document.createElement('li');
+    listItem1.textContent = "Readtime: " + chapter.readtime; // Display readtime for each part
+    const listItem2 = document.createElement('li');
+    listItem2.textContent = "Price: Free";
+    const listItem3 = document.createElement('li');
+    listItem3.textContent = "Availability: Available";
+
+    list.appendChild(listItem1);
+    list.appendChild(listItem2);
+    list.appendChild(listItem3);
+
+    content.appendChild(title);
+    content.appendChild(text);
+    content.appendChild(list);
+
+    cardBody.appendChild(img);
+    cardBody.appendChild(content);
+    card.appendChild(cardBody);
+
+    const link = document.createElement('a');
+    link.href = chapter.link;
+    link.appendChild(card);
+
+    $('.chapter-carousel').slick('slickAdd', link);
+  }
+});
+</script>
+</body>
+</html>
