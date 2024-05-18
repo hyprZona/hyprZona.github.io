@@ -15,14 +15,16 @@
 <body>
 
 <script>
-  const unlockDate = new Date("2024-07-14"); // Set the unlock date (May 12th, 2024)
+  const unlockDate = new Date(2024, 5, 14); // Set the unlock date (May 26, 2024), months are 0-indexed
   const today = new Date();
+  const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+console.log(unlockDate);
 
-  if (today >= unlockDate) {
+
+  if (todayDateOnly >= unlockDate) {
     document.body.style.display = "block";  /* Show content if unlocked */
   } else {
-    // Optionally display a message or redirect to a different page
-    document.body.innerHTML = "<p>Chapter XI: Not all ends well unlocks on May 12th, 2024. Stay tuned!</p>";
+    document.body.innerHTML = "<p>Chapter IV: The Drug Cartel unlocks on May 26, 2024. Stay tuned!</p>";
   }
 </script>
 
