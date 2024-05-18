@@ -9,13 +9,12 @@
 
   gtag('config', 'G-FW17RSLYQ9');
 </script>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>hyprZona - The T'N'T: Tom's Prologue</title>
   <link rel="stylesheet" href="../../style.css">
   <link rel="icon" type="image/x-icon" href="../../logo.ico">
-  <link rel="stylesheet" type="text/css" href="../../slick-1.8.1\slick\slick.css">
+  <link rel="stylesheet" type="text/css" href="../../slick-1.8.1/slick/slick.css">
 </head>
 <body>
 <header>
@@ -41,7 +40,7 @@
     <li><a href="../../index.html">Home</a></li>
     <li><a href="../../about.html">About Us</a></li>
     <li><a href="../../news.html">News & Updates</a></li>
-<li><a href="../../games.html">Our err... Offerings</a></li>
+    <li><a href="../../games.html">Our err... Offerings</a></li>
   </ul>
 </nav>
 
@@ -56,47 +55,47 @@
 </footer>
 
 <script src="../../jquery-3.7.1.min.js"></script>
-<script src="../../slick-1.8.1\slick\slick.min.js"></script>
+<script src="../../slick-1.8.1/slick/slick.min.js"></script>
 <script>
 $(document).ready(function(){
- const chapterData = [
+  const chapterData = [
     {
       title: "Chapter 1: The Legacy of Shadows",
       description: "Tom awakens in an unknown location, bound to a chair. As he struggles to piece together his situation, glimpses of his past and his resolve to confront corruption and crime unfold. Tension mounts as he faces a menacing adversary, testing his resilience and determination.",
       link: "part 1/T'N'T ch I.html",
-      unlockDate: new Date("2024-05-05"),
-readtime: "~4 min" // Adjust unlock dates as needed
+      unlockDate: new Date(2024, 4, 5), // May 5, 2024
+      readtime: "~4 min"
     },
     {
       title: "Chapter 2: The Chinatown Wars",
       description: "Delve into the relentless pursuit Tom, and his partner Tim, as they track down a kidnapper amidst the vibrant streets of Chinatown. Amidst cultural festivities, they confront danger head-on, uncovering a sinister organ trafficking operation.",
       link: "part 1/T'N'T ch II.html",
-      unlockDate: new Date("2024-05-12"),
-readtime: "~6 min"
+      unlockDate: new Date(2024, 4, 12), // May 12, 2024
+      readtime: "~6 min"
     },
-    // Add data for future chapters with unlock dates
     {
       title: "Chapter 3: The Unbreakable Duo",
       description: "Tom and Millie's budding friendship takes center stage as they bond over shared experiences. Their conversation sheds light on their pasts, highlighting the challenges they've faced and the strength of their bond. As they delve deeper into their pasts, secrets are unveiled, paving the way for unexpected twists and turns in their journey together.",
       link: "part 1/T'N'T ch III.html",
-      unlockDate: new Date("2024-05-19"),
-readtime: "~6 min"
+      unlockDate: new Date(2024, 4, 19), // May 19, 2024
+      readtime: "~6 min"
     },
     {
       title: "Chapter 4: Ending the Cartel",
       description: "Tom and Tim find themselves confronting a dangerous drug cartel in a high-stakes scenario. As they navigate the perilous environment of a drug warehouse, they must rely on their wits and courage to outmaneuver the heavily guarded criminals. Tensions escalate as they face off against armed cartel members, leading to a daring plan to escape the warehouse and confront the looming threat.",
       link: "part 1/T'N'T ch IV.html",
-      unlockDate: new Date("2024-05-26"),
-readtime: "~20 min"
-    },
-    // ...and so on for future chapters
+      unlockDate: new Date(2024, 4, 26), // May 26, 2024
+      readtime: "~20 min"
+    }
   ];
 
   const today = new Date();
+  const todayDateOnly = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  console.log("Today's date (local):", todayDateOnly);
 
   // Initialize the Slick carousel
   $('.chapter-carousel').slick({
-    slidesToShow: 1.5, // Show two slides at a time
+    slidesToShow: 1.5, // Show one and a half slides at a time
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -108,58 +107,59 @@ readtime: "~20 min"
   });
 
   chapterData.forEach(chapter => {
-    if (today >= chapter.unlockDate) {
+    console.log(`Unlock date for "${chapter.title}":`, chapter.unlockDate);
+    if (todayDateOnly >= chapter.unlockDate) {
       createChapterCard(chapter);
     }
   });
 
   function createChapterCard(chapter) {
-  const card = document.createElement('div');
-  card.classList.add('card', 'eb');
+    const card = document.createElement('div');
+    card.classList.add('card', 'eb');
 
-  const cardLink = document.createElement('a'); // Create <a> tag for linking
-  cardLink.href = chapter.link; // Set the href attribute to the chapter link
-  card.appendChild(cardLink); // Append the <a> tag to the card
+    const cardLink = document.createElement('a'); // Create <a> tag for linking
+    cardLink.href = chapter.link; // Set the href attribute to the chapter link
+    card.appendChild(cardLink); // Append the <a> tag to the card
 
-  const cardBody = document.createElement('div');
-  cardBody.classList.add('card-body');
-  cardLink.appendChild(cardBody); // Append cardBody to the cardLink
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    cardLink.appendChild(cardBody); // Append cardBody to the cardLink
 
-  const img = document.createElement('img');
-  img.src = "Tom Pro.png";
-  img.alt = "The T'N'T: Prologue Cover Art";
-  img.style.width = '400px';
-  img.classList.add('card-img-top');
-  cardBody.appendChild(img); // Append img to the cardBody
+    const img = document.createElement('img');
+    img.src = "Tom Pro.png";
+    img.alt = "The T'N'T: Prologue Cover Art";
+    img.style.width = '400px';
+    img.classList.add('card-img-top');
+    cardBody.appendChild(img); // Append img to the cardBody
 
-  const content = document.createElement('div');
-  content.classList.add('card-body');
-  cardBody.appendChild(content); // Append content to the cardBody
+    const content = document.createElement('div');
+    content.classList.add('card-body');
+    cardBody.appendChild(content); // Append content to the cardBody
 
-  const title = document.createElement('h4');
-  title.classList.add('card-title');
-  title.textContent = chapter.title;
-  content.appendChild(title); // Append title to the content
+    const title = document.createElement('h4');
+    title.classList.add('card-title');
+    title.textContent = chapter.title;
+    content.appendChild(title); // Append title to the content
 
-  const text = document.createElement('p');
-  text.classList.add('card-text');
-  text.textContent = chapter.description;
-  content.appendChild(text); // Append text to the content
+    const text = document.createElement('p');
+    text.classList.add('card-text');
+    text.textContent = chapter.description;
+    content.appendChild(text); // Append text to the content
 
-  const list = document.createElement('ul');
-  const listItem1 = document.createElement('li');
- listItem1.textContent = "Readtime: " + chapter.readtime; // Display readtime for each part
-  const listItem2 = document.createElement('li');
-  listItem2.textContent = "Price: Free";
-  const listItem3 = document.createElement('li');
-  listItem3.textContent = "Availability: Available";
-  list.appendChild(listItem1);
-  list.appendChild(listItem2);
-  list.appendChild(listItem3);
-  content.appendChild(list); // Append list to the content
+    const list = document.createElement('ul');
+    const listItem1 = document.createElement('li');
+    listItem1.textContent = "Readtime: " + chapter.readtime; // Display readtime for each part
+    const listItem2 = document.createElement('li');
+    listItem2.textContent = "Price: Free";
+    const listItem3 = document.createElement('li');
+    listItem3.textContent = "Availability: Available";
+    list.appendChild(listItem1);
+    list.appendChild(listItem2);
+    list.appendChild(listItem3);
+    content.appendChild(list); // Append list to the content
 
-  $('.chapter-carousel').slick('slickAdd', card);
-}
+    $('.chapter-carousel').slick('slickAdd', card);
+  }
 });
 </script>
 </body>
