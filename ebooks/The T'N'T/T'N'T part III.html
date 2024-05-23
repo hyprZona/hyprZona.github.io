@@ -65,28 +65,28 @@ $(document).ready(function(){
       description: "Tom recalls a significant mission from his past while conversing with Millie. The scene shifts to a bustling street known as the 'Doughnut Crossing' in late 2003. Tom and Tim receive urgent instructions about a weapon smuggling case involving a black van.",
       link: "part 3/T'N'T ch VIII.html",
       unlockDate: new Date(2024, 5, 23), // June 23, 2024
-      readtime: "~10 min" // Adjust unlock dates as needed
+      readtime: "~3 min" // Adjust unlock dates as needed
     },
     {
       title: "Chapter 9: Prototype 5",
       description: "Learn about the prototype and why retrieving it is necessary as the action escalates and voice-activated bombs start ticking off, the adrenaline will flow through your veins as well.",
       link: "part 3/T'N'T ch IX.html",
       unlockDate: new Date(2024, 5, 30), // June 30, 2024
-      readtime: "~7 min"
+      readtime: "~3 min"
     },
     {
       title: "Chapter 10: Ending it once and for all",
       description: "Find out if Tim survived as the intensity reaches new heights as Tom and Tim find themselves in a race against time and their nemesis, Mike Egan.",
       link: "part 3/T'N'T ch X.html",
       unlockDate: new Date(2024, 6, 7), // July 7, 2024
-      readtime: "~8 min"
+      readtime: "~3 min"
     },
     {
       title: "Chapter 11: Not all Ends well",
       description: "The final chapter, closing the ARC of this prologue but the start of a new story, <i>after all not everything ends well</i>.",
       link: "part 3/T'N'T ch XI.html",
       unlockDate: new Date(2024, 6, 14), // July 14, 2024
-      readtime: "~10 min"
+      readtime: "~3 min"
     },
   ];
 
@@ -107,7 +107,7 @@ $(document).ready(function(){
     arrows: false // This disables the previous and next buttons
   });
 
-  chapterData.forEach(chapter => {
+   chapterData.forEach(chapter => {
     console.log(`Unlock date for "${chapter.title}":`, chapter.unlockDate);
     if (todayDateOnly >= chapter.unlockDate) {
       createChapterCard(chapter);

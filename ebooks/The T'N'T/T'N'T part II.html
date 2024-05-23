@@ -65,21 +65,21 @@ $(document).ready(function(){
       description: "Delve into Tim's past, revealing the traumatic events that shaped his motivations and drive in the present. Through a series of flashbacks, learn about Tim's family background, and the tragic loss of his loved ones. As Tim reflects on these pivotal moments, the narrative explores his emotional journey and the factors that propel him forward in his current endeavors.",
       link: "part 2/T'N'T ch V.html",
       unlockDate: new Date(2024, 5, 2), // June 2, 2024
-      readtime: "~20 min" // Adjust unlock dates as needed
+      readtime: "~5 min" // Adjust unlock dates as needed
     },
     {
       title: "Chapter 6: Shaping Up",
       description: "Tim's return to his village after avenging his family's death by confronting the loan sharks responsible. The villagers view him as a hero for standing up to the oppressors. Tim reflects on his parents' letter, which urges him to seek justice and change the system peacefully. He recalls his friendship with Tom, a fellow student at the academy, and their shared desire to bring justice to immigrants.",
       link: "part 2/T'N'T ch VI.html",
       unlockDate: new Date(2024, 5, 9), // June 9, 2024
-      readtime: "~7 min"
+      readtime: "~2 min"
     },
     {
       title: "Chapter 7: The T'N'T",
       description: "Tim hosts a barbecue party at his home, celebrating his son Bill's achievement in a robotics competition. Amidst the festivities, an unexpected visitor arrives.",
       link: "part 2/T'N'T ch VII.html",
       unlockDate: new Date(2024, 5, 16), // June 16, 2024
-      readtime: "~8 min"
+      readtime: "~3 min"
     },
   ];
 
@@ -100,7 +100,7 @@ $(document).ready(function(){
     arrows: false // This disables the previous and next buttons
   });
 
-  chapterData.forEach(chapter => {
+   chapterData.forEach(chapter => {
     console.log(`Unlock date for "${chapter.title}":`, chapter.unlockDate);
     if (todayDateOnly >= chapter.unlockDate) {
       createChapterCard(chapter);
