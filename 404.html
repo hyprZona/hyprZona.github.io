@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hyprZona - Lost in Hyperspace</title>
+  <link rel="icon" href="images/logo.ico">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html">
+        <img src="images/logo.ico" alt="hyprZona Logo" width="50" height="50">
+      </a>
+      <h1>hyprZona</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="error-container">
+      <h1>Warning: Lost in Hyperspace!</h1>
+      <p>Looks like you've taken a wrong turn in hyperspace. The page you requested is currently unavailable.</p>
+      <button onclick="openModal()" class="error-button">Take me back</button>
+      <!-- Modal -->
+      <div id="mazeModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" onclick="closeModal()">&times;</span>
+          <p>Do you want play solve a maze to go back or be a coward & return without challenge? 😈</p>
+          <a href="404/maze.html" class="error-button">Yes, let's go!</a>
+<a href="index.html" class="error-button">I've other things to do.</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 hyprZona</p>
+  </footer>
+<script src="script.js"></script>
+</body>
+</html>
