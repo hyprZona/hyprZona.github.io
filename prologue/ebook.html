@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-FW17RSLYQ9');
-</script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The T'N'T: Prologue</title>
-  <link rel="icon" href="../images/logo.ico">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-  </head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FW17RSLYQ9');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The T'N'T: Prologue</title>
+    <link rel="icon" href="../images/logo.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+</head>
 <body>
-  <header>
-    <img src="../images/logo.ico" alt="Logo" id="logo">
-    <h1>hyprZona</h1>
-    <h2>The T'N'T: Prologue</h2>
-    <select id="chapter-dropdown"></select>
-    <button id="prev-button">Previous</button>
-    <button id="next-button">Next</button>
-    <button id="fullscreen-button">Fullscreen</button>
-    <div class="navbar-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
+    <header>
+        <img src="../images/logo.ico" alt="Logo" id="logo">
+        <h1>hyprZona</h1>
+        <h2>The T'N'T: Prologue</h2>
+        <select id="chapter-dropdown"></select>
+        <button id="prev-button">Previous</button>
+        <button id="next-button">Next</button>
+        <button id="fullscreen-button">Fullscreen</button>
+        <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
 
-  <nav class="sidebar">
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li class="expandable">
-        <a href="#" class="expand-icon">Products ↓</a>
-        <ul class="submenu">
-          <li><a href="../games.html">Games</a></li>
-          <li><a href="../books.html">Books</a></li>
+    <nav class="mobile-navbar">
+        <select id="chapter-dropdown-mobile"></select>
+        <button id="prev-button-mobile">Previous</button>
+        <button id="next-button-mobile">Next</button>
+        <button id="fullscreen-button-mobile">Fullscreen</button>
+        <div class="navbar-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <nav class="sidebar">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li class="expandable">
+                <a href="#" class="expand-icon">Products ↓</a>
+                <ul class="submenu">
+                    <li><a href="../games.html">Games</a></li>
+                    <li><a href="../books.html">Books</a></li>
+                </ul>
+            </li>
+            <li class="disabled">Connect with Us:</li>
+            <li class="social-media">
+                <a href="https://www.instagram.com/hyprzona"><img src="../images/iglogo.png" alt="Instagram Logo"></a>
+                <a href="https://www.youtube.com/@hyprzona"><img src="../images/ytlogo.png" alt="YouTube Logo"></a>
+            </li>
         </ul>
-      </li>
-      <li class="disabled">Connect with Us:</li>
-      <li class="social-media">
-        <a href="https://www.instagram.com/hyprzona"><img src="../images/iglogo.png" alt="Instagram Logo"></a>
-        <a href="https://www.youtube.com/@hyprzona"><img src="../images/ytlogo.png" alt="YouTube Logo"></a>
-      </li>
-    </ul>
-  </nav>
+    </nav>
 
-  <main></main>
-<script src="script.js"></script>
+    <main></main>
+    <script src="script.js"></script>
 </body>
 </html>

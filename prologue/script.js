@@ -6,6 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const unlockDateElem = document.getElementById('unlock-date');
     const fullscreenButton = document.getElementById('fullscreen-button');
 
+    // Mobile-specific elements
+    const prevButtonMobile = document.getElementById('prev-button-mobile');
+    const nextButtonMobile = document.getElementById('next-button-mobile');
+    const chapterDropdownMobile = document.getElementById('chapter-dropdown-mobile');
+    const fullscreenButtonMobile = document.getElementById('fullscreen-button-mobile');
+
     const chapters = [
         { key: 'introduction', title: 'Introduction', url: 'https://drive.google.com/file/d/1_ZfX-yrzAt6RVFfYONOonBdbWGf8i_F7/preview', unlockDate: new Date('2024-05-03') },
         { key: 'part1-ch1', title: 'Part I - Chapter 1', url: 'https://drive.google.com/file/d/1FXG4_Z4OESFEfdH-BcHolCWUCOQqeD0l/preview', unlockDate: new Date('2024-05-05') },
@@ -24,19 +30,25 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
     const now = new Date();
 
-    // Populate the dropdown with unlocked chapters
+    // Populate the dropdown with unlocked chapters for both desktop and mobile
     chapters.forEach((chapter, index) => {
         if (now >= chapter.unlockDate) {
             const option = document.createElement('option');
             option.value = index;
             option.text = chapter.title;
             chapterDropdown.appendChild(option);
+
+            const optionMobile = document.createElement('option');
+            optionMobile.value = index;
+            optionMobile.text = chapter.title;
+            chapterDropdownMobile.appendChild(optionMobile);
         }
     });
 
     // Load the initial chapter
     loadChapter(currentIndex);
 
+    // Desktop event listeners
     prevButton.addEventListener('click', () => {
         if (currentIndex > 0) {
             currentIndex--;
@@ -60,6 +72,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fullscreenButton.addEventListener('click', () => {
+        toggleFullscreen();
+    });
+
+    // Mobile event listeners
+    prevButtonMobile.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            loadChapter(currentIndex);
+        }
+    });
+
+    nextButtonMobile.addEventListener('click', () => {
+        if (currentIndex < chapters.length - 1) {
+            currentIndex++;
+            loadChapter(currentIndex);
+        }
+    });
+
+    chapterDropdownMobile.addEventListener('change', () => {
+        const selectedIndex = parseInt(chapterDropdownMobile.value, 10);
+        if (selectedIndex >= 0 && selectedIndex < chapters.length) {
+            currentIndex = selectedIndex;
+            loadChapter(currentIndex);
+        }
+    });
+
+    fullscreenButtonMobile.addEventListener('click', () => {
+        toggleFullscreen();
+    });
+
+    function toggleFullscreen() {
         if (!document.fullscreenElement) {
             document.documentElement.requestFullscreen();
         } else {
@@ -67,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.exitFullscreen();
             }
         }
-    });
+    }
 
     function loadChapter(index) {
         const chapter = chapters[index];
@@ -75,12 +118,16 @@ document.addEventListener('DOMContentLoaded', () => {
             loadPDF(chapter.url);
             prevButton.style.display = index === 0 ? 'none' : 'inline-block';
             nextButton.style.display = index === chapters.length - 1 ? 'none' : 'inline-block';
+            prevButtonMobile.style.display = index === 0 ? 'none' : 'inline-block';
+            nextButtonMobile.style.display = index === chapters.length - 1 ? 'none' : 'inline-block';
             chapterDropdown.value = index;
+            chapterDropdownMobile.value = index;
         } else {
             unlockDateElem.textContent = chapter.unlockDate.toDateString();
             unlockPopup.classList.remove('hidden');
             setTimeout(() => unlockPopup.classList.add('hidden'), 3000);
             nextButton.style.display = 'none';
+            nextButtonMobile.style.display = 'none';
         }
     }
 
