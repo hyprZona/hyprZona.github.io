@@ -244,3 +244,21 @@ footer p {
     text-align: center;
   }
 }
+.screenshot-thumb {
+  width: 200px; /* Adjust the size as needed */
+  height: auto;
+  margin: 10px;
+  border: 2px solid #555;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.screenshot-thumb:hover {
+  transform: scale(1.05);
+}
+/* Override Lightbox caption font */
+.lightbox .lb-caption {
+  font-family: 'Roboto', sans-serif; /* Change this to the desired font-family */
+  color: #fff; /* Adjust color if needed */
+}
