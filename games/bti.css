@@ -48,18 +48,19 @@ h1 {
   height: 3px;
   background-color: #ff4b4b;
 }
-
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0;
   right: -250px;
   width: 250px;
   height: 100%;
-  background: rgba(26, 26, 26, 0.95); /* Semi-transparent background */
+  background: linear-gradient(180deg, #000000, #1e1d23, #454549);
   padding-top: 60px;
   transition: right 0.3s ease;
   z-index: 999;
   box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid #faf8f9;
 }
 
 .sidebar.open {
@@ -73,56 +74,55 @@ h1 {
 
 .sidebar ul li {
   padding: 10px 20px;
-  color: #e0e0e0;
-  border-bottom: 1px solid #333;
+  color: #fff;
 }
 
 .sidebar ul li a {
-  color: #e0e0e0;
   text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transition: color 0.2s;
 }
 
-.sidebar ul li .expandable {
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.sidebar ul li a:hover {
+  color: #523535;
 }
 
-.sidebar ul li .submenu {
+.sidebar .disabled{
+  color: gray;
+}
+.submenu {
   display: none;
+  list-style: none;
   padding-left: 20px;
 }
 
-.sidebar ul li .submenu li {
-  padding: 5px 0;
+.expandable:hover .submenu {
+  display: block;
 }
 
-.sidebar ul li .submenu li a {
-  font-size: 0.9em;
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
 }
 
-.sidebar ul li .expand-icon {
-  transition: transform 0.3s;
+/* Sidebar Social Media Icons */
+.social-media a img {
+  width: 20%;
+  height: 20%;
+  transition: transform 0.3s, filter 0.3s;
 }
 
-.sidebar ul li .expand-icon.rotated {
-  transform: rotate(180deg);
+.social-media a img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px #ff0099);
 }
 
-.sidebar .disabled {
-  color: gray;
-}
-
-.sidebar ul li.social-media {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.sidebar ul li.social-media img {
-  width: 40px;
-  height: auto; /* Maintain aspect ratio */
+/* Discord Widget Styling */
+iframe {
+  border-radius: 10px;
+  border: 2px solid #ff0099;
 }
 
 main {
@@ -184,7 +184,7 @@ section ul li strong {
 .game-section {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
   margin-bottom: 20px;
 }
 
@@ -280,7 +280,8 @@ footer p {
 
     @media (min-width: 768px) {
       .responsive-video {
-        padding-bottom: 56.25%;
+        padding-bottom: 120%;
+	padding-right: 220%;
       }
     }
 

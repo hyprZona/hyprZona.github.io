@@ -1,0 +1,451 @@
+/* Basic Reset */
+body {
+  background-color: #000000;
+  font-family: 'Orbitron', sans-serif;
+  color: #fff;
+  margin: 0;
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #ff0099;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-container img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2em;
+  color: #ff0099;
+  text-shadow: 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 30px #ff0099;
+}
+
+/* Navbar Toggle */
+.navbar-toggle {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.navbar-toggle span {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -250px;
+  width: 250px;
+  height: 100%;
+  background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+  padding-top: 60px;
+  transition: right 0.3s ease;
+  z-index: 999;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+  border-left: 1px solid #ff0099;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+  color: #fff;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: block;
+  transition: color 0.2s;
+}
+
+.sidebar ul li a:hover {
+  color: #ff0099;
+}
+
+.sidebar .disabled{
+  color: gray;
+}
+.submenu {
+  display: none;
+  list-style: none;
+  padding-left: 20px;
+}
+
+.expandable:hover .submenu {
+  display: block;
+}
+
+.social-media a {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* Sidebar Social Media Icons */
+.social-media a img {
+  width: 20%;
+  height: 20%;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-media a img:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px #ff0099);
+}
+
+/* Discord Widget Styling */
+iframe {
+  border-radius: 10px;
+  border: 2px solid #ff0099;
+}
+
+/* Main Content Styles */
+main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+main h2 a {
+  text-decoration: none;
+  color: #ff0099;
+}
+
+main h2 a:hover {
+  color: #ff00ff;
+}
+
+section.welcome p,
+section.about-us p,
+section.about-me p {
+  line-height: 1.5;
+}
+
+/* News Carousel Styles */
+.news-carousel {
+  margin-top: 20px;
+}
+
+.news-item {
+  background: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 0 10px rgba(255, 0, 153, 0.5);
+}
+
+.news-item h3 {
+  color: #ff0099;
+}
+
+.news-item p {
+  color: #e0e0e0;
+}
+
+.news-item a {
+  color: #00ffff;
+  text-decoration: none;
+}
+
+.news-item a:hover {
+  color: #ff00ff;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #0f0c29;
+  color: #ff0099;
+  border-top: 1px solid #ff0099;
+}
+
+footer p {
+  margin: 0;
+}
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Game Info Container Styles */
+.game-info-container {
+  display: flex;
+  background: linear-gradient(180deg, #2b2b2b, #7e1353);
+  border: 3px solid #ff0099;
+  border-radius: 15px;
+  overflow: hidden;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px; /* Added margin to prevent overlap */
+}
+
+.game-info-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.game-info-container.left .game-logo {
+  z-index: 1;
+  width: 450px;
+  height: 250px;
+  object-fit: cover;
+  margin-right: 0px;
+  margin-top: -10px;
+}
+
+.game-info-container.left .text-container {
+  text-align: right;
+}
+
+.game-info-container.right .game-logo {
+  order: 2;
+  z-index: 1;
+  width: 300px;
+  height: 100%;
+  object-fit: cover;
+  margin-left: 0px;
+  margin-top: 100px;
+}
+
+.game-info-container.right .text-container {
+  text-align: left;
+}
+
+.game-info {
+  flex: 1;
+  padding: 20px;
+  font-family: 'Creepster', sans-serif;
+  background: linear-gradient(180deg, #000000, #3c1053); /* Spooky background for text */
+}
+
+.game-info h2 {
+  font-family: 'UnifrakturMaguntia', serif;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: #ff0099;
+}
+
+.game-info p {
+  font-family: 'Merriweather', serif;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.game-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.game-info ul li {
+  font-family: 'Roboto', sans-serif;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+/* Aligning game-info-container */
+.left {
+  margin-left: 10%;
+}
+
+.right {
+  margin-left: 30%;
+}
+
+/* Books */
+.book-section {
+  padding: 20px;
+  background: linear-gradient(135deg, #1a1a1d, #4e4e50);
+  border-radius: 15px;
+  margin: 30px auto;
+  max-width: 800px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.book-info-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.book-info-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.book-cover img {
+  max-width: 150px;
+  border-radius: 10px;
+}
+
+.text-container {
+  padding: 20px;
+}
+
+.text-container h2 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #ff4500;
+  font-size: 1.5em;
+}
+
+.text-container p {
+  font-family: 'Montserrat', sans-serif;
+  color: #d3d3d3;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.age-rating {
+  margin-left: auto;
+  text-align: center;
+}
+
+.rating {
+  font-family: 'Orbitron', sans-serif;
+  background-color: #ff4500;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.rating-reasons {
+  list-style: none;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #d3d3d3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .sidebar {
+    width: 100%;
+    right: -100%;
+  }
+
+  .sidebar.open {
+    right: 0;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  .news-item {
+    margin: 5px 0;
+  }
+}
+
+    
+    .error-button {
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    
+    .error-button:hover {
+      background-color: #0056b3;
+    }
+    
+    .error-container {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 30px;
+    }
+    
+    .error-container h1 {
+      color: #007bff;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    
+    .error-container p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: brown;
+    }
+    /* Add any additional CSS for the modal here */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto; /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%; /* Could be more or less, depending on screen size */
+    }
+    
+    section p {
+      color: #cccccc;
+    }
