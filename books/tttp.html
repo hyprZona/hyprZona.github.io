@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-FW17RSLYQ9');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The T'N'T: Prologue</title>
@@ -18,34 +11,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.6.347/pdf.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <header>
-        <img src="../images/logo.ico" alt="Logo" id="logo">
-        <h1>hyprZona</h1>
-        <h2>The T'N'T: Prologue</h2>
-        <select id="chapter-dropdown"></select>
-        <button id="prev-button">Previous</button>
-        <button id="next-button">Next</button>
-        <button id="fullscreen-button">Fullscreen</button>
-        <div class="navbar-toggle">
+        <div class="header-toggle">
             <span></span>
             <span></span>
             <span></span>
         </div>
+
+        <nav class="header-sidebar">
+            <div class="header-content">
+                <img src="../images/logo.ico" alt="Logo" id="logo">
+                <div class="header-text">
+                    <h1>hyprZona</h1>
+                    <h2>The T'N'T: Prologue</h2>
+                </div>
+                <div class="controls">
+                    <select id="chapter-dropdown"></select>
+                    <button id="prev-button">Previous</button>
+                    <button id="next-button">Next</button>
+                    <button id="fullscreen-button">Fullscreen</button>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <nav class="mobile-navbar">
-        <select id="chapter-dropdown-mobile"></select>
-        <button id="prev-button-mobile">Previous</button>
-        <button id="next-button-mobile">Next</button>
-        <button id="fullscreen-button-mobile">Fullscreen</button>
-        <div class="navbar-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
+    <div class="navbar-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
     <nav class="sidebar">
         <ul>
@@ -53,7 +50,7 @@
             <li class="expandable">
                 <a href="#" class="expand-icon">Products ↓</a>
                 <ul class="submenu">
-		    <li><a href="../about.html">About</a></li>
+                    <li><a href="../about.html">About</a></li>
                     <li><a href="../games.html">Games</a></li>
                     <li><a href="../books.html">Books</a></li>
                 </ul>
@@ -63,13 +60,16 @@
                 <a href="https://www.instagram.com/hyprzona"><img src="../images/iglogo.png" alt="Instagram Logo"></a>
                 <a href="https://www.youtube.com/@hyprzona"><img src="../images/ytlogo.png" alt="YouTube Logo"></a>
             </li>
-           <li>
-	<iframe src="https://discord.com/widget?id=918354308431503420&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-      </li>
+            <li>
+                <iframe class="discord-iframe", src="https://discord.com/widget?id=918354308431503420&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+            </li>
         </ul>
     </nav>
 
     <main></main>
-    <script src="script.js"></script>
+
+    <div id="unlock-popup" class="hidden">
+        <p>This chapter will unlock on <span id="unlock-date"></span></p>
+    </div>
 </body>
 </html>
