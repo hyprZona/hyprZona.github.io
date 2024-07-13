@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { part: 'Part 3', title: 'Chapter 8: The Black Van', url: 'https://drive.google.com/file/d/19FdPLlCDlzPQGi2p4pmfbsvkWfJXUyjM/preview', unlockDate: new Date('2024-06-23T18:30:00Z'), summary: 'The begging of the most intense mission of Tom & Tim as U.I.P.D. officers.', readTime: '4 mins' },
         { part: 'Part 3', title: 'Chapter 9: Prototype 5', url: 'https://drive.google.com/file/d/1NZE6AOh_0UbujSMquFopRIUjTqri3OJK/preview', unlockDate: new Date('2024-06-30T18:30:00Z'), summary: "It's about Prototype 5.", readTime: '3 mins' },
         { part: 'Part 3', title: 'Chapter 10: Ending it once & for all', url: 'https://drive.google.com/file/d/1CDZY8pnIuSBXKzqXGH_U1oDQ4-psYbKi/preview', unlockDate: new Date('2024-07-07T18:30:00Z'), summary: 'Did Tim survive the fall or not? Did Tom take his revenge on Mike? Read and find it out!', readTime: '10 mins' },
-        { part: 'Part 3', title: 'Chapter 11: Not all ends well', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-14T18:30:00Z'), summary: 'Something unexpected happened that changes things by a storm!', readTime: '3 mins' },
-        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1Xt1H-oUNr1Il1qU_2dwCZT-RsrP0SP2k/preview', unlockDate: new Date('2024-07-14T18:30:00Z'), summary: "It's not just credits and a special thanks!", readTime: '2 mins' },
+        { part: 'Part 3', title: 'Chapter 11: Not all ends well', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-13T18:30:00Z'), summary: 'Something unexpected happened that changes things by a storm!', readTime: '3 mins' },
+        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1Xt1H-oUNr1Il1qU_2dwCZT-RsrP0SP2k/preview', unlockDate: new Date('2024-07-13T18:30:00Z'), summary: "It's not just credits and a special thanks!", readTime: '2 mins' },
     ];
 
     let currentChapterIndex = 0;
