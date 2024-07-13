@@ -10,7 +10,7 @@ body {
 .header-sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -255px;
     width: 250px;
     height: 100%;
     background-color: #2C2C2C; /* Dark grey */
@@ -64,6 +64,36 @@ body {
     font-size: 16px;
     cursor: pointer;
     width: calc(100% - 20px); /* Ensure dropdown doesn't overflow */
+}
+
+/* Chapter Info Styles */
+.chapter-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.chapter-info .read-time, .chapter-info .chapter-summary {
+    background-color: #333;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    width: calc(100% - 20px);
+    color: #fff;
+}
+
+.chapter-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #FF6347; /* Tomato color */
+}
+
+.chapter-info p {
+    margin: 5px 0 0 0;
+    font-size: 16px;
+    color: #E0E0E0;
 }
 
 /* Navbar Toggle Styles */

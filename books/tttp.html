@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The T'N'T: Prologue</title>
@@ -15,28 +23,39 @@
 </head>
 <body>
     <header>
-        <div class="header-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+    <div class="header-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 
-        <nav class="header-sidebar">
-            <div class="header-content">
-                <img src="../images/logo.ico" alt="Logo" id="logo">
-                <div class="header-text">
-                    <h1>hyprZona</h1>
-                    <h2>The T'N'T: Prologue</h2>
+    <nav class="header-sidebar open">
+        <div class="header-content">
+            <img src="../images/logo.ico" alt="Logo" id="logo">
+            <div class="header-text">
+                <h1>hyprZona</h1>
+                <h2>The T'N'T: Prologue</h2>
+            </div>
+            <div class="controls">
+                <select id="chapter-dropdown"></select>
+                <button id="prev-button">Previous</button>
+                <button id="next-button">Next</button>
+                <button id="fullscreen-button">Fullscreen</button>
+            </div>
+            <div class="chapter-info">
+                <div class="read-time">
+                    <h3>Read Time</h3>
+                    <p id="chapter-read-time">N/A</p>
                 </div>
-                <div class="controls">
-                    <select id="chapter-dropdown"></select>
-                    <button id="prev-button">Previous</button>
-                    <button id="next-button">Next</button>
-                    <button id="fullscreen-button">Fullscreen</button>
+                <div class="chapter-summary">
+                    <h3>Summary</h3>
+                    <p id="chapter-summary">N/A</p>
                 </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
+
 
     <div class="navbar-toggle">
         <span></span>

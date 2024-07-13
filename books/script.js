@@ -9,21 +9,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.querySelector('.sidebar');
     const unlockPopup = document.getElementById('unlock-popup');
     const unlockDateSpan = document.getElementById('unlock-date');
+    const summaryDiv = document.getElementById('chapter-summary');
+    const readTimeSpan = document.getElementById('chapter-read-time');
 
     const chapters = [
-        { part: 'Intro', title: 'Introduction', url: 'https://drive.google.com/file/d/1-M1PZxH3xwgJmT0fTjYV4tEIh4gEGbim/preview', unlockDate: new Date('2024-05-03T18:30:00Z') },
-        { part: 'Part 1', title: 'Chapter 1: Legacy of Shadows', url: 'https://drive.google.com/file/d/1FXG4_Z4OESFEfdH-BcHolCWUCOQqeD0l/preview', unlockDate: new Date('2024-05-05T18:30:00Z') },
-        { part: 'Part 1', title: 'Chapter 2: The Chinatown War', url: 'https://drive.google.com/file/d/1D2wx8s0ZQC96BI-vGjZojKZTl_KH_AjX/preview', unlockDate: new Date('2024-05-12T18:30:00Z') },
-        { part: 'Part 1', title: 'Chapter 3: The Unbreakable Duo', url: 'https://drive.google.com/file/d/1RxPZFJ9knB7AH98yNy7wCbJDq0Fv1luC/preview', unlockDate: new Date('2024-05-19T18:30:00Z') },
-        { part: 'Part 1', title: 'Chapter 4: Ending the Cartel', url: 'https://drive.google.com/file/d/1PEIZcyEed0HzhKDWNz5YZGMaiSPpaOuu/preview', unlockDate: new Date('2024-05-26T18:30:00Z') },
-        { part: 'Part 2', title: 'Chapter 5: The Bad Old Times', url: 'https://drive.google.com/file/d/1BUIeFJ9pGFY8xasOUmK7phGSn9L5QlDy/preview', unlockDate: new Date('2024-06-02T18:30:00Z') },
-        { part: 'Part 2', title: 'Chapter 6: Shaping Up', url: 'https://drive.google.com/file/d/1ndzTkWDmhtGnWun0HXo15_JA6rCsJ6x7/preview', unlockDate: new Date('2024-06-09T18:30:00Z') },
-        { part: 'Part 2', title: "Chapter 7: The T'N'T", url: 'https://drive.google.com/file/d/1eNZkkLq9H7zycUYJ0OnY2o3SpTJhsa8c/preview', unlockDate: new Date('2024-06-16T18:30:00Z') },
-        { part: 'Part 3', title: 'Chapter 8: The Black Van', url: 'https://drive.google.com/file/d/19FdPLlCDlzPQGi2p4pmfbsvkWfJXUyjM/preview', unlockDate: new Date('2024-06-23T18:30:00Z') },
-        { part: 'Part 3', title: 'Chapter 9: Prototype 5', url: 'https://drive.google.com/file/d/1NZE6AOh_0UbujSMquFopRIUjTqri3OJK/preview', unlockDate: new Date('2024-06-30T18:30:00Z') },
-        { part: 'Part 3', title: 'Chapter 10: Ending it once & for all', url: 'https://drive.google.com/file/d/1CDZY8pnIuSBXKzqXGH_U1oDQ4-psYbKi/preview', unlockDate: new Date('2024-07-07T18:30:00Z') },
-        { part: 'Part 3', title: 'Chapter 11: Not all ends well', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-14T18:30:00Z') },
-        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1Xt1H-oUNr1Il1qU_2dwCZT-RsrP0SP2k/preview', unlockDate: new Date('2024-07-14T18:30:00Z') },
+        { part: 'Intro', title: 'Introduction', url: 'https://drive.google.com/file/d/1-M1PZxH3xwgJmT0fTjYV4tEIh4gEGbim/preview', unlockDate: new Date('2024-05-03T18:30:00Z'), summary: 'Meet the protogonist duo of the story as they converse about the screwed situation!', readTime: '1 min.' },
+        { part: 'Part 1', title: 'Chapter 1: Legacy of Shadows', url: 'https://drive.google.com/file/d/1FXG4_Z4OESFEfdH-BcHolCWUCOQqeD0l/preview', unlockDate: new Date('2024-05-05T18:30:00Z'), summary: "Learn about Tom's fate from the introduction.", readTime: '6 mins' },
+        { part: 'Part 1', title: 'Chapter 2: The Chinatown War', url: 'https://drive.google.com/file/d/1D2wx8s0ZQC96BI-vGjZojKZTl_KH_AjX/preview', unlockDate: new Date('2024-05-12T18:30:00Z'), summary: "A life changing case of Tom's life as an U.I.P.D. officer.", readTime: '9 mins' },
+        { part: 'Part 1', title: 'Chapter 3: The Unbreakable Duo', url: 'https://drive.google.com/file/d/1RxPZFJ9knB7AH98yNy7wCbJDq0Fv1luC/preview', unlockDate: new Date('2024-05-19T18:30:00Z'), summary: "Explore a drug filled warehouse with The T'N'T as they navigate it to complete a D.E.A. mission.", readTime: '4 mins' },
+        { part: 'Part 1', title: 'Chapter 4: Ending the Cartel', url: 'https://drive.google.com/file/d/1PEIZcyEed0HzhKDWNz5YZGMaiSPpaOuu/preview', unlockDate: new Date('2024-05-26T18:30:00Z'), summary: 'Learn about how Tom & Tim tackle the Cartel situation!', readTime: '5 mins' },
+        { part: 'Part 2', title: 'Chapter 5: The Bad Old Times', url: 'https://drive.google.com/file/d/1BUIeFJ9pGFY8xasOUmK7phGSn9L5QlDy/preview', unlockDate: new Date('2024-06-02T18:30:00Z'), summary: "Experience Tim's dark past with his detailed flashback.", readTime: '15 mins' },
+        { part: 'Part 2', title: 'Chapter 6: Shaping Up', url: 'https://drive.google.com/file/d/1ndzTkWDmhtGnWun0HXo15_JA6rCsJ6x7/preview', unlockDate: new Date('2024-06-09T18:30:00Z'), summary: 'Find out what shifted Tim from a revenge hungery kid to a true justice fighter.', readTime: '7 mins' },
+        { part: 'Part 2', title: "Chapter 7: The T'N'T", url: 'https://drive.google.com/file/d/1eNZkkLq9H7zycUYJ0OnY2o3SpTJhsa8c/preview', unlockDate: new Date('2024-06-16T18:30:00Z'), summary: 'A surprise awaits for Tim!', readTime: '5 mins' },
+        { part: 'Part 3', title: 'Chapter 8: The Black Van', url: 'https://drive.google.com/file/d/19FdPLlCDlzPQGi2p4pmfbsvkWfJXUyjM/preview', unlockDate: new Date('2024-06-23T18:30:00Z'), summary: 'The begging of the most intense mission of Tom & Tim as U.I.P.D. officers.', readTime: '4 mins' },
+        { part: 'Part 3', title: 'Chapter 9: Prototype 5', url: 'https://drive.google.com/file/d/1NZE6AOh_0UbujSMquFopRIUjTqri3OJK/preview', unlockDate: new Date('2024-06-30T18:30:00Z'), summary: "It's about Prototype 5.", readTime: '3 mins' },
+        { part: 'Part 3', title: 'Chapter 10: Ending it once & for all', url: 'https://drive.google.com/file/d/1CDZY8pnIuSBXKzqXGH_U1oDQ4-psYbKi/preview', unlockDate: new Date('2024-07-07T18:30:00Z'), summary: 'Did Tim survive the fall or not? Did Tom take his revenge on Mike? Read and find it out!', readTime: '10 mins' },
+        { part: 'Part 3', title: 'Chapter 11: Not all ends well', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-14T18:30:00Z'), summary: 'Something unexpected happened that changes things by a storm!', readTime: '3 mins' },
+        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1Xt1H-oUNr1Il1qU_2dwCZT-RsrP0SP2k/preview', unlockDate: new Date('2024-07-14T18:30:00Z'), summary: "It's not just credits and a special thanks!", readTime: '2 mins' },
     ];
 
     let currentChapterIndex = 0;
@@ -35,16 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const now = new Date();
 
         chapters.forEach((chapter, index) => {
-            // Only add chapters that are unlocked
             if (now >= chapter.unlockDate) {
-                // Create an option for each chapter
                 const option = document.createElement('option');
                 option.value = index;
                 option.textContent = `${chapter.title}`;
 
-                // Check if it's a new part
                 if (chapter.part !== currentPart) {
-                    // Create a disabled option for the part
                     const partOption = document.createElement('option');
                     partOption.textContent = `${chapter.part}`;
                     partOption.disabled = true;
@@ -52,12 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentPart = chapter.part;
                 }
 
-                // Append the chapter option
                 chapterDropdown.appendChild(option);
             }
         });
 
-        // Update buttons visibility based on the first available chapter
         updateButtonsVisibility();
     }
 
@@ -70,11 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
         iframe.style.backgroundColor= "transparent";
 
         const main = document.querySelector('main');
-        main.innerHTML = ''; // Clear previous content
+        main.innerHTML = '';
         main.appendChild(iframe);
 
-        // Set the height of the main container to fit the screen dynamically
-        const header = document.querySelector('header'); // Ensure header element is correctly selected
+        const header = document.querySelector('header');
         if (header) {
             const headerHeight = header.offsetHeight;
             main.style.height = `calc(100vh - ${headerHeight}px)`;
@@ -90,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (now < unlockDate) {
             unlockPopup.classList.remove('hidden');
-            unlockDateSpan.textContent = chapter.unlockDate.toLocaleString(); // Display unlock date
+            unlockDateSpan.textContent = chapter.unlockDate.toLocaleString();
             return;
         } else {
             unlockPopup.classList.add('hidden');
@@ -98,6 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         loadPDF(chapter.url);
         updateButtonsVisibility();
+
+        // Update summary and read time
+        summaryDiv.textContent = chapter.summary;
+        readTimeSpan.textContent = chapter.readTime;
     }
 
     function onPrevChapter() {
@@ -116,21 +115,19 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-function updateChapterDisplay() {
-    // Find the index of the current chapter in the dropdown options, skipping disabled options
-    let dropdownIndex = 0;
-    for (let i = 0; i < chapterDropdown.options.length; i++) {
-        if (!chapterDropdown.options[i].disabled) {
-            if (dropdownIndex === currentChapterIndex) {
-                chapterDropdown.selectedIndex = i;
-                break;
+    function updateChapterDisplay() {
+        let dropdownIndex = 0;
+        for (let i = 0; i < chapterDropdown.options.length; i++) {
+            if (!chapterDropdown.options[i].disabled) {
+                if (dropdownIndex === currentChapterIndex) {
+                    chapterDropdown.selectedIndex = i;
+                    break;
+                }
+                dropdownIndex++;
             }
-            dropdownIndex++;
         }
+        updateButtonsVisibility();
     }
-    updateButtonsVisibility();
-}
-
 
     function updateButtonsVisibility() {
         const now = new Date();
@@ -169,7 +166,6 @@ function updateChapterDisplay() {
     nextButton.addEventListener('click', onNextChapter);
     fullscreenButton.addEventListener('click', toggleFullscreen);
 
-    // Initial setup
     populateChapterDropdown();
     loadChapter(currentChapterIndex);
 });
