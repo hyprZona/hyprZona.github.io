@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { part: 'Part 3', title: 'Chapter 9: Prototype 5', url: 'https://drive.google.com/file/d/1NZE6AOh_0UbujSMquFopRIUjTqri3OJK/preview', unlockDate: new Date('2024-06-30T18:30:00Z') },
         { part: 'Part 3', title: 'Chapter 10: Ending it once & for all', url: 'https://drive.google.com/file/d/1CDZY8pnIuSBXKzqXGH_U1oDQ4-psYbKi/preview', unlockDate: new Date('2024-07-07T18:30:00Z') },
         { part: 'Part 3', title: 'Chapter 11: Not all ends well', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-14T18:30:00Z') },
-        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1DsrffcD7VEBqPJbDMOZVo_cNIJgjFxNF/preview', unlockDate: new Date('2024-07-14T18:30:00Z') },
+        { part: 'Credits', title: 'Post Credits', url: 'https://drive.google.com/file/d/1Xt1H-oUNr1Il1qU_2dwCZT-RsrP0SP2k/preview', unlockDate: new Date('2024-07-14T18:30:00Z') },
     ];
 
     let currentChapterIndex = 0;
