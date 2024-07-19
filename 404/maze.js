@@ -1,445 +1,220 @@
-const canvas =  
-    document.getElementById('mazeCanvas'); 
-const pen =  
-    canvas.getContext('2d'); 
-  
-const width = canvas.width; 
-const height = canvas.height; 
-let cellSize = 40; 
-  
-const playerRadius = cellSize / 2 - 5; 
-const endRadius = cellSize / 2 - 5; 
-  
-let trail = []; 
-let generatedMaze; 
-let solutionPath; 
-  
-let points = 0; 
-const cols =  
-    Math.floor(width / cellSize); 
-const rows =  
-    Math.floor(height / cellSize); 
-const player1 = { 
-    x: 0, 
-    y: 0, 
-    color: 'red', 
-}; 
-  
-const end = { 
-    x: cols - 1, 
-    y: rows - 1, 
-    color: 'blue', 
-}; 
-  
-document.querySelector('.startbtn'). 
-    addEventListener('click', function () { 
-    resetPlayerPos(); 
-    clearScreen(); 
-    setup(); 
-    draw(); 
-    addListener(); 
-    displayHidden(); 
-}); 
-  
-document. 
-    addEventListener('DOMContentLoaded',  
-    function () { 
-    const startButton =  
-        document.querySelector('.startbtn'); 
-    function stopBlinking() { 
-        startButton.classList.remove("blink"); 
-    } 
-    startButton.classList.add("blink"); 
-    startButton. 
-        addEventListener("click", stopBlinking); 
-}); 
-  
-function addListener() { 
-    document. 
-    addEventListener('keydown', handleKeyPress); 
-} 
-  
-document.getElementById('btnUp'). 
-addEventListener('click', function () { 
-    movePlayer('ArrowUp', player1); 
-    draw(); 
-}); 
-  
-document.getElementById('btnDown'). 
-addEventListener('click', function () { 
-    movePlayer('ArrowDown', player1); 
-    draw(); 
-}); 
-  
-document.getElementById('btnLeft'). 
-addEventListener('click', function () { 
-    movePlayer('ArrowLeft', player1); 
-    draw(); 
-}); 
-  
-document.getElementById('btnRight'). 
-addEventListener('click', function () { 
-    movePlayer('ArrowRight', player1); 
-    draw(); 
-}); 
-  
-function handleKeyPress(event) { 
-    const key = event.key; 
-    movePlayer(key, player1); 
-    draw(); 
-} 
-  
-function showRestartMessage() { 
-    const messageBox =  
-        document.getElementsByClassName('msgbox')[0]; 
-    messageBox.innerHTML = "Invalid Move. Press restart."; 
-    messageBox.innerHTML +=  
-    `<br> 
-    <button class='restartbtn' 
-            style='margin-top:70px;' 
-            onclick='resetState()'> 
-            Restart 
-    </button>`; 
-    messageBox.style.visibility = "visible"; 
-    messageBox.style.fontSize = "1.7em"
-    messageBox.style.color = "white"
-    messageBox.style.fontFamily =  
-    `'Lucida Sans',  
-    'Lucida Sans Regular',  
-    'Lucida Grande',  
-    'Lucida Sans Unicode',  
-    Geneva, Verdana, sans-serif` 
-  
-} 
-function resetState() { 
-    const messageBox =  
-        document.getElementsByClassName('msgbox')[0]; 
-    messageBox.style.visibility = "hidden"; 
-} 
-function movePlayer(key, player) { 
-    let validMove = false; 
-  
-    switch (key) { 
-        case 'ArrowUp': 
-            if (player.y > 0 &&  
-                cells[player.x][player.y]. 
-                walls.top === false) { 
-                player.y--; 
-                points++; 
-                validMove = true; 
-            } 
-            break; 
-        case 'ArrowDown': 
-            if (player.y < rows - 1 &&  
-                cells[player.x][player.y]. 
-                walls.bottom === false) { 
-                player.y++; 
-                points++; 
-                validMove = true; 
-            } 
-            break; 
-        case 'ArrowLeft': 
-            if (player.x > 0 &&  
-                cells[player.x][player.y]. 
-                walls.left === false) { 
-                player.x--; 
-                points++; 
-                validMove = true; 
-            } 
-            break; 
-        case 'ArrowRight': 
-            if (player.x < cols - 1 &&  
-                cells[player.x][player.y]. 
-                walls.right === false) { 
-                player.x++; 
-                points++; 
-                validMove = true; 
-            } 
-            break; 
-    } 
-    if (!validMove) { 
-        return; 
-    } 
-  
-    const isTwice = trail.some( 
-        cell => cell.x === player.x &&  
-        cell.y === player.y); 
-    if (isTwice) { 
-        showRestartMessage(); 
-        resetPlayerPos(); 
-    } 
-  
-    if (player.x == cols - 1 && player.y == rows - 1) { 
-        document.
-        removeEventListener('keydown', handleKeyPress); 
-        const messageBox =  
-            document.getElementsByClassName('msgbox')[0]; 
-  
-        messageBox.innerHTML = "<h1>You Won!</h1>"
-        messageBox.innerHTML += "<h2 id='moves'>Moves</h2>"
-        messageBox.innerHTML +=  
-        `<button id='done' onclick='location.reload()'> 
-            Play Again 
-        </button>` 
-        document.getElementById('moves').innerHTML = "Moves:" + points; 
-        messageBox.style.fontSize = "1em"
-        messageBox.style.color = "black"
-        messageBox.style.fontFamily =  
-        `'Lucida Sans',  
-        'Lucida Sans Regular',  
-        'Lucida Grande',  
-        'Lucida Sans Unicode',  
-        Geneva, Verdana, sans-serif` 
-        messageBox.style.visibility = "visible"; 
-        window.location.href = '../index.html'; // Redirect to homepage
-        // Display congratulatory message
-        alert("Congratulations! You've completed the maze!\nTotal moves: " + points);
-    } 
-} 
-  
-function clearScreen() { 
-    pen.canvas.width = pen.canvas.width; 
-} 
-  
-function displayHidden() { 
-    document.getElementsByClassName('msgbox')[0]. 
-    style.visibility = "hidden"; 
-} 
-  
-const cells = []; 
-  
-for (let x = 0; x < rows; x++) { 
-    cells[x] = []; 
-    for (let y = 0; y < cols; y++) { 
-        cells[x][y] = null; 
-    } 
-} 
-  
-class CellA { 
-    constructor(x, y) { 
-        this.x = x; 
-        this.y = y; 
-        this.visited = false; 
-        this.walls = { 
-            top: true, 
-            right: true, 
-            bottom: true, 
-            left: true, 
-        }; 
-    } 
-  
-    show() { 
-        const x = this.x * cellSize; 
-        const y = this.y * cellSize; 
-  
-        pen.beginPath(); 
-  
-        if (this.walls.top) { 
-            pen.moveTo(x, y); 
-            pen.lineTo(x + cellSize, y); 
-        } 
-  
-        if (this.walls.right) { 
-            pen.moveTo(x + cellSize, y); 
-            pen.lineTo(x + cellSize, y + cellSize); 
-        } 
-  
-        if (this.walls.bottom) { 
-            pen.moveTo(x + cellSize, y + cellSize); 
-            pen.lineTo(x, y + cellSize); 
-        } 
-  
-        if (this.walls.left) { 
-            pen.moveTo(x, y + cellSize); 
-            pen.lineTo(x, y); 
-        } 
-        pen.strokeStyle = 'green'; 
-        pen.lineWidth = 5; 
-        pen.lineCap = "round"; 
-        pen.stroke(); 
-    } 
-} 
-  
-function setup() { 
-    // Initialize the cells 
-    for (let x = 0; x < rows; x++) { 
-        for (let y = 0; y < cols; y++) { 
-            cells[x][y] = new CellA(x, y); 
-        } 
-    } 
-    genMaze(0, 0); 
-} 
-  
-function genMaze(x, y) { 
-    const presentCell = cells[x][y]; 
-    presentCell.visited = true; 
-  
-    const directions =  
-        randomize(['top', 'right', 'bottom', 'left']); 
-  
-    for (const direction of directions) { 
-        const dx =  
-            { top: 0, right: 1, bottom: 0, left: -1 }[direction]; 
-        const dy =  
-            { top: -1, right: 0, bottom: 1, left: 0 }[direction]; 
-  
-        const newX = x + dx; 
-        const newY = y + dy; 
-        // if the coordinates are inbound 
-        if (newX >= 0 && newX < cols  
-            && newY >= 0 && newY < rows) { 
-            const neighbour = cells[newX][newY]; 
-  
-            // removing walls 
-  
-            if (!neighbour.visited) { 
-                presentCell.walls[direction] = false; 
-                neighbour.walls[{ 
-                    top: 'bottom', 
-                    right: 'left', 
-                    bottom: 'top', 
-                    left: 'right', 
-                }[direction]] = false; 
-                genMaze(newX, newY); 
-            } 
-        } 
-    } 
-    generatedMaze =  
-        cells.map(row => row.map( 
-            cell => ({ ...cell }))); 
-    solutionPath = solveMaze(); 
-} 
-  
-  
-function resetPlayerPos() { 
-    player1.x = 0; 
-    player1.y = 0; 
-    points = 0; 
-    trail = []; 
-} 
-  
-function draw() { 
-    clearScreen(); 
-    genMaze(player1.x, player1.y); 
-  
-    for (let x = 0; x < cols; x++) { 
-        for (let y = 0; y < rows; y++) { 
-            cells[x][y].show(); 
-        } 
-    } 
-  
-    trail.push({ x: player1.x, y: player1.y }); 
-    pen.beginPath(); 
-    for (let i = 0; i < trail.length; i++) { 
-        const trailX =  
-            trail[i].x * cellSize + cellSize / 2; 
-        const trailY =  
-            trail[i].y * cellSize + cellSize / 2; 
-  
-        if (i === 0) { 
-            pen.moveTo(trailX, trailY); 
-        } else { 
-            pen.lineTo(trailX, trailY); 
-        } 
-    } 
-    pen.lineCap = "round"; 
-    pen.strokeStyle = "white"; 
-    pen.lineWidth = 4; 
-    pen.stroke(); 
-  
-    drawPlayer(player1); 
-    drawEnd(); 
-  
-  
-    pen.strokeStyle = 'green'; 
-    pen.lineWidth = 6; 
-    pen.lineCap = "round"; 
-    pen.stroke(); 
-  
-    const isPartOfSolution =  
-        solutionPath.some(cell =>  
-            cell.x === player1.x &&  
-            cell.y === player1.y); 
-  
-    if (!isPartOfSolution) { 
-        showRestartMessage(); 
-        player1.x = 0; 
-        player1.y = 0; 
-        points = 0; 
-        trail = []; 
-        draw(); 
-    } 
-} 
-  
-function drawPlayer(player) { 
-    const x = player.x * cellSize + cellSize / 2; 
-    const y = player.y * cellSize + cellSize / 2; 
-  
-    pen.beginPath(); 
-    pen.arc(x, y, playerRadius, 0, 2 * Math.PI); 
-    pen.fillStyle = player.color; 
-    pen.fill(); 
-} 
-  
-function drawEnd() { 
-    const x = (end.x + 0.5) * cellSize; 
-    const y = (end.y + 0.5) * cellSize; 
-  
-    pen.beginPath(); 
-    pen.arc(x, y, endRadius, 0, 2 * Math.PI); 
-    pen.fillStyle = end.color; 
-    pen.fill(); 
-  
-} 
-  
-function randomize(array) { 
-    for (let i = array.length - 1; i > 0; i--) { 
-        const j = Math.floor(Math.random() * (i + 1)); 
-        [array[i], array[j]] = [array[j], array[i]]; 
-    } 
-    return array; 
-} 
-function solveMaze() { 
-    const visited =  
-        Array.from({ length: rows },  
-            () => Array(cols).fill(false)); 
-    const path = []; 
-  
-    function dfs(x, y) { 
-        if (x < 0 || x >= cols || y < 0 ||  
-            y >= rows || visited[y][x]) { 
-            return false; 
-        } 
-  
-        visited[y][x] = true; 
-        path.push({ x, y }); 
-  
-        if (x === cols - 1 && y === rows - 1) { 
-            return true; 
-        } 
-  
-        const cell = generatedMaze[x][y]; 
-  
-        if (!cell.walls.top && dfs(x, y - 1)) { 
-            return true; 
-        } 
-        if (!cell.walls.right && dfs(x + 1, y)) { 
-            return true; 
-        } 
-        if (!cell.walls.bottom && dfs(x, y + 1)) { 
-            return true; 
-        } 
-        if (!cell.walls.left && dfs(x - 1, y)) { 
-            return true; 
-        } 
-  
-        path.pop(); 
-        return false; 
-    } 
-  
-    dfs(0, 0); 
-    return path; 
-} 
-  
-setup(); 
-draw(); 
+const canvas = document.getElementById('gameCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth * 0.8;
+canvas.height = window.innerHeight * 0.8;
+
+const shipImage = new Image();
+shipImage.src = 'https://upload.wikimedia.org/wikipedia/commons/a/aa/Shuttle.png';
+
+const enemyImage = new Image();
+enemyImage.src = 'https://pngimg.com/d/rockets_PNG13281.png';
+
+const bulletImage = new Image();
+bulletImage.src = 'https://upload.wikimedia.org/wikipedia/commons/0/0b/Voskhod_Rocket.png';
+
+const explosionImage = new Image();
+explosionImage.src = 'https://pngimg.com/d/explosion_PNG15382.png';  // Placeholder explosion image
+
+let ship = {
+  x: canvas.width / 2 - 25,
+  y: canvas.height - 60,
+  width: 50,
+  height: 50,
+  speed: 5,
+  dx: 0,
+  dy: 0,
+  lives: 3,
+  score: 0
+};
+
+let bullets = [];
+let enemies = [];
+let explosions = [];
+let enemySpawnRate = 20;
+let frameCount = 0;
+let difficultyIncrement = 0.1;
+
+function drawShip() {
+  ctx.drawImage(shipImage, ship.x, ship.y, ship.width, ship.height);
+}
+
+function moveShip() {
+  ship.x += ship.dx;
+  ship.y += ship.dy;
+
+  if (ship.x < 0) ship.x = 0;
+  if (ship.x + ship.width > canvas.width) ship.x = canvas.width - ship.width;
+  if (ship.y < 0) ship.y = 0;
+  if (ship.y + ship.height > canvas.height) ship.y = canvas.height - ship.height;
+}
+
+function drawBullets() {
+  bullets.forEach(bullet => {
+    ctx.drawImage(bulletImage, bullet.x, bullet.y, bullet.width, bullet.height);
+  });
+}
+
+function moveBullets() {
+  bullets = bullets.filter(bullet => bullet.y > 0);
+  bullets.forEach(bullet => bullet.y -= bullet.speed);
+}
+
+function spawnEnemy() {
+  const x = Math.random() * (canvas.width - 50);
+  const y = -50;
+  const width = 50;
+  const height = 50;
+  const speed = 2;
+
+  enemies.push({ x, y, width, height, speed });
+  console.log('Enemy spawned:', { x, y, width, height, speed });  // Debug
+}
+
+function drawEnemies() {
+  enemies.forEach(enemy => {
+    // Draw smoke and fire effects (placeholder)
+    ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+    ctx.beginPath();
+    ctx.arc(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2, 30, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.save();
+    ctx.translate(enemy.x + enemy.width / 2, enemy.y + enemy.height / 2);
+    ctx.rotate(Math.PI);  // Rotate by 180 degrees
+    ctx.drawImage(enemyImage, -enemy.width / 2, -enemy.height / 2, enemy.width, enemy.height);
+    ctx.restore();
+  });
+}
+
+function moveEnemies() {
+  enemies.forEach(enemy => enemy.y += enemy.speed);
+  enemies = enemies.filter(enemy => enemy.y < canvas.height);
+}
+
+function detectCollisions() {
+  bullets.forEach((bullet, bulletIndex) => {
+    enemies.forEach((enemy, enemyIndex) => {
+      if (bullet.x < enemy.x + enemy.width &&
+          bullet.x + bullet.width > enemy.x &&
+          bullet.y < enemy.y + enemy.height &&
+          bullet.y + bullet.height > enemy.y) {
+        explosions.push({ x: enemy.x, y: enemy.y, width: 50, height: 50, timer: 0 });
+        bullets.splice(bulletIndex, 1);
+        enemies.splice(enemyIndex, 1);
+        ship.score += 10;
+      }
+    });
+  });
+
+  enemies.forEach((enemy, enemyIndex) => {
+    if (enemy.x < ship.x + ship.width &&
+        enemy.x + enemy.width > ship.x &&
+        enemy.y < ship.y + ship.height &&
+        enemy.y + enemy.height > ship.y) {
+      explosions.push({ x: ship.x, y: ship.y, width: 50, height: 50, timer: 0 });
+      enemies.splice(enemyIndex, 1);
+      ship.lives -= 1;
+      if (ship.lives <= 0) {
+        alert('Game Over! Your Score: ' + ship.score);
+        window.location.href = '../index.html';
+      }
+    }
+  });
+}
+
+function drawExplosions() {
+  explosions.forEach((explosion, index) => {
+    ctx.drawImage(explosionImage, explosion.x, explosion.y, explosion.width, explosion.height);
+    explosion.timer++;
+    if (explosion.timer > 20) {
+      explosions.splice(index, 1);
+    }
+  });
+}
+
+function drawScore() {
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText('Score: ' + ship.score, 10, 20);
+}
+
+function drawLives() {
+  ctx.fillStyle = 'white';
+  ctx.font = '20px Arial';
+  ctx.fillText('Lives: ' + ship.lives, canvas.width - 100, 20);
+}
+
+function applyNoirFilter() {
+  ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
+function update() {
+  moveShip();
+  moveBullets();
+  moveEnemies();
+  detectCollisions();
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  drawShip();
+  drawBullets();
+  drawEnemies();
+  drawExplosions();
+  drawScore();
+  drawLives();
+
+  applyNoirFilter();
+
+  frameCount++;
+  if (frameCount % enemySpawnRate === 0) {
+    spawnEnemy();
+    enemySpawnRate = Math.max(20, enemySpawnRate - difficultyIncrement);  // Decrease the spawn rate to increase difficulty
+    ship.speed = Math.max(2, ship.speed - difficultyIncrement / 10);       // Slow down ship
+  }
+
+  console.log('Frame count:', frameCount, 'Enemy spawn rate:', enemySpawnRate);  // Debug
+
+  requestAnimationFrame(update);
+}
+
+function handleKeyDown(e) {
+  if (e.key === 'ArrowLeft') ship.dx = -ship.speed;
+  if (e.key === 'ArrowRight') ship.dx = ship.speed;
+  if (e.key === 'ArrowUp') ship.dy = -ship.speed;
+  if (e.key === 'ArrowDown') ship.dy = ship.speed;
+  if (e.key === ' ') {
+    bullets.push({
+      x: ship.x + ship.width / 2 - 5,
+      y: ship.y,
+      width: 10,
+      height: 20,
+      speed: Math.max(3, 7 - difficultyIncrement)  // Slow down bullets over time
+    });
+  }
+}
+
+function handleKeyUp(e) {
+  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') ship.dx = 0;
+  if (e.key === 'ArrowUp' || e.key === 'ArrowDown') ship.dy = 0;
+}
+
+window.addEventListener('keydown', handleKeyDown);
+window.addEventListener('keyup', handleKeyUp);
+
+function showControls() {
+  alert("Controls:\nArrow Keys: Move\nSpace: Shoot\n\nGood luck, pilot!");
+}
+
+function detectNonPC() {
+  if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+    alert("This game is PC-only. Redirecting to homepage.");
+    window.location.href = '../index.html';
+  }
+}
+
+window.onload = () => {
+  detectNonPC();
+  showControls();
+  update();
+};

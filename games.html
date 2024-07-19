@@ -6,94 +6,165 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-FW17RSLYQ9');
 </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hyprZona - Games</title>
-  <link rel="icon" href="images/logo.ico">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamer's Paradise</title>
+<link rel="icon" href="images/logo.ico">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="header-container">
-      <a href="index.html">
-        <img src="images/logo.ico" alt="hyprZona Logo" width="80" height="80">
-      </a>
-      <h1>hyprZona</h1>
-    </div>
-    <div class="navbar-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
+<header>
+  <div class="navbar-toggle" aria-label="Toggle navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div class="header-container">
+    <h1>hyprZona</h1>
+    <a href="index.html">
+      <img src="images/logo.ico" alt="hyprZona Logo" class="circle-logo" width="80" height="80">
+    </a>
+  </div>
+</header>
 
-  <nav class="sidebar">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li class="expandable">
-        <a href="#" class="expand-icon">Products ↓</a>
-        <ul class="submenu">
-	  <li><a href="about.html">About</a></li>
-          <li class="disabled">Games</li>
-          <li><a href="books.html">Books</a></li>
-        </ul>
-      </li>
-      <li class="disabled">Connect with Us:</li>
-      <li class="social-media">
-        <a href="https://www.instagram.com/hyprzona"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram Logo"></a>
-        <a href="https://www.youtube.com/@hyprzona"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube Logo"></a>
-	<a href="https://github.com/hyprZona/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Github Logo"></a>
-      </li>
-      <li>
-	<iframe src="https://discord.com/widget?id=918354308431503420&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-      </li>
-    </ul>
-  </nav>
 
-  <main>
-    <section class="game-section">
-      <a href="games/BTI.html" class="game-info-container left">
-        <img src="images/BTI.png" alt="Beyond The Illusions" class="game-logo">
-        <div class="game-info">
-          <div class="text-container">
-            <h2>Beyond The Illusions</h2>
-            <p>Depression, manifestation, and illusions lead the player to a new and different dimension.</p>
+<nav class="sidebar" aria-label="Sidebar navigation">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">Info</a></li>
+    <li class="expandable">
+  <a href="#" class="expand-icon">Products ↓</a>
+  <ul class="submenu">
+    <li class="disabled">
+      <li class="disabled">Games</li>
+      <ul class="submenu">
+        <li><a href="games/bti.html">BTI</a></li>
+      </ul>
+    </li>
+    <li class="expandable">
+      <a href="books.html">Books</a>
+      <ul class="submenu">
+        <li><a href="books/tttp.html">TT:P (e-book)</a></li>
+      </ul>
+    </li>
+  </ul>
+</li>
+    <li class="disabled">Connect with Us:</li>
+    <li class="social-media">
+  <a href="https://www.instagram.com/hyprzona"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="Instagram Logo" class="insta"></a>
+  <a href="https://www.youtube.com/@hyprzona"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_logo.png" alt="YouTube Logo" class="yt"></a>
+  <a href="https://github.com/hyprZona/"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Github Logo" class="github"></a>
+</li>
+    <li>
+      <iframe src="https://discord.com/widget?id=918354308431503420&theme=dark" width="220" height="400" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+    </li>
+  </ul>
+</nav>
+
+<main>
+  <!-- Beyond The Illusions Section -->
+  <section class="game-section bti-section">
+    <div class="game-info-container">
+      <img src="images/BTI.png" alt="Beyond The Illusions" class="game-logo bti-logo">
+      <div class="game-info bti-info">
+        <div class="gtext-container">
+          <h2>Beyond The Illusions</h2>
+          <p class="short-description">Depression, manifestation, and illusions lead the player to a new and different dimension.</p>
+          <ul class="game-details hidden">
+            <li><strong>Release Date:</strong> Fall 2024</li>
+            <li><strong>Playtime:</strong> ~half an hour</li>
+            <li><strong>Price:</strong> Free</li>
+            <li><strong>Platform:</strong> <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="Windows Logo" class="platform-icon"> </li>
+            <li><strong>State:</strong> Paused (Week 3/4)</li>
+            <li><strong>Stage:</strong> Beta 1</li>
+            <li><strong>Genre:</strong> Psychological Horror Adventure</li>
+          </ul>
+          <div class="game-summary hidden">
+            <h2>Summary</h2>
+            <p>Embark on a chilling journey into the mind of a young boy grappling with depression. When a routine visit to a forest turns into a surreal nightmare, he must navigate twisted realities and dark secrets. Will he find the strength to escape, or will he succumb to the horrors that lurk within?</p>
+          </div>
+          <div class="game-section hidden">
+            <h2>Screenshots</h2>
+            <div id="screenshots-container">
+        <a href="images/Room.png" data-lightbox="screenshots" data-title="The room from the opening cutscene of the game; where it all starts!">
+          <img src="images/Room.png" alt="The room from the opening cutscene of the game; where it all starts!" class="screenshot-thumb">
+        </a>
+        <a href="images/Env.png" data-lightbox="screenshots" data-title="The simple foggy lifeless environment of the game.">
+          <img src="images/Env.png" alt="The simple foggy lifeless environment of the game." class="screenshot-thumb">
+        </a>
+	<a href="images/SF.png" data-lightbox="screenshots" data-title="The dark foggy forest in the game.">
+          <img src="images/SF.png" alt="The dark foggy forest in the game." class="screenshot-thumb">
+        </a>
+	<a href="images/MSF.png" data-lightbox="screenshots" data-title="A more spooky environment in the forest.">
+          <img src="images/MSF.png" alt="The dark foggy forest in the game." class="screenshot-thumb">
+        </a>
+      </div>
+          </div>
+          <div class="game-section hidden">
+            <h2>Trailers</h2>
+            <div class="game-info-container left">
+              <div class="text-container">
+                <h2>Reveal Trailer</h2>
+                <div class="responsive-video">
+                  <iframe src="https://www.youtube.com/embed/gZ-8F3-EpMM?autoplay=1" frameborder="0" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </a>
-    </section>
+       <div class="expand-icon" onclick="toggleGameInfo('BTI')">Show More</div>
+      </div>
+    </div>
+  </section>
 
-    <section class="game-section">
-      <a class="game-info-container right">
-        <img src="images/memories.png" alt="Memories" class="game-logo">
-        <div class="game-info">
-          <div class="text-container">
-            <h2>Memories</h2>
-            <p>A horror action-adventure and survival game, <br> having an enduring story spanning across various genres.</p>
-            <ul>
-              <li><strong>Release Date:</strong> 2025 (Tentative)</li>
-              <li><strong>Playtime:</strong> ~1 hour</li>
-              <li><strong>Price:</strong> ?</li>
-              <li><strong>Platform:</strong> PC</li>
-            </ul>
-          </div>
+  <!-- Memories Section -->
+  <section class="game-section memories-section">
+    <div class="game-info-container">
+      <img src="images/memories.png" alt="Memories" class="game-logo memories-logo">
+      <div class="game-info memories-info">
+        <div class="gtext-container">
+          <h2>Memories</h2>
+          <p class="short-description">A horror action-adventure and survival game, having an enduring story spanning across various genres.</p>
+          <ul class="game-details hidden">
+            <li><strong>Release Date:</strong> 2025 (Tentative)</li>
+            <li><strong>Playtime:</strong> ~1 hour</li>
+            <li><strong>Price:</strong> To Be Announced</li>
+            <li><strong>Platform:</strong> <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="Windows Logo" class="platform-icon"> </li>
+            <li><strong>State:</strong> N.A.</li>
+            <li><strong>Stage:</strong> N.A.</li>
+            <li><strong>Genre:</strong> Psychological Horror Action-Adventure</li>
+          </ul>
         </div>
-      </a>
-    </section>
-  </main>
+       <div class="expand-icon" onclick="toggleGameInfo('Memories')">Show More</div>
+      </div>
+    </div>
+  </section>
+</main>
+
   <footer>
     <p>&copy; 2024 hyprZona</p>
   </footer>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
   <script src="script.js"></script>
+   </script>
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+  <!-- Ensure Lightbox2 is initialized after the DOM is fully loaded -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true,
+        'alwaysShowNavOnTouchDevices': true
+      });
+    });
+  </script>
 </body>
 </html>
