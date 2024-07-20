@@ -224,7 +224,7 @@ main {
     align-items: center;
     padding: 20px;
     background-color: #1D1D1D;
-    background-image: url('../images/Background.png');
+    background-image: url('https://1drv.ms/i/c/8733ebcc765b0f03/IQNgHiCXAA5tQY_BZoBWj_T_AQwwcdZ22bnDdVWRvXk_Vcw?width=1024');
   /* Repeat the background image along the y-axis */
     background-size: cover; /* Keep the original size of the background image */
     background-position: top center; /* Align the background image at the top center */
