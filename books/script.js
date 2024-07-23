@@ -1,12 +1,13 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", function () {
+    const headerToggle = document.querySelector('.header-toggle');
+    const headerSidebar = document.querySelector('.header-sidebar');
+    const navbarToggle = document.querySelector('.navbar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const expandableItems = document.querySelectorAll('.expandable');
     const chapterDropdown = document.getElementById('chapter-dropdown');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
     const fullscreenButton = document.getElementById('fullscreen-button');
-    const headerToggle = document.querySelector('.header-toggle');
-    const headerSidebar = document.querySelector('.header-sidebar');
-    const navToggle = document.querySelector('.navbar-toggle');
-    const sidebar = document.querySelector('.sidebar');
     const unlockPopup = document.getElementById('unlock-popup');
     const unlockDateSpan = document.getElementById('unlock-date');
     const summaryDiv = document.getElementById('chapter-summary');
@@ -145,12 +146,18 @@ function loadPDF(url) {
         }
     }
 
-    headerToggle.addEventListener('click', () => {
+    headerToggle.addEventListener('click', function () {
         headerSidebar.classList.toggle('open');
     });
 
-    navToggle.addEventListener('click', () => {
+    navbarToggle.addEventListener('click', function () {
         sidebar.classList.toggle('open');
+    });
+
+    expandableItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            item.classList.toggle('expanded');
+        });
     });
 
     chapterDropdown.addEventListener('change', (e) => {

@@ -770,13 +770,13 @@ section h2 {
     font-size: 24px;
   }
 
-  .responsive-video {
+  section#trailer {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
+    height: auto;
   }
 
-  .responsive-video iframe {
+  section#trailer iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -849,13 +849,13 @@ section h2 {
     font-size: 20px;
   }
 
-  .responsive-video {
+  section#trailer {
     position: relative;
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
+    height: auto;
   }
 
-  .responsive-video iframe {
+  section#trailer iframe {
     position: absolute;
     top: 0;
     left: 0;

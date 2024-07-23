@@ -80,7 +80,7 @@ function calculateAge(birthDate) {
     months += 12;
   }
 
-  return `${age} (${months} months)`;
+  return `${age} (& ${months} months)`;
 }
 
 // Wait for the DOM to load
