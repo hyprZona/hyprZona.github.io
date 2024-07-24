@@ -2,11 +2,12 @@ body {
     margin: 0;
     font-family: 'Courier New', Courier, monospace;
     background-color: #121212;
-    backgroud: url('https://1drv.ms/i/c/8733ebcc765b0f03/IQNgHiCXAA5tQY_BZoBWj_T_AQwwcdZ22bnDdVWRvXk_Vcw?width=5120&height=3648');
+    background-image: url(https://1drv.ms/i/c/8733ebcc765b0f03/IQNgHiCXAA5tQY_BZoBWj_T_AQwwcdZ22bnDdVWRvXk_Vcw?width=5120&height=3648);
     color: #E0E0E0;
     overflow: hidden;
-    filter: grayscale(10%) contrast(150%) brightness(50%);
+    filter: grayscale(10%) contrast(150%) brightness(60%);
     position: relative;
+    background-size: contain;
 }
 
 body::before {
@@ -17,7 +18,7 @@ body::before {
     width: 100%;
     height: 100%;
     background: url('https://1drv.ms/i/c/8733ebcc765b0f03/IQPWynETN4oPSalTotaG9NFyAZdF9CKANs37cAxd-fJMWVw?width=1024');
-    opacity: 0.2;
+    opacity: 0.4;
     pointer-events: none;
     z-index: 9999;
 }
@@ -38,7 +39,7 @@ iframe.custom-iframe {
     height: 100%;
     background-color: #2C2C2C;
     transition: transform 0.3s ease;
-    z-index: 999;
+    z-index: 9999;
     box-shadow: 4px 0 8px rgba(0, 0, 0, 0.3);
     border-right: 1px solid #faf8f9;
     padding-top: 20px;
@@ -124,7 +125,7 @@ iframe.custom-iframe {
     position: fixed;
     top: 10px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 10000;
     background-color: #444;
     padding: 5px;
     border-radius: 5px;
@@ -356,5 +357,13 @@ main {
 
     .chapter-info p {
         font-size: 14px;
+    }
+}
+
+@media (min-width: 769px) {
+    iframe.pdf-frame {
+        width: 70%; /* Adjust percentage as needed to ensure the background image is visible */
+        margin: 0 auto; /* Center the iframe */
+        display: block; /* Ensure it's treated as a block element */
     }
 }
