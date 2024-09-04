@@ -1,0 +1,717 @@
+@import url('https://fonts.googleapis.com/css2?family=Nosifer&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+    --primary-color: #00ffff;
+    --secondary-color: #ff00ff;
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --accent-color: #ff4500;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+header {
+    grid-column: 1 / -1;
+    background-color: rgba(10, 10, 10, 0.8);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 1rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px var(--primary-color);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.sidebar {
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 1rem;
+    border-right: 2px solid var(--secondary-color);
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 1rem;
+}
+
+.sidebar a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: var(--primary-color);
+}
+
+.expandable > a::after {
+    content: ' ↓';
+}
+
+.submenu {
+    display: none;
+    margin-left: 1rem;
+}
+
+.social-media {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.social-media img:hover {
+    transform: scale(1.1);
+}
+
+main {
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 3rem;
+    background-image: url('path-to-your-hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+.cta-button, .secondary-button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-button {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+}
+
+.cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    box-shadow: 0 0 15px var(--primary-color);
+}
+
+.secondary-button {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.about, .latest-release {
+    background-color: rgba(20, 20, 20, 0.8);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--secondary-color);
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.news-item {
+    background-color: rgba(30, 30, 30, 0.8);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+footer {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(10, 10, 10, 0.8);
+    border-top: 2px solid var(--secondary-color);
+}
+
+/* Add these styles to your existing CSS file */
+
+.expandable-section {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.expandable-section h2 {
+    background-color: #f5f5f5;
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expandable-section .content {
+    padding: 15px;
+    display: none;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+.arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.about-company h3, .about-founder h3 {
+    color: #333;
+    margin-top: 20px;
+}
+
+.about-founder {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+.about-company {
+    font-family: 'Orbitron', sans-serif;
+    line-height: 1.5;
+}
+
+#age {
+    font-weight: bold;
+    color: #007bff;
+}
+/* Main content styles */
+body.bgame {
+    background-color: #0a0a0a;
+    color: #d0d0d0;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+}
+
+#bti-page main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-section {
+    background-color: #151515;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.1);
+    border: 1px solid #2a2a2a;
+}
+
+.game-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-logo {
+    max-width: 300px;
+    margin-bottom: 30px;
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.3));
+}
+
+.game-info {
+    width: 100%;
+}
+
+#bti-page h2,
+#bti-page h3,
+#bti-page h4 {
+  font-family: 'Crimson Text', serif;
+  color: #ff4d4d;
+  margin-top: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.short-description {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #b3b3b3;
+}
+
+.itch-widget {
+    margin: 30px 0;
+}
+
+.game-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.game-details li {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #2a2a2a;
+    padding-bottom: 10px;
+}
+
+.platform-icon {
+    height: 20px;
+    vertical-align: middle;
+    filter: invert(1);
+}
+
+.game-gameplay ol {
+    padding-left: 25px;
+}
+
+.game-gameplay li {
+    margin-bottom: 15px;
+}
+
+.screenshot-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.screenshot-thumb {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    border: 1px solid #2a2a2a;
+}
+
+.screenshot-thumb:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px; /* Optional: rounded corners */
+    margin-bottom: 20px; /* Space below each trailer */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 8px; /* Optional: rounded corners for the iframe */
+}
+
+.feedback-section {
+    padding: 20px;
+    background-color: #2C2C2C; /* Adjust background color as needed */
+    color: #EAEAEA; /* Adjust text color as needed */
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.feedback-form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.feedback-form {
+    border: 1px solid #F4D03F; /* Adjust border color if needed */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional shadow effect */
+}
+
+/* Memories Game Page Specific Styles */
+
+.memories-main {
+  background-color: #0a0a0a;
+  color: #d0d0d0;
+  font-family: 'Special Elite', cursive;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAECElEQVRoQ92aS3LbMBBE2ydIeYNYJ4h8gtgnSOxbxJLX4gksn8D2CWyfwPEJJGUTWtYJIp0g1A2qB5wBKIiSKNNSlcsmJRKDN/3rAYjQnXvddch1DAHOzOoA4ImI9t3V0d2/mNkNEY0P8bAQiLu/MLNLIno8xCBN3zGzayIaZP5PQdz9zMxuiKgXvTSzF9mHiF4dCjzod0pEvXBxZp+ZPRPRcyqWUCVx93Mzu42+FDLsJXxpZldE9NZksDqzcffY9yZ/1t2lNb8Q0ag2SIBIRKIChAoN/z0iEsXc/Uq0YWavdSF1hGMzu0xBmNm1JDOFIFWzzcwGRHRRF0TA+J2I7qpA3P2pmT00zWL+fXd/MLNxFXhdX1Jqb4hoXAri7i/N7L0uL5rZNz0XRPReoDhbEEUgmuEUxMymVbNoZng4+5+ZPcZk2HRCo62JFJ4AjxRYmSSS1XdRrzZIqCWrKZS7K9HXoREAkn2fXN6a2YSIwrlakNgp+jYG1r4xjJndE9FZWYUPiXSl2Z9KvK9bQoOK9VYHH7wvjl8KIhlS0mr7pUq+CiLcPxPEe+F8EYi7PzCzyVEOcbfNzG7r8iRsLEr0Ogg16xLJYyLCkUEqQUJO3MvZdVs2KwwamdmdKFgpvxsZNZODtojoCKLR4y4KohzZl5rtGHCVOoK3dTM/AyOqHhHRB5K3RHS6EyQkt3xQHhQwPufq2B6/E4DJdhM5qySCqKWNXlRBUNb0NG1AbQUgY+VJXHmWu4dZ/xiEWMZERKdNOfKHSW+jQmqHzQ1QSQGUq1pgwAHVECsAWvCxqSYB+VpvgRQluy4IXbfFZNfF15GGW0nfCmS7DspO6tF2KVr+PJK9lOvRI7NdDSPtdKXKpKTVFSQWy9JUKvX1Xr/rGqeOSgVsrBpWEzwQRMmuLBqUSa3uoTqDqJDK8XSgrSc82JR7wMvRHg3YnONqsGEtrUq6oPLG2j4eT2VHqtDL3ZPVMa7rAawOyVVLkGBnffiOydHJwq4upWOuHNq6grhWIJo0ql9OChLS6Z/TQ4JQXdEAoJfrQq1WK4yyaWyqDdI2RnMQlADbLTYaMNsBgTGx1m+3HBWqZZuVAm0PUQ45YOnMEwu6qBNbQXRbFGMXo+PugWNBPHZsXO6uQp1eobQEUcx1AtE6XjD5XGNBJvlzH6hWO4BInZ1AtCDM4w0RIwwY9qXVBkiG3QrEzD5CrmgD4qYcgbxcPbLMUgQYlW2P6XmImdJp9UfEMjmDFQWMZH8EKIrQAMlF2WnZtLCEpOWgTBgkVMO7CMIwjYvhunVWH4zMlX/xvGSuEoYL1jDgj0r+EyT8+A8RXvf9pXbcXwAAAABJRU5ErkJggg==');
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+.game-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.game-title {
+  font-family: 'Nosifer', cursive;
+  font-size: 4rem;
+  color: #8a0303;
+  text-shadow: 0 0 10px rgba(138, 3, 3, 0.7), 0 0 20px rgba(138, 3, 3, 0.5);
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+.game-tagline {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #a30000;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.section-title {
+  font-family: 'Nosifer', cursive;
+  font-size: 2rem;
+  color: #b30000;
+  border-bottom: 2px solid #4a0000;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.game-intro, .coming-soon p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.feature-list, .info-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.feature-list li, .info-list li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.feature-list li::before {
+  content: '🩸';
+  position: absolute;
+  left: 0;
+}
+
+.info-list li strong {
+  color: #ff4d4d;
+}
+
+.coming-soon {
+  background-color: #1a0000;
+  border: 1px solid #400;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  box-shadow: inset 0 0 10px #600;
+}
+
+/* Hover effects */
+.game-title:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  color: #b30000;
+}
+
+.feature-list li:hover, .info-list li:hover {
+  color: #ff6666;
+  transition: color 0.3s ease;
+}
+
+/* Additional horror elements */
+.memories-main::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 1000;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.memories-main {
+  animation: flicker 5s infinite;
+}
+
+/* General Page Style */
+body.book-page {
+    background-color: #1b1b1b;
+    color: #f4f4f4;
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Book Section Style */
+.book-section {
+    background-color: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+.book-info-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.book-cover {
+    cursor: pointer;
+    flex: 1;
+    min-width: 250px;
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.book-cover:hover {
+    transform: scale(1.05);
+}
+
+.book-cover img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Text Container */
+.text-container {
+    flex: 2;
+    min-width: 300px;
+}
+
+.book-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    color: #d32f2f;
+    margin-bottom: 15px;
+}
+
+.short-description {
+    font-family: 'Libre Baskerville', italic;
+    margin-bottom: 10px;
+}
+
+.full-description {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+#tttp .section-title,
+#tttp .section-subtitle {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #d32f2f;
+    margin-bottom: 10px;
+}
+
+.story-parts {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.story-parts li {
+    font-family: 'Libre Baskerville', serif;
+    margin-bottom: 5px;
+}
+
+/* Availability Section */
+.availability-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.availability-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #d32f2f;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.availability-link img {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Age Rating Section */
+.age-rating {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.rating {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: #d32f2f;
+    margin-bottom: 5px;
+}
+
+.rating-reasons {
+    list-style: none;
+    padding: 0;
+    font-size: 0.9rem;
+    color: #f4f4f4;
+}
+
+/* Trailer Section */
+.book-trailer {
+    border: 1px solid #333;
+    border-radius: 4px;
+    width: 100%;
+    height: 315px;
+    margin-top: 20px;
+}
+
+/* Expand Icon */
+.expand-icon {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    color: #d32f2f;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-toggle span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: var(--text-color);
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+    }
+    .game-info-container {
+        flex-direction: column;
+    }
+
+    .game-logo {
+        max-width: 200px;
+    }
+
+    .screenshot-thumb {
+        width: 150px;
+        height: 90px;
+    }
+
+}
