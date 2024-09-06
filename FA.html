@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Ashes - hyprZona Music Productions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Ashes</title>
+    <link rel="icon" href="https://1drv.ms/i/c/8733ebcc765b0f03/IQRmUhsUXdSsQ6ZuFOHbrIklAQqAduOODdxLXFwPSeQmL-Y?width=1024">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-FW17RSLYQ9');
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://1drv.ms/u/c/8733ebcc765b0f03/IQQqzjo-zQs7Tats5dLcu47QAevyWXizS-q7b1YpQLLcOYM?width=1024" alt="Fading Ashes Logo" id="logo">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html">hyprZona Main</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h1>Fading Ashes</h1>
+            <p>hyprZona Music Production</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Fading Ashes, a subdivision of hyprZona, was founded by the 16-year-old D.M. Our music is heavily inspired by Linkin Park, focusing on the evolution of music, style, and lyrics. We primarily create dark romance and life lesson-themed songs, with occasional light-hearted compositions.</p>
+        </section>
+
+        <section id="music">
+            <h2>Our Music</h2>
+            <div class="music-item">
+                <h3>Distorted Reality</h3>
+                <p>From "Beyond The Illusions" Soundtrack</p>
+                <a href="https://youtu.be/RWySL_67OOw?si=sKWOblw-GpD3hNRB" target="_blank">Listen on YouTube</a>
+            </div>
+            <div class="music-item">
+                <h3>Twisted Memories</h3>
+                <p>From "Beyond The Illusions" Soundtrack</p>
+                <a href="https://youtu.be/nCRckAQBaw8?si=BK-xG4f7BSZkml97" target="_blank">Listen on YouTube</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Connect With Us</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@fadingashes-hyprzona" target="_blank" class="social-icon">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://www.instagram.com/fadingasheshyprzona" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Fading Ashes - hyprZona Music Productions. All rights reserved.</p>
+    </footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      }
+    });
+  });
+
+  document.querySelectorAll('section').forEach((section) => {
+    observer.observe(section);
+  });
+</script>
+</body>
+</html>
