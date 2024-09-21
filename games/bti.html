@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://itch.io https://*.itch.io https://discord.com https://www.youtube.com https://docs.google.com;">
     <title>hyprZona - Beyond The Illusions</title>
+    <script src="https://cdn.jsdelivr.net/npm/coi-serviceworker@0.1.6/coi-serviceworker.min.js"></script>
     <link rel="icon" href="https://1drv.ms/i/c/8733ebcc765b0f03/IQPAfDCtFLKpS61y6N16kII-AZbDFZIt2SxKXhXT7IhsC20?width=1024">
     <link rel="stylesheet" href="../styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
@@ -69,16 +71,26 @@
     </ul>
 </nav>
 <main>
-    <section class="game-section bti-section">
-        <div class="game-info-container">
-            <img src="https://1drv.ms/i/c/8733ebcc765b0f03/IQNr1Fqqse_6Q7V5SrZ53A_qAZSGF_hspt1Wp2SVHboEBxA?width=1024" alt="Beyond The Illusions" class="game-logo bti-logo">
-            <div class="game-info bti-info">
-                <h2>Beyond The Illusions</h2>
-                <p class="short-description">Depression, manifestation, and illusions lead the player to a new and different dimension.</p>
+            <section class="game-section bti-section">
+                <div class="game-info-container">
+                    <img src="https://1drv.ms/i/c/8733ebcc765b0f03/IQNr1Fqqse_6Q7V5SrZ53A_qAZSGF_hspt1Wp2SVHboEBxA?width=1024" alt="Beyond The Illusions" class="game-logo bti-logo">
+                    <div class="game-info bti-info">
+                        <h2>Beyond The Illusions</h2>
+                        <p class="short-description">Depression, manifestation, and illusions lead the player to a new and different dimension.</p>
 
-                <div class="itch-widget">
-                    <iframe frameborder="0" src="https://itch.io/embed/2814861?border_width=2&amp;bg_color=2C2C2C&amp;fg_color=EAEAEA&amp;link_color=C0392B&amp;border_color=F4D03F" width="554" height="169"><a href="https://hyprzona.itch.io/bti">Beyond The Illusions by hyprZona</a></iframe>
-                </div>
+                        <div class="itch-widget">
+                            <iframe frameborder="0" src="https://itch.io/embed/2814861?border_width=2&amp;bg_color=2C2C2C&amp;fg_color=EAEAEA&amp;link_color=C0392B&amp;border_color=F4D03F" width="554" height="169"><a href="https://hyprzona.itch.io/bti">Beyond The Illusions by hyprZona</a></iframe>
+                        </div>
+
+                        <!-- New itch.io embed for playing the game -->
+                        <div class="itch-play-embed">
+                        <iframe src="https://itch.io/embed-upload/11524907?color=2C2C2C" allowfullscreen="" width="640" height="380" frameborder="0" allow="cross-origin-isolated"><a href="https://hyprzona.itch.io/bti">Play Beyond The Illusions on itch.io</a></iframe>
+                    </div>
+
+                        <!-- New warning message -->
+                        <div class="warning-message" style="background-color: #ffcc00; color: #333; padding: 10px; margin: 10px 0; border-radius: 5px;">
+                            <strong>Warning:</strong> The browser version may provide a laggy experience as it is unoptimized for Web and is a direct port of the PC version. For a smooth and visually appealing experience, we recommend downloading the game.
+                        </div>
 
                 <div class="game-details">
                     <h3>Game Details</h3>
@@ -86,7 +98,7 @@
                         <li><strong>Release Date:</strong> 5<sup>th</sup> September 2024</li>
                         <li><strong>Playtime:</strong> Approx. 30 mins.</li>
                         <li><strong>Price:</strong> Free</li>
-                        <li><strong>Platform:</strong> <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="Windows Logo" class="platform-icon"></li>
+                        <li><strong>Platform:</strong> <img src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Windows_logo_-_2012.svg" alt="Windows Logo" class="platform-icon"> <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/MacOS_logo_%282017%29.svg" alt="MacOS Logo" class="platform-icon"> <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML5 Logo" class="platform-icon"></li>
                         <li><strong>State:</strong> Released</li>
                         <li><strong>Stage:</strong> v1</li>
                         <li><strong>Genre:</strong> Psychological Horror, Action-Adventure, Survival</li>
