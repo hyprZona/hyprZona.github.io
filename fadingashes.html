@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fading Ashes - Solo Music Project</title>
+    <link rel="icon" href="https://1drv.ms/u/c/8733ebcc765b0f03/IQQqzjo-zQs7Tats5dLcu47QAevyWXizS-q7b1YpQLLcOYM?width=1024&height=1024" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Orbitron:wght@400;700&display=swap');
+        
+        :root {
+            --primary-color: #c91111;
+            --secondary-color: #1e1e1e;
+            --background-color: #0a0a0a;
+            --text-color: #ffffff;
+            --accent-color: #ff8800;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+            animation: burn 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes burn {
+            from {
+                text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color);
+            }
+            to {
+                text-shadow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+            }
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)), url('https://yt3.googleusercontent.com/lXl8_npYFLuOfMcW6QcaHE1NrxMy3lw16zDRHi6osm0rF8fns34MyjKsBcwcCnmTiN0wlc4=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj') no-repeat center center/cover;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            opacity: 0.1;
+            animation: gradientShift 10s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { opacity: 0.1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 0.1; }
+        }
+
+        .glitch {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            position: relative;
+            color: var(--primary-color);
+            letter-spacing: 0.5rem;
+            animation: glitch 1s linear infinite;
+        }
+
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+
+        .glitch:before,
+        .glitch:after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: var(--background-color);
+            clip: rect(0, 0, 0, 0);
+        }
+
+        .glitch:before {
+            left: -2px;
+            text-shadow: 2px 0 var(--secondary-color);
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        .glitch:after {
+            left: 2px;
+            text-shadow: -2px 0 var(--primary-color);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(64px, 9999px, 66px, 0); }
+            5% { clip: rect(30px, 9999px, 36px, 0); }
+            10% { clip: rect(87px, 9999px, 95px, 0); }
+            15% { clip: rect(55px, 9999px, 62px, 0); }
+            20% { clip: rect(28px, 9999px, 31px, 0); }
+            25% { clip: rect(63px, 9999px, 69px, 0); }
+            30% { clip: rect(92px, 9999px, 98px, 0); }
+            35% { clip: rect(10px, 9999px, 17px, 0); }
+            40% { clip: rect(49px, 9999px, 54px, 0); }
+            45% { clip: rect(76px, 9999px, 82px, 0); }
+            50% { clip: rect(33px, 9999px, 39px, 0); }
+            55% { clip: rect(25px, 9999px, 33px, 0); }
+            60% { clip: rect(18px, 9999px, 25px, 0); }
+            65% { clip: rect(45px, 9999px, 51px, 0); }
+            70% { clip: rect(72px, 9999px, 78px, 0); }
+            75% { clip: rect(81px, 9999px, 88px, 0); }
+            80% { clip: rect(15px, 9999px, 21px, 0); }
+            85% { clip: rect(66px, 9999px, 73px, 0); }
+            90% { clip: rect(43px, 9999px, 50px, 0); }
+            95% { clip: rect(24px, 9999px, 30px, 0); }
+            100% { clip: rect(58px, 9999px, 65px, 0); }
+        }
+
+        .subtitle {
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            margin: 1rem 0.5rem;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(255, 255, 255, 0.3),
+                transparent
+            );
+            transition: all 0.6s;
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .about, .music, .contact {
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about:before, .music:before, .contact:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(201, 17, 17, 0.1) 0%,
+                rgba(30, 30, 30, 0.1) 25%,
+                rgba(255, 136, 0, 0.1) 50%,
+                rgba(30, 30, 30, 0.1) 75%,
+                rgba(201, 17, 17, 0.1) 100%
+            );
+            animation: gradient-animation 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradient-animation {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(-25%, -25%); }
+            100% { transform: translate(0, 0); }
+        }
+
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .content-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .social-icon {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: all 0.3s ease;
+            font-size: 2rem;
+            display: inline-block;
+            padding: 0.5rem;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .social-icon:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px) rotate(15deg);
+            box-shadow: 0 3px 10px rgba(201, 17, 17, 0.3);
+        }
+
+        footer {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            text-align: center;
+            padding: 1rem 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+            
+            .glitch {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--background-color);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Fading Ashes</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#music">Music</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1 class="glitch" data-text="Fading Ashes">Fading Ashes</h1>
+        <p class="subtitle">Rock & Pop Fusion</p>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Fading Ashes</h2>
+            <div class="content-box reveal">
+                <p>Fading Ashes is a solo music project that blends the raw energy of rock with the catchy hooks of pop. Drawing inspiration from iconic bands like Linkin Park, I create music that's both dark and funky, exploring themes of resilience and transformation.</p>
+                <p>As a subdivision of hyprZona, Fading Ashes pushes the boundaries of contemporary rock and pop, delivering powerful melodies and hard-hitting lyrics that resonate with listeners.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="music" class="music">
+        <div class="container">
+            <h2>Music</h2>
+            <div class="content-box reveal">
+                <p>Immerse yourself in the world of Fading Ashes. Check out the latest releases:</p>
+                <ul>
+                    <li>"Beyond The Illusions Soundtrack" - Game Soundtrack</li>
+                </ul>
+                <a href="https://music.youtube.com/playlist?list=PLOzPaRHfKncSMCmolutJMnqGW1oNyo03B" class="cta-button">Listen on Youtube Music!</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="content-box reveal">
+                <p>For bookings, collaborations, or just to say hello, reach out through these channels:</p>
+                <div class="social-links">
+                    <a href="x.com/@hyprZona" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="instagram.com/fadingasheshyprzona" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="youtube.com/@FadingAshes-hyprZona" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Fading Ashes. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        reveal(); // Call once to check initial state
+    </script>
+</body>
+</html>
