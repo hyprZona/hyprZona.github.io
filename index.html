@@ -1,108 +1,397 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- SEO and Performance Improvements -->
+    <meta name="description" content="hyprZona: Exploring creativity through games, ebooks, and music">
+    <meta name="keywords" content="hyprZona, Fading Ashes, Horror Games, Physcological Games, Action Games, Video Games, Noir Games, eBooks, Music, Beyond The Illusions, Memories">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:title" content="hyprZona | Developer & Creative Hub">
+    <meta property="og:description" content="Dive into a world of innovative games, compelling ebooks, and powerful music">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://hyprzona.github.io">
+    <meta name="twitter:title" content="hyprZona | Developer & Creative Hub">
+    <meta name="twitter:description" content="Explore creativity across games, literature, and music">
+    
+    <!-- Performance Optimization -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- Accessibility Improvements -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>hyprZona - Games, Stories, Vibes</title>
+    <title>hyprZona | Developer & Creator</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="https://yt3.googleusercontent.com/eyZfwMk_QAtRPvYLxmyqk8gNG_hjyiHXYlauLbF_fhgozSvgLr_9tWGNpZzp-xVJUIFEUlVbNo8=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon">
 </head>
 <body>
-    <header class="header">
-        <nav class="nav">
-            <div class="logo">hyprZona</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-		<li><a href="#fading-ashes">Fading Ashes</a></li>
-                <li><a href="#news">What's Up</a></li>
-                <li><a href="#contact">Connect</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Navigation -->
+    <nav id="main-nav">
+        <div class="logo">hyprZona</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-me">About Me</a></li>
+	    <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+	    <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <h1 class="glitch" data-text="hyprZona">hyprZona</h1>
-            <p class="subtitle">Crafting Games 🎮 | Spinning Tales 📚 | Dropping Beats 🎵</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>hyprZona</h1>
+            <h2>Where stories strike like lightning</h2>
             <div class="cta-buttons">
-    <button class="cta-button" id="gamesButton">Play My Games</button>
-    <button class="cta-button" id="storiesButton">Read My Stories</button>
-</div>
-
-<div id="menuOverlay">
-    <div id="menuContent">
-        <button id="closeButton">X</button>
-        <div id="gamesOptions" class="options">
-            <h2 href="BTI" style="font-family: 'Creepster', cursive; color: darkred; fonst-size:50px;"><a href="BTI.html" style="color: darkred;">Beyond The Illusions</a></h2>
-            <h2 href="Memories" style="font-family: 'Nosifer', cursive; color: #8B0000; font-size:50px;"><a href="Memories.html" style="color: darkred;">Memories</a></h2>
+                <a href="#games" class="btn btn-primary">Explore Games</a>
+                <a href="#ebooks" class="btn btn-secondary">Read eBooks</a>
+		<a href="#FA" class="btn btn-tertiary">Listen Music</a>
+            </div>
         </div>
-        <div id="storiesOptions" class="options">
-            <h2 style="font-family: serif; color: #333;"><a href="TNT.html" style="color: #333;">The T'N'T: Prologue</a></h2>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <!-- About Me Section (New) -->
+    <section id="about-me" class="about-me-section">
+        <h2>Who the holy duck am I?</h2>
+        <div class="about-me-content">
+            <div class="personal-bio">
+                <img src="https://lh3.googleusercontent.com/pw/AP1GczO12dT4ORTbJEGHGESuA7dAkua_qr9CcN-ufh5284UCRTlmS2ZeRPxcstIFQigEA4kyG5dYci5jdlnC_utuNWfq42o66H0S_0Ge-S3R4cHraIPsNpvcQsZBC8sri0obR_PFhWuSa6M3m_wBF2P2p3xH=w625-h625-s-no-gm?authuser=0" alt="hyprZona Creator" class="profile-image">
+                <div class="bio-text">
+<p><strong>⚠ Warning:</strong> This bio contains broken humor, unapologetic vulgarity, and enough sarcasm to drown your last brain cell. If you’re easily offended, this is your cue to exit faster than your dad left for cigarettes. <em>Proceed with caution—or don’t. I’m not your mom.</em></p>
+
+<h3>Let’s get this disaster rolling.</h3>
+<p>I’m <strong>Daksh Mehta</strong>, your friendly neighborhood chaos engine. Call me <strong>Dakie</strong>, <strong>Ducky</strong> (no, I don’t waddle or swim laps), or that squishy-ass momo that somehow survived life’s steam pot. <em>Cute?</em> Sure. <em>Tragic?</em> Definitely. But let’s not sugarcoat it—I’m a walking combo meal of <strong>ADHD, depression,</strong> and <strong>social anxiety</strong>, with a side of <q>I’m fine</q> lies. My brain’s got more plot twists than a telenovela about alien ducks invading Earth.</p>
+
+<h3>My Passions (or lack thereof):</h3>
+<p>I’m your classic sci-fi, <em>action-movie-junkie-with-a-side-of-broke</em>. Disney+? <strong>Yup.</strong> Prime? <strong>Absolutely.</strong> Netflix? <strong>Nah,</strong> I’m a man of humble subscriptions, thank you very much. In another life, I’d be <strong>Gordon Ramsay</strong>, minus the kitchen and the British accent. All I need is an oven and a brain that doesn’t ADHD itself into oblivion every two minutes.</p>
+
+<h3>If I Were a Flavor:</h3>
+<p>Tangy tomato chips with an existential crisis. <em>Sweet</em>, <em>spicy</em>, and <em>sour</em> enough to make you rethink your life choices. Basically, I’m the human version of <strong>pineapple on pizza</strong>—a divisive asshole who’ll either ruin your vibe or become your guilty pleasure. <strong>Speaking of pineapple on pizza:</strong> <u>no.</u> That’s the culinary equivalent of nut-kicking a chef and spitting on their soufflé. Even zombies would gag at that combo.</p>
+
+<h3>Speaking of Zombies...</h3>
+<p>If I ever get chased, hand me a <strong>guitar</strong> and a <strong>potato</strong>, and it’s showtime. I’d try to strum a killer tune (using the potato as a pick, of course) and hope it unleashes some magical death notes. Knowing my luck, though, I’d end up playing something so awful the zombies would stop, give me a pitying blowjob (no, not that kind, you little gremlin), and shuffle off in disappointment.</p>
+
+<h3>Ah, yes—Straight Hero to Zero moments.</h3>
+<p>Like the time in school when I tried to save a girl from falling. Heroic, right? <strong>Wrong.</strong> My dumb ass grabbed her… <strong>by the ass.</strong> Hard. Turns out, I’m a walking HR violation. Her scream was louder than a jet engine blasting through hell. I stood there wishing I could <em>Thanos-snap</em> myself into oblivion. Luckily, nobody called a <strong>9/11</strong> on me, so here I am. Classic Dakie Moment™.</p>
+
+<h3>On My “IDGAF” Attitude:</h3>
+<p>Experiences like that built my “IDGAF” attitude, so toxic it could be bottled and sold as poison. Life’s too short to care about Karen’s complaints or Chad’s fragile ego. I’ll do my thing, and if you don’t like it? <em>Go fuck yourself with a rusty spoon.</em></p>
+<p>My favorite emojis? 🫡, 🤨, and 💀—because they say everything I need without me wasting my breath. If <strong>vibes</strong> were a religion, I’d be their nihilistic prophet.</p>
+
+<h3>Aliens and Rockstar Games:</h3>
+<p>If aliens ever invite me for a ride, I’m <strong>gone.</strong> Earth, it’s been real. I’ll come back with all the alien secrets and rebrand myself as <strong>Mr. Newton-who-fucked-Einstein</strong>, with the ropes used to tie Jesus as a cherry on top. All that just to infiltrate <strong>Rockstar Games’</strong> servers and finally find out what the hell they’re cooking. Don’t worry, though—I’m not out here trying to be the next <strong>Arion Kurtaj.</strong> Rockstar deserves respect… just not my wallet.</p>
+
+<h3>In a Nutshell:</h3>
+<p>I’m <strong>“Given Up”</strong>, followed by <strong>“Points of Authority”</strong>, and topped with <strong>“Bubbles”</strong> from Linkin Park’s <em>Mmm...Cookies</em> album—all delivered with the <strong>Static Max Payne Smile</strong>. Stare at me when I’m alone, and you’ll see a blank, haunting expression hiding a million inappropriate thoughts. Like the time I wrote the most cursed lyric ever: <q>You so hot, I want to tie you on my bed like Jesus on the cross.</q> My friends found it, and let’s just say I won’t be showing my face in heaven anytime soon.</p>
+
+<h3>Final Toppings:</h3>
+<p>Toss in some <strong>ADHD</strong> (since day one), <strong>depression</strong> (it’s not a bug; it’s a feature), and <strong>social anxiety</strong> for seasoning, and you’ve got the ultimate snack… or disaster.</p>
+
+<h2>Welcome to My Circus 🎪</h2>
+<p>Grab some popcorn, dodge the flying fucks, and enjoy the ride. <strong>Life’s a joke, and I’m the punchline.</strong> Signing off 🫡</p><br>
+                    <div class="skills">
+    <h4>Core Skills</h4>
+<div class="skill-categories">
+    <div class="skill-category">
+        <h5>Programming Languages</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Aoi.js (intermediate)</span>
+        <span class="skill-tag">C++ (Learning)</span>
+        <span class="skill-tag">CSS (Intermediate)</span>
+        <span class="skill-tag">GDscript (Basics)</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">JavaScript (HTML & Discord Bot)</span>
+        <span class="skill-tag">MySQL (Basics)</span>
+        <span class="skill-tag">Python (Intermediate)</span> 
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Game Development</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Game Design</span>
+        <span class="skill-tag">Godot</span>
+        <span class="skill-tag">Mechanics Prototyping</span>
+        <span class="skill-tag">Unreal Engine (Learning)</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Creative Writing</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Character Development</span>
+        <span class="skill-tag">Lyrics Writing</span>
+        <span class="skill-tag">Narrative Design</span>
+        <span class="skill-tag">Poetry</span>
+        <span class="skill-tag">Sci-Fi Writing</span>
+        <span class="skill-tag">Story Writing</span>
+        <span class="skill-tag">World-Building</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Design & Tools</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Blender (Learning)</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">UI/UX Design</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Audio/Video</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Music Production</span>
+        <span class="skill-tag">Video Editing</span>
+        <span class="skill-tag">Voice Over</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Design</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">3D Modeling</span>
+        <span class="skill-tag">Animation Designing</span>
+        <span class="skill-tag">Character Designing</span>
+        <span class="skill-tag">Texture Designing</span>
+        <span class="skill-tag">VFX Artist</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Music</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Electric Guitar</span>
+        <span class="skill-tag">Guitar</span>
+        <span class="skill-tag">Piano</span>
+        <span class="skill-tag">Violin</span>
+        <span class="skill-tag">Vocalist</span>
+        </div>
+    </div>
+
+    <div class="skill-category">
+        <h5>Other</h5>
+        <div class="skill-tags">
+        <span class="skill-tag">Discord Bot Developer</span>
+        <span class="skill-tag">Graphic Designing</span>
+        <span class="skill-tag">Shader Designing</span>
+        <span class="skill-tag">Web Developer</span>
         </div>
     </div>
 </div>
-        </section>
-
-        <section id="about" class="about">
-            <div class="about-content">
-                <h2>Who's hyprZona?</h2>
-                <ul>
-		    <li>Just a young creative on a mission to make cool stuff. Games, stories, music - you name it, I'm probably working on it!</li>
-		    <li>I'm just driven by the forces of my creativity.</li>
-		    <li>No team just alone along with some supportive friends.</li>
-		    <li>Ran by an unpredictable, unhinged, A.D.H.D. Gen-Z dude named Daksh Mehta (dakindahood).</li>
-		</ul>
+                </div>
             </div>
-        </section>
-
-        <section id="fading-ashes" class="fading-ashes">
-            <h2>Fading Ashes</h2>
-            <p>Where beats meet feels. My music playground.</p>
-            <a href="fadingashes.html" class="cta-button">Vibe with Me</a>
-        </section>
-
-        <section id="news" class="news reveal">
-            <h2>What's the Buzz? 🐝</h2>
-            <div class="news-grid">
-                <article class="news-item">
-                    <h3>🎮 Game Drop</h3>
-                    <p>Beyond the Illusions now live on itch.io! Ready to bend reality?</p>
-                    <span class="timestamp">Posted: 2024-09-5 00:01</span>
-                </article>
-                <article class="news-item">
-                    <h3>📚 Story Time</h3>
-                    <p>T'N'T: Prologue "Complete Edition" is out! Dive into this noir world and get hooked.</p>
-                    <span class="timestamp">Posted: 2024-07-14 00:11</span>
-                </article>
-                <article class="news-item">
-                    <h3>🎂 Birthday Bash</h3>
-                    <p>Shoutout to Anveshika, my inspiration behind "Millie"! HBD! 🎉</p>
-                    <span class="timestamp">Posted: 2024-07-14 00:01</span>
-		    <p>A heartwarming wish to my dad, my inspiration behind "Erin"! HBD! 🎉</p>
-                    <span class="timestamp">Posted: 2024-07-21 00:01</span>
-		    <p>A wish from the bottom of my heart to my mother, my inspiration behind "Susan"! HBD! 🎉</p>
-                    <span class="timestamp">Posted: 2024-09-23 00:01</span>
-                </article>
-                <article class="news-item">
-                    <h3>📣 General Update</h3>
-                    <p>New website, who dis? Welcome to the fresh hyprZona hub!</p>
-                    <span class="timestamp">Posted: 2024-05-01 11:00</span>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>&copy; 2024 hyprZona. Keepin' it real since 2007.</p>
-        <div id="contact" class="social-links">
-            <a href="https://X.com/@hyprZona" class="social-icon">Twitter</a>
-            <a href="https://instagram.com/hyprZona" class="social-icon">Insta</a>
-            <a href="https://youtube.com/@hyprZona" class="social-icon">YouTube</a>
-            <a href="https://github.com/hyprZona" class="social-icon">GitHub</a>
-            <a href="https://hyprZona.itch.io" class="social-icon">itch.io</a>
-	    <a href="https://discord.gg/ESyDH3vv87" class="social-icon">Discord</a>
         </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>Who We Are</h2>
+                <p>Welcome to <strong>hyprZona</strong>, where creativity strikes like lightning! Founded with a dream of delivering unparalleled experiences in the indie games industry, hyprZona is the brainchild of a one-boy powerhouse with an insatiable love for storytelling, immersive gameplay, and bold experimentation.</p>
+
+  <h3>Our Mission</h3>
+  <p>At hyprZona, we don’t just create games, eBooks, or music—we craft experiences. Our mission is to bridge the gap between creators and audiences, fostering a unique, transparent development process. We believe in keeping the creative doors open, regularly updating you on our projects, and even inviting your ideas for gameplay mechanics. After all, what’s better than an indie creator who actually listens?</p>
+
+  <h3>The Name and Philosophy</h3>
+  <p>Let’s talk about the name, because we know you’re curious. <strong>hyprZona</strong> doesn’t just roll off the tongue; it zaps with meaning. “Hypr” stands for hyper (stylishly, of course), and “Z” symbolizes thunder—a perfect match for our neon-soaked aesthetics. Sure, there are similarly named companies, but hey, originality isn’t always about being the <em>first</em>. It’s about being the <em>most memorable</em> (<i>the one, the "ona"</i>).</p>
+
+  <h3>What Sets Us Apart</h3>
+  <p>Quality over quantity—that’s our mantra. From deeply detailed narratives to choices that keep you coming back for more, hyprZona takes pride in creating games that resonate. Each story, mechanic, and visual is crafted with the care of someone who’s obsessed with delivering only the best. Plus, we’re not shy about sharing behind-the-scenes moments, screenshots, and quirky updates (but we’ll keep some secrets—you don’t want all the spoilers, do you?).</p>
+
+  <h3>Our Offerings</h3>
+  <ul>
+    <li><strong>Games:</strong> At the heart of hyprZona lies the pulse of action, dark/noir, and horror. But we’re not afraid to step into fantasy, satire, or puzzle genres, because creativity knows no bounds.</li>
+    <li><strong>eBooks:</strong> Every now and then, the pen takes over. If it strikes a chord, it strikes the paper.</li>
+    <li><strong>Music:</strong> What’s a story without the right melody? Music happens when inspiration calls, and when it does, we answer.</li>
+  </ul><br>
+
+  <h3>Achievements and Inspirations</h3>
+  <p>Our flagship eBook, <em>The T’N’T</em>, stands out as a vivid, emotionally intense masterpiece. As for our first game prototype, <em>Beyond the Illusions</em>... well, let’s just say we call it “humble beginnings.” (We’re all about the glow-up!)</p>
+  <p>Behind hyprZona is a boy who started out reverse-engineering RC cars and experimenting with science books as a kid before transitioning to writing, music, and game development. With a journey that began as a Discord bot developer and evolved into creating story-driven games, the passion to bring imagination to life has been the guiding force.</p>
+
+  <h3>Culture and Vibes</h3>
+  <p>hyprZona thrives on a mix of intense focus and lighthearted goofiness. Easter eggs, quirky processes, and behind-the-scenes antics are part of the DNA. From the absurd aftermath of brainstorming sessions to moments of sheer brilliance, everything we do is about balancing hard work with the joy of creation.</p>
+
+  <h3>Fun Facts to Zap You</h3>
+  <ul>
+    <li>Our first planned game, <em>Memories</em>, was shelved temporarily because... well, we were still learning what buttons to press.</li>
+    <li>hyprZona almost became just an eBook company, but discovering Godot on a potato laptop changed everything.</li>
+    <li>Every misstep and goofy behind-the-scenes moment will live on as easter eggs in future games—because why not laugh at yourself?</li>
+  </ul>
+            </div>
+            <div class="about-images">
+                <div class="image-collage">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczMuJ5QXZxAkDvK2W51qu7Qzd27FmCrO0CnYjDhalLnyiiVvCcKd-5T-wZEzmyYLumSPB6E-LE8_Chf6AmpMMR5NxHAAxibSPxCh6zDMnDe5KAFTZRTSxhbM3gEkKLSBSvdpNxMnPUYlwZvfMsjCPdHN=w1565-h880-s-no-gm?authuser=0" alt="Development Process">
+                </div>
+		<div class="image-collage">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczNrLm3FLQihl0JUuSf-ZMy7qDBKA6UQiI55UDO_UD-QzjHYO0aqlFbFeovWQkAemL9vybEfLk8UdNsRkeAf2QltEZ02vgrNz4E29X72yfqKMjIlvk9bWOvv4HN-0kPr6HGP755lMBOPzhWGK5-02ZBi=w610-h394-s-no-gm?authuser=0" alt="Development Process">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="featured-projects">
+    <h2>Projects</h2>
+    <div class="project-categories">
+        <div id="games" class="project-category games-category">
+            <h3>Games</h3>
+            <div class="project-carousel">
+                <div id="bti-project" class="project-card BTI">
+                    <img src="https://img.itch.zone/aW1nLzE3NjQzMjExLnBuZw==/original/4NswDg.png" alt="BTI">
+                    <h3>Beyond The Illusions</h3>
+                    <p><i>A psychological survival adventure where fragmented memories hold the key to escaping a haunted forest—and uncovering the truth behind a broken heart.</i></p><br>
+                    <a href="games/BTI.html" class="btn btn-primary">Learn More</a>
+                </div>
+		<div id="bti-project" class="project-card MEM">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPQYIG5OZv9kMW622Oq-OQ25VBeKZ62fD2Os4UwZ_wztQh4wb3-MA4TTyKVkOrmTB-DSioVjUmkQ1Z7J56iNH7b18aPd2cjlDyVZDMlBPxwCEMM4DRUpg6OSeI0H2chWIbggilOhyI9-ZHwZhx-BIM8=w630-h146-s-no-gm?authuser=0" alt="MEM">
+                    <h3>Memories</h3>
+                    <p><i>A haunting tale of love, loss, and the perilous journey through a world where memories and magic collide.</i></p><br>
+                    <a href="games/MEM.html" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ebooks" class="project-category ebooks-category">
+            <h3>Ebooks</h3>
+            <div class="project-carousel">
+                <div id="tnt-project" class="project-card noir-ebook-card">
+                    <img src="https://lh3.googleusercontent.com/pw/AP1GczPjQOa0OcZSfriVE5LcVTIHFIfy58tnHHSFnc6Yb_VCVy30sEdbTubTqi0ZBjoDzarKmL3h8vLRX-D_glDyPOkmYo0LiUKf7HDukvW01LxK_R_p3nAnHqTNALontnF49Px1_hPSarmnZ9p87c_LdOJ8=w654-h928-s-no-gm?authuser=0" alt="TNT">
+                    <h3>The T'N'T: A Story of the Scars</h3>
+                    <p><i>An emotionally gripping modern-day noir about loss, resilience, and the fight against a corrupt system.</i></p><br>
+                    <a href="ebooks/TNT.html" class="btn btn-secondary">Read Now</a>
+                </div>
+            </div>
+        </div>
+        
+        <div id="FA" class="project-category music-category">
+            <h3>Music</h3>
+            <div class="project-carousel">
+                <div id="soundscape-project" class="project-card music-project-card">
+                    <img src="https://yt3.googleusercontent.com/06GqYH9CUGE7_hhOQVci2Kkb2h75VV8JTNFTC0l0vpx622sX4xMqXrhNwNBzPaGUb0idGizuJjM=s160-c-k-c0x00ffffff-no-rj" alt="Soundscape">
+                    <h3>Fading Ashes</h3>
+                    <p>Fading Ashes creates powerful, heartfelt music blending rock, nu-metal, and indie-alternative, inspired by legends, to deliver hope, unity, and emotional connection.</p><br>
+                    <a href="FA.html" class="btn btn-tertiary">Explore Sounds</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2>What People Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <p>"Nice game...."</p>
+                <span class="author">- StupenRio, on itch.io</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"Great and emotionally charged expansion of the original eBook!"</p>
+                <span class="author">- Leiko, my personal reviewer.</span>
+            </div>
+        </div>
+    </section>
+
+     <!-- News/Announcements Section (New) -->
+    <section id="news" class="news-section">
+        <h2>Latest News & Updates</h2>
+        <div class="news-container">
+	    <div class="news-card">
+                <span class="news-date">December 2024</span>
+                <h3>The T'N'T: A Story of the Scars</h3>
+                <p>Got the time to improve the masterpiece. The T'N'T: Prologue is replaced by this new version, promise of a roller coaster.</p>
+                <a href="ebooks/TNT.html" class="btn btn-secondary">Get in Action!</a>
+            </div>
+            <div class="news-card">
+                <span class="news-date">November 2024</span>
+                <h3>Memories Development Paused</h3>
+                <p>Hey Fellows, the development process of Memories is paused until 11<sup>th</sup> March, 2025. <i>Gotta nail those stupid final exams.</i> Demo will be released by the first of April.</p>
+            </div>
+            <div class="news-birthdays">
+                <h3>Upcoming Birthdays</h3>
+                <div class="birthday-list">
+		    <div class="birthday-item">
+                        <span class="birthday-name">Mine</span>
+                        <span class="birthday-date">December 17</span>
+                    </div>
+		    <div class="birthday-item">
+                        <span class="birthday-name">The TNT: A Story of the Scars</span>
+                        <span class="birthday-date">December 05</span>
+                    </div>
+                    <div class="birthday-item">
+                        <span class="birthday-name">Beyond The Illusions</span>
+                        <span class="birthday-date">September 05</span>
+                    </div>
+		    <div class="birthday-item">
+                        <span class="birthday-name">Leiko</span>
+                        <span class="birthday-date">August 05</span>
+                    </div>
+		    <div class="birthday-item">
+                        <span class="birthday-name">Dad</span>
+                        <span class="birthday-date">July 21</span>
+                    </div>
+		    <div class="birthday-item">
+                        <span class="birthday-name">Anveshika B.</span>
+                        <span class="birthday-date">July 14</span>
+                    </div>
+                    <div class="birthday-item">
+                        <span class="birthday-name">hyprZona</span>
+                        <span class="birthday-date">April 28</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <h2>Connect with hyprZona</h2>
+        <div class="social-links">
+  <div class="social-group">
+    <h3>Instagram</h3>
+    <div class="social-icons">
+      <a href="https://instagram.com/dakindahood" class="social-icon">@dakindahood</a>
+      <a href="https://instagram.com/hyprZona" class="social-icon">@hyprZona</a>
+      <a href="https://instagram.com/fadingasheshyprZona" class="social-icon">@fadingasheshyprZona</a>
+    </div>
+  </div>
+  <div class="social-group">
+    <h3>Professional Networks</h3>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/daksh-mehta-17236128b/" class="social-icon">LinkedIn</a>
+      <a href="https://github.com/hyprZona/" class="social-icon">GitHub</a>
+    </div>
+  </div>
+  <div class="social-group">
+    <h3>Content Platforms</h3>
+    <div class="social-icons">
+      <a href="https://x.com/hyprZona" class="social-icon">X (hyprZona)</a>
+      <a href="https://youtube.com/dakindahood" class="social-icon">X (dakindahood)
+      <a href="https://youtube.com/@hyprZona" class="social-icon">YouTube (Main)</a>
+      <a href="https://youtube.com/@fadingashes-hyprZona" class="social-icon">YouTube (Fading Ashes)</a> 
+      <a href="https://hyprZona.itch.io" class="social-icon">itch.io</a>
+    </div>
+  </div>
+  <div class="social-group">
+    <h3>Community</h3>
+    <div class="social-icons">
+      <a href="https://discord.com/invite/ESyDH3vv87" class="social-icon">Discord Server</a>
+    </div>
+  </div>
+</div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 hyprZona. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>

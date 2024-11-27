@@ -1,204 +1,199 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
+    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                // Enhanced smooth scrolling with custom easing
+                targetElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+
+                // Add a subtle highlight effect
+                targetElement.classList.add('scroll-highlight');
+                setTimeout(() => {
+                    targetElement.classList.remove('scroll-highlight');
+                }, 1500);
+            }
+        });
+    });
+
+    // Project Carousel Auto-Scroll with Enhanced Interactions
+    function initProjectCarousel() {
+        const carousel = document.querySelector('.project-carousel');
+        if (!carousel) return;
+
+        const projects = carousel.querySelectorAll('.project-card');
+        let currentIndex = 0;
+        let autoScrollInterval;
+
+        function rotateProjects() {
+            // Remove active states from all projects
+            projects.forEach(project => {
+                project.classList.remove('active');
+                project.classList.add('fade-out');
+            });
+            
+            // Add active state to current project
+            projects[currentIndex].classList.remove('fade-out');
+            projects[currentIndex].classList.add('active');
+            
+            // Move to next project
+            currentIndex = (currentIndex + 1) % projects.length;
+        }
+
+        function startAutoScroll() {
+            autoScrollInterval = setInterval(rotateProjects, 5000);
+        }
+
+        function stopAutoScroll() {
+            clearInterval(autoScrollInterval);
+        }
+
+        // Manual navigation controls
+        projects.forEach((project, index) => {
+            project.addEventListener('mouseenter', () => {
+                stopAutoScroll();
+                
+                // Highlight hovered project
+                projects.forEach(p => p.classList.remove('hover'));
+                project.classList.add('hover');
+            });
+
+            project.addEventListener('mouseleave', () => {
+                project.classList.remove('hover');
+                startAutoScroll();
             });
         });
-    });
 
-    // Parallax effect for hero section
-    window.addEventListener('scroll', () => {
-        const heroSection = document.querySelector('.hero');
-        const scrollPosition = window.pageYOffset;
-        heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-    });
-
-    // Neon flicker effect for logo
-    const logo = document.querySelector('.logo');
-    setInterval(() => {
-        logo.style.textShadow = Math.random() > 0.9 ? 'none' : '0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color)';
-    }, 100);
-
-    // Animate news items on scroll
-    const newsItems = document.querySelectorAll('.news-item');
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-    };
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    newsItems.forEach(item => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(item);
-    });
-
-    // Typing effect for subtitle
-    const subtitle = document.querySelector('.subtitle');
-    const text = subtitle.textContent;
-    subtitle.textContent = '';
-    let index = 0;
-    function typeText() {
-        if (index < text.length) {
-            subtitle.textContent += text.charAt(index);
-            index++;
-            setTimeout(typeText, 50);
-        }
+        // Initial setup
+        rotateProjects();
+        startAutoScroll();
     }
-    setTimeout(typeText, 1000);
 
-    // Scroll reveal animation
-    function revealOnScroll() {
-        var reveals = document.querySelectorAll('.reveal');
+    // Enhanced Reveal Animations for Sections
+    function addScrollRevealAnimations() {
+        const sections = document.querySelectorAll('.about-section, .featured-projects, .testimonials, .contact-section, .about-me-section, .news-section');
         
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150;
-            
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add('active');
-            } else {
-                reveals[i].classList.remove('active');
-            }
-        }
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    
-    // Trigger initial check for scroll reveal
-    revealOnScroll();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // Parallax effect for hero section
-    const heroSection = document.querySelector('.hero');
-    if (heroSection) {
-        window.addEventListener('scroll', () => {
-            const scrollPosition = window.pageYOffset;
-            heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
-        });
-    }
-
-    // Neon flicker effect for logo
-    const logo = document.querySelector('.logo');
-    if (logo) {
-        setInterval(() => {
-            logo.style.textShadow = Math.random() > 0.9 ? 'none' : '0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color)';
-        }, 100);
-    }
-
-    // Animate news items on scroll
-    const newsItems = document.querySelectorAll('.news-item');
-    if (newsItems.length > 0) {
         const observerOptions = {
             root: null,
             rootMargin: '0px',
             threshold: 0.1
         };
-        const observer = new IntersectionObserver((entries, observer) => {
+
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                    observer.unobserve(entry.target);
+                    entry.target.classList.add('visible');
+                    entry.target.classList.remove('hidden');
+                    
+                    // Add stagger effect for child elements
+                    const animatableElements = entry.target.querySelectorAll(
+                        'h2, h3, p, .project-card, .testimonial-card, .news-card, .social-group'
+                    );
+                    
+                    animatableElements.forEach((el, index) => {
+                        el.style.transitionDelay = `${index * 0.1}s`;
+                        el.classList.add('stagger-reveal');
+                    });
                 }
             });
         }, observerOptions);
-        newsItems.forEach(item => {
-            item.style.opacity = '0';
-            item.style.transform = 'translateY(20px)';
-            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-            observer.observe(item);
+
+        sections.forEach(section => {
+            section.classList.add('hidden');
+            observer.observe(section);
         });
     }
 
-    // Typing effect for subtitle
-    const subtitle = document.querySelector('.subtitle');
-    if (subtitle) {
-        const text = subtitle.textContent;
-        subtitle.textContent = '';
-        let index = 0;
-        function typeText() {
-            if (index < text.length) {
-                subtitle.textContent += text.charAt(index);
-                index++;
-                setTimeout(typeText, 50);
+    // Dynamic News/Announcements Update (Enhanced)
+    function updateNewsSection() {
+        const newsContainer = document.querySelector('.news-container');
+        if (!newsContainer) return;
+
+        // Placeholder for potential dynamic content fetching
+        const newsUpdates = [
+            {
+                date: 'September 2024',
+                title: 'Beyond the Illusions Out Now',
+                description: 'Experience our first game on itch.io! It is just a prototype meant to set my hands in Godot.',
+                link: 'games/BTI.html'
             }
-        }
-        setTimeout(typeText, 1000);
+        ];
+
+        // Dynamically add news updates with enhanced animation
+        newsUpdates.forEach((update, index) => {
+            const newsCard = document.createElement('div');
+            newsCard.classList.add('news-card', 'news-card-dynamic');
+            newsCard.style.animationDelay = `${index * 0.2}s`;
+            newsCard.innerHTML = `
+                <span class="news-date">${update.date}</span>
+                <h3>${update.title}</h3>
+                <p>${update.description}</p>
+                <a href="${update.link}" class="btn btn-primary">Read More</a>
+            `;
+            newsContainer.appendChild(newsCard);
+        });
     }
 
-    // Scroll reveal animation
-    function revealOnScroll() {
-        var reveals = document.querySelectorAll('.reveal');
-        
-        for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
-            var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150;
-            
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].classList.add('active');
-            } else {
-                reveals[i].classList.remove('active');
-            }
-        }
+    // Navigation Menu Interactivity
+    function enhanceNavigation() {
+        const nav = document.getElementById('main-nav');
+        const navLinks = nav.querySelectorAll('ul li a');
+
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                navLinks.forEach(otherLink => {
+                    if (otherLink !== link) {
+                        otherLink.style.opacity = '0.5';
+                    }
+                });
+            });
+
+            link.addEventListener('mouseleave', () => {
+                navLinks.forEach(otherLink => {
+                    otherLink.style.opacity = '1';
+                });
+            });
+        });
     }
-    if (document.querySelectorAll('.reveal').length > 0) {
-        window.addEventListener('scroll', revealOnScroll);
-        // Trigger initial check for scroll reveal
-        revealOnScroll();
-    }
 
-    // Interactive menu functionality
-    const gamesButton = document.querySelector('#gamesButton');
-    const storiesButton = document.querySelector('#storiesButton');
-    const menuOverlay = document.querySelector('#menuOverlay');
-    const closeButton = document.querySelector('#closeButton');
-    const gamesOptions = document.querySelector('#gamesOptions');
-    const storiesOptions = document.querySelector('#storiesOptions');
+    // Initialize all features
+    initProjectCarousel();
+    addScrollRevealAnimations();
+    updateNewsSection();
+    enhanceNavigation();
 
-    if (gamesButton && storiesButton && menuOverlay && closeButton && gamesOptions && storiesOptions) {
-        function showMenu(options) {
-            menuOverlay.style.display = 'flex';
-            options.style.display = 'block';
-        }
+    // Add a global loading fade-out effect
+    window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+    });
+});
 
-        function hideMenu() {
-            menuOverlay.style.display = 'none';
-            gamesOptions.style.display = 'none';
-            storiesOptions.style.display = 'none';
-        }
+// Performance and Accessibility Enhancements
+document.addEventListener('DOMContentLoaded', () => {
+    // Lazy loading for images
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+    
+    if ('IntersectionObserver' in window) {
+        let imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    let image = entry.target;
+                    image.src = image.dataset.src;
+                    image.classList.add('fade-in');
+                    imageObserver.unobserve(image);
+                }
+            });
+        }, {
+            rootMargin: '50px 0px',
+            threshold: 0.01
+        });
 
-        gamesButton.addEventListener('click', () => showMenu(gamesOptions));
-        storiesButton.addEventListener('click', () => showMenu(storiesOptions));
-        closeButton.addEventListener('click', hideMenu);
-    } else {
-        console.warn('Some elements for the interactive menu are missing. Please check your HTML.');
+        lazyImages.forEach(img => imageObserver.observe(img));
     }
 });
