@@ -57,6 +57,43 @@ body::before {
   z-index: 1;
 }
 
+.main-content {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure proper spacing between sections */
+.section:not(:first-child) {
+  margin-top: 20px;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Mobile optimization */
+@media screen and (max-width: 768px) {
+  .section {
+      padding: 10px;
+      min-height: calc(100vh - 20px);
+  }
+}
+
 .assistive-ball {
   width: 60px;
   height: 60px;
@@ -79,6 +116,7 @@ body::before {
     inset 0 0 15px rgba(0, 255, 255, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: pulse-nav 2s infinite;
+  z-index: 9999;
 }
 
 .assistive-ball:hover {

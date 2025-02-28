@@ -45,6 +45,7 @@
     font-size: 20px;
     -webkit-user-select: none;
     user-select: none;
+    z-index: 9999;
 }
 
 .ai-assistive-ball:hover {
