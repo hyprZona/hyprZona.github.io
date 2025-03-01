@@ -273,7 +273,75 @@
                 </svg>
             </div>
         </section>
+    <div class="terms-screen" id="termsScreen">
+        <h2>Terms & Conditions</h2>
+        <p>You must accept the terms to proceed.</p>
+        <label>
+            <input type="checkbox" id="acceptTerms"> I Accept
+        </label>
+        <button onclick="checkTerms()">Proceed</button>
+    </div>
 
+    <div class="profile-container" id="profileContainer">
+        <div class="profile-card">
+            <div class="profile-img" id="profileImg"></div>
+            <div>
+                <h2>dVlopr</h2>
+                <p>Birthday: ??</p>
+                <p>Sex: M (x7)</p>
+                <p>Gender: Developer</p>
+            </div>
+        </div>
+        <div class="content-container">
+            <div class="tabs">
+                <button class="tab-btn active" onclick="switchTab(event, 'legend')">The Legend of dVlopr</button>
+                <button class="tab-btn" onclick="switchTab(event, 'skills')">dVlopr Skills</button>
+                <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
+                <button class="tab-btn" onclick="switchTab(event, 'facts')">Facts</button>
+            </div>
+            <div class="scroll-box">
+                <div id="legend" class="tab-content active">
+                    <h3>The Legend of dVlopr</h3>
+                    <label for="chapterSelect">Select a chapter:</label>
+                    <select id="chapterSelect" onchange="changeChapter()">
+                        <option value="1">Chapter 1: The Beginning</option>
+                        <option value="2">Chapter 2: The Rise</option>
+                        <option value="3">Chapter 3: The Chaos</option>
+                    </select>
+                    <div id="chapterContent">
+                        <h4 id="chapterTitle">Chapter 1: The Beginning</h4>
+                        <p id="chapterText">Once upon a time, a young coder discovered his passion for software development. With no guidance but an insatiable curiosity, he began exploring the digital world, laying the foundation of his journey.</p>
+                    </div>
+                </div>
+                <div id="skills" class="tab-content">
+                    <h3>dVlopr Skills</h3>
+                    <ul>
+                        <li><strong>Code Necromancy:</strong> Resurrecting abandoned projects and making them alive again.</li>
+                        <li><strong>Pixel Alchemy:</strong> Crafting mesmerizing visuals from pixels and chaos.</li>
+                        <li><strong>Bug Whispering:</strong> Communicating with bugs, understanding their needs... and annihilating them.</li>
+                    </ul>
+                </div>
+                <div id="stats" class="tab-content">
+                    <h3>Stats</h3>
+                    <ul>
+                        <li>Lines of Code Written: 1,000,000+</li>
+                        <li>Crashes Survived: 500+</li>
+                        <li>Coffee Cups Consumed: Infinite</li>
+                        <li>Projects Completed: 42</li>
+                    </ul>
+                </div>
+                <div id="facts" class="tab-content">
+                    <h3>Fun Facts</h3>
+                    <ul>
+                        <li><strong>Fact 1:</strong> dVlopr once coded an entire game in one caffeine-fueled night.</li>
+                        <li><strong>Fact 2:</strong> His debugging skills are rumored to be supernatural.</li>
+                        <li><strong>Fact 3:</strong> Can turn any project into an epic saga of creativity and madness.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script defer src="js/abtdvp.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/sst.js"></script>
     <script defer src="js/SPAi.js"></script>

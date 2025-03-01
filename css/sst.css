@@ -46,7 +46,7 @@
         0 0 30px rgba(0, 255, 255, 0.2),
         inset 0 0 15px rgba(0, 255, 255, 0.4);
     transition: all 0.3s;
-    z-index: 9999;
+    z-index: 9997;
 }
 
 .social-tab:hover {
@@ -85,7 +85,7 @@
         0 0 40px rgba(0, 255, 255, 0.2),
         inset 0 0 20px rgba(0, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    z-index: 9998;
+    z-index: 9997;
 }
 
 .social-links::before {
@@ -114,7 +114,7 @@
         0 0 10px rgba(0, 255, 255, 0.2),
         inset 0 0 10px rgba(0, 255, 255, 0.1);
     position: relative;
-    z-index: 500;
+    z-index: 9996;
 }
 
 .social-group-title {

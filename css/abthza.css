@@ -329,8 +329,8 @@
 
 /* Chromatic Aberration CSS Filter */
 svg {
-    height: 0;
-    width: 0;
+    height: 100%;
+    width: 100%;
 }
 
 /* Mobile Optimizations */
@@ -478,7 +478,7 @@ svg {
     }
 
     .summary-panel {
-        width: 95%;
+        width: 85%;
         max-height: 60vh;
         top: 70px;
         right: 10px;
