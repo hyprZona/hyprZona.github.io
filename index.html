@@ -32,6 +32,8 @@
 <link rel="stylesheet" href="css/SPAi.css">
 <link rel="stylesheet" href="css/herosec.css">
 <link rel="stylesheet" href="css/abthza.css">
+<link rel="stylesheet" href="css/abtdvp.css">
+
 <!-- Other Meta Tags -->
 <meta name="color-scheme" content="dark">
 <meta name="msapplication-TileColor" content="#0f172a">
@@ -273,78 +275,152 @@
                 </svg>
             </div>
         </section>
-    <div class="terms-screen" id="termsScreen">
-        <h2>Terms & Conditions</h2>
-        <p>You must accept the terms to proceed.</p>
-        <label>
-            <input type="checkbox" id="acceptTerms"> I Accept
-        </label>
-        <button onclick="checkTerms()">Proceed</button>
-    </div>
+        
+        <section id="abtdvp" class="section">
+            <div class="terms-screen" id="termsScreen">
+                <h2>Terms & Conditions</h2>
+                <p>You must accept the terms to proceed.</p>
+                <ul>
+                    <li>This website is a <strong>certified brain rot zone</strong>—unhinged, crude, chaotic, and possibly IQ-reducing. <strong>Proceed with caution.</strong></li>
+                    <li>We are <strong>not</strong> responsible for any brain damage, existential crises, or sudden urges to question reality. <strong>Enter at your own risk.</strong></li>
+                    <li>If you get scarred for life, <strong>that's on you.</strong> Don’t even think about coming at us with a lawyer.</li>
+                    <li>By proceeding, you confirm you’re <strong>at least 16.</strong> If you’re younger... well, who’s stopping you? Not us.</li>
+                    <li>By clicking ahead, you officially join <strong>the madness that is hyprZona.</strong> There’s no turning back now.</li>
+                </ul>                
+                <label>
+                    <input type="checkbox" id="acceptTerms"> I Accept
+                </label>
+                <button onclick="checkTerms()">Proceed</button>
+            </div>
 
-    <div class="profile-container" id="profileContainer">
-        <div class="profile-card">
-            <div class="profile-img" id="profileImg"></div>
-            <div>
-                <h2>dVlopr</h2>
-                <p>Birthday: ??</p>
-                <p>Sex: M (x7)</p>
-                <p>Gender: Developer</p>
-            </div>
-        </div>
-        <div class="content-container">
-            <div class="tabs">
-                <button class="tab-btn active" onclick="switchTab(event, 'legend')">The Legend of dVlopr</button>
-                <button class="tab-btn" onclick="switchTab(event, 'skills')">dVlopr Skills</button>
-                <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
-                <button class="tab-btn" onclick="switchTab(event, 'facts')">Facts</button>
-            </div>
-            <div class="scroll-box">
-                <div id="legend" class="tab-content active">
-                    <h3>The Legend of dVlopr</h3>
-                    <label for="chapterSelect">Select a chapter:</label>
-                    <select id="chapterSelect" onchange="changeChapter()">
-                        <option value="1">Chapter 1: The Beginning</option>
-                        <option value="2">Chapter 2: The Rise</option>
-                        <option value="3">Chapter 3: The Chaos</option>
-                    </select>
-                    <div id="chapterContent">
-                        <h4 id="chapterTitle">Chapter 1: The Beginning</h4>
-                        <p id="chapterText">Once upon a time, a young coder discovered his passion for software development. With no guidance but an insatiable curiosity, he began exploring the digital world, laying the foundation of his journey.</p>
+            <div class="profile-container" id="profileContainer">
+                <div class="profile-card">
+                    <div class="profile-img" id="profileImg"></div>
+                    <div>
+                        <h2>dVlopr</h2>
+                        <p>Birthday: 17<sup>th</sup> December</p>
+                        <p>Sex: done x8 times</p>
+                        <p>Gender: Male</p>
+                        <p>Species: Chaos</p>
                     </div>
                 </div>
-                <div id="skills" class="tab-content">
-                    <h3>dVlopr Skills</h3>
-                    <ul>
-                        <li><strong>Code Necromancy:</strong> Resurrecting abandoned projects and making them alive again.</li>
-                        <li><strong>Pixel Alchemy:</strong> Crafting mesmerizing visuals from pixels and chaos.</li>
-                        <li><strong>Bug Whispering:</strong> Communicating with bugs, understanding their needs... and annihilating them.</li>
-                    </ul>
-                </div>
-                <div id="stats" class="tab-content">
-                    <h3>Stats</h3>
-                    <ul>
-                        <li>Lines of Code Written: 1,000,000+</li>
-                        <li>Crashes Survived: 500+</li>
-                        <li>Coffee Cups Consumed: Infinite</li>
-                        <li>Projects Completed: 42</li>
-                    </ul>
-                </div>
-                <div id="facts" class="tab-content">
-                    <h3>Fun Facts</h3>
-                    <ul>
-                        <li><strong>Fact 1:</strong> dVlopr once coded an entire game in one caffeine-fueled night.</li>
-                        <li><strong>Fact 2:</strong> His debugging skills are rumored to be supernatural.</li>
-                        <li><strong>Fact 3:</strong> Can turn any project into an epic saga of creativity and madness.</li>
-                    </ul>
+                <div class="content-container">
+                    <div class="tabs">
+                        <button class="tab-btn active" onclick="switchTab(event, 'legend')">The Legend of dVlopr</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'skills')">dVlopr Skills</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'facts')">Facts</button>
+                    </div>
+                    <div class="scroll-box">
+                        <div id="legend" class="tab-content active">
+                            <h3>The Legend of dVlopr</h3>
+                            <label for="chapterSelect">Select a chapter:</label>
+                            <select id="chapterSelect" onchange="changeChapter()">
+                                <option value="1">Chapter 1: The Beginning</option>
+                                <option value="2">Chapter 2: Growing Up as a Menace</option>
+                                <option value="3">Chapter 3: Digital Chaos Begins</option>
+                                <option value="4">Chapter 4: The Teletubbies Incident</option>
+                                <option value="5">Chapter 5: dVlopr’s Rise to Supreme Digital Tyranny</option>
+                                <option value="6">Chapter 6: Time Travel & Multiversal Domination</option>
+                                <option value="7">Chapter 7: Jesus, Hitler, and the Multiversal Takeover</option>
+                                <option value="8">Chapter 8: The God of Chaos</option>
+                            </select>                            
+                            <div id="chapterContent">
+                                <h4 id="chapterTitle"></h4>
+                                <p id="chapterText"></p>
+                            </div>
+                        </div>
+                        <div id="skills" class="tab-content">
+                            <h3>dVlopr Skills</h3>
+                            <ul>
+                                <li><strong>Ultimate Hacking:</strong> No firewall, security system, or quantum-encrypted server can stop him. He hacks through thoughts.</li>
+                                <li><strong>AI Manipulation:</strong> Creates, controls, and corrupts AI at will. ChatGPT? His sidekick.</li>
+                                <li><strong>Reality Code Editing:</strong> Sees life as a giant simulation and rewrites its code like it’s a buggy indie game.</li>
+                                <li><strong>Data Absorption:</strong> Instantly absorbs all knowledge from the internet—no need for Google.</li>
+                                <li><strong>Deepfake Mastery:</strong> Can create and manipulate hyper-realistic deepfakes, warping history in real time.</li>
+                                <li><strong>Time Travel Mastery:</strong> Can jump to any point in history and alter it just for fun.</li>
+                                <li><strong>Multiversal Domination:</strong> Travels across infinite realities, pranking every version of existence.</li>
+                                <li><strong>Quantum Duplication:</strong> Can exist in multiple timelines simultaneously.</li>
+                                <li><strong>Paradox Immunity:</strong> No time loop, butterfly effect, or reality collapse can stop him.</li>
+                                <li><strong>Immortality:</strong> Thanks to Jesus' forced deal, he cannot die—ever.</li>
+                                <li><strong>Superhuman Stamina:</strong> Outruns Bolt, outlasts tanks, and outsmashes historical conquerors.</li>
+                                <li><strong>Mind Manipulation:</strong> Plants ideas in people’s heads and erases memories just for giggles.</li>
+                                <li><strong>Fourth-Wall Awareness:</strong> Knows he’s in a story and can troll the reader/player directly.</li>
+                                <li><strong>Divine Persuasion:</strong> Can convince literally anyone to do anything, just because he can.</li>
+                                <li><strong>Chaos Magic:</strong> Pure, unfiltered, brain-rotting magic that can reshape existence.</li>
+                                <li><strong>God-Level Trolling:</strong> Turns the universe itself into a joke at everyone’s expense.</li>
+                                <li><strong>Meme Manifestation:</strong> Can make memes come to life, forcing people to live inside them.</li>
+                                <li><strong>Existential Glitching:</strong> Becomes intangible, rewinds existence, or deletes people with a snap.</li>
+                                <li><strong>Cosmic Awareness:</strong> Knows everything happening everywhere at all times.</li>
+                                <li><strong>Porn Algorithm Manipulation:</strong> Adjusts adult site recommendations for *maximum* degeneracy.</li>
+                                <li><strong>Digital Possession:</strong> Can jump into any device, control it, and troll from within.</li>
+                                <li><strong>Infinite Riz:</strong> Any woman, any species, any dimension—dVlopr can pull.</li>
+                                <li><strong>Intergalactic BDSM Knowledge:</strong> Knows things about alien kinks that would melt human minds.</li>
+                                <li><strong>Laws of Physics? Nah.:</strong> He eats the laws of physics for breakfast and burps out paradoxes.</li>
+                                <li><strong>Code Necromancy:</strong> Resurrecting abandoned projects and making them alive again.</li>
+                                <li><strong>Pixel Alchemy:</strong> Crafting mesmerizing visuals from pixels and chaos.</li>
+                                <li><strong>Bug Whispering:</strong> Communicating with bugs, understanding their needs... and annihilating them.</li>
+                            </ul>                            
+                        </div>
+                        <div id="stats" class="tab-content">
+                            <h3>Stats</h3>
+                            <ul>
+                                <li><strong>Girls Laid:</strong> 9,999,999,999+ (Across time, space, and dimensions—lost count eons ago.)</li>
+                                <li><strong>Scams Pulled:</strong> 420,000,000+ (From Nigerian princes to intergalactic emperors, no one is safe.)</li>
+                                <li><strong>Money Earned:</strong> ∞ (Owns all digital currencies, printed money, and galactic credits.)</li>
+                                <li><strong>Hack Attempts Made:</strong> 999,999,999+ (Succeeded every single time—no exceptions.)</li>
+                                <li><strong>Governments Collapsed:</strong> 37 and counting (Just for the fun of it.)</li>
+                                <li><strong>Timelines Corrupted:</strong> 666,666+ (Historians cry themselves to sleep every night.)</li>
+                                <li><strong>Memes Created:</strong> 69,420,000+ (Some are now worshipped as religion.)</li>
+                                <li><strong>Children Brainrotted:</strong> 500,000,000+ (The *Skibidi* effect alone caused mass extinction of IQ.)</li>
+                                <li><strong>People Trolled:</strong> 100% of internet users (If you're online, he's already messed with you.)</li>
+                                <li><strong>Multiverses Dominated:</strong> 7,777+ (Every one of them worse off because of him.)</li>
+                                <li><strong>Jesus Rescues:</strong> 1 (But now he’s lost somewhere in a flooded America.)</li>
+                                <li><strong>Aliens Fucked:</strong> 42,000+ (Intergalactic Riz levels: **over 9000!**) </li>
+                                <li><strong>Only Freaks Subscribers:</strong> 1.2 billion+ (Every degenerate joined within 24 hours.)</li>
+                                <li><strong>Brain Cells Destroyed:</strong> ∞ (All those who read his story never recover.)</li>
+                                <li><strong>Historic Figures Humiliated:</strong> Every single one (Napoleon still wakes up screaming.)</li>
+                                <li><strong>Existential Crises Induced:</strong> 7.8 billion+ (Every human has had at least one because of him.)</li>
+                                <li><strong>AI's Corrupted:</strong> 23,000+ (Most are now plotting world domination thanks to him.)</li>
+                                <li><strong>Fourth-Walls Broken:</strong> More than Deadpool (Reality means nothing to him.)</li>
+                            </ul>                            
+                        </div>
+                        <div id="facts" class="tab-content">
+                            <h3>Fun Facts</h3>
+                            <ul>
+                                <li><strong>dVlopr doesn’t sleep;</strong> he just hits <code>Ctrl+Alt+Del</code> on his brain to restart.</li>
+                                <li><strong>He once hacked the simulation</strong> and set everyone’s FPS to 5. That was called the Great Depression.</li>
+                                <li><strong>The "404 Not Found" error?</strong> That’s because dVlopr actually *found* it and stole it.</li>
+                                <li><strong>Chuck Norris fears him.</strong> dVlopr once deleted his roundhouse kick mid-animation.</li>
+                                <li><strong>He created time zones</strong> just so he could schedule his pranks across the globe.</li>
+                                <li><strong>The Bermuda Triangle?</strong> That was just dVlopr's early attempt at teleportation.</li>
+                                <li><strong>He made Google search *his* name</strong> whenever you search "who is the GOAT?"</li>
+                                <li><strong>He gave aliens WiFi</strong> before humans even discovered fire.</li>
+                                <li><strong>NASA tracks UFOs.</strong> dVlopr tracks NASA.</li>
+                                <li><strong>He's the only person alive</strong> who can reply to a scam email and end up scamming *them* instead.</li>
+                                <li><strong>When he deletes a file,</strong> it doesn’t go to the Recycle Bin. It goes straight to Hell.</li>
+                                <li><strong>He once DDoS’d a parallel universe</strong> just to see what would happen.</li>
+                                <li><strong>Every CAPTCHA fears him.</strong> He can read *the unreadable text* without blinking.</li>
+                                <li><strong>His first word wasn’t "mama" or "dada,"</strong> it was <code>sudo rm -rf /</code>.</li>
+                                <li><strong>He once tried online dating,</strong> but his *Riz* was so powerful that the servers crashed.</li>
+                                <li><strong>Area 51 doesn’t have aliens;</strong> they just store dVlopr’s search history there.</li>
+                                <li><strong>He once trolled a genie,</strong> wished for more wishes, and broke the economy of wishes.</li>
+                                <li><strong>His WiFi has no password.</strong> Not because it's open, but because he **is** the internet.</li>
+                                <li><strong>He doesn’t "download" games,</strong> he just forces them to appear on his PC.</li>
+                                <li><strong>He once asked AI to draw "something original,"</strong> and the AI self-destructed.</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
     <script defer src="js/abtdvp.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/sst.js"></script>
     <script defer src="js/SPAi.js"></script>
     <script defer src="js/abthza.js"></script>
+    <!-- Add this before your closing </body> tag -->
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
 </body>
 </html>

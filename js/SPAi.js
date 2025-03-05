@@ -85,12 +85,67 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Initial state
+        assistiveBall.style.opacity = '1';
+        assistiveBall.style.transition = 'opacity 1s ease-in-out';
+
+        // Add delay and fade effect
+        setTimeout(() => {
+            if (aiContainer.style.display === 'none') {
+                assistiveBall.style.opacity = '0.15';
+            }
+        }, 10000);
+
+        let chatTimer; // Timer for chat auto-hide
+
+        // Function to handle chat auto-hide
+        const hideChat = () => {
+            aiContainer.style.display = 'none';
+            assistiveBall.style.opacity = '0.15';
+        };
+
+        // Reset chat timer on any interaction
+        const resetChatTimer = () => {
+            clearTimeout(chatTimer);
+            if (aiContainer.style.display !== 'none') {
+                chatTimer = setTimeout(hideChat, 15000);
+            }
+        };
+
+        // Add interaction listeners to all interactive elements
+        aiContainer.addEventListener('mousemove', resetChatTimer);
+        aiContainer.addEventListener('click', resetChatTimer);
+        aiContainer.addEventListener('scroll', resetChatTimer);
+        categorySection.addEventListener('mousemove', resetChatTimer);
+        questionSection.addEventListener('mousemove', resetChatTimer);
+
+        // Update assistive ball click handler
         assistiveBall.addEventListener('click', () => {
-            aiContainer.style.display = aiContainer.style.display === 'flex' ? 'none' : 'flex';
+            clearTimeout(chatTimer);
+            assistiveBall.style.opacity = '1';
+            
+            if (aiContainer.style.display === 'none') {
+                aiContainer.style.display = 'flex';
+                chatTimer = setTimeout(hideChat, 15000);
+            } else {
+                hideChat();
+            }
+        });
+
+        // Add hover effects
+        assistiveBall.addEventListener('mouseover', () => {
+            assistiveBall.style.opacity = '1';
+        });
+
+        assistiveBall.addEventListener('mouseout', () => {
+            if (aiContainer.style.display === 'none') {
+                assistiveBall.style.opacity = '0.15';
+            }
         });
 
         categorySection.addEventListener('click', (e) => {
             if (e.target.classList.contains('category-title')) {
+                resetChatTimer();
                 document.querySelectorAll('.category-title').forEach(el => el.classList.remove('active'));
                 e.target.classList.add('active');
                 displayQuestions(e.target.dataset.category);
@@ -99,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         questionSection.addEventListener('click', (e) => {
             if (e.target.classList.contains('faq-question')) {
+                resetChatTimer();
                 const questionText = e.target.textContent;
                 const responseText = e.target.dataset.response;
 

@@ -7,6 +7,47 @@ document.addEventListener('DOMContentLoaded', () => {
     
     let currentIndex = 0;
     let isAnimating = false;
+    let fadeTimeout;
+
+    // Initialize summary circle state
+    if (summaryCircle) {
+        summaryCircle.style.opacity = '1';
+        summaryCircle.style.transition = 'opacity 1s ease-in-out';
+
+        // Fade after 10 seconds
+        fadeTimeout = setTimeout(() => {
+            if (summaryPanel.style.display !== 'block') {
+                summaryCircle.style.opacity = '0.15';
+            }
+        }, 10000);
+
+        // Update click handler
+        summaryCircle.addEventListener('click', () => {
+            clearTimeout(fadeTimeout);
+            summaryCircle.style.opacity = '1';
+            
+            if (summaryPanel.style.display === 'block') {
+                summaryPanel.style.display = 'none';
+                // Fade after closing panel
+                fadeTimeout = setTimeout(() => {
+                    summaryCircle.style.opacity = '0.15';
+                }, 1000);
+            } else {
+                summaryPanel.style.display = 'block';
+            }
+        });
+
+        // Add hover effects
+        summaryCircle.addEventListener('mouseover', () => {
+            summaryCircle.style.opacity = '1';
+        });
+
+        summaryCircle.addEventListener('mouseout', () => {
+            if (summaryPanel.style.display !== 'block') {
+                summaryCircle.style.opacity = '0.15';
+            }
+        });
+    }
 
     function showCard(index) {
         if (isAnimating || index === currentIndex) return;

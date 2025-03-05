@@ -115,12 +115,11 @@ html {
     0 0 30px rgba(0, 255, 255, 0.2),
     inset 0 0 15px rgba(0, 255, 255, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  animation: pulse-nav 2s infinite;
   z-index: 9999;
+  /* Remove the default animation */
 }
 
 .assistive-ball:hover {
-  animation: none;
   transform: scale(1.1);
   background-color: rgba(0, 255, 255, 0.2);
   box-shadow: 
@@ -130,9 +129,9 @@ html {
     inset 0 0 20px rgba(0, 255, 255, 0.5);
 }
 
-.assistive-ball:active {
-  transform: scale(0.95);
-  transition: transform 0.1s;
+/* Add a class for active state */
+.assistive-ball.active {
+  animation: pulse-nav 2s infinite;
 }
 
 /* Chromatic Aberration Effect */
