@@ -1,6 +1,6 @@
 function setProfileImage() {
     const profileImg = document.getElementById('profileImg');
-    profileImg.style.backgroundImage = 'url("https://lh3.googleusercontent.com/pw/AP1GczPkGoAGmKGmY-v5fgytenSgUbvVwzcjclnZGrwhrp4b2czXIlZQIxqYccLk8Cb0jHG6X_fEM2T3vXBUO9PCs8VLxp71BaSNlLo5QvHkRyV3uP-0mSQTAcaiCLcwm-jr3H4_bsb_qmWur3QND2RKHIvA=w880-h880-s-no-gm?authuser=0")';
+    profileImg.style.backgroundImage = 'url("https://lh3.googleusercontent.com/pw/AP1GczOaBcAHMLzIsoB70P3ECQtML2RAtP_RZhuMUDmxE6yRafg9AUFAa-y8-_d22uY6JbGSEW-6MMseXrsq_XO5Txox4y5kzdtaAt04kwzw0HA3_VxebjqfazLu58GbqfDqsamOOHpzE2y0GQmua1F-LQL0=w880-h880-s-no-gm?authuser=0")';
     profileImg.style.backgroundSize = 'cover';
     profileImg.style.backgroundPosition = 'center';
 }

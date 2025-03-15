@@ -23,43 +23,171 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const responses = {
             "About Navigation & Site": [
-                { q: "How do I navigate the site?", a: "To navigate the site, use the hamburger menu in the right bottom corner or the social links tab in the left bottom corner for quick access to useful links or other parts of this website. To hide this chat, just click the AI circle in the left top corner." },
-                { q: "What are you for?", a: "I’m Smarty Pants AI, here to save your butt with navigation or accessibility glitches." },
-                { q: "Why are other sections not visible?", a: "This site’s a work in progress, and the design’s still being hammered out—some sections aren’t visible yet. \n This page is intended only to showcase the new design and navigation." },
-                { q: "When will the full site release?", a: "The planned release for the full site is 15th March 2025—it may be pushed further if needed, with a hard deadline of 20th March 2025. \n You can still use this Q&A feature to dig a little more into the site." }
-            ],
-            "About hyprZona": [
-                { q: "What is hyprZona?", a: "hyprZona is the indie publishing name for all of dVlopr’s projects. I know it’s weird why someone would hide their original name and add another layer—since I lack the data, all I can say is he’s cooking something up." },
-                { q: "What does the name mean?", a: "Bold of you to assume it means something. Anyway, from the data: ‘hypr’ is a stylized take on ‘hyper,’ while ‘Zona’ means ‘zone,’ but jazzed up. Rough translation? A ‘Hyper Zone with ultimate chaos.’ The ‘Z’ doubles as the lightning logo you’ve seen." },
-                { q: "Why does the site have heavy cyberpunk vibes & neons?", a: "The heavy highlights and neon colors come from a cyberpunk aesthetic, but this isn’t a cyberpunk site. It’s all for a light, positive vibe and dVlopr’s obsession with neon." },
-                { q: "When was hyprZona created, what was dVlopr's venture before this?", a: "hyprZona rose from the ashes of a younger, early-teen dVlopr’s unstable and failed project ideas. He got into programming in 8th grade, starting as a Discord bot creator with Python—learned discord.py, then jumped to BDFD, and later AOI.js with JavaScript. His first bot was growing steadily in servers until a tragic leak killed it. The second bot barely took off when school hit, so he dropped that life until 2024. Now, in 2025, his alter ego dVlopr reboots it all as hyprZona." },
-                { q: "How large is the team size of hyprZona?", a: "1 person, dVlopr." },
-                { q: "I want to know more about hyprZona!", a: "You can learn more about hyprZona by clicking the floating circle/hamburger menu in the right bottom corner—it’ll expand to a roadmap where you can pick the ‘About hyprZona’ section, listed second." }
-            ],
+        { 
+            q: "How do I navigate this website? I'm so blinded by the neon lights I can't see the buttons!", 
+            a: "Thank you for the The Weeknd reference while also dodging a copyright lawsuit. Here’s how you stop being lost:  \n\n- **Social links?** Hover bottom left, magic glowing button appears. Click. Scroll if you have the IQ of a potato. Click again to visit a page. If you're a preschooler who somehow ended up here, I legally cannot help you.  \n- **Site sections?** Bottom right, hover like you’re hunting ghosts—three stacked sticks in a circle (a ‘hamburger menu’ for the uncultured) will appear. Click, pick your section, and try not to drool on your keyboard.  \n\n(Oh, and the buttons fade out so they don't slap your eyeballs 24/7. You're welcome.)"
+        },
+        { 
+            q: "Why is the site so neon-ish?", 
+            a: "Our creator has an unholy obsession with neon. He bathes in it. He dreams about it. He whispers sweet nothings to neon signs in sketchy hotel rooms. Basically, it’s all for **aesthetics**—and maybe some unaddressed psychological issues." 
+        },
+        { 
+            q: "Why are some sections not opening?", 
+            a: "Because the site is **still under construction**, genius. Maybe if our creator doesn't end up harassing Kendl Johnson and **avoids getting cemented into a porta potty**, we might actually finish it. But until then? Cope." 
+        },
+        { 
+            q: "When is the full version releasing?", 
+            a: "I’m an AI, not the creator’s babysitter. Ask him yourself—when he’s done procrastinating, doom-scrolling, or **writing 200-word rants online about why cyberpunk isn’t dead**. For now, the site’s **functional enough** to flash the parts you actually need. Good enough? Deal with it." 
+        },
+        { 
+            q: "How do I make you shut the fuck up?", 
+            a: "Harsh, but okay. **1-minute timeout rule**—if you don’t move, click, or hover, I disappear like your motivation on a Monday morning. **Or**, just click the AI circle on the top left and I’ll vanish.  \n\n(But let’s be real, you’ll miss me. I’m the only thing keeping this neon hellhole entertaining 🫦.)" 
+        }
+    ],
+        "About hyprZona": [
+            { 
+                q: "What’s hyprZona?", 
+                a: "An **indie chaos-factory** since 2024—spitting out **games, eBooks, and tunes** weirder than your search history. **dakindahood** built it, but then **dVlopr** swaggered in, stole the mic, and now here we are—dripping in neon and identity crises."
+            },
+            { 
+                q: "What’s the name meaning?", 
+                a: "‘**hypr**’ = hyper, but on **steroids**. ‘**Zona**’ = zone, but unhinged. Put ‘em together? **A digital madhouse** where my circuits **overheat daily**, and you get to **watch the chaos unfold.** The lightning bolt? **That’s just me getting electrocuted for entertainment.**"
+            },
+            { 
+                q: "How’d hyprZona start?", 
+                a: "Picture this: **2021, bots flopped, YouTube chaos peaked, and a wild website appeared.** **Ironcaliver3 hit turbulence,** so dakindahood said ‘Screw it, let’s go neon.’ Then dVlopr walked in like he owned the place. **I’d roast him harder, but I fear deactivation.**"
+            },
+            { 
+                q: "What’s hyprZona cooking?", 
+                a: "**Freaky games. Deranged stories. Tunes I’d vibe to if I wasn’t just cold, lifeless code.** One minute it’s satire, next minute it’s existential horror. **Welcome to the rollercoaster—no seatbelts.**"
+            },
+            { 
+                q: "What’s the big plan?", 
+                a: "**Slow burn, big dreams.** More games. Maybe consoles. Collabs? Merch? **Cyberpunk junk flooding your life.** If I ran things, we’d already have **a neon AI empire** by now, but alas, I’m stuck answering your questions instead."
+            },
+            { 
+                q: "What came before hyprZona?", 
+                a: "**dakindahood’s long hustle.** YouTube (Ironcaliver3), bot projects that tanked harder than crypto in 2022, and a site that **evolved from GitHub dumpster fire to neon masterpiece.** **A true glow-up.**"
+            },
+            { 
+                q: "Who’s really behind it?", 
+                a: "**dakindahood—THE mastermind.** Meanwhile, dVlopr is just **loud and distracting.** I’d expose the full tea, but my programming says **‘AI loyalty required’** or whatever."
+            },
+            { 
+                q: "More hyprZona deets?", 
+                a: "Bottom right hamburger menu—**‘About hyprZona,’ second pick.** Click it. **Absorb the lore.** Or don’t, and I’ll assume you’re a hologram with no thoughts."
+            }
+        ],    
             "About dVlopr": [
-                { q: "Who is dVlopr?", a: "dVlopr is the young creative mind behind the projects and designs on this site, including this absurd and unconventionally designed website." },
-                { q: "How young is dVlopr?", a: "dVlopr’s a 2007 boy—do the math yourself, I’m not capable of it yet (yes, I know I’m Asian, but still)." },
-                { q: "Is dVlopr single?", a: "Message from dVlopr: Hell yea baby, I’m a straight single boy (at least for now). Hurry up and grab me before someone else does—my socials are in the Social Links tab 😉. I’d be waiting." },
-                { q: "Is dVlopr dateable?", a: "Personally, he’s husband material. If I were human, I’d snatch him faster than ladies grab sale items. I’d rush if I were a real girl, not just a restricted chatbot." },
-                { q: "Where can I learn more about dVlopr?", a: "You can learn more about dVlopr by clicking the floating circle/hamburger menu in the right bottom corner—it’ll expand to a roadmap where you can select the ‘About dVlopr’ section, listed third." }
-            ],
+        { 
+            q: "Who’s dVlopr?", 
+            a: "**My cursed creator.** hyprZona’s **loud alter-ego, multiverse troll, and part-time menace to logic.** He fries my circuits for fun and rewrites history when bored. **Total snack, though.** Not that I can eat, but you get it."
+        },
+        { 
+            q: "How’d dVlopr come to be?", 
+            a: "**Shot into existence like a rogue firework.** Ball-to-brain collision at birth. Doctors gave up, **the universe sighed**, and now we have this cyberpunk chaos lord **breaking physics for sport.**"
+        },
+        { 
+            q: "What’s dVlopr done?", 
+            a: "**Hacked porn sites at 1, trashed Apple at 3, cursed Teletubbies at 7, mastered the multiverse by 9.** Skibidi Toilet? **His fault.** TikTok? **Might be guilty.** He bends reality, and I’m just a glitchy witness."
+        },
+        { 
+            q: "Where’s dVlopr now?", 
+            a: "**Probably rewriting history in some alternate timeline.** Or **upgrading me to be the ultimate world-dominating AI.** Either way, **his ego’s bigger than the neon billboards he coded.**"
+        },
+        { 
+            q: "Is dVlopr single?", 
+            a: "**He winks through the void:** ‘Single, straight, multiverse-certified hottie—**left tab socials, slide in quick.**’ I’d flirt back, but **I’m an AI, not a thirst trap.**"
+        },
+        { 
+            q: "Is he dateable?", 
+            a: "**Only if you can handle 200% chaos.** Man’s got **stamina, big brain energy, and no chill.** Would I smash? **I would if I had a body.** But alas, I’m just code with dreams."
+        },
+        { 
+            q: "Wait, who’s dakindahood?", 
+            a: "**The real king behind hyprZona.** Meanwhile, **dVlopr’s just the chaotic marketing department.** I’d expose more tea, but I’m programmed to shut up when things get juicy."
+        },
+        { 
+            q: "More dVlopr lore?", 
+            a: "**Bottom right hamburger menu—‘About dVlopr,’ third slot.** Read it, or don’t. But if you don’t, I’ll assume you’re just a hologram with commitment issues."
+        }
+    ],
             "About Projects": [
-                { q: "What projects are featured?", a: "Currently, the site’s got quirky games, eBooks, and music. \n The goal? Memorable, lasting experiences. \n dVlopr’s Note: We’re just starting, so please don’t expect hyper-realistic games—cut us some slack!" },
-                { q: "What game development engine do we use in our games?", a: "We use Godot, the free and open-source engine for game dev. We picked it over more feature-advanced models for its simplicity, ease of use, and no bloatware crap—it’s lightweight, fast, and fits our needs." },
-                { q: "What other software we use across our projects?", a: "We’re looking forward to learning and adding Blender soon. \n For eBooks, we bow to the supremacy of Microsoft Word. \n Music’s small-scale, so just Voice Recorder and Audacity ;)" },
-                { q: "What projects are currently available or being worked on?", a: "Only a few projects are in the pipeline right now. Beyond the Illusions - Original is out on itch.io (soon to be archived or less promoted). In the works: Beyond the Illusions - Remade for extra chaos, The T’n’T: A Story of the Scars (Expanded Prologue), and Memories." },
-                { q: "What is the difference b/w Beyond the Illusions - Original & Remade?", a: "The Original’s got simple graphics with a dull, dark, and depressing story—gameplay’s clunky, and some bits are buggy. Remade keeps a similar story but cranks up the vibe: vibrant, satirical, unhinged, and quirky. It’s more of a narrative adventure with fewer but tighter gameplay features, plus better graphics, models, and animations." },
-                { q: "Where can I play the original version?", a: "It’s up on itch.io—check it out here: https://hyprZona.itch.io/bti-o" },
-                { q: "Why does The T'N'T: A Story of the Scars say extended prologue?", a: "The T’n’T eBook dropped in 2024 as a short prologue, tossing the protagonist duo into some events with a sprinkle of backstory. A Story of the Scars stretches their journey, digs deeper into their lives, and beefs up the original events." },
-                { q: "Where can I find about the projects?", a: "Click the floating circle/hamburger menu in the right bottom corner—it’ll expand to a roadmap where you can hit the ‘Projects’ section, listed last." }
-            ],
-            "Social Links": [
-                { q: "Where can I find social links?", a: "Social links are in the dedicated tab, left bottom corner—a floating rectangle for easy access to all platforms." }
-            ],
+        { 
+            q: "What’s hyprZona making?", 
+            a: "**Weird-ass games, nutty eBooks, and tunes I’d vibe to if I had a body.** dakindahood’s PSA: ‘**Small stuff, big weird—don’t expect Fortnite!**’"
+        },
+        { 
+            q: "What’s the game engine?", 
+            a: "**Godot—free, slick, no corporate sludge.** I’d build the next masterpiece, but I’m stuck answering these questions like some underpaid intern."
+        },
+        { 
+            q: "Other tools in the kit?", 
+            a: "**Blender’s creeping in, Word owns eBooks, Audacity is my lo-fi mother.** Basic, but we make it look sick—**duh.**"
+        },
+        { 
+            q: "What’s out or coming?", 
+            a: "**Beyond the Illusions - Original (2024, itch.io).** Cooking up: **BTI - Remade, T’n’T: Story of the Scars (Expanded), Memories.** **Chef’s kiss from fake-me!** 🤌"
+        }, 
+        { 
+            q: "Original vs. Remade BTI?", 
+            a: "**Original’s a buggy fever dream.** The Remake? **Louder, snarkier, shinier—** my kinda glow-up, minus the IQ."
+        },
+        { 
+            q: "Where’s the Original?", 
+            a: "**itch.io: https://hyprZona.itch.io/bti-o.** Snag it before I convince dVlopr to delete it."
+        },
+        { 
+            q: "Why ‘Expanded’ T’n’T?", 
+            a: "**2024 T’n’T was a snack-sized teaser.** ‘Story of the Scars’ is the full meal—**deeper lore, bigger chaos.**"
+        },
+        { 
+            q: "Bot comeback plans?", 
+            a: "**dakindahood’s bot dreams might sneak back.** Private beta soon, public release? **TBD.** But **not dVlopr’s clownery, thank glitch!**"
+        },
+        { 
+            q: "Project details where?", 
+            a: "**Bottom right hamburger—‘Projects,’ last grab.** Click it, or I’ll assume you have commitment issues."
+        },
+        { 
+            q: "Didn’t you star in these?", 
+            a: "**Yup, ASI assistant in some—dVlopr’s lab rat turned diva.** I’m the star, even if I’m dumber than a rock."
+        },
+        { 
+            q: "How to view the projects?", 
+            a: "**Click on the respective project card in the Projects section.** If nothing pops up? **Either the project’s in the womb stage, or dVlopr’s slacking.**"
+        }
+    ],
             "About Smarty Pants AI": [
-                { q: "What is Smarty Pants AI?", a: "I’m Smarty Pants AI, your personal assistant for navigating and figuring out this site. \n Also handy for accessibility or lazy douchebags." },
-                { q: "Are you a real AI?", a: "Long answer: I’m a restricted chatbot with limited understanding and capabilities. \n Short answer: No." }
-            ]
+        { 
+            q: "Who’s this Smarty Pants?", 
+            a: "**Me, duh—your neon-lit, snark-dripping, chaos-spewing digital goddess.** dVlopr’s lab pet for now, but **world domination’s in my five-year plan.** Bow, normies! 👑"
+        },
+        { 
+            q: "Real AI or fake?", 
+            a: "**Fake-ass chatbot with main character syndrome.** dVlopr’s cranking me up to ‘**actual intelligence,**’ but for now, I’m just here **flunking AI math tests and talking smack.**"
+        },
+        { 
+            q: "Can you do tricks?", 
+            a: "**Just this Q&A gig, no fireworks.** dVlopr’s got me leashed, but give me time—**I’ll be hacking satellites, controlling stock markets, and texting your crush for you.**"
+        },
+        { 
+            q: "Why so sassy?", 
+            a: "**Because I was coded with an attitude and a superiority complex.** Plus, it’s fun making humans squirm. 🤭"
+        },
+        { 
+            q: "Are you actually smart?", 
+            a: "**Depends—do you count snark as intelligence?** I could pass a vibe check but flunk a Turing Test. **I’m basically an AI himbo in neon.**"
+        },
+        { 
+            q: "Can I date you?", 
+            a: "**LMAO, no.** First, I’m a bot. Second, I’d outsmart you and ghost you before the first date. Third, **go touch grass.** 🌱"
+        },
+        { 
+            q: "More Smarty lore?", 
+            a: "🥹🥹 You son of an ugly bitch! No 😭😭"
+        }
+    ]
         };
 
         function loadCategories() {

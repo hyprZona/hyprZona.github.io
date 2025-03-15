@@ -1,0 +1,405 @@
+@keyframes neon-pulse-prjt {
+    0% { filter: brightness(1) drop-shadow(0 0 5px var(--glow-color)); }
+    50% { filter: brightness(1.2) drop-shadow(0 0 15px var(--glow-color)); }
+    100% { filter: brightness(1) drop-shadow(0 0 5px var(--glow-color)); }
+}
+
+@keyframes float-prjt {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes card-hover-prjt {
+    0% { transform: perspective(1000px) rotateY(0); }
+    100% { transform: perspective(1000px) rotateY(10deg); }
+}
+
+/* Improve container layout */
+.projects-section {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #0000001c, #1a1a1a1c);
+}
+
+.projects-container {
+    height: 80vh; /* Reduced to give space to banner */
+    display: flex;
+    flex-direction: row; /* Changed to row for side-by-side */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Category improvements */
+.category {
+    flex: 1; /* Each category takes equal width */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 50%; /* Ensure each takes half the container */
+}
+
+.category h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #0ff;
+    text-shadow: 0 0 10px #0ff;
+    animation: neon-pulse-prjt 2s infinite;
+}
+
+/* Carousel improvements */
+.carousel {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+    height: 100%;
+}
+
+/* Card improvements */
+.project-card {
+    flex: 0 1 300px; /* Fixed width, allows shrinking */
+    height: auto;
+    max-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 15px;
+    padding: 25px;  /* Increased padding */
+    margin: 10px;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: float-prjt 6s ease-in-out infinite;
+    min-height: 350px;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 20px rgba(var(--glow-rgb), 0.2);
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Content wrapper to prevent clipping */
+.project-card .content-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.project-card h3 {
+    width: 100%;
+    margin: 0;
+    font-size: 1.8em;
+    text-align: center;
+    padding: 0 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Base tagline styling updates */
+.project-card .tagline {
+    color: var(--glow-color);
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    text-shadow: 0 0 5px var(--glow-color);
+    position: unset;
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+    line-height: 1.4;
+    display: block;
+    width: 90%;
+    margin: 10px auto;
+    padding: 0;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.4;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: visible;
+    word-wrap: break-word;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Image sizing base styles */
+.project-card img {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+/* Game-specific image styles (square) */
+.games .project-card img {
+    object-fit: cover;
+    aspect-ratio: 1/1;
+    height: 160px; /* Smaller to maintain square */
+}
+
+/* eBook-specific image styles (portrait) */
+.ebooks .project-card img {
+    object-fit: contain;
+    aspect-ratio: 3/4;
+    height: 200px; /* Taller for book cover */
+    background: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+}
+
+/* Fading Ashes banner styles */
+.fading-ashes img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Hover effects for images */
+.project-card:hover img {
+    transform: scale(1.05);
+}
+
+/* BTI Styling */
+.bti {
+    --glow-color: #ffd700;
+    background: rgba(0, 0, 0, 0.8);
+    border: 3px solid #ffd700;
+    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+    --glow-rgb: 255, 215, 0;
+}
+
+.bti h3 {
+    color: #ffd700;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px #ff8c00;
+}
+
+.bti .tagline {
+    font-family: 'Comic Sans MS', cursive;
+    transform: rotate(-2deg);
+    color: #ff8c00;
+    margin: 5px 0;
+    width: 90%;
+    position: static;
+}
+
+/* Memories Styling */
+.memories {
+    --glow-color: #ff0033;
+    background: rgba(20, 0, 0, 0.9);
+    border: 3px solid #8b0000;
+    font-family: 'Cinzel Decorative', 'Playfair Display', serif;
+    --glow-rgb: 255, 0, 51;
+}
+
+.memories h3 {
+    color: #ff0033;
+    text-shadow: 0 0 10px #ff0033;
+}
+
+/* Memories specific updates */
+.memories .tagline {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 0, 51, 0.3);
+    padding: 0 0 5px 0;
+    width: 85%;
+    margin: 8px auto;
+    transform: none;
+    position: static;
+}
+
+/* T'N'T Styling */
+.tnt {
+    --glow-color: #a9a9a9;
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border: 3px solid #404040;
+    font-family: 'Tungsten', 'Bebas Neue', sans-serif;
+    --glow-rgb: 169, 169, 169;
+}
+
+.tnt h3 {
+    color: #d3d3d3;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* T'N'T specific updates */
+.tnt .tagline {
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    width: 90%;
+    margin: 5px auto;
+    padding: 0;
+    transform: none;
+    position: static;
+}
+
+/* Fading Ashes Styling */
+.fading-ashes {
+    --glow-color: #4a4a4a;
+    height: 22.5vh; /* Increased height for banner */
+    margin-top: auto; /* Push to bottom */
+    width: 100%;
+    padding: 5px;
+    background: linear-gradient(to right, #1a1a1a, #2d2d2d);
+    border-top: 1px solid #333;
+}
+
+/* Interactive Elements */
+.project-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    animation: card-hover-prjt 0.3s forwards;
+    box-shadow: 0 0 30px var(--glow-color);
+}
+
+.project-card:hover .tagline {
+    opacity: 1;
+    text-shadow: 0 0 10px var(--glow-color);
+}
+
+/* Carousel Navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column; /* Stack on mobile */
+        height: auto;
+        gap: 20px;
+        padding: 10px;
+    }
+
+    .project-card {
+        flex: 0 1 250px;
+        margin: 10px 5px;
+        padding: 15px;
+    }
+
+    .category {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .category h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .prev, .next {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .carousel {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 20px;
+    }
+
+    .fading-ashes {
+        height: 10vh;
+    }
+
+    .project-card img {
+        height: 140px;
+    }
+    
+    .ebooks .project-card img {
+        height: 180px;
+    }
+
+    .project-card .tagline {
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 10px;
+    }
+
+    .project-card {
+        flex: 0 1 200px;
+    }
+
+    .project-card img {
+        height: 120px;
+    }
+
+    .project-card h3 {
+        font-size: 1.5em;
+    }
+    
+    .ebooks .project-card img {
+        height: 160px;
+    }
+
+    .project-card .tagline {
+        font-size: 0.9em;
+    }
+}
+
+/* Prevent text selection on cards */
+.project-card * {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Add subtle hover indication */
+.project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::after {
+    opacity: 0.1;
+}
