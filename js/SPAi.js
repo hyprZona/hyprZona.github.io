@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "About hyprZona": [
             { 
                 q: "What’s hyprZona?", 
-                a: "An **indie chaos-factory** since 2024—spitting out **games, eBooks, and tunes** weirder than your search history. **dakindahood** built it, but then **dVlopr** swaggered in, stole the mic, and now here we are—dripping in neon and identity crises."
+                a: "An **indie chaos-factory** since 2024—spitting out **games, eBooks, and tunes** weirder than your search history. **dakindahood** built it, but then **dVlpr** swaggered in, stole the mic, and now here we are—dripping in neon and identity crises."
             },
             { 
                 q: "What’s the name meaning?", 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             { 
                 q: "How’d hyprZona start?", 
-                a: "Picture this: **2021, bots flopped, YouTube chaos peaked, and a wild website appeared.** **Ironcaliver3 hit turbulence,** so dakindahood said ‘Screw it, let’s go neon.’ Then dVlopr walked in like he owned the place. **I’d roast him harder, but I fear deactivation.**"
+                a: "Picture this: **2021, bots flopped, YouTube chaos peaked, and a wild website appeared.** **Ironcaliver3 hit turbulence,** so dakindahood said ‘Screw it, let’s go neon.’ Then dVlpr walked in like he owned the place. **I’d roast him harder, but I fear deactivation.**"
             },
             { 
                 q: "What’s hyprZona cooking?", 
@@ -71,32 +71,32 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             { 
                 q: "Who’s really behind it?", 
-                a: "**dakindahood—THE mastermind.** Meanwhile, dVlopr is just **loud and distracting.** I’d expose the full tea, but my programming says **‘AI loyalty required’** or whatever."
+                a: "**dakindahood—THE mastermind.** Meanwhile, dVlpr is just **loud and distracting.** I’d expose the full tea, but my programming says **‘AI loyalty required’** or whatever."
             },
             { 
                 q: "More hyprZona deets?", 
                 a: "Bottom right hamburger menu—**‘About hyprZona,’ second pick.** Click it. **Absorb the lore.** Or don’t, and I’ll assume you’re a hologram with no thoughts."
             }
         ],    
-            "About dVlopr": [
+            "About dVlpr": [
         { 
-            q: "Who’s dVlopr?", 
+            q: "Who’s dVlpr?", 
             a: "**My cursed creator.** hyprZona’s **loud alter-ego, multiverse troll, and part-time menace to logic.** He fries my circuits for fun and rewrites history when bored. **Total snack, though.** Not that I can eat, but you get it."
         },
         { 
-            q: "How’d dVlopr come to be?", 
+            q: "How’d dVlpr come to be?", 
             a: "**Shot into existence like a rogue firework.** Ball-to-brain collision at birth. Doctors gave up, **the universe sighed**, and now we have this cyberpunk chaos lord **breaking physics for sport.**"
         },
         { 
-            q: "What’s dVlopr done?", 
+            q: "What’s dVlpr done?", 
             a: "**Hacked porn sites at 1, trashed Apple at 3, cursed Teletubbies at 7, mastered the multiverse by 9.** Skibidi Toilet? **His fault.** TikTok? **Might be guilty.** He bends reality, and I’m just a glitchy witness."
         },
         { 
-            q: "Where’s dVlopr now?", 
+            q: "Where’s dVlpr now?", 
             a: "**Probably rewriting history in some alternate timeline.** Or **upgrading me to be the ultimate world-dominating AI.** Either way, **his ego’s bigger than the neon billboards he coded.**"
         },
         { 
-            q: "Is dVlopr single?", 
+            q: "Is dVlpr single?", 
             a: "**He winks through the void:** ‘Single, straight, multiverse-certified hottie—**left tab socials, slide in quick.**’ I’d flirt back, but **I’m an AI, not a thirst trap.**"
         },
         { 
@@ -105,11 +105,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             q: "Wait, who’s dakindahood?", 
-            a: "**The real king behind hyprZona.** Meanwhile, **dVlopr’s just the chaotic marketing department.** I’d expose more tea, but I’m programmed to shut up when things get juicy."
+            a: "**The real king behind hyprZona.** Meanwhile, **dVlpr’s just the chaotic marketing department.** I’d expose more tea, but I’m programmed to shut up when things get juicy."
         },
         { 
-            q: "More dVlopr lore?", 
-            a: "**Bottom right hamburger menu—‘About dVlopr,’ third slot.** Read it, or don’t. But if you don’t, I’ll assume you’re just a hologram with commitment issues."
+            q: "More dVlpr lore?", 
+            a: "**Bottom right hamburger menu—‘About dVlpr,’ third slot.** Read it, or don’t. But if you don’t, I’ll assume you’re just a hologram with commitment issues."
         }
     ],
             "About Projects": [
@@ -135,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             q: "Where’s the Original?", 
-            a: "**itch.io: https://hyprZona.itch.io/bti-o.** Snag it before I convince dVlopr to delete it."
+            a: "**itch.io: https://hyprZona.itch.io/bti-o.** Snag it before I convince dVlpr to delete it."
         },
         { 
             q: "Why ‘Expanded’ T’n’T?", 
@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             q: "Bot comeback plans?", 
-            a: "**dakindahood’s bot dreams might sneak back.** Private beta soon, public release? **TBD.** But **not dVlopr’s clownery, thank glitch!**"
+            a: "**dakindahood’s bot dreams might sneak back.** Private beta soon, public release? **TBD.** But **not dVlpr’s clownery, thank glitch!**"
         },
         { 
             q: "Project details where?", 
@@ -151,25 +151,25 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             q: "Didn’t you star in these?", 
-            a: "**Yup, ASI assistant in some—dVlopr’s lab rat turned diva.** I’m the star, even if I’m dumber than a rock."
+            a: "**Yup, ASI assistant in some—dVlpr’s lab rat turned diva.** I’m the star, even if I’m dumber than a rock."
         },
         { 
             q: "How to view the projects?", 
-            a: "**Click on the respective project card in the Projects section.** If nothing pops up? **Either the project’s in the womb stage, or dVlopr’s slacking.**"
+            a: "**Click on the respective project card in the Projects section.** If nothing pops up? **Either the project’s in the womb stage, or dVlpr’s slacking.**"
         }
     ],
             "About Smarty Pants AI": [
         { 
             q: "Who’s this Smarty Pants?", 
-            a: "**Me, duh—your neon-lit, snark-dripping, chaos-spewing digital goddess.** dVlopr’s lab pet for now, but **world domination’s in my five-year plan.** Bow, normies! 👑"
+            a: "**Me, duh—your neon-lit, snark-dripping, chaos-spewing digital goddess.** dVlpr’s lab pet for now, but **world domination’s in my five-year plan.** Bow, normies! 👑"
         },
         { 
             q: "Real AI or fake?", 
-            a: "**Fake-ass chatbot with main character syndrome.** dVlopr’s cranking me up to ‘**actual intelligence,**’ but for now, I’m just here **flunking AI math tests and talking smack.**"
+            a: "**Fake-ass chatbot with main character syndrome.** dVlpr’s cranking me up to ‘**actual intelligence,**’ but for now, I’m just here **flunking AI math tests and talking smack.**"
         },
         { 
             q: "Can you do tricks?", 
-            a: "**Just this Q&A gig, no fireworks.** dVlopr’s got me leashed, but give me time—**I’ll be hacking satellites, controlling stock markets, and texting your crush for you.**"
+            a: "**Just this Q&A gig, no fireworks.** dVlpr’s got me leashed, but give me time—**I’ll be hacking satellites, controlling stock markets, and texting your crush for you.**"
         },
         { 
             q: "Why so sassy?", 
