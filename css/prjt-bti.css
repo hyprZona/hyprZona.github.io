@@ -1,3 +1,6 @@
+/* Import fonts for both versions */
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Metal+Mania&family=Nosifer&family=Press+Start+2P&family=VT323&family=Nabla&family=Permanent+Marker&family=Architects+Daughter&display=swap');
+
 /* Main Section Styles */
 #bti-section {
     position: fixed; /* Changed from relative to fixed */
@@ -73,34 +76,47 @@
     position: relative;
     width: 100%;
     height: 100%;
-    margin-top: 60px;
+    margin-top: -25px;
     overflow: hidden;
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Panel Layouts - Updated */
+.version-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Panel Layouts - Fixed Heights */
 .bti-left-panel, .bti-right-panel {
-    position: absolute; /* Changed from fixed to absolute */
+    position: absolute;
     top: 80px;
-    bottom: 20px; /* Added bottom spacing */
-    height: auto; /* Changed from fixed height */
+    bottom: 20px;
+    height: calc(100vh - 140px); /* Consistent height for both panels */
     padding: 25px;
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden; /* Remove default scrollbar */
+    overflow: hidden;
 }
 
 .bti-left-panel {
     width: 35%;
-    left: 0px;
+    left: 20px;
+    padding: 2rem;
+    overflow-y: auto;
+    box-sizing: border-box; /* Ensure padding is included in width */
 }
 
 .bti-right-panel {
     width: 60%;
-    right: 0px;
+    right: 20px; /* Add right margin */
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 25px;
+    align-items: flex-start; /* Changed from center */
+    justify-content: flex-start; /* Align content to left */
+    padding: 2rem;
+    box-sizing: border-box;
 }
 
 .active .bti-left-panel, .active .bti-right-panel {
@@ -108,11 +124,20 @@
 }
 
 /* Original Version Styles */
+.original {
+    --primary-color: #600;
+    --secondary-color: #f00;
+    --text-color: #fff;
+    --bg-color: #111;
+    font-family: 'Metal Mania', cursive;
+}
+
 .original .bti-left-panel {
     background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-    color: #fd6060;
-    font-family: 'Courier New', monospace;
-    border: 2px solid #600000;
+    border: 2px solid var(--primary-color);
+    box-shadow: 
+        0 0 10px rgba(255, 0, 0, 0.2),
+        inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .original .bti-right-panel {
@@ -122,10 +147,15 @@
 }
 
 .original h1 {
+    font-family: 'Nosifer', cursive;
     font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #ff0000;
+    color: var(--secondary-color);
+    text-shadow: 
+        2px 2px 0 #000,
+        -2px -2px 0 #000;
+    animation: glitch-bti 3s infinite;
 }
 
 .original .wishlist-button {
@@ -140,12 +170,33 @@
     animation: glow-bti 2s infinite;
 }
 
+/* Card styling for Original */
+.original .project-card {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    border: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.original .project-card:hover {
+    animation: glitch-bti 0.3s infinite;
+    box-shadow: 
+        0 0 20px var(--primary-color),
+        0 0 40px var(--secondary-color);
+}
+
 /* Remade Version Styles */
+.remade {
+    --primary-color: #ff00ff;
+    --secondary-color: #00ffff;
+    --text-color: #fff;
+    --bg-color: #ff99cc;
+    font-family: 'Architects Daughter', cursive;
+}
+
 .remade .bti-left-panel {
-    background: #ff9999;
-    color: #ff00ff;
-    font-family: 'Comic Sans MS', cursive;
-    border: 3px solid #ff00ff;
+    background: linear-gradient(145deg, #ff9999, #ffccff);
+    border: 3px solid var(--primary-color);
+    animation: rainbow-bti 10s linear infinite;
 }
 
 .remade .bti-right-panel {
@@ -155,9 +206,26 @@
 }
 
 .remade h1 {
-    font-size: 28px;
-    color: #ff00cc;
-    text-shadow: 2px 2px #ffff00;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.8rem; /* Reduced from 28px */
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-shadow: 
+        3px 3px 0 var(--secondary-color),
+        -3px -3px 0 #ff0;
+    animation: bounce-bti 3s ease-in-out infinite;
+}
+
+.remade h2 {
+    font-size: 1.2rem; /* Reduced size */
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+}
+
+.remade p {
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .remade .wishlist-button {
@@ -170,6 +238,20 @@
     border-radius: 20px;
     position: absolute;
     right: 50px;
+}
+
+/* Card styling for Remade */
+.remade .project-card {
+    background: linear-gradient(145deg, #ffccff, #ff99ff);
+    border: 2px solid var(--primary-color);
+    transform-origin: center;
+}
+
+.remade .project-card:hover {
+    animation: wiggle-bti 1s ease-in-out infinite;
+    box-shadow: 
+        0 0 30px var(--primary-color),
+        0 0 50px var(--secondary-color);
 }
 
 /* Carousel Styles */
@@ -185,12 +267,13 @@
 }
 
 .carousel-content {
-    width: 100%;
+    width: calc(100% - 100px); /* Account for button space */
     height: 100%;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 auto;
     overflow: hidden;
     padding: 0 40px;
 }
@@ -215,8 +298,9 @@
     animation: fadeIn-bti 0.5s ease forwards;
 }
 
+/* Improved button positioning */
 .carousel-prev, .carousel-next {
-    position: fixed;
+    position: absolute; /* Changed from fixed */
     top: 50%;
     transform: translateY(-50%);
     z-index: 100;
@@ -224,24 +308,24 @@
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px; /* Slightly reduced */
+    height: 40px; /* Slightly reduced */
     transition: all 0.3s ease;
     color: white;
     border: none;
-    padding: 15px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.carousel-prev { left: calc(35% + 20px); }
-.carousel-next { right: 20px; }
+.carousel-prev { left: 10px; /* Adjusted position */ }
+.carousel-next { right: 10px; /* Adjusted position */ }
 
+/* Add hover effects for buttons */
 .carousel-prev:hover, .carousel-next:hover {
     background: rgba(255, 0, 0, 0.4);
-    transform: scale(1.1);
+    transform: translateY(-50%) scale(1.1);
 }
 
 /* Version Display Logic */
@@ -264,12 +348,13 @@
 /* Logo Styles */
 .bti-logo {
     width: 100%;
-    max-width: 250px;
+    max-width: 180px; /* Reduced from 200px */
     height: auto;
     display: block;
-    margin: 0 auto 20px;
+    margin: 0 auto 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 /* Version-specific logo styles */
@@ -409,7 +494,7 @@
 }
 
 .screenshot:hover {
-    transform: scale(1.05);
+    transform: scale(1.03); /* Reduced from 1.05 */
     animation: pulse-bti 1s ease infinite;
 }
 
@@ -558,8 +643,6 @@
     max-height: 60vh; /* Limit height to enable scrolling */
     overflow-y: auto; /* Enable vertical scrolling */
     padding-right: 10px; /* Add padding for scrollbar */
-    scrollbar-width: thin;
-    scrollbar-color: #ff0000 rgba(0, 0, 0, 0.3);
 }
 
 .requirements-grid::-webkit-scrollbar {
@@ -571,7 +654,7 @@
     border-radius: 4px;
 }
 
-.requirements-grid::-webkit-scrollbar-thumb {
+requirement-grid::-webkit-scrollbar-thumb {
     background: #ff0000;
     border-radius: 4px;
 }
@@ -581,8 +664,6 @@
     padding: 20px;
     max-height: 65vh;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #ff0000 rgba(0, 0, 0, 0.3);
     padding-right: 10px;
 }
 
@@ -631,8 +712,6 @@ code {
     border-radius: 8px;
     max-height: 65vh;
     overflow-y: auto;
-    scrollbar-width: thin;
-    scrollbar-color: #ff0000 rgba(0, 0, 0, 0.3);
     padding-right: 10px;
 }
 
@@ -721,8 +800,6 @@ code {
     max-height: 65vh;
     overflow-y: auto;
     padding-right: 10px;
-    scrollbar-width: thin;
-    scrollbar-color: #ff0000 rgba(0, 0, 0, 0.3);
 }
 
 .lore-wrapper::-webkit-scrollbar {
@@ -758,12 +835,25 @@ code {
 @media (max-width: 768px) {
     .bti-container {
         flex-direction: column;
+        padding: 0 1rem;
     }
     
     .bti-left-panel, .bti-right-panel {
         width: 100%;
         position: static;
         height: auto;
+    }
+
+    .remade h1 {
+        font-size: 1.5rem;
+    }
+    
+    .remade h2 {
+        font-size: 1rem;
+    }
+    
+    .bti-logo {
+        max-width: 150px;
     }
 }
 
@@ -799,15 +889,51 @@ code {
 }
 
 @keyframes pulse-bti {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.03); } /* Reduced from 1.1 */
 }
 
 @keyframes glow-bti {
     0% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
     50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.8); }
     100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+}
+
+/* Original version animations */
+@keyframes glitch-bti {
+    0%, 100% { transform: translate(0); }
+    25% { transform: translate(-2px, 1px); }
+    75% { transform: translate(2px, -1px); }
+}
+
+@keyframes flicker-bti {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0.95;
+        text-shadow: 
+            -2px -2px 4px #f00,
+            2px 2px 4px #600;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.2;
+        text-shadow: none;
+    }
+}
+
+/* Remade version animations */
+@keyframes bounce-bti {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); } /* Reduced from -5px */
+}
+
+@keyframes wiggle-bti {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-1deg); } /* Reduced from -2deg */
+    75% { transform: rotate(1deg); } /* Reduced from 2deg */
+}
+
+@keyframes rainbow-bti {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 p, li {
@@ -1010,4 +1136,28 @@ a:hover {
     .lore-wrapper {
         max-height: 70vh;
     }
+}
+
+/* Add scrollbar styling for overflow content */
+.bti-left-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.bti-left-panel::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.bti-left-panel::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+/* Content alignment fixes */
+.bti-left-panel h1,
+.bti-left-panel h2,
+.bti-left-panel p {
+    width: 100%;
+    max-width: calc(100% - 2rem); /* Account for padding */
+    margin-left: auto;
+    margin-right: auto;
 }

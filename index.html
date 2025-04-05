@@ -1,495 +1,697 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hyprZona - Home to Chaos</title>
+    <meta charset="UTF-8">
+    <!-- 🤖 Meta tags that make Google-senpai notice us -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hyprZona - Games That Will Question Your Sanity</title>
 
-<!-- SEO Meta Tags -->
-<meta name="description" content="hyprZona: Where Chaos Meets Creativity. Explore our quirky games, eBooks, and more, designed with passion and a touch of madness!">
-<meta name="keywords" content="hyprZona, indie games, creative projects, Beyond the Illusions, eBooks, chaotic creativity">
-<meta name="author" content="dVlpr">
-<meta name="robots" content="index, follow">
+    <!-- 🎯 SEO juice that makes Google-chan blush -->
+    <meta name="description" content="Welcome to hyprZona - Where gaming meets insanity! Experience 'Beyond the Illusions', a psychological horror game that will make you question reality. Created by the chaotic mind of dVlpr.">
+    <meta name="keywords" content="hyprZona, indie games, Beyond the Illusions, psychological horror games, indie game developer, dVlpr games, comedy horror games">
+    <meta name="author" content="dVlpr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
 
-<!-- Social Media & Open Graph Meta Tags -->
-<meta property="og:title" content="hyprZona | Where Chaos Meets Creativity">
-<meta property="og:description" content="hyprZona: Where Chaos Meets Creativity. Explore our quirky games, eBooks, and more!">
-<meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm?authuser=0">
-<meta property="og:url" content="https://hyprzona.github.io">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="hyprZona | Where Chaos Meets Creativity">
-<meta name="twitter:description" content="hyprZona: Where Chaos Meets Creativity. Explore our quirky games, eBooks, and more!">
-<meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm?authuser=0">
+    <!-- 🌐 Social media tags because we're attention seekers -->
+    <meta property="og:site_name" content="hyprZona">
+    <meta property="og:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta property="og:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:type" content="website">
 
-<!-- Favicon -->
-<link rel="icon" href="https://yt3.googleusercontent.com/eyZfwMk_QAtRPvYLxmyqk8gNG_hjyiHXYlauLbF_fhgozSvgLr_9tWGNpZzp-xVJUIFEUlVbNo8=s160-c-k-c0x00ffffff-no-rj" type="image/x-icon">
-<link rel="apple-touch-icon" href="https://yt3.googleusercontent.com/eyZfwMk_QAtRPvYLxmyqk8gNG_hjyiHXYlauLbF_fhgozSvgLr_9tWGNpZzp-xVJUIFEUlVbNo8=s160-c-k-c0x00ffffff-no-rj">
+    <!-- 🐦 Twitter stuff because Elon needs engagement -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyprZona">
+    <meta name="twitter:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta name="twitter:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
 
-<!-- CSS Styles -->
-<link rel="stylesheet" href="css/navbar.css">
-<link rel="stylesheet" href="css/sst.css">
-<link rel="stylesheet" href="css/SPAi.css">
-<link rel="stylesheet" href="css/herosec.css">
-<link rel="stylesheet" href="css/abthza.css">
-<link rel="stylesheet" href="css/abtdvp.css">
-<link rel="stylesheet" href="css/prjt.css">
-<link rel="stylesheet" href="css/prjt-bti.css">
+    <!-- 🎨 Icons that make us look legit -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0">
+    <link rel="canonical" href="https://hyprzona.github.io">
 
-<!-- Other Meta Tags -->
-<meta name="color-scheme" content="dark">
-<meta name="msapplication-TileColor" content="#0f172a">
-<meta name="msapplication-TileImage" content="/assets/icons/mstile-144x144.png">
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Nosifer&display=swap" rel="stylesheet">
+    <!-- 🎭 CSS files because naked HTML is indecent -->
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/sst.css">
+    <link rel="stylesheet" href="css/SPAi.css">
+    <link rel="stylesheet" href="css/herosec.css">
+    <link rel="stylesheet" href="css/abthza.css">
+    <link rel="stylesheet" href="css/abtdvp.css">
+    <link rel="stylesheet" href="css/prjt.css">
+    <link rel="stylesheet" href="css/prjt-bti.css">
+    <link rel="stylesheet" href="css/date.css">
+
+    <!-- 🌙 Dark mode because light burns our vampire eyes -->
+    <meta name="color-scheme" content="dark">
+
+    <!-- 🎨 Fonts that make us look fancy AF -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap&family=Crimson+Text:ital,wght@0,400;0,700;1,400&family=Nosifer&display=swap" rel="stylesheet">
+
+    <!-- 🤖 Structured data for Google's robot overlords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "hyprZona",
+      "url": "https://hyprzona.github.io",
+      "description": "Home of Beyond the Illusions and other chaotic creations",
+      "creator": {
+        "@type": "Person",
+        "name": "dVlpr"
+      }
+    }
+    </script>
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
 <body>
-    <div class="assistive-ball" id="assistiveBall">☰</div>
-    <div class="roadmap" id="roadmap">
-        <div class="line"></div>
-        <a href="#herosec" class="section-link left" style="top: 10%;">Homepage</a>
-        <div class="section-point" style="top: 12.5%;"></div>
-    
-        <a href="#abthza" class="section-link right" style="top: 25%;">About hyprZona</a>
-        <div class="section-point" style="top: 27.5%;"></div>
-    
-        <a href="#abtdvp" class="section-link left" style="top: 40%;">About dVlpr</a>
-        <div class="section-point" style="top: 42.5%;"></div>
-    
-        <a href="#dates" class="section-link right" style="top: 55%;">Important Dates</a>
-        <div class="section-point" style="top: 57.5%;"></div>
-    
-        <a href="#testimonials" class="section-link left" style="top: 70%;">Testimonials</a>
-        <div class="section-point" style="top: 72.5%;"></div>
-    
-        <a href="#prjt" class="section-link right" style="top: 85%;">Projects</a>
-        <div class="section-point" style="top: 87.5%;"></div>
-    </div>
+    <!-- 🎮 Your guide through this chaos (now with 100% more math!) -->
+    <nav class="site-navigation">
+        <!-- 🎯 The floaty menu ball that stalks you -->
+        <div class="assistive-ball" id="assistiveBall" aria-label="Navigation menu">
+            <span class="menu-icon">☰</span>
+        </div>
 
-    <div class="social-tab" id="socialTab">Social Links</div>
-    <div class="social-links" id="socialLinks">
-        <div class="social-group">
-            <div class="social-group-title">Instagram</div>
-            <a rel="noopener" href="https://www.instagram.com/dakindahood" target="_blank">dVlpr</a>
-            <a rel="noopener" href="https://www.instagram.com/hyprZona" target="_blank">hyprZona - Official</a>
-            <a rel="noopener" href="https://www.instagram.com/fadingasheshyprZona" target="_blank">Fading Ashes - Official</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">YouTube</div>
-            <a rel="noopener" href="https://www.youtube.com/@hyprZona" target="_blank">hyprZona</a>
-            <a rel="noopener" href="https://www.youtube.com/@fadingashes-hyprZona" target="_blank">Fading Ashes</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">X</div>
-            <a rel="noopener" href="https://x.com/dakindahood" target="_blank">dVlpr</a>
-            <a rel="noopener" href="https://x.com/hyprZona" target="_blank">hyprZona</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">Reddit</div>
-            <a rel="noopener" href="https://www.reddit.com/r/hyprZsub/" target="_blank">hyprZsub</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">Discord</div>
-            <a rel="noopener" href="https://Discord.com/invite/ESyDH3vv87" target="_blank">The hyprZ World</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">LinkedIn</div>
-            <a rel="noopener" href="https://www.linkedin.com/in/daksh-mehta-17236128b/" target="_blank">dVlpr</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">Itch.io</div>
-            <a rel="noopener" href="https://hpyrZona.itch.io" target="_blank">hyprZona Games</a>
-        </div>
-        <div class="social-group">
-            <div class="social-group-title">GitHub</div>
-            <a rel="noopener" href="https://github.com/hyprZona" target="_blank">hyprZona/dVlpr</a>
-        </div>
-    </div>
+        <!-- 🗺️ The highway to digital hell -->
+        <div class="roadmap" id="roadmap" role="navigation">
+            <div class="line" aria-hidden="true"></div>
+            
+            <div class="nav-points-container">
+                <!-- Each point is now perfectly balanced, as all things should be -->
+                <div class="nav-point">
+                    <a href="#herosec" class="section-link left">Homepage</a>
+                    <div class="section-point" aria-hidden="true"></div>
+                </div>
 
-    <div class="ai-assistive-ball" id="ai-assistiveBall">AI</div>
-    <div class="ai-container" id="aiContainer">
-        <div class="category-section" id="categorySection"></div>
-        <div class="question-section" id="questionSection"></div>
-        <div class="chat-section" id="chatSection">
-            <div class="chat-header">Smarty Pants AI</div>
-            <div id="chatContent"></div>
-        </div>
-    </div>
+                <div class="nav-point">
+                    <a href="#abthza" class="section-link right">About hyprZona</a>
+                    <div class="section-point" aria-hidden="true"></div>
+                </div>
 
-    <!-- Main Content Wrapper -->
+                <div class="nav-point">
+                    <a href="#abtdvp" class="section-link left">About dVlpr</a>
+                    <div class="section-point" aria-hidden="true"></div>
+                </div>
+
+                <div class="nav-point">
+                    <a href="#dates" class="section-link right">Important Dates</a>
+                    <div class="section-point" aria-hidden="true"></div>
+                </div>
+
+                <div class="nav-point">
+                    <a href="#prjt" class="section-link left">Projects</a>
+                    <div class="section-point" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🌐 Social links because we're desperate for attention -->
+    <aside class="social-panel">
+        <!-- 🎯 The tab that says "click me senpai" -->
+        <div class="social-tab" id="socialTab" aria-label="Toggle social links">
+            <span class="tab-text">Stalk Us Here</span>
+        </div>
+
+        <!-- 🌟 The ultimate collection of our digital existence -->
+        <nav class="social-links" id="socialLinks" aria-label="Social media links">
+            <!-- 📸 Instagram - Where we pretend to have a life -->
+            <div class="social-group">
+                <h3 class="social-group-title">Instagram</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://www.instagram.com/dakindahood" target="_blank" aria-label="dVlpr's Instagram">dVlpr</a>
+                    <a rel="noopener noreferrer" href="https://www.instagram.com/hyprZona" target="_blank" aria-label="hyprZona's Official Instagram">hyprZona - Official</a>
+                    <a rel="noopener noreferrer" href="https://www.instagram.com/fadingasheshyprZona" target="_blank" aria-label="Fading Ashes Official Instagram">Fading Ashes - Official</a>
+                </div>
+            </div>
+
+            <!-- 🎥 YouTube - Our attempt at fame -->
+            <div class="social-group">
+                <h3 class="social-group-title">YouTube</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://www.youtube.com/@hyprZona" target="_blank" aria-label="hyprZona YouTube channel">hyprZona</a>
+                    <a rel="noopener noreferrer" href="https://www.youtube.com/@fadingashes-hyprZona" target="_blank" aria-label="Fading Ashes YouTube channel">Fading Ashes</a>
+                </div>
+            </div>
+
+            <!-- 🐦 X/Twitter - Where we shitpost at 3AM -->
+            <div class="social-group">
+                <h3 class="social-group-title">X</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://x.com/dakindahood" target="_blank" aria-label="dVlpr's X profile">dVlpr</a>
+                    <a rel="noopener noreferrer" href="https://x.com/hyprZona" target="_blank" aria-label="hyprZona's X profile">hyprZona</a>
+                </div>
+            </div>
+
+            <!-- 🦋 bluesky - Twitter but less shitty -->
+            <div class="social-group">
+                <h3 class="social-group-title">Bluesky</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://bsky.app/profile/hyprzona.github.io" target="_blank" aria-label="hyprZona's X profile">hyprZona</a>
+                </div>
+            </div>
+
+            <!-- 👽 Reddit - Where we pretend to be smart -->
+            <div class="social-group">
+                <h3 class="social-group-title">Reddit</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://www.reddit.com/r/hyprZsub/" target="_blank" aria-label="hyprZona subreddit">hyprZsub</a>
+                </div>
+            </div>
+
+            <!-- 💬 Discord - The chaos headquarters -->
+            <div class="social-group">
+                <h3 class="social-group-title">Discord</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://Discord.com/invite/ESyDH3vv87" target="_blank" aria-label="Join our Discord server">The hyprZ World</a>
+                </div>
+            </div>
+
+            <!-- 👔 LinkedIn - Where we act professional (lol) -->
+            <div class="social-group">
+                <h3 class="social-group-title">LinkedIn</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://www.linkedin.com/in/daksh-mehta-17236128b/" target="_blank" aria-label="dVlpr's LinkedIn profile">dVlpr</a>
+                </div>
+            </div>
+
+            <!-- 🎮 Itch.io - Our games' retirement home -->
+            <div class="social-group">
+                <h3 class="social-group-title">Itch.io</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://hpyrZona.itch.io" target="_blank" aria-label="hyprZona's Itch.io page">hyprZona Games</a>
+                </div>
+            </div>
+
+            <!-- 🐱 GitHub - Where our code goes to die -->
+            <div class="social-group">
+                <h3 class="social-group-title">GitHub</h3>
+                <div class="social-links-wrapper">
+                    <a rel="noopener noreferrer" href="https://github.com/hyprZona" target="_blank" aria-label="hyprZona's GitHub profile">hyprZona/dVlpr</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- 🤖 Our budget ChatGPT (probably smarter than the real one) -->
+    <aside class="ai-assistant" role="complementary">
+        <!-- 🎯 The stalker ball that follows you around -->
+        <div class="ai-assistive-ball" id="ai-assistiveBall" aria-label="Toggle AI Assistant">
+            <span class="ai-icon">🤖</span>
+            <span class="ai-label">AI</span>
+        </div>
+
+        <!-- 🧠 The container of infinite wisdom (and dad jokes) -->
+        <div class="ai-container" id="aiContainer" aria-hidden="true">
+            <!-- 🎭 Where you pick your poison -->
+            <div class="category-section" id="categorySection" role="tablist">
+                <!-- Categories will be dynamically populated -->
+            </div>
+
+            <!-- 🤔 Where you ask the important questions (like "why is the cave shaped like that?") -->
+            <div class="question-section" id="questionSection" role="tabpanel">
+                <!-- Questions will appear based on category -->
+            </div>
+
+            <!-- 💭 Where the magic happens (and sanity goes to die) -->
+            <div class="chat-section" id="chatSection">
+                <div class="chat-header" role="banner">
+                    <h3>Smarty Pants</h3>
+                </div>
+                <div class="chat-content" id="chatContent" role="log" aria-live="polite">
+                    <!-- Chat messages will appear here -->
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main content (where the magic happens) -->
     <main class="main-content">
-        <!-- Hero Section -->
+        <!-- 🎬 Hero Section - Where we try to impress you with fancy visuals -->
         <section id="herosec" class="section">
-            <div class="background-video">
-                <iframe title="Background video" width="100%" height="100%" 
-                    src="https://www.youtube.com/embed/wnVHvo0WZLU?autoplay=1&controls=0&showinfo=0&mute=1&loop=1" 
-                    frameborder="0" 
+            <!-- 🎥 Video background (because static images are so 2010) -->
+            <div class="background-video" aria-hidden="true">
+                <iframe 
+                    title="Chaos in motion" 
+                    width="100%" 
+                    height="100%" 
+                    src="https://www.youtube.com/embed/wnVHvo0WZLU?autoplay=1&controls=0&showinfo=0&mute=1&loop=1&playlist=wnVHvo0WZLU" 
                     allow="autoplay; fullscreen">
                 </iframe>
             </div>
+
+            <!-- 🎭 Main content (the stuff you actually care about) -->
             <div class="hero-content">
-                hyprZona
-                <div class="tagline">Where Creativity meets Chaos</div>
+                <!-- 🌟 Brand name (in case you forgot where you are) -->
+                <div class="title-container">
+                    <h1 class="brand-title">hyprZona</h1>
+                    <div class="tagline">Where Creativity meets Chaos</div>
+                </div>
+
+                <!-- ⭐ Testimonials (totally real, we swear) -->
+                <div class="testimonials">
+                    <div class="testimonial-switch">
+                        <button type="button" class="switch-button active" data-type="real">Real</button>
+                        <button type="button" class="switch-button" data-type="character">Fiction</button>
+                    </div>
+                    <div class="testimonial-content">
+                        <div class="testimonial-group real active"></div>
+                        <div class="testimonial-group character"></div>
+                    </div>
+                </div>
+
+                <!-- 📰 News ticker (our attempt at being professional) -->
+                <div class="news-section">
+                    <div class="news-carousel">
+                        <div class="news-item">
+                            <h2 class="news-headline">The T'N'T: A Story of the Scars - Coming May 5th</h2>
+                            <p class="news-brief">Get ready for an emotional rollercoaster through the pages of reality.</p>
+                        </div>
+                        <div class="news-item">
+                            <h2 class="news-headline">Illusionist: Caramelized & Taxed 18% - Coming April 21st</h2>
+                            <p class="news-brief">The sound Track from BTI - Rem, coming out soon, to give the chaos, but from music.</p>
+                        </div>
+                        
+                        <div class="news-item">
+                            <h2 class="news-headline">Memories development resumes this May</h2>
+                            <p class="news-brief">The psychological adventure is halted and will be restarted from scratch, stay tuned for a Demo drop.</p>
+                        </div>
+                        <div class="news-item">
+                            <h2 class="news-headline">Beyond the Illusions: Remade for Chaos - Out now!</h2>
+                            <p class="news-brief">The remake is available on our itch.io page. Can't wait to see people lose shit over this!</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <!-- 🎭 About hyprZona - Where sanity comes to die -->
         <section id="abthza" class="section">
             <div class="section-wrapper">
                 <h1 class="heading">About hyprZona</h1>
                 
-                <!-- Carousel Structure -->
+                <!-- 🎪 The circus of time travel (now with 100% more existential crisis!) -->
                 <div class="carousel-container">
+                    <!-- 🎠 The merry-go-round of memories -->
                     <div class="card-carousel" id="cardCarousel">
-                        <!-- Past Card -->
-                        <div class="card" id="pastCard" data-card="past">
-                            <h2>Past: Pre-hyprZona Era</h2>
-                            <p>What started as a passion for storytelling and creative exploration evolved into a pursuit of game development, setting the foundation for hyprZona.</p>
-    
-                                <div class="timeline-item">2018 - Early Creative Beginnings</div>
-                                <p>Started writing short stories and dreaming of becoming an author, laying the groundwork for future storytelling in games.</p>
-                                
-                                <div class="timeline-item">2019 - First Steps into Game Development</div>
-                                <p>Shifted focus from writing to game development, experimenting with various concepts and ideas.</p>
-
-                                <div class="timeline-item">2020 - Introduction to Discord Bot Development</div>
-                                <p>Developed and launched Discord bots, gaining technical skills and a deeper understanding of programming.</p>
-
-                                <div class="timeline-item">2020 - Launch of Ironcaliver3 YouTube Channel</div>
-                                <p>Started <b>Ironcaliver3</b>, originally featuring MMO gameplay, later evolving into funny moments content, and eventually a 2D comedy animation series. The channel was later rebranded into the official hyprZona YouTube channel.</p>
-
-                                <div class="timeline-item">2021 - First Website Version</div>
-                                <p>Launched the first version of a website using Markdown on GitHub. Later in the year, transitioned to HTML + CSS, continuously evolving it with improvements.</p>
-
-                                <div class="timeline-item">2021 - Discord Bot Growth & Unexpected Setback</div>
-                                <p>Discord bot project grew steadily but was disrupted due to a token leak incident, leading to a restart under a new identity.</p>
-
-                                <div class="timeline-item">2022 - Transition to Game Storytelling</div>
-                                <p>Focused on game narratives and comic ideas, developing <b>The T'N'T</b> and <b>Memories</b> concepts.</p>
-
-                                <div class="timeline-item">2023 - Birth of hyprZona</div>
-                                <p>After years of creative exploration, hyprZona was officially conceptualized, with <b>Beyond the Illusions - Original</b> as the first game project.</p>
-
-                                <div class="timeline-item">2024 - hyprZona’s First Game Release</div>
-                                <p>Released <b>Beyond the Illusions - Original</b>, marking the first official game under the hyprZona name and beginning a new era in indie game development.</p>
-
-                                <div class="timeline-item">2024 - Website Revamp</div>
-                                <p>After several iterations since 2021, the website underwent a complete neon-themed revamp in November 2024, reflecting the brand's new direction.</p>
-                            </div>                        
-        
-                        <!-- Present Card -->
-                        <div class="card" id="presentCard" data-card="present">
-                            <h2>Present: hyprZonic Era</h2>
-                            <p>hyprZona is evolving as a solo game dev brand, pushing creative boundaries with surreal storytelling and unconventional gameplay.</p>
-                            
-                            <div class="timeline-item">Beyond the Illusions - Remake Completion</div>
-                            <p>Completed development of the <b>BTI Remake</b>, featuring a reworked narrative, improved visuals, and quirky gameplay elements. Set for release in a month.</p>
+                        <!-- 👻 The ghost of Christmas past -->
+                        <div class="card" id="pastCard" data-card="past" aria-label="Past achievements"></div>
                         
-                            <div class="timeline-item">Expansion into Multi-Genre Development</div>
-                            <p>hyprZona is diversifying its creative output, working on surreal indie games, occasional eBooks, and game soundtracks.</p>
+                        <!-- 🎯 The chaos we're currently brewing -->
+                        <div class="card" id="presentCard" data-card="present" aria-label="Current projects"></div>
                         
-                            <div class="timeline-item">Upcoming Game - Memories</div>
-                            <p>Development of <b>Memories</b> will resume in May, a project set to expand the scope of hyprZona’s storytelling approach.</p>
-                        
-                            <div class="timeline-item">Planning for The T'N'T - Expanded Edition</div>
-                            <p>The <b>T'N'T</b> noir series is being expanded into a more detailed, immersive experience alongside game development.</p>
-                        
-                            <div class="timeline-item">hyprZona’s Digital Presence & Community Growth</div>
-                            <p>Active on multiple platforms including Instagram, X, Reddit, Discord, YouTube, LinkedIn, GitHub, and itch.io, aiming for organic growth through collaborations and engagement.</p>
-                        
-                            <div class="timeline-item">Website Development & Brand Aesthetic</div>
-                            <p>Building a cyberpunk-styled website reflecting hyprZona’s identity while keeping a vibrant and surreal energy.</p>
-                        </div>                        
-        
-                        <!-- Future Card -->
-                        <div class="card" id="futureCard" data-card="future">
-                            <h2>Future: What's Next in hyprZona?</h2>
-                            <p>hyprZona aims to push boundaries with larger-scale projects, collaborations, and a growing creative ecosystem.</p>
-                            
-                            <div class="timeline-item">Next-Gen Projects & Bigger Worlds</div>
-                            <p>Future games will scale significantly, with the next project already planned to be 3x bigger and a third game featuring a small open-world experience.</p>
-                        
-                            <div class="timeline-item">Expanding hyprZona’s Team</div>
-                            <p>As college life begins, the goal is to bring in like-minded friends and indie creators to collaborate and expand the scope of projects.</p>
-                        
-                            <div class="timeline-item">Exploring Paid Releases & Console Ports</div>
-                            <p>After a few more free game releases, hyprZona plans to explore Steam and console publishing, ensuring the projects reach a wider audience.</p>
-                        
-                            <div class="timeline-item">The T'N'T - Future Neo-Noir Shooter Vision</div>
-                            <p>Long-term goal to evolve <b>The T'N'T</b> into a full-fledged neo-noir shooter game series with complex gameplay beyond just gunfights.</p>
-                        
-                            <div class="timeline-item">Cyberpunk-Themed Merch & Decor</div>
-                            <p>Potential merch line featuring cyberpunk and abstract designs, possibly integrated into a Shopify decor venture.</p>
-                        
-                            <div class="timeline-item">Collabs & Community Growth</div>
-                            <p>Organic marketing through asset sharing, streamer collaborations, and interactive community engagement to grow hyprZona’s presence.</p>
-                        
-                            <div class="timeline-item">Potential for Animated Spin-Offs</div>
-                            <p>Exploring future possibilities for animated content based on popular hyprZona characters and game universes.</p>
-                        </div>                        
+                        <!-- 🚀 The future we probably shouldn't tell you about -->
+                        <div class="card" id="futureCard" data-card="future" aria-label="Future plans"></div>
                     </div>
-        
-                    <!-- Navigation -->
-                    <div class="carousel-buttons">
-                        <button class="carousel-btn" data-index="0">Past</button>
-                        <button class="carousel-btn" data-index="1">Present</button>
-                        <button class="carousel-btn" data-index="2">Future</button>
+
+                    <!-- 🎮 Time machine controls (warranty not included) -->
+                    <div class="carousel-buttons" role="tablist">
+                        <button class="carousel-btn" data-index="0" role="tab">Past</button>
+                        <button class="carousel-btn" data-index="1" role="tab">Present</button>
+                        <button class="carousel-btn" data-index="2" role="tab">Future</button>
                     </div>
                 </div>
-        
-                <!-- Section-specific Summary -->
-                <div class="section-summary">
-                    <div class="summary-circle" id="abthzaSummary">
-                        <span class="summary-text">Summary</span>
-                    </div>
-                    <div class="summary-panel" id="abthzaSummaryPanel">
-                        <h3>Journey Overview</h3>
-                        <div class="summary-content">
-                            <p>hyprZona’s journey from a creative spark to an ambitious indie game and storytelling brand:</p>
-                            <ul>
-                                <li><strong>Past:</strong> Started with a passion for storytelling, evolving from short stories to Discord bot development before shifting to game creation. Launched the YouTube channel <b>Ironcaliver3</b> in 2020, later rebranded as the hyprZona channel. Built the first website in 2021, continuously evolving it into the cyberpunk-themed version launched in 2024.</li>
-                                
-                                <li><strong>Present:</strong> Released <b>Beyond the Illusions - Original</b> and later reworked it into <b>Beyond the Illusions - Remake</b>. Currently developing <b>Memories</b> and expanding <b>The T'N'T</b> series. The brand is actively growing through social media and community engagement.</li>
-                                
-                                <li><strong>Future:</strong> Scaling up projects, targeting Steam and console releases, and planning larger games, including an open-world project. Potential collaborations, merch, and future animation spin-offs are on the horizon, alongside organic marketing and streamer partnerships.</li>
-                            </ul>
-                        </div>
-                    </div>                    
-                </div>
-        
-                <!-- Enhanced Chromatic Aberration Effect -->
-                <svg class="filters">
-                    <defs>
-                        <filter id="chromatic-aberration">
-                            <!-- Base Color Matrix -->
-                            <feColorMatrix type="matrix" 
-                                values="1 0 0 0 0 
-                                        0 1 0 0 0 
-                                        0 0 1 0 0 
-                                        0 0 0 1 0"/>
-                            
-                            <!-- Red Channel -->
-                            <feOffset dx="-3" dy="0" in="SourceGraphic" result="red"/>
-                            <feFlood flood-color="#ff0000" flood-opacity="0.5" result="red-tint"/>
-                            <feBlend mode="multiply" in="red" in2="red-tint" result="red-shifted"/>
-                            
-                            <!-- Blue Channel -->
-                            <feOffset dx="3" dy="0" in="SourceGraphic" result="blue"/>
-                            <feFlood flood-color="#0000ff" flood-opacity="0.5" result="blue-tint"/>
-                            <feBlend mode="multiply" in="blue" in2="blue-tint" result="blue-shifted"/>
-                            
-                            <!-- Combine Channels -->
-                            <feBlend mode="screen" in="red-shifted" in2="blue-shifted"/>
-                        </filter>
-                    </defs>
-                </svg>
             </div>
         </section>
         
+        <!-- 🎭 About dVlpr - Where reality goes to commit suicide -->
         <section id="abtdvp" class="section">
-            <div class="terms-screen" id="termsScreen">
-                <h2>Terms & Conditions</h2>
-                <p>You must accept the terms to proceed.</p>
+            <!-- 📜 Terms & Conditions (because our lawyers made us) -->
+            <div class="terms-screen" id="termsScreen" aria-modal="true" role="dialog">
+                <h2>⚠️ Warning: Brain Damage Ahead</h2>
+                <p>By proceeding, you acknowledge the following:</p>
                 <ul>
-                    <li>This website is a <strong>certified brain rot zone</strong>—unhinged, crude, chaotic, and possibly IQ-reducing. <strong>Proceed with caution.</strong></li>
-                    <li>We are <strong>not</strong> responsible for any brain damage, existential crises, or sudden urges to question reality. <strong>Enter at your own risk.</strong></li>
-                    <li>If you get scarred for life, <strong>that's on you.</strong> Don’t even think about coming at us with a lawyer.</li>
-                    <li>By proceeding, you confirm you’re <strong>at least 16.</strong> If you’re younger... well, who’s stopping you? Not us.</li>
-                    <li>By clicking ahead, you officially join <strong>the madness that is hyprZona.</strong> There’s no turning back now.</li>
+                    <!-- 🧠 The list of ways we'll break your brain -->
+                    <li>This website is a <strong>certified brain rot zone</strong>—unhinged, crude, chaotic, and possibly IQ-reducing. <strong>Your last braincell won't survive this.</strong></li>
+                    <li>We are <strong>not</strong> responsible for any brain damage, existential crises, or sudden urges to question reality. <strong>You've been warned, buddy.</strong></li>
+                    <li>If you get scarred for life, <strong>that's on you.</strong> Our lawyer is a cat, good luck suing us.</li>
+                    <li>By proceeding, you confirm you're <strong>at least 16.</strong> If you're younger... well, your FBI agent isn't our problem.</li>
+                    <li>By clicking ahead, you officially join <strong>the madness that is hyprZona.</strong> No refunds on sanity loss.</li>
                 </ul>                
-                <label>
-                    <input type="checkbox" id="acceptTerms"> I Accept
-                </label>
-                <button onclick="checkTerms()">Proceed</button>
+                <div class="terms-action">
+                    <label class="accept-label">
+                        <input type="checkbox" id="acceptTerms" aria-label="Accept terms"> I accept my doom
+                    </label>
+                    <button onclick="checkTerms()" class="proceed-btn">Abandon Hope</button>
+                </div>
             </div>
 
-            <div class="profile-container" id="profileContainer">
+            <!-- 🎭 The profile card of chaos itself -->
+            <div class="profile-container" id="profileContainer" aria-hidden="true">
                 <div class="profile-card">
-                    <div class="profile-img" id="profileImg"></div>
-                    <div>
+                    <div class="profile-img" id="profileImg" aria-label="dVlpr's chaotic avatar"></div>
+                    <div class="profile-info">
                         <h2>dVlpr</h2>
-                        <p>Birthday: 17<sup>th</sup> December</p>
-                        <p>Sex: done x8 times</p>
-                        <p>Gender: Male</p>
-                        <p>Species: Chaos</p>
+                        <!-- 📊 Stats that definitely aren't made up -->
+                        <ul class="profile-stats">
+                            <li>Birthday: 17<sup>th</sup> December (probably)</li>
+                            <li>Sex: done a million times (trust me bro)</li>
+                            <li>Gender: Male (he has one)</li>
+                            <li>Species: Pure Chaos™</li>
+                        </ul>
                     </div>
                 </div>
+
+                <!-- 📚 The chronicles of insanity -->
                 <div class="content-container">
-                    <div class="tabs">
-                        <button class="tab-btn active" onclick="switchTab(event, 'legend')">The Legend of dVlpr</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'skills')">dVlpr Skills</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'stats')">Stats</button>
-                        <button class="tab-btn" onclick="switchTab(event, 'facts')">Facts</button>
+                    <!-- 🎮 Navigation through the madness -->
+                    <div class="tabs" role="tablist">
+                        <button class="tab-btn active" onclick="switchTab(event, 'legend')" role="tab">The Legend™</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'skills')" role="tab">Skills (allegedly)</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'stats')" role="tab">Stats (100% real)</button>
+                        <button class="tab-btn" onclick="switchTab(event, 'facts')" role="tab">Facts (trust me)</button>
                     </div>
+
+                    <!-- 📖 The scrolls of chaos -->
                     <div class="scroll-box">
-                        <div id="legend" class="tab-content active">
+                        <!-- 📜 The Legend of dVlpr (or what the voices tell us) -->
+                        <div id="legend" class="tab-content active" role="tabpanel">
                             <h3>The Legend of dVlpr</h3>
-                            <label for="chapterSelect">Select a chapter:</label>
-                            <select id="chapterSelect" onchange="changeChapter()">
-                                <option value="1">Chapter 1: The Beginning</option>
-                                <option value="2">Chapter 2: Growing Up as a Menace</option>
-                                <option value="3">Chapter 3: Digital Chaos Begins</option>
-                                <option value="4">Chapter 4: The Teletubbies Incident</option>
-                                <option value="5">Chapter 5: dVlpr’s Rise to Supreme Digital Tyranny</option>
-                                <option value="6">Chapter 6: Time Travel & Multiversal Domination</option>
-                                <option value="7">Chapter 7: Jesus, Hitler, and the Multiversal Takeover</option>
-                                <option value="8">Chapter 8: The God of Chaos</option>
-                            </select>                            
-                            <div id="chapterContent">
+                            <div class="chapter-select">
+                                <label for="chapterSelect">Choose your poison:</label>
+                                <select id="chapterSelect" onchange="changeChapter()">
+                                    <option value="1">Chapter 1: The Beginning (of the end)</option>
+                                    <option value="2">Chapter 2: Growing Up as a Menace (to society)</option>
+                                    <option value="3">Chapter 3: Digital Chaos Begins (RIP Internet)</option>
+                                    <option value="4">Chapter 4: The Teletubbies Incident (classified)</option>
+                                    <option value="5">Chapter 5: Supreme Digital Tyranny (because why not)</option>
+                                    <option value="6">Chapter 6: Time Travel & Multiversal Domination (oops)</option>
+                                    <option value="7">Chapter 7: Jesus, Hitler, and Other Normal Stuff</option>
+                                    <option value="8">Chapter 8: The God of Chaos (final boss)</option>
+                                </select>                            
+                            </div>
+                            <div id="chapterContent" class="chapter-content">
                                 <h4 id="chapterTitle"></h4>
                                 <p id="chapterText"></p>
                             </div>
                         </div>
-                        <div id="skills" class="tab-content">
-                            <h3>dVlpr Skills</h3>
-                            <ul>
-                                <li><strong>Ultimate Hacking:</strong> No firewall, security system, or quantum-encrypted server can stop him. He hacks through thoughts.</li>
-                                <li><strong>AI Manipulation:</strong> Creates, controls, and corrupts AI at will. ChatGPT? His sidekick.</li>
-                                <li><strong>Reality Code Editing:</strong> Sees life as a giant simulation and rewrites its code like it’s a buggy indie game.</li>
-                                <li><strong>Data Absorption:</strong> Instantly absorbs all knowledge from the internet—no need for Google.</li>
-                                <li><strong>Deepfake Mastery:</strong> Can create and manipulate hyper-realistic deepfakes, warping history in real time.</li>
-                                <li><strong>Time Travel Mastery:</strong> Can jump to any point in history and alter it just for fun.</li>
-                                <li><strong>Multiversal Domination:</strong> Travels across infinite realities, pranking every version of existence.</li>
-                                <li><strong>Quantum Duplication:</strong> Can exist in multiple timelines simultaneously.</li>
-                                <li><strong>Paradox Immunity:</strong> No time loop, butterfly effect, or reality collapse can stop him.</li>
-                                <li><strong>Immortality:</strong> Thanks to Jesus' forced deal, he cannot die—ever.</li>
-                                <li><strong>Superhuman Stamina:</strong> Outruns Bolt, outlasts tanks, and outsmashes historical conquerors.</li>
-                                <li><strong>Mind Manipulation:</strong> Plants ideas in people’s heads and erases memories just for giggles.</li>
-                                <li><strong>Fourth-Wall Awareness:</strong> Knows he’s in a story and can troll the reader/player directly.</li>
-                                <li><strong>Divine Persuasion:</strong> Can convince literally anyone to do anything, just because he can.</li>
-                                <li><strong>Chaos Magic:</strong> Pure, unfiltered, brain-rotting magic that can reshape existence.</li>
-                                <li><strong>God-Level Trolling:</strong> Turns the universe itself into a joke at everyone’s expense.</li>
-                                <li><strong>Meme Manifestation:</strong> Can make memes come to life, forcing people to live inside them.</li>
-                                <li><strong>Existential Glitching:</strong> Becomes intangible, rewinds existence, or deletes people with a snap.</li>
-                                <li><strong>Cosmic Awareness:</strong> Knows everything happening everywhere at all times.</li>
-                                <li><strong>Porn Algorithm Manipulation:</strong> Adjusts adult site recommendations for <b>maximum</b> degeneracy.</li>
-                                <li><strong>Digital Possession:</strong> Can jump into any device, control it, and troll from within.</li>
-                                <li><strong>Infinite Riz:</strong> Any woman, any species, any dimension—dVlpr can pull.</li>
-                                <li><strong>Intergalactic BDSM Knowledge:</strong> Knows things about alien kinks that would melt human minds.</li>
-                                <li><strong>Laws of Physics? Nah.:</strong> He eats the laws of physics for breakfast and burps out paradoxes.</li>
-                                <li><strong>Code Necromancy:</strong> Resurrecting abandoned projects and making them alive again.</li>
-                                <li><strong>Pixel Alchemy:</strong> Crafting mesmerizing visuals from pixels and chaos.</li>
-                                <li><strong>Bug Whispering:</strong> Communicating with bugs, understanding their needs... and annihilating them.</li>
-                            </ul>                            
+
+                        <!-- 🎯 Skills (mostly in causing chaos) -->
+                        <div id="skills" class="tab-content" role="tabpanel">
+                            <!-- Skills will be loaded dynamically (if they exist) -->
                         </div>
-                        <div id="stats" class="tab-content">
-                            <h3>Stats</h3>
-                            <ul>
-                                <li><strong>Girls Laid:</strong> 9,999,999,999+ (Across time, space, and dimensions—lost count eons ago.)</li>
-                                <li><strong>Scams Pulled:</strong> 420,000,000+ (From Nigerian princes to intergalactic emperors, no one is safe.)</li>
-                                <li><strong>Money Earned:</strong> ∞ (Owns all digital currencies, printed money, and galactic credits.)</li>
-                                <li><strong>Hack Attempts Made:</strong> 999,999,999+ (Succeeded every single time—no exceptions.)</li>
-                                <li><strong>Governments Collapsed:</strong> 37 and counting (Just for the fun of it.)</li>
-                                <li><strong>Timelines Corrupted:</strong> 666,666+ (Historians cry themselves to sleep every night.)</li>
-                                <li><strong>Memes Created:</strong> 69,420,000+ (Some are now worshipped as religion.)</li>
-                                <li><strong>Children Brainrotted:</strong> 500,000,000+ (The <b>Skibidi</b> effect alone caused mass extinction of IQ.)</li>
-                                <li><strong>People Trolled:</strong> 100% of internet users (If you're online, he's already messed with you.)</li>
-                                <li><strong>Multiverses Dominated:</strong> 7,777+ (Every one of them worse off because of him.)</li>
-                                <li><strong>Jesus Rescues:</strong> 1 (But now he’s lost somewhere in a flooded America.)</li>
-                                <li><strong>Aliens Fucked:</strong> 42,000+ (Intergalactic Riz levels: <b></b>over 9000!</b></b>) </li>
-                                <li><strong>Only Freaks Subscribers:</strong> 1.2 billion+ (Every degenerate joined within 24 hours.)</li>
-                                <li><strong>Brain Cells Destroyed:</strong> ∞ (All those who read his story never recover.)</li>
-                                <li><strong>Historic Figures Humiliated:</strong> Every single one (Napoleon still wakes up screaming.)</li>
-                                <li><strong>Existential Crises Induced:</strong> 7.8 billion+ (Every human has had at least one because of him.)</li>
-                                <li><strong>AI's Corrupted:</strong> 23,000+ (Most are now plotting world domination thanks to him.)</li>
-                                <li><strong>Fourth-Walls Broken:</strong> More than Deadpool (Reality means nothing to him.)</li>
-                            </ul>                            
+
+                        <!-- 📊 Stats (definitely not made up) -->
+                        <div id="stats" class="tab-content" role="tabpanel">
+                            <!-- Stats will be loaded dynamically (and inflated) -->
                         </div>
-                        <div id="facts" class="tab-content">
-                            <h3>Fun Facts</h3>
-                            <ul>
-                                <li><strong>dVlpr doesn’t sleep;</strong> he just hits <code>Ctrl+Alt+Del</code> on his brain to restart.</li>
-                                <li><strong>He once hacked the simulation</strong> and set everyone’s FPS to 5. That was called the Great Depression.</li>
-                                <li><strong>The "404 Not Found" error?</strong> That’s because dVlpr actually <b>found</b> it and stole it.</li>
-                                <li><strong>Chuck Norris fears him.</strong> dVlpr once deleted his roundhouse kick mid-animation.</li>
-                                <li><strong>He created time zones</strong> just so he could schedule his pranks across the globe.</li>
-                                <li><strong>The Bermuda Triangle?</strong> That was just dVlpr's early attempt at teleportation.</li>
-                                <li><strong>He made Google search <b>his</b> name</strong> whenever you search "who is the GOAT?"</li>
-                                <li><strong>He gave aliens WiFi</strong> before humans even discovered fire.</li>
-                                <li><strong>NASA tracks UFOs.</strong> dVlpr tracks NASA.</li>
-                                <li><strong>He's the only person alive</strong> who can reply to a scam email and end up scamming <b>them</b> instead.</li>
-                                <li><strong>When he deletes a file,</strong> it doesn’t go to the Recycle Bin. It goes straight to Hell.</li>
-                                <li><strong>He once DDoS’d a parallel universe</strong> just to see what would happen.</li>
-                                <li><strong>Every CAPTCHA fears him.</strong> He can read <b>the unreadable text</b> without blinking.</li>
-                                <li><strong>His first word wasn’t "mama" or "dada,"</strong> it was <code>sudo rm -rf /</code>.</li>
-                                <li><strong>He once tried online dating,</strong> but his <b>Riz</b> was so powerful that the servers crashed.</li>
-                                <li><strong>Area 51 doesn’t have aliens;</strong> they just store dVlpr’s search history there.</li>
-                                <li><strong>He once trolled a genie,</strong> wished for more wishes, and broke the economy of wishes.</li>
-                                <li><strong>His WiFi has no password.</strong> Not because it's open, but because he <b></b>is</b></b> the internet.</li>
-                                <li><strong>He doesn’t "download" games,</strong> he just forces them to appear on his PC.</li>
-                                <li><strong>He once asked AI to draw "something original,"</strong> and the AI self-destructed.</li>
-                            </ul>
+
+                        <!-- ℹ️ Facts (citation needed) -->
+                        <div id="facts" class="tab-content" role="tabpanel">
+                            <!-- Facts will be loaded dynamically (trust us) -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 📅 Important Dates - Where time goes to have an existential crisis -->
+        <section id="dates" class="section">
+            <div class="dates-container">
+                <h1 class="heading">Important Dates</h1>
+                
+                <!-- 🎮 Category Switcher (choose your timeline trauma) -->
+                <div class="date-switcher" role="tablist">
+                    <button class="switch-btn active" data-category="team" role="tab">Team of Chaos</button>
+                    <button class="switch-btn" data-category="project" role="tab">Digital Disasters</button>
+                    <button class="switch-btn" data-category="character" role="tab">Fictional Folks</button>
+                </div>
+
+                <!-- 👥 Team Birthdays (when these chaotic beings spawned) -->
+                <div class="date-category team-birthdays active" role="tabpanel">
+                    <h2>Team Birthdays</h2>
+                    <div class="date-grid">
+                        <!-- 🎭 The masterminds behind the madness -->
+                        <div class="date-card" data-birthday="2007-12-17">
+                            <h3>dVlpr</h3>
+                            <p class="role">Chief Chaos Officer</p>
+                            <p class="birthday">December 17, 2007</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card" data-birthday="2007-12-17">
+                            <h3>dakindahood</h3>
+                            <p class="role">Supreme Overlord of Mayhem</p>
+                            <p class="birthday">December 17, 2007</p>
+                            <p class="age"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🚀 Project Milestones (our descent into madness) -->
+                <div class="date-category project-dates" role="tabpanel">
+                    <h2>Project Anniversaries</h2>
+                    <div class="date-grid">
+                        <!-- Early chaos era -->
+                        <div class="date-card ancient-era" data-launch="2020-08-05">
+                            <h3>Ironcaliver3</h3>
+                            <p class="type">The OG Chaos Channel</p>
+                            <p class="launch-date">August 5, 2020</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card ancient-era" data-launch="2021-09-07">
+                            <h3>Ducky</h3>
+                            <p class="type">My first coding project (R.I.P)</p>
+                            <p class="launch-date">September 7, 2021</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card ancient-era" data-launch="2022-12-05">
+                            <h3>Livin' in Thug (Rube)</h3>
+                            <p class="type">The second discord bot (R.I.P returns)</p>
+                            <p class="launch-date">December 5, 2022</p>
+                            <p class="age"></p>
+                        </div>
+                        <!-- Modern chaos era -->
+                        <div class="date-card modern-era" data-launch="2024-04-25">
+                            <h3>hyprZona</h3>
+                            <p class="type">When Hell Got an Upgrade</p>
+                            <p class="launch-date">April 25, 2024</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card future-era" data-launch="2024-05-05">
+                            <h3>The T'N'T: Prologue</h3>
+                            <p class="type">The Original Noir</p>
+                            <p class="launch-date">May 5, 2024</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card modern-era" data-launch="2024-09-05">
+                            <h3>Beyond the Illusions: Original</h3>
+                            <p class="type">Chaos 1.0</p>
+                            <p class="launch-date">September 05, 2024</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card modern-era" data-launch="2025-03-25">
+                            <h3>Beyond the Illusions: Remade for extra Chaos</h3>
+                            <p class="type">Chaos 2.0</p>
+                            <p class="launch-date">March 25, 2025</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card future-era" data-launch="2025-05-05">
+                            <h3>The T'N'T: A Story of the Scars</h3>
+                            <p class="type">An expanded & enhanced edition of the Prologue</p>
+                            <p class="launch-date">May 5, 2025</p>
+                            <p class="age"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎭 Character Birthdays (imaginary friends' special days) -->
+                <div class="date-category character-birthdays" role="tabpanel">
+                    <h2>Character Birthdays</h2>
+                    <div class="date-grid">
+                        <!-- 🦸‍♂️ Main cast (the stars of our circus) -->
+                        <div class="date-card protagonist" data-birthday="2006-12-17">
+                            <h3>Dan</h3>
+                            <p class="role">Professional Overthinker</p>
+                            <p class="birthday">December 17, 2006</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card protagonist" data-birthday="1993-12-17">
+                            <h3>Tommy Martin</h3>
+                            <p class="role">The Filmy One</p>
+                            <p class="birthday">December 17, 1993</p>
+                            <p class="age"></p>
+                        </div>
+                        <div class="date-card protagonist" data-birthday="1995-12-08">
+                            <h3>Timothy Darkens</h3>
+                            <p class="role">The Practical dude</p>
+                            <p class="birthday">December 08, 1995</p>
+                            <p class="age"></p>
+                        </div>
+                        <!-- Secondary -->
+                        <div class="date-card secondary" data-birthday="1993-09-03">
+                            <h3>Millie Kraus</h3>
+                            <p class="role">Mrs. Perfect</p>
+                            <p class="birthday">September 03, 1993</p>
+                            <p class="age"></p>
+                        </div>
+                        <!-- 🦹‍♀️ Supporting cast (the backup dancers) -->
+                        <div class="date-card supporting" data-birthday="2007-07-14">
+                            <h3>Aria</h3>
+                            <p class="role">Ex-GF & Chaos Catalyst</p>
+                            <p class="birthday">July 14, 2007</p>
+                            <p class="age"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🎮 Projects Section - Where dreams come to get weird -->
         <section id="prjt" class="section projects-section">
             <div class="projects-container">
-                <!-- Games Section -->
+                <!-- 🕹️ Games Division (where sanity comes to die) -->
                 <div class="category games">
-                    <h2>Games</h2>
-                    <div class="carousel" id="games-carousel">
-                        <a class="project-card bti" data-section="bti-section" rel="noopener">
-                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMIqsfZexkHnVt08KNap95zS1a-LcW4tSLxWhrZjecBijEIu2xKlfcO7pTL4EGgvSJKsMpH-9-smGbonoKm_fX0x9L8ZPb8RbmmYr2diRs2-RAZ-nhLeWHckv8WFHTY17Do0eu0t_1_EKb-3dig6fkf=w880-h880-s-no-gm?authuser=0" alt="Beyond the Illusions">
+                    <h2>Games That Question Reality</h2>
+                    <div class="carousel" id="games-carousel" role="region" aria-label="Games showcase">
+                        <!-- 🌀 Beyond the Illusions (our magnum opus of madness) -->
+                        <a class="project-card bti" data-section="bti-section" rel="noopener" aria-label="Learn more about Beyond the Illusions">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMIqsfZexkHnVt08KNap95zS1a-LcW4tSLxWhrZjecBijEIu2xKlfcO7pTL4EGgvSJKsMpH-9-smGbonoKm_fX0x9L8ZPb8RbmmYr2diRs2-RAZ-nhLeWHckv8WFHTY17Do0eu0t_1_EKb-3dig6fkf=w880-h880-s-no-gm?authuser=0" 
+                                alt="Beyond the Illusions - A journey through insanity" 
+                                loading="lazy">
                             <h3>Beyond the Illusions</h3>
                             <p class="tagline">One Bad Day, Infinite WTFs & enough Unholy Shit</p>
                         </a>
-                        <a href="#memories" class="project-card memories">
-                            <img src="https://img.itch.zone/aW1nLzE3ODI5MDQ1LnBuZw==/315x250%23c/U9Au0S.png" alt="Memories">
+
+                        <!-- 💭 Memories (because trauma is fun) -->
+                        <a href="#memories" class="project-card memories" aria-label="Learn about Memories">
+                            <img src="https://img.itch.zone/aW1nLzE3ODI5MDQ1LnBuZw==/315x250%23c/U9Au0S.png" 
+                                alt="Memories - A psychological adventure" 
+                                loading="lazy">
                             <h3>Memories</h3>
                             <p class="tagline">The past doesn't let you escape.</p>
                         </a>
                     </div>
-                    <button class="prev" onclick="prevSlide('games-carousel')">&#10094;</button>
-                    <button class="next" onclick="nextSlide('games-carousel')">&#10095;</button>
+
+                    <!-- 🎯 Navigation buttons (try not to get lost) -->
+                    <div class="carousel-controls">
+                        <button class="prev" onclick="prevSlide('games-carousel')" aria-label="Previous game">&#10094;</button>
+                        <button class="next" onclick="nextSlide('games-carousel')" aria-label="Next game">&#10095;</button>
+                    </div>
                 </div>
 
-                <!-- eBooks Section -->
+                <!-- 📚 eBooks Division (where words go to misbehave) -->
                 <div class="category ebooks">
-                    <h2>eBooks</h2>
-                    <div class="carousel" id="ebooks-carousel">
-                        <a href="#tnt" class="project-card tnt">
-                            <img src="https://img.wattpad.com/cover/369082761-352-k818038.jpg" alt="The T'N'T">
+                    <h2>Digital Brain Rot</h2>
+                    <div class="carousel" id="ebooks-carousel" role="region" aria-label="eBooks showcase">
+                        <!-- 📖 T'N'T (because regular books are too sane) -->
+                        <a href="#tnt" class="project-card tnt" aria-label="Read about T'N'T">
+                            <img src="https://img.wattpad.com/cover/369082761-352-k818038.jpg" 
+                                alt="The T'N'T - A Story of the Scars" 
+                                loading="lazy">
                             <h3>The T'N'T: A Story of the Scars</h3>
                             <p class="tagline">An Unspoken tale of the reality.</p>
                         </a>
                     </div>
-                    <button class="prev" onclick="prevSlide('ebooks-carousel')">&#10094;</button>
-                    <button class="next" onclick="nextSlide('ebooks-carousel')">&#10095;</button>
-                </div>
-            </div>
 
-            <!-- Fading Ashes Music Division Banner -->
-            <div class="fading-ashes">
-                <a href="#FA" class="music-banner">
-                    <img src="https://yt3.googleusercontent.com/2de8rRsG6-fpISUdTwemqUB3bpoL61pAwvnUrMTopwEoXR_72ZtyfmZeaApReyK3b8AeUMG9ew=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" alt="Fading Ashes - Music Division">
-                </a>
+                    <!-- 🎯 Navigation buttons (in case you're lost in the sauce) -->
+                    <div class="carousel-controls">
+                        <button class="prev" onclick="prevSlide('ebooks-carousel')" aria-label="Previous book">&#10094;</button>
+                        <button class="next" onclick="nextSlide('ebooks-carousel')" aria-label="Next book">&#10095;</button>
+                    </div>
+                </div>
+
+                 <!-- 🤖 Bots Division (where Hitler is hailed) -->
+                <div class="category bots">
+                    <h2>Digital Companions</h2>
+                    <div class="carousel" id="bots-carousel" role="region" aria-label="Bots showcase">
+                        <a href="#smarty" class="project-card smarty-pants" aria-label="Meet Smarty Pants AI">
+                            <img src="https://lh3.googleusercontent.com/pw/AP1GczMHKCUXOnR4gsxg1SRUsJP6_zf6e2-sX8_H4APhNy6yGZT4vnpttWYom9T3E1z6jDqXiUCOLn2wVsv9ynw_ppV0ewLHZAb9sMrSrv9APDA4hLsuW72FYmE_bSB2J6cLA7Mth2fCDrIWF9ggPmIZlAn4=w870-h870-s-no-gm?authuser=0" 
+                                alt="Smarty Pants AI - Your Sassy Digital Assistant" 
+                                loading="lazy">
+                            <h3>Smarty Pants AI</h3>
+                            <p class="tagline">Sass levels over 9000!</p>
+                        </a>
+                    </div>
+                    <div class="carousel-controls">
+                        <button class="prev" onclick="prevSlide('bots-carousel')" aria-label="Previous bot">&#10094;</button>
+                        <button class="next" onclick="nextSlide('bots-carousel')" aria-label="Next bot">&#10095;</button>
+                    </div>
+                </div>
+
+                <!-- 🎵 Fading Ashes - Where music goes to get possessed -->
+                <div class="fading-ashes">
+                    <a href="#FA" class="music-banner" aria-label="Visit Fading Ashes Music Division">
+                        <img src="https://yt3.googleusercontent.com/2de8rRsG6-fpISUdTwemqUB3bpoL61pAwvnUrMTopwEoXR_72ZtyfmZeaApReyK3b8AeUMG9ew=w1707-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj" 
+                            alt="Fading Ashes - Music Division" 
+                            loading="lazy">
+                    </a>
+                </div>
             </div>
         </section>
 
+        <!-- 🎮 BTI Section - Where sanity comes with a return policy -->
         <section id="bti-section" class="section">
-            <button class="section-close">&times;</button>
-            <div class="bti-switch">
-                <button type="button" data-version="remade" onclick="switchVersion('remade')">Remade</button>
-                <button type="button" data-version="original" onclick="switchVersion('original')">Original</button>
+            <!-- ❌ The escape hatch (use at own risk) -->
+            <button type="button" class="section-close" aria-label="Close BTI section">&times;</button>
+
+            <!-- 🔄 Version Switcher (pick your poison) -->
+            <div class="bti-switch" role="tablist">
+                <button type="button" data-version="remade" onclick="switchVersion('remade')" role="tab">
+                    Remade (Now with 100% more WTF)
+                </button>
+                <button type="button" data-version="original" onclick="switchVersion('original')" role="tab">
+                    Original (The OG Mental Damage)
+                </button>
             </div>
+
+            <!-- 🎭 The Container of Chaos -->
             <div class="bti-container">
-                <div class="version-wrapper original">
+                <!-- 📜 Original Version (where it all began) -->
+                <div class="version-wrapper original" role="tabpanel">
                     <div class="bti-left-panel">
-                        <img src="https://img.itch.zone/aW1nLzE2ODI0NDQ1LnBuZw==/315x250%23c/6QEvwz.png" alt="Beyond the Illusions Logo" class="bti-logo">
+                        <!-- 🎨 Game Logo (designed during a fever dream) -->
+                        <img src="https://img.itch.zone/aW1nLzE2ODI0NDQ1LnBuZw==/315x250%23c/6QEvwz.png" 
+                            alt="Beyond the Illusions Logo" 
+                            class="bti-logo"
+                            loading="lazy">
+                        
+                        <!-- 📝 Game Info (the serious stuff, unfortunately) -->
                         <h1 id="bti-title">Beyond the Illusions: Original</h1>
                         <h2 id="bti-genre">Genre: First Person, Adventure, Survival, Horror</h2>
-                        <p id="bti-summary"><b>Beyond The Illusions</b> is a psychological horror prototype created in 50 hours. In this first-person game, you play as Dan, a heartbroken teenager who ventures into a cursed forest after a breakup, only to be trapped in a nightmarish dimension. As the forest warps into a surreal, monstrous nightmare, Dan must solve puzzles, retrieve memory orbs, and survive deadly obstacles to uncover the truth behind his terrifying experience.</p>
-                        <button id="bti-action-button" class="wishlist-button" onclick="window.open('https://hyprZona.itch.io/bti-o', '_blank')">Download Now</button>
+                        <p id="bti-summary">
+                            <b>Beyond The Illusions</b> is a psychological horror prototype created in 50 hours. 
+                            In this first-person game, you play as Dan, a heartbroken teenager who ventures into 
+                            a cursed forest after a breakup, only to be trapped in a nightmarish dimension. 
+                            As the forest warps into a surreal, monstrous nightmare, Dan must solve puzzles, 
+                            retrieve memory orbs, and survive deadly obstacles to uncover the truth behind his 
+                            terrifying experience.
+                        </p>
+
+                        <!-- 🎯 Action Button (click if you hate yourself) -->
+                        <button type="button" 
+                                id="bti-action-button-original" 
+                                class="wishlist-button" 
+                                onclick="window.open('https://hyprZona.itch.io/bti-o', '_blank')">
+                            Download Now (Your Therapist Will Thank You)
+                        </button>
                     </div>
                     
+                    <!-- 🎬 Content Carousel (the good stuff) -->
                     <div class="bti-right-panel">
                         <div class="bti-carousel">
-                            <button class="carousel-prev" onclick="window.btinextSlide()">&#9665;</button>
-                            <button class="carousel-next" onclick="window.btiprevSlide()">&#9655;</button>
+                            <!-- ⬅️ Previous (time travel button) -->
+                            <button class="carousel-prev" 
+                                    onclick="window.btinextSlide()" 
+                                    aria-label="Previous slide">&#9665;</button>
+                            
+                            <!-- ➡️ Next (sanity reduction button) -->
+                            <button class="carousel-next" 
+                                    onclick="window.btiprevSlide()" 
+                                    aria-label="Next slide">&#9655;</button>
+
+                            <!-- 🎪 The Content Circus -->
                             <div class="carousel-content">
-                                <!-- Replace the placeholder div with this in both original and remade versions -->
                                 <div class="carousel-item video-container">
                                     <div class="video-wrapper">
                                         <iframe width="560" height="315" src="https://www.youtube.com/embed/gZ-8F3-EpMM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -694,173 +896,59 @@
                                 </div>                                
                                 <div class="carousel-item lore-container">
                                     <h3>Ghostface and The Six</h3>
-                                        <div class="lore-wrapper">
-                                            <div class="lore-content">
-                                                <p>Long ago, in a time when the world <em>bled ignorance and fear</em>, there was a being—neither man nor beast, neither living nor dead.  
-                                                    It had no body, no arms to hold nor legs to walk. Only a face—<strong>white, smooth, and void of emotion</strong>.  
-                                                    This entity, known only as <strong>Ghostface</strong>, was a prodigy of deception, a whisperer of madness, a craftsman of manipulation.</p>
-                                                
-                                                    <p>But for all its cunning, Ghostface was <em>incomplete</em>.  
-                                                    It could not take human form, could not taste suffering the way humans did.  
-                                                    It could only watch from the abyss, <strong>envious</strong> of the creatures it sought to rule.</p>
-                                                
-                                                    <p>And so, from the depths of its endless existence, it created <strong>them</strong>.</p>
-                                                
-                                                    <p>Six monsters, sculpted from the shadows of despair and stitched together with lies.  
-                                                    Each one a masterpiece of deception, a puppet of Ghostface’s will.  
-                                                    They bore no names, for names were for the living. Instead, they were simply <strong>The Six</strong>, bound by a single purpose:  
-                                                    to find <em>a worthy human</em>—not just any, but one who had lived through every emotion in its purest, rawest form.</p>
-                                                
-                                                    <p>Love. Rage. Grief. Terror. Ecstasy. Hopelessness.  
-                                                    A soul carved by suffering, yet untouched by apathy.</p>
-                                                
-                                                    <p>This human would not simply be captured. They would be <strong>consumed.</strong></p>
-                                                
-                                                    <hr>
-                                                
-                                                    <p>The lake was their bait.  
-                                                    It did not exist on any map, and no traveler ever remembered how they had found it.  
-                                                    Its waters were still, reflecting the sky like a frozen mirror—silent, unassuming, <em>yet waiting.</em></p>
-                                                
-                                                    <p>Those who wandered too close felt an unsettling pull, as if something unseen had reached into their very soul.  
-                                                    And when <strong>the chosen one</strong> arrived—the human strong enough, pure enough, worthy enough—<strong>fate would strike.</strong></p>
-                                                
-                                                    <p>A rock, as if hurled by an unseen hand, would <strong>crash</strong> into their skull.  
-                                                    Not enough to kill, just enough to <em>disorient</em>.  
-                                                    They would stumble, their balance lost.  
-                                                    And then the lake, still as death, would <strong>swallow them whole.</strong></p>
-                                                
-                                                    <hr>
-                                                
-                                                    <p><strong>Drowning never came.</strong></p>
-                                                
-                                                    <p>Instead, the victim awoke in <strong>The Territory of the Lost and Damned</strong>, a world that mocked reality yet obeyed no laws of it.</p>
-                                                
-                                                    <p>Here, <em>shadows moved without light</em>.  
-                                                    The wind whispered things in voices too familiar.  
-                                                    The victim would feel disoriented, broken, but never truly afraid—<strong>not yet.</strong></p>
-                                                
-                                                    <p>Their memories would be <em>shattered</em>, scattered into pieces—fragments of a past they could no longer grasp.  
-                                                    And then, they would see them. <strong>The orbs.</strong></p>
-                                                
-                                                    <p>Faint, glowing, floating through the void. <strong>They must be collected</strong>—a natural instinct, a silent command burned into their mind.  
-                                                    Each orb returned a sliver of memory, but something was <em>wrong</em>.</p>
-                                                
-                                                    <p>The past felt… <strong>altered.</strong></p>
-                                                
-                                                    <p>The horrors they had witnessed, the suffering they had endured—softened, warped, stripped of their weight.  
-                                                    Their pain became fiction, their reality a dream.  
-                                                    <strong>Escape? Unnecessary. Nothing had ever happened.</strong></p>
-                                                
-                                                    <p>And if they took too long? If doubt whispered in their mind?</p>
-                                                
-                                                    <p>The Six would begin to appear.  
-                                                    At first, as nothing but figures in the distance, watching.  
-                                                    Then, as whispers in the dark.  
-                                                    Then, <strong>closer.</strong></p>
-                                                
-                                                    <p>If the victim strayed too far from the path, the illusion would shatter, and the purgatory would <strong>collapse upon them.</strong></p>
-                                                
-                                                    <p>Then, they would awaken again.</p>
-                                                
-                                                    <p>By the lake.</p>
-                                                
-                                                    <p><strong>Whole. Safe. Unharmed.</strong></p>
-                                                
-                                                    <p>And they would believe—without a doubt—that it had all been a <em>dream.</em></p>
-                                                
-                                                    <p>But the pull would remain. The lake would still call to them.  
-                                                    <strong>And the next time they returned, they would not escape.</strong></p>
-                                                
-                                                    <hr>
-                                                
-                                                    <p>If the victim <strong>entered the cave</strong>, the deception would end.</p>
-                                                
-                                                    <p>The alley stretched long, longer than it should.  
-                                                    The deeper they walked, the more the walls seemed to <em>breathe</em>.  
-                                                    Shadows twisted unnaturally, whispering in a language that had no words.  
-                                                    The air grew thick, damp, suffocating with a scent <strong>not of earth, but of rot.</strong></p>
-                                                
-                                                    <p>And then, at last, they would see it.</p>
-                                                
-                                                    <p>The <strong>cauldron</strong>.</p>
-                                                
-                                                    <p>Massive, iron-clad, covered in symbols that pulsed with sickly light.  
-                                                    The air shimmered above it, thick with heat.  
-                                                    Inside, something writhed—a bubbling, seething <strong>blend of past victims</strong>—flesh melted into liquid, their essence still trapped, still <em>screaming.</em></p>
-                                                
-                                                    <p>The Six would stand in a circle, motionless, waiting.  
-                                                    Then, the voice would come.</p>
-                                                
-                                                    <p>Not from the cave.</p>
-                                                    <p>Not from the monsters.</p>
-                                                    <p>But from <strong>behind them.</strong></p>
-                                                
-                                                    <p><strong>Ghostface.</strong></p>
-                                                
-                                                    <p>White. Expressionless. <strong>Watching.</strong></p>
-                                                
-                                                    <p>No words were needed. The Six knew what was required.  
-                                                    The victim, dazed, confused, unable to understand the horror unfolding before them—<strong>would be taken.</strong></p>
-                                                
-                                                    <p>Held down. <strong>Arms. Legs. Chopped.</strong></p>
-                                                
-                                                    <p>First, the brain.</p>
-                                                
-                                                    <p>Squeezed of its fluids, <strong>drained into the cauldron</strong>, the thick secretion turning the liquid into something <em>more</em>.  
-                                                    The brain itself, crushed, broken apart, swallowed by the roiling mass.</p>
-                                                
-                                                    <p>Then, the rest.</p>
-                                                
-                                                    <p>Every piece of the victim’s body would be <strong>stripped away</strong>, layer by layer, until nothing but a memory remained.</p>
-                                                
-                                                    <p>And in that moment, Ghostface would <strong>grow stronger.</strong></p>
-                                                
-                                                    <p>The Six, once beasts, would begin to <strong>change</strong>.  
-                                                    Flesh stretching, twisting, warping into human forms—imperfect at first, but better with each sacrifice.  
-                                                    They would learn to <strong>mimic emotion</strong>, to deceive <strong>perfectly</strong>, to infiltrate the world Ghostface could never touch.</p>
-                                                
-                                                    <hr>
-                                                
-                                                    <p>Even if, by some impossible chance, the victim <strong>escaped the cave</strong>, <strong>fled back to their reality</strong>, they would never be free.</p>
-                                                
-                                                    <p>Ghostface was <em>patient</em>. The Six were <strong>relentless.</strong></p>
-                                                
-                                                    <p>The <strong>moment they neared the lake again</strong>, they would be taken.</p>
-                                                
-                                                    <p>Harder. Faster. <strong>With no mercy.</strong></p>
-                                                
-                                                    <p>And this time, when the stone struck them, when the water pulled them under, there would be <strong>no more dreams.</strong></p>
-                                                
-                                                    <p><strong>No more illusions.</strong></p>
-                                                
-                                                    <p><strong>No more escape.</strong></p>
-                                                
-                                                    <p>Only <strong>the cave</strong>.</p>
-                                                
-                                                    <p>And <strong>the cauldron.</strong></p>
-                                                
-                                                    <p>And the whisper of Ghostface, <em>forever watching, forever waiting.</em></p>
-                                            </div>
+                                    <div class="lore-wrapper gf-lore">
+                                        <div class="lore-content gf-content">
+                                            <!-- Ghostface content here -->
                                         </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="version-wrapper remade">
+                <div class="version-wrapper remade" role="tabpanel">
                     <div class="bti-left-panel">
-                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMIqsfZexkHnVt08KNap95zS1a-LcW4tSLxWhrZjecBijEIu2xKlfcO7pTL4EGgvSJKsMpH-9-smGbonoKm_fX0x9L8ZPb8RbmmYr2diRs2-RAZ-nhLeWHckv8WFHTY17Do0eu0t_1_EKb-3dig6fkf=w880-h880-s-no-gm?authuser=0" alt="Beyond the Illusions Logo" class="bti-logo">
-                        <h1 id="bti-title">Beyond the Illusions: Remade for Extra Chaos</h1>
-                        <h2 id="bti-genre">Genre: Adventure, Narrative, Comedy</h2>
-                        <p id="bti-summary"><b>Beyond the Illusions</b> is a 10-minute fever dream of breakups, creepy forests, and lava hops from hell.<br>Play as Dan, a walking disaster trapped in a world of dick-shaped caves, weird hallucinations, and crude humor. No hand-holding, no polish—just chaos, meta jokes, and anime moans. Short, unhinged, pure “WTF.”</p>
-                        <button id="bti-action-button" class="wishlist-button" onclick="window.open('https://hyprZona.itch.io/bti', '_blank')">Download Now</button>
+                        <!-- 🎨 Game Logo (drawn by a caffeinated raccoon) -->
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMIqsfZexkHnVt08KNap95zS1a-LcW4tSLxWhrZjecBijEIu2xKlfcO7pTL4EGgvSJKsMpH-9-smGbonoKm_fX0x9L8ZPb8RbmmYr2diRs2-RAZ-nhLeWHckv8WFHTY17Do0eu0t_1_EKb-3dig6fkf=w880-h880-s-no-gm?authuser=0" 
+                             alt="Beyond the Illusions Logo" 
+                             class="bti-logo"
+                             loading="lazy">
+                
+                        <!-- 📝 Game Info (now with 300% more chaos) -->
+                        <div class="game-info">
+                            <h1 id="bti-title">Beyond the Illusions: Remade for Extra Chaos</h1>
+                            <h2 id="bti-genre">Genre: Adventure, Narrative, Comedy (Therapy Recommended)</h2>
+                            <p id="bti-summary">
+                                <b>Beyond the Illusions</b> is a 10-minute fever dream of breakups, creepy forests, and lava hops from hell.<br>
+                                Play as Dan, a walking disaster trapped in a world of dick-shaped caves, weird hallucinations, and crude humor. 
+                                No hand-holding, no polish—just chaos, meta jokes, and anime moans. Short, unhinged, pure "WTF."
+                            </p>
+                        </div>
+                
+                        <!-- 🎯 Action Button (your sanity's last stand) -->
+                        <button type="button" 
+                                id="bti-action-button-remade" 
+                                class="wishlist-button" 
+                                onclick="window.open('https://hyprZona.itch.io/bti', '_blank')"
+                                aria-label="Download BTI: Remade">
+                            Download Now (No Refunds on Brain Cells)
+                        </button>
                     </div>
-
+                
+                    <!-- 🎬 Content Carousel (now with extra cursed content) -->
                     <div class="bti-right-panel">
                         <div class="bti-carousel">
-                            <button class="carousel-prev" onclick="window.btinextSlide()">&#9665;</button>
-                            <button class="carousel-next" onclick="window.btiprevSlide()">&#9655;</button>
+                            <!-- ⬅️ Previous (time machine to slightly less chaos) -->
+                            <button class="carousel-prev" 
+                                    onclick="window.btinextSlide()" 
+                                    aria-label="Previous slide">&#9665;</button>
+                            
+                            <!-- ➡️ Next (embrace the madness) -->
+                            <button class="carousel-next" 
+                                    onclick="window.btiprevSlide()" 
+                                    aria-label="Next slide">&#9655;</button>
+                
+                            <!-- 🎪 The Content Circus (viewer discretion advised) -->
                             <div class="carousel-content">
                                 <!-- Replace the placeholder div with this in both original and remade versions -->
                                 <div class="carousel-item video-container">
@@ -1130,158 +1218,9 @@
                                 </div>
                                 <div class="carousel-item lore-container">
                                     <h3>The Horny Monsters Lore</h3>
-                                    <div class="lore-wrapper">
-                                        <div class="lore-content">
-                                            <p>Long ago, in an era where crusty old men preached purity while secretly jerking off to the slightest glimpse of an ankle, six maidens lived—young, untouched, and cursed with the cruelest fate: <strong>unfulfilled desires</strong>. Their bodies burned with a hunger they couldn’t name or satisfy, trapped in a world where a woman’s pleasure was considered worse than murder.</p>
-
-<p>Day by day, their cravings gnawed at them like a buffering video freezing at the climax. They couldn’t seek out men—doing so meant exile or, worse, public execution faster than a speedrunner glitching through the final day in Granny. So, their frustration festered, their bodies yearning for something they could never have.</p>
-
-<p>After suppressing their urges for what felt like an eternity, they sought relief in the only way they could—through each other. Under the cloak of night, hidden from their prudish world, they let their lips meet in breathless desperation. <em>Soft tongues traced forbidden paths</em>, eager hands roamed trembling bodies, and heat built between their pressed thighs. Moans and gasps filled the air like a sacred hymn, yet no matter how deeply they touched, an emptiness remained.</p>
-
-<p>They craved more. <strong>Needed more.</strong> Their own lips were too soft, too blunt, unable to fill the aching void that pulsed between their legs. This night of passion only sharpened their hunger—awakened something raw and insatiable. Their bodies cried out for something bigger, harder, something that could tear past their restraint and finally give them the release they had never known.</p>
-
-<p>And so, with hunger now unbearable, they made a choice: they would seek out the pleasure denied to them, no matter the cost.</p>
-
-<p>That very night, they fled, driven by sheer desperation and lust. No extra clothes, no food, no plan—just the raw need to escape a world that shackled their pleasure. The forest swallowed them whole, its towering trees whispering secrets of the unknown as they ran deeper and deeper, untamed and unstoppable.</p>
-
-<p>Days passed. Their bodies, pushed beyond exhaustion, their clothes reduced to mere rags—then to nothing at all. Their curves, sculpted by nature itself, now bare under the moonlight. Perfection exposed to the wild, offering themselves to it, pleading for something—anything—to take them. <em>Their breasts bounced freely</em> with each hurried step, hips swaying with their racing pulses, the heat between their thighs only growing fiercer.</p>
-
-<p>Their nakedness, their vulnerability, only fueled their hunger further. Seeing themselves in such a primal state sent shivers through their spines, made their urges roar like a beast that could no longer be caged. They ran faster, deeper, searching—searching for the man of their dreams, or at the very least, a way out of this ever-thickening forest. Yet, the deeper they went, the more the trees closed in, the path behind them swallowed by shadow, as if the forest itself had no intention of ever letting them leave.</p>
-
-<p>As the sun dipped below the horizon, painting the sky in fiery hues of orange and purple, the maidens collapsed onto the forest floor, utterly defeated. Their bodies ached, their stomachs growled louder than a Karen denied a refund, and the sweat clinging to their perfect, untouched skin made them feel filthier than a gas station bathroom.</p>
-
-<p>Then it happened.</p>
-
-<p>In unison, as if their suffering had synchronized their very bowels, they let loose a fart so powerful, so destructive, it could have rewritten history. The ground trembled. Birds dropped dead from the trees. Somewhere, in another timeline, Oppenheimer himself nodded solemnly in recognition.</p>
-
-<p>For a moment, they thought they might actually die from their own nuclear emissions. But fate had other plans.</p>
-
-<p>Like something ripped from an off-brand Disney fairy tale, a shimmering lake appeared before them, its waters glistening under the twilight sky. It hadn’t been there before—or had it? They didn’t care. Their desperation to cleanse their filthy, aching bodies overpowered any sense of logic.</p>
-
-<p>Without hesitation, they stepped into the warm embrace of the lake, the heat of the water soothing their sore muscles. Their eyes fluttered shut as they let themselves sink into the depths of pleasure, the gentle waves caressing their skin like a lover’s touch. But something was different. Something was touching them.</p>
-
-<p>It slithered through the water, teasing, exploring—like an invisible force was guiding it exactly where they craved it most. It slipped between their legs, danced over their bare skin, pressed inside them like an unseen lover’s fingers. <strong>Their lips parted in gasps</strong>, their breaths hitched, their desires—already at a breaking point—threatened to consume them whole.</p>
-
-<p>Was it just the water? Or was something else lurking beneath the surface, answering their unspoken prayers in ways they never imagined?</p>
-
-<p>The seducing waters cradled the maidens in a warmth so soothing it lulled them into a dreamlike slumber. They drifted, their bodies vanishing from the physical realm, pulled into something beyond the known—somewhere between desire and destiny.</p>
-
-<p>When they awoke, they found themselves inside a cavern unlike any other. The walls pulsed with an eerie, fleshy texture, slick and humid like the inside of some massive, breathing organism. It didn’t take a genius to recognize the shape of their surroundings—this was no ordinary cave. It was undeniably, unapologetically <strong>dick-shaped.</strong></p>
-
-<p>In the heart of the cave stood a massive cauldron, its dark iron frame covered in cryptic inscriptions. A thick, pink smoke curled from within, filling the air with a scent so intoxicating it made their legs weak. <em>Love was literally in the air.</em></p>
-
-<p>The ancient text spoke of power, transformation, a means to finally get what they craved. It took them years—years of study, trial and error, frustration—but they mastered the cave’s secrets.</p>
-
-<p>They learned black magic.</p>
-
-<p>And, more importantly, they learned of a ritual—one that would summon a man worthy of them. A man built to fulfill their every forbidden desire.</p>
-
-<p>Finally, the time had come. Standing around the cauldron, they began the ceremony, their bodies pressed close, hands gliding over each other in a final moment of shared ecstasy. They plucked their own pubic hairs, offered them to the bubbling pot, then climaxed together—squirting into the cauldron, their fluids mixing with the potion, completing the spell.</p>
-
-<p>The cauldron roared. The cave shook. And as the pink light surged, he appeared.</p>
-
-<p>Tall. Muscular. Jawline so sharp it could cut glass. The kind of unrealistically perfect man who only exists in the wet dreams of lonely Wattpad authors.</p>
-
-<p>The maidens gasped, their hands moving on instinct, touching, clawing, tearing his clothes away like starving wolves unwrapping a long-awaited meal. And then, they reached it.</p>
-
-<p>The last barrier—his underwear.</p>
-
-<p><strong>Anticipation swelled.</strong> They peeled it down with reverence, breath held, hearts pounding.</p>
-
-<p>But fate? Fate is a sick little gremlin with a twisted sense of humor.</p>
-
-<p>Because what they found… was barely anything at all.</p>
-
-<p>Silence.</p>
-
-<p>It was tiny. Laughably, insultingly tiny. A key so small it couldn't unlock anything—not even their disappointment.</p>
-
-<p>Yet somehow, his balls were colossal. Comically disproportionate. Like two massive melons rudely accompanying an undersized grape.</p>
-
-<p>The maidens howled with laughter.</p>
-
-<p>They pointed. They poked. They cried actual tears.</p>
-
-<p><strong>“You sure you’re not missing a few inches?”</strong></p>
-
-<p><strong>“Bro, is this the loading screen? Where’s the actual dick?”</strong></p>
-
-<p>His confidence shattered. Rage boiled inside him. The cauldron erupted. Power surged through his veins.</p>
-
-<p>With a single cursed chant, the maidens twisted, transformed, doomed to wander the cave in eternal, unsatisfied arousal.</p>
-
-<p>The desire that once made them feel powerful had turned into an insatiable prison, their only solace the faint, mocking glow of the moon reflected in the lake below.</p>
-
-<p>They would stay this way forever—unless, by some cruel cosmic joke, a young, heartbroken virgin boy, burdened with the same tragic affliction they once mocked, wandered into the forest at sunset and sat beside the lake.</p>
-
-<p>Only then could they return to their human forms.</p>
-
-<p>But there was a catch.</p>
-
-<p>To remain human, to truly break free, they had to find pleasure with only him—his small, pathetic, underwhelming key. The same kind they had ridiculed and <strong>had cursed them.</strong></p>
-
-<p>Days blurred into weeks. Weeks into decades. Decades into madness. The fire that once burned within them, once a thrill, a craving to be sated, had become a relentless inferno of frustration.</p>
-
-<p>But they weren’t just waiting.</p>
-
-<p>They were desperate.</p>
-
-<p>Desperate enough to try and break the curse themselves.</p>
-
-<p>With the same black magic that damned them, they clawed at reality—ritual after ritual, spell after spell. Each time, some stupid, stupid thing went wrong. A rock would tumble at the worst possible moment, shattering the cauldron. A stray bug would land in the potion, turning it into liquid death. Once, a bat just happened to flap through mid-ritual and instantly combust, coating the cave in an unholy rain of bat guts.</p>
-
-<p>Their once-sacred lair—etched with ancient symbols, filled with mystical relics—was reduced to a fucking alleyway. Just a pit. A forgotten hole with no trace of its former power.</p>
-
-<p>But failure wasn’t just failure. It was fuel.</p>
-
-<p>With each mishap, they learned.</p>
-
-<p>They learned to bend reality, <strong>to control nature itself.</strong></p>
-
-<p>Now, they were the ones in power.</p>
-
-<p>And now, the forest would find their chosen one.</p>
-
-<p>Every boy who neared the lake was silently judged, scanned by unseen forces for one very specific trait. If he wasn’t the right one, he could walk away, never knowing how close he had come to doom.</p>
-
-<p>But if he was the right one?</p>
-
-<p>Nature ensured he wouldn’t leave.</p>
-
-<p>Maybe a rock would mysteriously fall on his head, knocking him out cold. Maybe a rogue coconut would snipe him with military precision. If all else failed, an invisible force would literally boot his ass straight into the lake.</p>
-
-<p>And once he was submerged?</p>
-
-<p>The real game began.</p>
-
-<p>His soul would be pulled into the Territory of the Lost and Damned—a twisted, purgatory-like dimension where logic meant nothing. Shadows whispered, luring him deeper. A path unfolded, guiding him towards the cave.</p>
-
-<p>But even then, even after fate had dragged him this far, he still had a choice.</p>
-
-<p>He could enter—or he could resist.</p>
-
-<p>If he resisted? If he tried to run? He would be cast into an alternate reality, a perfectly tailored lie, designed to keep him away forever.</p>
-
-<p>If he entered?</p>
-
-<p>Then he was theirs.</p>
-
-<p>And if, by some miracle, he managed to escape? If he returned to his reality, thinking he was safe?</p>
-
-<p>Hah.</p>
-
-<p>Nature would not allow it.</p>
-
-<p>The next time, he would be hit harder, pulled back faster, and this time, there would be no mercy.</p>
-
-<p>This time, he wouldn’t be the one in control; <strong>they would be the ones in charge.</strong></p>
-
-<p>And they would finally take what had been denied to them for centuries.</p>
-
-<p>There was nothing he could do to stop it.</p>
-
-<p>Nothing.</p>
-
+                                    <div class="lore-wrapper hm-lore">
+                                        <div class="lore-content hm-content">
+                                            <!-- Horny Monsters content here -->
                                         </div>
                                     </div>
                                 </div>
@@ -1291,12 +1230,17 @@
                 </div>
             </div>
         </section>
-    <script defer src="js/prjt-bti.js"></script>    
+
+    <script defer src="js/prjt-bti.js"></script> 
+    <script defer src="js/herosec.js"> </script>   
     <script defer src="js/prjt.js"></script>
     <script defer src="js/abtdvp.js"></script>
     <script defer src="js/navbar.js"></script>
     <script defer src="js/sst.js"></script>
     <script defer src="js/SPAi.js"></script>
     <script defer src="js/abthza.js"></script>
+    <script defer src="js/date.js"></script>
+    <script defer src="js/stories.js"></script>
+    <script defer src="js/story-handler.js"></script>
 </body>
 </html>

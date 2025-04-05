@@ -263,9 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Add hover effects
         assistiveBall.addEventListener('mouseover', () => {
             assistiveBall.style.opacity = '1';
+            assistiveBall.style.animation = 'glitch-ai 0.3s infinite';
         });
 
         assistiveBall.addEventListener('mouseout', () => {
+            assistiveBall.style.animation = 'pulse-ai 2s infinite';
             if (aiContainer.style.display === 'none') {
                 assistiveBall.style.opacity = '0.15';
             }
@@ -293,8 +295,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const responseDiv = document.createElement('div');
                 responseDiv.classList.add('chat-response');
-                responseDiv.textContent = `Smarty Pants AI: ${responseText}`;
-
+                responseDiv.innerHTML = `Smarty Pants AI: ${responseText}`;
+                responseDiv.style.animation = 'typing-ai 0.5s steps(50, end)';
+                
                 chatContent.appendChild(questionDiv);
                 chatContent.appendChild(responseDiv);
                 chatContent.scrollTop = chatContent.scrollHeight;

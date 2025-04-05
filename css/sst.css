@@ -1,15 +1,47 @@
+/* Import cyberpunk fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
+/* Enhanced animations */
 @keyframes glitch-sst {
     0% { transform: translate(0); }
-    25% { transform: translate(-2px, 2px); }
-    50% { transform: translate(2px, -2px); }
-    75% { transform: translate(-2px, -2px); }
-    100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); filter: hue-rotate(0deg); }
+    40% { transform: translate(2px, -2px); filter: hue-rotate(30deg); }
+    60% { transform: translate(-2px, -2px); filter: hue-rotate(60deg); }
+    80% { transform: translate(2px, 2px); filter: hue-rotate(30deg); }
+    100% { transform: translate(0); filter: hue-rotate(0deg); }
 }
 
 @keyframes border-flow-sst {
     0% { border-color: #0ff; }
-    50% { border-color: #f00; }
+    33% { border-color: #f0f; }
+    66% { border-color: #f00; }
     100% { border-color: #0ff; }
+}
+
+@keyframes cyber-pulse-sst {
+    0% { 
+        box-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+        text-shadow: 0 0 5px #0ff;
+    }
+    50% { 
+        box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+        text-shadow: 0 0 10px #0ff;
+    }
+    100% { 
+        box-shadow: 0 0 5px #0ff, 0 0 15px #0ff;
+        text-shadow: 0 0 5px #0ff;
+    }
+}
+
+@keyframes neon-flicker-sst {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 0.95;
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+    }
+    20%, 22%, 24%, 55% {
+        opacity: 0.5;
+        text-shadow: none;
+    }
 }
 
 @keyframes glow-pulse-sst {
@@ -39,20 +71,22 @@
     cursor: pointer;
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
-    animation: glow-pulse-sst 2s infinite;
+    animation: cyber-pulse-sst 2s infinite;
     box-shadow: 
         0 0 10px rgba(0, 255, 255, 0.6),
         0 0 20px rgba(0, 255, 255, 0.4),
         0 0 30px rgba(0, 255, 255, 0.2),
         inset 0 0 15px rgba(0, 255, 255, 0.4);
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 9997;
+    font-family: 'Orbitron', sans-serif;
 }
 
 .social-tab:hover {
     transform: scale(1.05);
     animation: glitch-sst 0.3s infinite;
-    background-color: rgba(0, 255, 255, 0.3);
+    background-color: rgba(0, 255, 255, 0.2);
+    border-color: #f00;
     box-shadow: 
         0 0 15px rgba(0, 255, 255, 0.8),
         0 0 30px rgba(0, 255, 255, 0.6),
@@ -86,15 +120,18 @@
         inset 0 0 20px rgba(0, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     z-index: 9997;
+    font-family: 'Rajdhani', sans-serif;
+    isolation: isolate; /* Create stacking context */
 }
 
+/* Move the pattern to a pseudo-element that stays fixed within the container */
 .social-links::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    position: fixed; /* Change from absolute to fixed */
+    top: 20px; /* Match the bottom distance of parent */
+    left: 20px; /* Match the left distance of parent */
+    width: 280px; /* Match parent width */
+    height: 1425px; /* Match parent max-height */
     background: 
         linear-gradient(90deg, 
             rgba(0, 255, 255, 0.1) 1px,
@@ -103,6 +140,7 @@
             rgba(0, 255, 255, 0.1) 1px,
             transparent 1px) 0 0 / 20px 20px;
     pointer-events: none;
+    z-index: -1; /* Place behind content */
 }
 
 .social-group {
@@ -114,18 +152,19 @@
         0 0 10px rgba(0, 255, 255, 0.2),
         inset 0 0 10px rgba(0, 255, 255, 0.1);
     position: relative;
-    z-index: 9996;
+    z-index: 1; /* Ensure content stays above pattern */
 }
 
 .social-group-title {
     color: #f00;
-    font-family: 'Courier New', monospace;
+    font-family: 'Orbitron', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
     text-shadow: 
         0 0 10px rgba(255, 0, 0, 0.7),
         0 0 20px rgba(255, 0, 0, 0.5);
+    animation: neon-flicker-sst 10s infinite;
 }
 
 .social-links a {
@@ -137,6 +176,8 @@
     transition: all 0.3s;
     position: relative;
     padding-left: 20px;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
 }
 
 .social-links a:hover {
@@ -155,6 +196,23 @@
 
 .social-links a:hover::before {
     opacity: 1;
+}
+
+.social-links a::after {
+    content: '';
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+    animation: cyber-slide-sst 3s infinite;
+}
+
+@keyframes cyber-slide-sst {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: -100%; }
 }
 
 .social-links::-webkit-scrollbar {
@@ -194,6 +252,14 @@
         padding: 12px;
     }
 
+    .social-links::before {
+        top: 60px; /* Update to match mobile positioning */
+        left: 15px;
+        width: 85vw;
+        max-width: 300px;
+        height: 70vh;
+    }
+
     .social-group {
         padding: 8px;
         margin-bottom: 15px;
@@ -219,6 +285,10 @@
     .social-links {
         width: 90vw;
         padding: 10px;
+    }
+
+    .social-links::before {
+        width: 90vw;
     }
 }
 

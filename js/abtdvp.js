@@ -10,7 +10,9 @@ function checkTerms() {
         document.getElementById("termsScreen").style.display = "none";
         document.getElementById("profileContainer").style.display = "block";
         setProfileImage();
-        // Set default chapter when terms are accepted
+        loadContent('skills'); // Load initial content
+        loadContent('stats');
+        loadContent('facts');
         changeChapter();
     }
 }
@@ -20,6 +22,11 @@ function switchTab(event, tabId) {
     document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
     event.currentTarget.classList.add('active');
+
+    // Load content if it hasn't been loaded yet
+    if (tabId !== 'legend' && !document.getElementById(tabId).innerHTML) {
+        loadContent(tabId);
+    }
 }
 
 function changeChapter() {
@@ -54,8 +61,139 @@ function changeChapter() {
     document.getElementById("chapterText").innerText = chapters[val][1];
 }
 
+const profileContent = {
+    skills: [
+        { name: "Ultimate Hacking", description: "No firewall, security system, or quantum-encrypted server can stop him. He hacks through thoughts." },
+        { name: "AI Manipulation", description: "Creates, controls, and corrupts AI at will. ChatGPT? His sidekick." },
+        { name: "Reality Code Editing", description: "Sees life as a giant simulation and rewrites its code like it's a buggy indie game." },
+        { name: "Data Absorption", description: "Instantly absorbs all knowledge from the internet—no need for Google." },
+        { name: "Deepfake Mastery", description: "Can create and manipulate hyper-realistic deepfakes, warping history in real time." },
+        { name: "Time Travel Mastery", description: "Can jump to any point in history and alter it just for fun." },
+        { name: "Multiversal Domination", description: "Travels across infinite realities, pranking every version of existence." },
+        { name: "Quantum Duplication", description: "Can exist in multiple timelines simultaneously." },
+        { name: "Paradox Immunity", description: "No time loop, butterfly effect, or reality collapse can stop him." },
+        { name: "Immortality", description: "Thanks to Jesus' forced deal, he cannot die—ever." },
+        { name: "Superhuman Stamina", description: "Outruns Bolt, outlasts tanks, and outsmashes historical conquerors." },
+        { name: "Mind Manipulation", description: "Plants ideas in people's heads and erases memories just for giggles." },
+        { name: "Fourth-Wall Awareness", description: "Knows he's in a story and can troll the reader/player directly." },
+        { name: "Divine Persuasion", description: "Can convince literally anyone to do anything, just because he can." },
+        { name: "Chaos Magic", description: "Pure, unfiltered, brain-rotting magic that can reshape existence." },
+        { name: "God-Level Trolling", description: "Turns the universe itself into a joke at everyone's expense." },
+        { name: "Meme Manifestation", description: "Can make memes come to life, forcing people to live inside them." },
+        { name: "Existential Glitching", description: "Becomes intangible, rewinds existence, or deletes people with a snap." },
+        { name: "Cosmic Awareness", description: "Knows everything happening everywhere at all times." },
+        { name: "Porn Algorithm Manipulation", description: "Adjusts adult site recommendations for <b>maximum</b> degeneracy." },
+        { name: "Digital Possession", description: "Can jump into any device, control it, and troll from within." },
+        { name: "Infinite Riz", description: "Any woman, any species, any dimension—dVlpr can pull." },
+        { name: "Intergalactic BDSM Knowledge", description: "Knows things about alien kinks that would melt human minds." },
+        { name: "Laws of Physics? Nah.", description: "He eats the laws of physics for breakfast and burps out paradoxes." },
+        { name: "Code Necromancy", description: "Resurrecting abandoned projects and making them alive again." },
+        { name: "Pixel Alchemy", description: "Crafting mesmerizing visuals from pixels and chaos." },
+        { name: "Bug Whispering", description: "Communicating with bugs, understanding their needs... and annihilating them." }
+    ],
+    
+    stats: [
+        { stat: "Girls Laid", value: "9,999,999,999+", context: "(Across time, space, and dimensions—lost count eons ago.)" },
+        { stat: "Scams Pulled", value: "420,000,000+", context: "(From Nigerian princes to intergalactic emperors, no one is safe.)" },
+        { stat: "Money Earned", value: "∞", context: "(Owns all digital currencies, printed money, and galactic credits.)" },
+        { stat: "Hack Attempts Made", value: "999,999,999+", context: "(Succeeded every single time—no exceptions.)" },
+        { stat: "Governments Collapsed", value: "37 and counting", context: "(Just for the fun of it.)" },
+        { stat: "Timelines Corrupted", value: "666,666+", context: "(Historians cry themselves to sleep every night.)" },
+        { stat: "Memes Created", value: "69,420,000+", context: "(Some are now worshipped as religion.)" },
+        { stat: "Children Brainrotted", value: "500,000,000+", context: "(The <b>Skibidi</b> effect alone caused mass extinction of IQ.)" },
+        { stat: "People Trolled", value: "100% of internet users", context: "(If you're online, he's already messed with you.)" },
+        { stat: "Multiverses Dominated", value: "7,777+", context: "(Every one of them worse off because of him.)" },
+        { stat: "Jesus Rescues", value: "1", context: "(But now he's lost somewhere in a flooded America.)" },
+        { stat: "Aliens Fucked", value: "42,000+", context: "(Intergalactic Riz levels: <b>over 9000!</b>)" },
+        { stat: "Only Freaks Subscribers", value: "1.2 billion+", context: "(Every degenerate joined within 24 hours.)" },
+        { stat: "Brain Cells Destroyed", value: "∞", context: "(All those who read his story never recover.)" },
+        { stat: "Historic Figures Humiliated", value: "Every single one", context: "(Napoleon still wakes up screaming.)" },
+        { stat: "Existential Crises Induced", value: "7.8 billion+", context: "(Every human has had at least one because of him.)" },
+        { stat: "AI's Corrupted", value: "23,000+", context: "(Most are now plotting world domination thanks to him.)" },
+        { stat: "Fourth-Walls Broken", value: "More than Deadpool", context: "(Reality means nothing to him.)" }
+    ],
+    
+    facts: [
+        { fact: "dVlpr doesn't sleep;", description: "he just hits <code>Ctrl+Alt+Del</code> on his brain to restart." },
+        { fact: "He once hacked the simulation", description: "and set everyone's FPS to 5. That was called the Great Depression." },
+        { fact: 'The "404 Not Found" error?', description: "That's because dVlpr actually <b>found</b> it and stole it." },
+        { fact: "Chuck Norris fears him.", description: "dVlpr once deleted his roundhouse kick mid-animation." },
+        { fact: "He created time zones", description: "just so he could schedule his pranks across the globe." },
+        { fact: "The Bermuda Triangle?", description: "That was just dVlpr's early attempt at teleportation." },
+        { fact: 'He made Google search <b>his</b> name', description: 'whenever you search "who is the GOAT?"' },
+        { fact: "He gave aliens WiFi", description: "before humans even discovered fire." },
+        { fact: "NASA tracks UFOs.", description: "dVlpr tracks NASA." },
+        { fact: "He's the only person alive", description: "who can reply to a scam email and end up scamming <b>them</b> instead." },
+        { fact: "When he deletes a file,", description: "it doesn't go to the Recycle Bin. It goes straight to Hell." },
+        { fact: "He once DDoS'd a parallel universe", description: "just to see what would happen." },
+        { fact: "Every CAPTCHA fears him.", description: "He can read <b>the unreadable text</b> without blinking." },
+        { fact: 'His first word wasn\'t "mama" or "dada,"', description: 'it was <code>sudo rm -rf /</code>.' },
+        { fact: "He once tried online dating,", description: "but his <b>Riz</b> was so powerful that the servers crashed." },
+        { fact: "Area 51 doesn't have aliens;", description: "they just store dVlpr's search history there." },
+        { fact: "He once trolled a genie,", description: "wished for more wishes, and broke the economy of wishes." },
+        { fact: "His WiFi has no password.", description: "Not because it's open, but because he <b>is</b> the internet." },
+        { fact: 'He doesn\'t "download" games,', description: "he just forces them to appear on his PC." },
+        { fact: 'He once asked AI to draw "something original,"', description: "and the AI self-destructed." }
+    ]
+};
+
+function loadContent(contentType) {
+    const container = document.getElementById(contentType);
+    if (!container) return;
+
+    let html = '';
+
+    switch(contentType) {
+        case 'skills':
+            html = `
+                <h3>dVlpr Skills</h3>
+                <ul>
+                    ${profileContent.skills.map(skill => 
+                        `<li><strong>${skill.name}</strong> ${skill.description}</li>`
+                    ).join('')}
+                </ul>`;
+            break;
+
+        case 'stats':
+            html = `
+                <h3>Stats</h3>
+                <ul>
+                    ${profileContent.stats.map(stat => 
+                        `<li><strong>${stat.stat}</strong> ${stat.value} ${stat.context}</li>`
+                    ).join('')}
+                </ul>`;
+            break;
+
+        case 'facts':
+            html = `
+                <h3>Fun Facts</h3>
+                <ul>
+                    ${profileContent.facts.map(fact => 
+                        `<li><strong>${fact.fact}</strong> ${fact.description}</li>`
+                    ).join('')}
+                </ul>`;
+            break;
+    }
+
+    container.innerHTML = html;
+}
+
+// Make sure content loads when terms are accepted
 document.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById("profileContainer").style.display === "block") {
-        changeChapter();
+    const termsAccepted = document.getElementById("acceptTerms")?.checked;
+    if (termsAccepted) {
+        loadContent('skills');
+        loadContent('stats');
+        loadContent('facts');
+    }
+});
+
+// Update the event listener to load content when tabs are clicked
+document.addEventListener('DOMContentLoaded', () => {
+    const termsAccepted = document.getElementById("profileContainer").style.display === "block";
+    if (termsAccepted) {
+        loadContent('skills');
+        loadContent('stats');
+        loadContent('facts');
     }
 });

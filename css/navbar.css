@@ -1,3 +1,6 @@
+/* Import cyberpunk-style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&display=swap');
+
 /* Enhanced Scanline Animation */
 @keyframes scanline-nav {
   0% { 
@@ -26,6 +29,36 @@
   100% { transform: scale(1); opacity: 1; }
 }
 
+/* Enhanced electric animations */
+@keyframes electric-pulse-nav {
+  0% { box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
+  50% { box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff; }
+  100% { box-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff; }
+}
+
+@keyframes neon-flicker-nav {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+    filter: brightness(1);
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+    filter: brightness(0.8);
+  }
+}
+
+@keyframes cyber-glow-nav {
+  0% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 25px #0ff; }
+  50% { text-shadow: 0 0 10px #0ff, 0 0 30px #0ff, 0 0 50px #0ff; }
+  100% { text-shadow: 0 0 5px #0ff, 0 0 15px #0ff, 0 0 25px #0ff; }
+}
+
+/* Add new animation for opacity transition */
+@keyframes fade-idle-nav {
+  0% { opacity: 1; }
+  100% { opacity: 0.15; }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -33,7 +66,7 @@ body {
   overflow: hidden;
   background-color: #000;
   color: #0ff;
-  font-family: 'Courier New', monospace;
+  font-family: 'Rajdhani', sans-serif;
   position: relative;
 }
 
@@ -98,7 +131,7 @@ html {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgba(0, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.9);
   border: 2px solid #0ff;
   position: fixed;
   bottom: 20px;
@@ -109,6 +142,7 @@ html {
   justify-content: center;
   color: #0ff;
   font-size: 24px;
+  font-family: 'Orbitron', sans-serif;
   box-shadow: 
     0 0 10px rgba(0, 255, 255, 0.5),
     0 0 20px rgba(0, 255, 255, 0.3),
@@ -116,7 +150,17 @@ html {
     inset 0 0 15px rgba(0, 255, 255, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 9999;
-  /* Remove the default animation */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Create a new class for animations */
+.assistive-ball.animated {
+  animation: neon-flicker-nav 10s infinite;
+}
+
+.assistive-ball.idle {
+  opacity: 0.15 !important;
+  animation: none; /* Disable all animations when idle */
 }
 
 .assistive-ball:hover {
@@ -132,6 +176,7 @@ html {
 /* Add a class for active state */
 .assistive-ball.active {
   animation: pulse-nav 2s infinite;
+  opacity: 1 !important; /* Force opacity when active */
 }
 
 /* Chromatic Aberration Effect */
@@ -164,16 +209,17 @@ html {
   background: 
       linear-gradient(
           135deg,
-          rgba(0, 255, 255, 0.1),
-          rgba(255, 0, 0, 0.1)
+          rgba(0, 0, 0, 0.95),
+          rgba(0, 0, 0, 0.85)
       );
   animation: holo-nav 15s ease infinite, holo-shift-nav 5s infinite;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 2px solid transparent;
+  border: 1px solid rgba(0, 255, 255, 0.3);
   border-image: linear-gradient(45deg, #0ff, #f00) 1;
   box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
   z-index: 9001;
+  font-family: 'Rajdhani', sans-serif;
 }
 
 .line {
@@ -207,8 +253,8 @@ html {
   position: absolute;
   width: 45%;
   padding: 15px;
-  border: 1px solid #0ff;
-  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.8);
   color: #0ff;
   text-decoration: none;
   box-shadow: 
@@ -217,9 +263,11 @@ html {
   transition: all 0.3s;
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
-  font-family: 'Courier New', monospace;
+  font-family: 'Orbitron', sans-serif;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-shadow: 0 0 5px #0ff;
+  animation: neon-flicker-nav 15s infinite;
 }
 
 .section-link:hover {
@@ -229,12 +277,45 @@ html {
       0 0 40px rgba(0, 255, 255, 0.4),
       0 0 60px rgba(0, 255, 255, 0.2),
       inset 0 0 20px rgba(0, 255, 255, 0.4);
+  animation: electric-pulse-nav 1.5s infinite;
+  background: rgba(0, 255, 255, 0.15);
+  letter-spacing: 3px;
 }
 
 .section-link::before {
   content: '>';
   margin-right: 10px;
   color: #0ff;
+}
+
+.section-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.2), transparent);
+  transform: translateX(-100%);
+  animation: electric-slide-nav 3s infinite;
+  opacity: 0.5;
+  pointer-events: none; /* Prevent interaction with the pseudo-element */
+  z-index: -1; /* Keep it behind the content */
+}
+
+@keyframes electric-slide-nav {
+  0% { 
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% { 
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  100% { 
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 .section-point {
@@ -250,6 +331,8 @@ html {
     0 0 20px rgba(255, 0, 0, 0.5),
     inset 0 0 10px rgba(255, 255, 255, 0.5);
   z-index: 1;
+  animation: cyber-glow-nav 2s infinite;
+  border: 2px solid rgba(255, 0, 0, 0.8);
 }
 
 .section-point::after {
@@ -291,9 +374,11 @@ html {
 
   .section-link {
     width: 70%;
-    font-size: 12px;
+    font-size: 14px;
     padding: 10px;
     margin: 5px 0;
+    background: rgba(0, 0, 0, 0.9);
+    border-width: 2px;
   }
 
   .section-link.left,
@@ -314,7 +399,7 @@ html {
     font-size: 16px;
     bottom: 15px;
     right: 15px;
-    animation: pulse-nav 2.5s infinite;
+    animation: electric-pulse-nav 2s infinite;
   }
 }
 
@@ -339,4 +424,67 @@ html {
   .line {
     left: 10%;
   }
+}
+
+/* filepath: c:\Users\mehta\hypFinale\css\navbar.css */
+.nav-point {
+  position: relative;
+  top: var(--point-position);
+}
+
+.nav-points-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Calculate position for each nav point */
+.nav-point {
+    position: absolute;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+/* First point (Homepage) */
+.nav-point:nth-child(1) {
+    top: 10%;
+}
+
+/* Second point (About hyprZona) */
+.nav-point:nth-child(2) {
+    top: 30%;
+}
+
+/* Third point (About dVlpr) */
+.nav-point:nth-child(3) {
+    top: 50%;
+}
+
+/* Fourth point (Important Dates) */
+.nav-point:nth-child(4) {
+    top: 70%;
+}
+
+/* Fifth point (Projects) */
+.nav-point:nth-child(5) {
+    top: 90%;
+}
+
+/* Alternate between left and right */
+.nav-point:nth-child(odd) .section-link {
+    left: 2%;
+}
+
+.nav-point:nth-child(even) .section-link {
+    right: 2%;
+}
+
+/* Add hover effects */
+.nav-point:hover {
+    transform: scale(1.05);
+}
+
+/* Make the point glow on hover */
+.nav-point:hover .section-point {
+    box-shadow: 0 0 15px var(--glow-color, #00ff95);
 }

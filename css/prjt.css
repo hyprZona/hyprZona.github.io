@@ -1,405 +1,314 @@
-@keyframes neon-pulse-prjt {
-    0% { filter: brightness(1) drop-shadow(0 0 5px var(--glow-color)); }
-    50% { filter: brightness(1.2) drop-shadow(0 0 15px var(--glow-color)); }
-    100% { filter: brightness(1) drop-shadow(0 0 5px var(--glow-color)); }
-}
+/* Import cyberpunk fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500;700&family=Share+Tech+Mono&family=Press+Start+2P&family=VT323&family=Audiowide&display=swap');
 
-@keyframes float-prjt {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+/* Project-specific animations */
+@keyframes neon-pulse-prjt {
+    0% { box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color); }
+    50% { box-shadow: 0 0 20px var(--glow-color), 0 0 40px var(--glow-color); }
+    100% { box-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color); }
 }
 
 @keyframes card-hover-prjt {
-    0% { transform: perspective(1000px) rotateY(0); }
-    100% { transform: perspective(1000px) rotateY(10deg); }
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
 }
 
-/* Improve container layout */
+/* Main container styles */
 .projects-section {
-    height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 20px;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #0000001c, #1a1a1a1c);
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.95);
+    margin-top: -45px; /* Add negative margin to pull content up */
 }
 
 .projects-container {
-    height: 80vh; /* Reduced to give space to banner */
-    display: flex;
-    flex-direction: row; /* Changed to row for side-by-side */
-    gap: 30px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, minmax(250px, 1fr)); /* Set minimum height */
+    gap: 2rem; /* Reduced from 3rem */
+    width: 100%;
+    max-width: 1800px;
+    height: calc(100vh - 8rem); /* Adjusted height */
 }
 
-/* Category improvements */
+/* Fix the bots and fading-ashes categories to be in grid */
+.bots, .fading-ashes {
+    grid-column: auto;
+    grid-row: auto;
+    height: 100%; /* Ensure full height */
+}
+
+/* Make the category container more compact */
 .category {
-    flex: 1; /* Each category takes equal width */
-    display: flex;
-    flex-direction: column;
     position: relative;
-    max-width: 50%; /* Ensure each takes half the container */
-}
-
-.category h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
-    text-align: center;
-    color: #0ff;
-    text-shadow: 0 0 10px #0ff;
-    animation: neon-pulse-prjt 2s infinite;
-}
-
-/* Carousel improvements */
-.carousel {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 0 50px;
-    height: 100%;
-}
-
-/* Card improvements */
-.project-card {
-    flex: 0 1 300px; /* Fixed width, allows shrinking */
-    height: auto;
-    max-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--glow-color, #0ff);
     border-radius: 15px;
-    padding: 25px;  /* Increased padding */
-    margin: 10px;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    transition: all 0.3s ease;
-    animation: float-prjt 6s ease-in-out infinite;
-    min-height: 350px;
-    background: rgba(0, 0, 0, 0.7);
-    box-shadow: 0 0 20px rgba(var(--glow-rgb), 0.2);
-    overflow: hidden;
-    align-items: center;
-    text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+    padding: 1.25rem; /* Slightly reduced padding */
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    gap: 0.75rem; /* Reduced gap */
+    overflow: hidden;
+    height: 100%; /* Force full height */
+    max-height: calc((100vh - 12rem) / 2); /* Adjusted max-height */
 }
 
-/* Content wrapper to prevent clipping */
-.project-card .content-wrapper {
-    width: 100%;
+/* Category-specific styling */
+.games {
+    --glow-color: #0ff;
+    --font-family: 'Press Start 2P', cursive;
+}
+
+.ebooks {
+    --glow-color: #f0f;
+    --font-family: 'Share Tech Mono', monospace;
+}
+
+.bots {
+    --glow-color: #f00;
+    --font-family: 'VT323', monospace;
+}
+
+.fading-ashes {
+    --glow-color: #ff0;
+    --font-family: 'Audiowide', cursive;
+    position: relative;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--glow-color, #ff0);
+    border-radius: 15px;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    overflow: hidden;
+    height: 100%;
+    max-height: calc((100vh - 10rem) / 2);
+}
+
+/* Category headers */
+.category h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--glow-color);
+    text-align: center;
+    font-size: 1.3rem; /* Slightly reduced */
+    text-shadow: 0 0 10px var(--glow-color);
+    margin-bottom: 0.75rem; /* Reduced margin */
+}
+
+/* Carousel styling */
+.carousel {
+    position: relative;
+    height: calc(100% - 3.5rem); /* Reduced from 4rem */
+    overflow: hidden;
+    display: flex;
     align-items: center;
-    gap: 15px;
-    padding: 0 10px;
+    justify-content: center;
+    padding: 0 2.5rem; /* Add padding for buttons */
+}
+
+/* Project card styling */
+.project-card {
+    width: calc(100% - 1rem);
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex; /* Add flex display */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* Card image container */
+.project-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Changed from cover to contain */
+    border-radius: 8px;
+    border: 1px solid var(--glow-color);
+    transition: all 0.3s ease;
+    padding: 10px; /* Add padding */
+}
+
+/* Content overlay on hover */
+.project-card h3,
+.project-card .tagline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto; /* Center horizontally */
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-align: center; /* Center text */
+    width: 100%;
     box-sizing: border-box;
 }
 
 .project-card h3 {
-    width: 100%;
-    margin: 0;
-    font-size: 1.8em;
-    text-align: center;
-    padding: 0 10px;
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Base tagline styling updates */
-.project-card .tagline {
+    top: 30%; /* Adjust vertical position */
+    font-family: var(--font-family);
     color: var(--glow-color);
-    font-style: italic;
-    text-align: center;
-    margin: 0;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    font-size: 1.1em;
+    font-size: 1.2rem;
     text-shadow: 0 0 5px var(--glow-color);
-    position: unset;
-    text-align: center;
-    width: 100%;
-    padding: 0 10px;
+    transform: translateY(-50%);
+}
+
+.project-card .tagline {
+    top: 60%; /* Adjust vertical position */
+    font-family: 'Rajdhani', sans-serif;
+    color: #fff;
+    font-size: 0.9rem;
     line-height: 1.4;
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 0;
-    text-align: center;
-    font-size: 1.1em;
-    line-height: 1.4;
-    opacity: 0.8;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: visible;
-    word-wrap: break-word;
-    text-decoration: none;
-    color: inherit;
+    transform: translateY(50%);
 }
 
-/* Image sizing base styles */
-.project-card img {
-    width: 100%;
-    height: 180px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-    transition: transform 0.3s ease;
-}
-
-/* Game-specific image styles (square) */
-.games .project-card img {
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    height: 160px; /* Smaller to maintain square */
-}
-
-/* eBook-specific image styles (portrait) */
-.ebooks .project-card img {
-    object-fit: contain;
-    aspect-ratio: 3/4;
-    height: 200px; /* Taller for book cover */
-    background: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-}
-
-/* Fading Ashes banner styles */
-.fading-ashes img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 4px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-}
-
-/* Hover effects for images */
+/* Hover effects */
 .project-card:hover img {
+    filter: blur(3px) brightness(0.7);
     transform: scale(1.05);
 }
 
-/* BTI Styling */
-.bti {
-    --glow-color: #ffd700;
-    background: rgba(0, 0, 0, 0.8);
-    border: 3px solid #ffd700;
-    font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
-    --glow-rgb: 255, 215, 0;
+.project-card:hover h3,
+.project-card:hover .tagline {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.bti h3 {
-    color: #ffd700;
-    font-size: 2em;
-    text-shadow: 2px 2px 4px #ff8c00;
-}
-
-.bti .tagline {
-    font-family: 'Comic Sans MS', cursive;
-    transform: rotate(-2deg);
-    color: #ff8c00;
-    margin: 5px 0;
-    width: 90%;
-    position: static;
-}
-
-/* Memories Styling */
-.memories {
-    --glow-color: #ff0033;
-    background: rgba(20, 0, 0, 0.9);
-    border: 3px solid #8b0000;
-    font-family: 'Cinzel Decorative', 'Playfair Display', serif;
-    --glow-rgb: 255, 0, 51;
-}
-
-.memories h3 {
-    color: #ff0033;
-    text-shadow: 0 0 10px #ff0033;
-}
-
-/* Memories specific updates */
-.memories .tagline {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 0, 51, 0.3);
-    padding: 0 0 5px 0;
-    width: 85%;
-    margin: 8px auto;
-    transform: none;
-    position: static;
-}
-
-/* T'N'T Styling */
-.tnt {
-    --glow-color: #a9a9a9;
-    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
-    border: 3px solid #404040;
-    font-family: 'Tungsten', 'Bebas Neue', sans-serif;
-    --glow-rgb: 169, 169, 169;
-}
-
-.tnt h3 {
-    color: #d3d3d3;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* T'N'T specific updates */
-.tnt .tagline {
-    font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 0.9em;
-    width: 90%;
-    margin: 5px auto;
-    padding: 0;
-    transform: none;
-    position: static;
-}
-
-/* Fading Ashes Styling */
-.fading-ashes {
-    --glow-color: #4a4a4a;
-    height: 22.5vh; /* Increased height for banner */
-    margin-top: auto; /* Push to bottom */
-    width: 100%;
-    padding: 5px;
-    background: linear-gradient(to right, #1a1a1a, #2d2d2d);
-    border-top: 1px solid #333;
-}
-
-/* Interactive Elements */
-.project-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    animation: card-hover-prjt 0.3s forwards;
-    box-shadow: 0 0 30px var(--glow-color);
+.project-card:hover h3 {
+    opacity: 1;
+    transform: translateY(-50%); /* Maintain center position */
 }
 
 .project-card:hover .tagline {
     opacity: 1;
-    text-shadow: 0 0 10px var(--glow-color);
+    transform: translateY(0); /* Reset transform */
 }
 
-/* Carousel Navigation */
-.prev, .next {
+.project-card:hover {
+    box-shadow: 
+        0 0 20px var(--glow-color),
+        0 0 40px var(--glow-color, #0ff);
+}
+
+/* Add a subtle animation for the glow effect */
+@keyframes hover-glow-prjt {
+    0% { box-shadow: 0 0 20px var(--glow-color); }
+    50% { box-shadow: 0 0 40px var(--glow-color); }
+    100% { box-shadow: 0 0 20px var(--glow-color); }
+}
+
+.project-card:hover {
+    animation: hover-glow-prjt 2s infinite;
+}
+
+/* Navigation buttons */
+.carousel-controls {
     position: absolute;
     top: 50%;
+    left: 0;
+    right: 0;
+    width: calc(100% - 2rem); /* Account for container padding */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
+.carousel-controls button {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid var(--glow-color);
+    color: var(--glow-color);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 10px;
+    box-shadow: 0 0 10px var(--glow-color);
+}
 
-/* Mobile Optimization */
-@media (max-width: 768px) {
+.carousel-controls button:hover {
+    background: var(--glow-color);
+    color: #000;
+    transform: scale(1.1);
+    animation: neon-pulse-prjt 2s infinite;
+}
+
+.music-banner {
+    width: 100%;
+    height: calc(100% - 1rem);
+    display: block;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.music-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--glow-color);
+}
+
+/* Add media queries for better responsiveness */
+@media screen and (max-width: 1200px) {
     .projects-container {
-        flex-direction: column; /* Stack on mobile */
         height: auto;
-        gap: 20px;
-        padding: 10px;
+        grid-template-rows: auto;
+        gap: 1.5rem;
     }
 
     .project-card {
-        flex: 0 1 250px;
-        margin: 10px 5px;
-        padding: 15px;
+        height: 100%;
     }
 
     .category {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .category h2 {
-        font-size: 1.5rem;
-        margin-bottom: 10px;
-    }
-
-    .prev, .next {
-        padding: 10px;
-        font-size: 14px;
+        max-height: none;
+        height: auto;
     }
 
     .carousel {
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0 20px;
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
     }
 
-    .fading-ashes {
-        height: 10vh;
+    .carousel {
+        height: 250px;
+        padding: 0 2rem;
     }
 
     .project-card img {
-        height: 140px;
-    }
-    
-    .ebooks .project-card img {
-        height: 180px;
+        height: 50%;
     }
 
-    .project-card .tagline {
-        font-size: 1em;
+    .carousel-controls button {
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
     }
-}
-
-@media (max-width: 480px) {
-    .projects-section {
-        padding: 10px;
-    }
-
-    .project-card {
-        flex: 0 1 200px;
-    }
-
-    .project-card img {
-        height: 120px;
-    }
-
-    .project-card h3 {
-        font-size: 1.5em;
-    }
-    
-    .ebooks .project-card img {
-        height: 160px;
-    }
-
-    .project-card .tagline {
-        font-size: 0.9em;
-    }
-}
-
-/* Prevent text selection on cards */
-.project-card * {
-    -webkit-user-select: none;
-    user-select: none;
-}
-
-/* Add subtle hover indication */
-.project-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at center, var(--glow-color) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-}
-
-.project-card:hover::after {
-    opacity: 0.1;
 }

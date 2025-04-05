@@ -242,6 +242,8 @@ function switchVersion(version) {
             resetIframe(iframe, videoId);
         }
     });
+
+    handleVersionChange(version);
 }
 
 // Position panels function
@@ -412,4 +414,15 @@ function setupLightboxControls(lightbox) {
             if (e.key === 'ArrowRight') nextScreenshot();
         }
     });
+}
+
+// Add new animation handling
+function handleVersionChange(version) {
+    const container = document.querySelector('.bti-container');
+    
+    if (version === 'original') {
+        container.style.animation = 'glitch-bti 0.3s infinite';
+    } else {
+        container.style.animation = 'bounce-bti 2s infinite';
+    }
 }

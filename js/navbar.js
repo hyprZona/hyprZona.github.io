@@ -10,11 +10,11 @@ let isIdle = true;
 let idleTimer;
 let roadmapTimer; // New timer for roadmap auto-hide
 
-// Function to handle idle state
+// Update the setIdle function
 const setIdle = () => {
-    if (roadmap.style.display === 'none') {
-        assistiveBall.style.opacity = '0.15';
-        assistiveBall.classList.remove('active');
+    if (roadmap.style.display === 'none' && !assistiveBall.matches(':hover')) {
+        assistiveBall.classList.remove('active', 'animated');
+        assistiveBall.classList.add('idle');
         isIdle = true;
     }
 };
@@ -62,11 +62,12 @@ roadmap.addEventListener('mouseout', () => {
     }
 });
 
+// Update click handler
 assistiveBall.addEventListener('click', () => {
     clearTimeout(idleTimer);
     clearTimeout(roadmapTimer); // Clear roadmap timer
-    assistiveBall.style.opacity = '1';
-    assistiveBall.classList.add('active');
+    assistiveBall.classList.remove('idle');
+    assistiveBall.classList.add('active', 'animated');
     isIdle = false;
     
     if (roadmap.style.display === 'none') {
@@ -79,15 +80,23 @@ assistiveBall.addEventListener('click', () => {
     }
 });
 
+// Update mouseover handler
 assistiveBall.addEventListener('mouseover', () => {
+    clearTimeout(idleTimer);
+    assistiveBall.classList.remove('idle');
+    assistiveBall.classList.add('animated');
     if (isIdle) {
-        assistiveBall.style.opacity = '1';
-        assistiveBall.classList.add('active'); // Add animation on hover
+        assistiveBall.classList.add('active');
     }
 });
 
+// Update mouseout handler
 assistiveBall.addEventListener('mouseout', () => {
     if (isIdle && roadmap.style.display === 'none') {
-        assistiveBall.style.opacity = '0.15';
+        assistiveBall.classList.remove('active', 'animated');
+        assistiveBall.classList.add('idle');
     }
 });
+
+// Initial setup
+assistiveBall.classList.add('animated');
