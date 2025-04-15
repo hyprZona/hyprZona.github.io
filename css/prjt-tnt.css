@@ -1,0 +1,346 @@
+/* Import neo-noir style fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&family=Special+Elite&family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+    --violence: #8b0000;
+    --violence-glow: rgba(139, 0, 0, 0.5);
+    --betrayal: #4a0063;
+    --betrayal-glow: rgba(74, 0, 99, 0.5);
+    --corruption: #1a472a;
+    --corruption-glow: rgba(26, 71, 42, 0.5);
+    --text-primary: #d3d3d3;
+    --text-secondary: #a0a0a0;
+    --bg-dark: #0a0a0a;
+    --bg-darker: #050505;
+}
+
+/* Custom Animations */
+@keyframes neon-flicker-tnt {
+    0%, 100% { 
+        text-shadow: 
+            0 0 10px var(--violence),
+            0 0 20px var(--violence-glow);
+    }
+    50% { 
+        text-shadow: 
+            0 0 5px var(--betrayal),
+            0 0 15px var(--betrayal-glow);
+    }
+}
+
+@keyframes corruption-pulse-tnt {
+    0%, 100% {
+        box-shadow: 
+            0 0 10px var(--corruption),
+            0 0 20px var(--corruption-glow);
+    }
+    50% {
+        box-shadow: 
+            0 0 15px var(--violence),
+            0 0 30px var(--violence-glow);
+    }
+}
+
+/* Main Section Styles */
+#tnt-section {
+    position: fixed;
+    top: -15px;
+    left: 0;
+    width: 100vw;
+    height: 110%;
+    padding: 20px;
+    display: none;
+    background: var(--bg-darker);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-family: 'Crimson Text', serif;
+    overflow: hidden;
+    z-index: 10999;
+}
+
+#tnt-section.active {
+    display: block;
+    animation: fadeIn-tnt 0.3s ease forwards;
+}
+
+/* Version Switcher Styles */
+.tnt-tab-switch {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    background: rgba(10, 10, 10, 0.8);
+}
+
+.tnt-tab-switch button {
+    padding: 12px 25px;
+    border: 1px solid var(--violence);
+    cursor: pointer;
+    font-family: 'Special Elite', cursive;
+    font-size: 14px;
+    color: var(--text-primary);
+    background: var(--bg-dark);
+    transition: all 0.3s ease;
+}
+
+.tnt-tab-switch button.active {
+    background: var(--violence);
+    color: var(--text-primary);
+    animation: neon-flicker-tnt 2s infinite;
+}
+
+/* Container Layout */
+.tnt-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-top: -50px;
+    overflow: hidden;
+}
+
+.tnt-version {
+    display: none;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.tnt-version.active {
+    display: flex;
+    opacity: 1;
+    animation: fadeIn-tnt 0.5s ease forwards;
+}
+
+.tnt-version.expanded {
+    display: flex;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Panel Layouts */
+.tnt-left-panel, .tnt-right-panel {
+    position: absolute;
+    top: 80px;
+    bottom: 20px;
+    height: calc(100vh - 140px);
+    padding: 25px;
+    border-radius: 5px;
+    background: var(--bg-dark);
+    border: 1px solid var(--violence);
+    animation: corruption-pulse-tnt 4s infinite;
+}
+
+.tnt-left-panel {
+    width: 35%;
+    left: -0.125px;
+    overflow-y: auto;
+}
+
+.tnt-right-panel {
+    width: 60%;
+    right: -0.125px;
+}
+
+/* Cover and Info Styles */
+.tnt-cover {
+    width: 100%;
+    max-width: 250px; /* Reduced from 300px */
+    height: auto;
+    max-height: 350px; /* Added max-height */
+    margin: 0 auto 1.5rem; /* Reduced bottom margin from 2rem */
+    border: 2px solid var(--violence);
+    filter: grayscale(30%) contrast(120%);
+    transition: all 0.3s ease;
+    object-fit: contain; /* Added to maintain aspect ratio */
+}
+
+.tnt-info {
+    margin-bottom: 1.5rem; /* Reduced from 2rem */
+}
+
+.tnt-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.75rem; /* Reduced from 2rem */
+    color: var(--violence);
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+    text-shadow: 2px 2px 4px var(--bg-darker);
+}
+
+.tnt-genre {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9rem; /* Reduced from 1rem */
+    color: var(--betrayal);
+    margin-bottom: 0.75rem; /* Reduced from 1rem */
+}
+
+.tnt-summary {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem; /* Reduced from 1.1rem */
+    color: var(--text-primary);
+    line-height: 1.5; /* Slightly reduced from 1.6 */
+}
+
+/* Read Buttons */
+.tnt-read-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tnt-read-btn {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--bg-dark);
+    border: 1px solid var(--betrayal);
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    width: 85%
+}
+
+.tnt-read-btn:hover {
+    background: var(--betrayal);
+    transform: translateX(10px);
+}
+
+.tnt-read-btn img {
+    height: 24px;
+    width: auto;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.tnt-read-btn:hover img {
+    filter: grayscale(0%);
+}
+
+/* Carousel Styles */
+.tnt-carousel {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tnt-carousel-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.tnt-carousel-item {
+    display: none;
+    padding: 1.5rem;
+    background: var(--bg-darker);
+    border: 1px solid var(--corruption);
+    border-radius: 5px;
+}
+
+.tnt-carousel-item.active {
+    display: block;
+    animation: fadeIn-tnt 0.5s ease forwards;
+}
+
+/* Rating Styles */
+.tnt-rating-container {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, var(--bg-dark), var(--bg-darker));
+    border: 1px solid var(--violence);
+}
+
+.tnt-rating-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.tnt-age-rating {
+    font-family: 'Special Elite', cursive;
+    font-size: 2rem;
+    color: var(--violence);
+}
+
+/* Character Cards */
+.tnt-chars-container {
+    padding: 1.5rem;
+}
+
+.tnt-chars-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.tnt-char-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--betrayal);
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.tnt-char-card:hover {
+    transform: translateX(10px);
+    border-color: var(--violence);
+}
+
+.tnt-char-header {
+    margin-bottom: 1rem;
+}
+
+.tnt-char-role {
+    font-family: 'Source Code Pro', monospace;
+    color: var(--betrayal);
+    font-size: 0.9rem;
+}
+
+.tnt-char-name {
+    font-family: 'Cinzel', serif;
+    color: var(--violence);
+    font-size: 1.4rem;
+}
+
+.tnt-char-bio {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Navigation Buttons */
+.tnt-prev-btn, .tnt-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-dark);
+    border: 1px solid var(--violence);
+    color: var(--text-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.tnt-prev-btn { left: 10px; }
+.tnt-next-btn { right: 10px; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tnt-left-panel, .tnt-right-panel {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+        right: 0;
+    }
+
+    .tnt-version {
+        flex-direction: column;
+    }
+}

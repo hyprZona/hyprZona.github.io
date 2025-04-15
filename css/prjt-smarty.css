@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+:root {
+    --neon-blue: #00fff9;
+    --neon-purple: #ff00ff;
+    --neon-green: #39ff14;
+    --cyber-black: #0a0a0a7d;
+    --cyber-dark: #1a1a1a;
+    --cyber-gray: #2a2a2a;
+    --text-glow: 0 0 10px var(--neon-blue);
+}
+
+@keyframes neon-pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px var(--neon-blue),
+                    0 0 20px var(--neon-purple);
+    }
+    50% {
+        box-shadow: 0 0 20px var(--neon-purple),
+                    0 0 40px var(--neon-blue);
+    }
+}
+
+@keyframes text-glitch {
+    0% { text-shadow: 2px 2px var(--neon-purple); }
+    25% { text-shadow: -2px -2px var(--neon-blue); }
+    50% { text-shadow: 2px -2px var(--neon-green); }
+    75% { text-shadow: -2px 2px var(--neon-purple); }
+    100% { text-shadow: 2px 2px var(--neon-blue); }
+}
+
+@keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+#smarty-section {
+    position: fixed;
+    top: -25px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background: var(--cyber-black);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-family: 'Share Tech Mono', monospace;
+    z-index: 10000;
+}
+
+#smarty-section.active {
+    display: block;
+}
+
+.smarty-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.smarty-content {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 80vh;
+    gap: 20px;
+}
+
+.smarty-left-panel,
+.smarty-right-panel {
+    padding: 20px;
+    background: var(--cyber-dark);
+    border: 1px solid var(--neon-blue);
+    animation: neon-pulse 4s infinite;
+}
+
+.smarty-left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.smarty-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 2px solid var(--neon-purple);
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+.smarty-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    color: var(--neon-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    animation: text-glitch 5s infinite;
+}
+
+.smarty-description {
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+    text-shadow: var(--text-glow);
+    min-height: 200px; /* Adjust based on your content */
+    white-space: pre-line;
+    position: relative; /* Add this */
+}
+
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1.2em; /* Change to em for better text alignment */
+    background-color: var(--neon-blue);
+    margin-left: 5px;
+    animation: cursor-blink 1s infinite;
+    position: absolute; /* Add this */
+    right: -10px; /* Add this */
+}
+
+.smarty-right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.platforms-title {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--neon-green);
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.platforms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.platform-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: var(--cyber-gray);
+    border: 1px solid var(--neon-purple);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.platform-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px var(--neon-purple);
+}
+
+.platform-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.platform-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(1) grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.platform-card:hover .platform-icon img {
+    filter: brightness(1) saturate(1) invert(0); 
+}
+
+.platform-card h3 {
+    color: var(--neon-blue);
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.platform-card p {
+    color: #fff;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.section-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid var(--neon-purple);
+    color: var(--neon-blue);
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 9001;
+    transition: all 0.3s ease;
+}
+
+.section-close:hover {
+    background: var(--neon-purple);
+    color: var(--cyber-black);
+}
+
+@media (max-width: 768px) {
+    .smarty-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .smarty-logo {
+        width: 200px;
+        height: 200px;
+    }
+
+    .platforms-grid {
+        grid-template-columns: 1fr;
+    }
+}

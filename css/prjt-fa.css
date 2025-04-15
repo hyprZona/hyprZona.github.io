@@ -1,0 +1,377 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Syncopate:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Share+Tech+Mono&family=Press+Start+2P&display=swap');
+
+:root {
+    --fa-primary: #ff3c00;
+    --fa-secondary: #750000;
+    --fa-dark: #1a0000;
+    --fa-light: #ff8c66;
+    --fa-text: #ffffff;
+    --fa-glow: 0 0 10px var(--fa-primary);
+
+    --glitch-primary: #0ff;
+    --glitch-secondary: #f0f;
+    --glitch-tertiary: #0f0;
+    --glitch-dark: #000;
+    --glitch-light: #fff;
+    --glitch-glow: 0 0 10px var(--glitch-primary);
+    --glitch-shadow: 2px 2px 0px var(--glitch-secondary);
+}
+
+@keyframes ember-flicker {
+    0%, 100% { 
+        box-shadow: 0 0 10px var(--fa-primary),
+                   0 0 20px var(--fa-secondary);
+    }
+    50% { 
+        box-shadow: 0 0 20px var(--fa-secondary),
+                   0 0 40px var(--fa-primary);
+    }
+}
+
+@keyframes glitch-anim {
+    0% {
+        text-shadow: 3px 0 0 var(--glitch-primary), -3px 0 0 var(--glitch-secondary);
+        transform: translate(0);
+    }
+    25% {
+        text-shadow: -3px 0 0 var(--glitch-primary), 3px 0 0 var(--glitch-secondary);
+        transform: translate(1px);
+    }
+    50% {
+        text-shadow: 3px 0 0 var(--glitch-primary), -3px 0 0 var(--glitch-secondary);
+        transform: translate(0);
+    }
+    75% {
+        text-shadow: -3px 0 0 var(--glitch-tertiary), 3px 0 0 var(--glitch-secondary);
+        transform: translate(-1px);
+    }
+    100% {
+        text-shadow: 3px 0 0 var(--glitch-primary), -3px 0 0 var(--glitch-secondary);
+        transform: translate(0);
+    }
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+#fa-section {
+    position: fixed;
+    top: -25px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    background: rgba(0, 0, 0, 0.85);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    font-family: 'Share Tech Mono', monospace;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+#fa-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+#fa-section.active {
+    display: block;
+}
+
+.fa-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-content {
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    height: 80vh;
+    gap: 20px;
+    position: relative;
+}
+
+.fa-left-panel,
+.fa-right-panel {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--glitch-primary);
+    box-shadow: 0 0 15px var(--glitch-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.fa-left-panel::after,
+.fa-right-panel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--glitch-primary);
+    animation: scanline 2s linear infinite;
+}
+
+.fa-left-panel {
+    flex: 0.8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 550px;
+}
+
+.fa-right-panel {
+    flex: 1.2;
+}
+
+.fa-logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--glitch-primary);
+    margin-bottom: 20px;
+    position: relative;
+    filter: brightness(1.2) contrast(1.2);
+}
+
+.fa-logo:hover {
+    animation: glitch-anim 0.3s infinite;
+}
+
+.fa-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 2rem;
+    color: var(--glitch-primary);
+    text-align: center;
+    margin-bottom: 20px;
+    animation: glitch-anim 5s infinite;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.fa-description {
+    color: var(--glitch-light);
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: var(--glitch-glow);
+    font-size: 0.95rem;
+    padding: 0 20px;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.genre-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.genre-tags span {
+    background: transparent;
+    color: var(--glitch-tertiary);
+    padding: 5px 15px;
+    border: 1px solid var(--glitch-tertiary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.genre-tags span:hover {
+    animation: glitch-anim 0.2s infinite;
+    background: var(--glitch-tertiary);
+    color: var(--glitch-dark);
+}
+
+.album-card {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 1px solid var(--glitch-secondary);
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.album-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.1), transparent);
+    animation: scanline 2s linear infinite;
+}
+
+.album-cover {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid var(--glitch-secondary);
+    transition: all 0.3s ease;
+}
+
+.album-cover:hover {
+    transform: scale(1.05);
+    animation: glitch-anim 0.3s infinite;
+}
+
+.album-info {
+    flex: 1;
+}
+
+.album-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--glitch-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.album-date {
+    color: var(--glitch-tertiary);
+    margin-bottom: 20px;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.streaming-links {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.platform {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid var(--glitch-primary);
+    color: var(--glitch-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.platform:hover {
+    background: var(--glitch-primary);
+    color: var(--glitch-dark);
+    animation: glitch-anim 0.2s infinite;
+}
+
+.platform img {
+    width: 20px;
+    height: 20px;
+}
+
+.tracklist {
+    color: var(--glitch-light);
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.tracklist h4 {
+    color: var(--glitch-tertiary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tracklist ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.tracklist li {
+    margin-bottom: 5px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tracklist li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--glitch-secondary);
+}
+
+.fa-prev-btn,
+.fa-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: 2px solid var(--glitch-primary);
+    color: var(--glitch-primary);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1;
+    font-family: 'Press Start 2P', cursive;
+    transition: all 0.3s ease;
+}
+
+.fa-prev-btn:hover,
+.fa-next-btn:hover {
+    animation: glitch-anim 0.2s infinite;
+    background: var(--glitch-primary);
+    color: var(--glitch-dark);
+}
+
+.fa-prev-btn { left: 10px; }
+.fa-next-btn { right: 10px; }
+
+@media (max-width: 768px) {
+    .fa-content {
+        flex-direction: column;
+    }
+
+    .album-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album-info {
+        text-align: center;
+    }
+
+    .streaming-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .fa-content {
+        max-width: 95vw;
+    }
+}
