@@ -124,7 +124,42 @@
 }
 
 /* Panel Layouts */
-.tnt-left-panel, .tnt-right-panel {
+.tnt-left-panel {
+    position: relative; /* Changed from absolute */
+    width: 35%;
+    padding: 25px;
+    top: 80px;
+    height: calc(100vh - 140px);
+    border-radius: 5px;
+    background: var(--bg-dark);
+    border: 1px solid var(--violence);
+    animation: corruption-pulse-tnt 4s infinite;
+    overflow-y: auto; /* Added overflow-y */
+    z-index: 1000;
+}
+
+/* Webkit scrollbar styles */
+.tnt-left-panel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tnt-left-panel::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+    border-radius: 4px;
+}
+
+.tnt-left-panel::-webkit-scrollbar-thumb {
+    background: var(--violence);
+    border-radius: 4px;
+    border: 2px solid var(--bg-darker);
+}
+
+.tnt-left-panel::-webkit-scrollbar-thumb:hover {
+    background: var(--betrayal);
+    box-shadow: 0 0 10px var(--violence-glow);
+}
+
+.tnt-right-panel {
     position: absolute;
     top: 80px;
     bottom: 20px;
@@ -134,15 +169,6 @@
     background: var(--bg-dark);
     border: 1px solid var(--violence);
     animation: corruption-pulse-tnt 4s infinite;
-}
-
-.tnt-left-panel {
-    width: 35%;
-    left: -0.125px;
-    overflow-y: auto;
-}
-
-.tnt-right-panel {
     width: 60%;
     right: -0.125px;
 }

@@ -85,8 +85,8 @@
 }
 
 .smarty-logo {
-    width: 250px;
-    height: 250px;
+    width: 225px;
+    height: 225px;
     object-fit: cover;
     border: 2px solid var(--neon-purple);
     border-radius: 50%;

@@ -145,8 +145,8 @@
 }
 
 .fa-logo {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: cover;
     border: 2px solid var(--glitch-primary);
     margin-bottom: 20px;
