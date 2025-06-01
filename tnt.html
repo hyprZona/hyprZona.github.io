@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The T'N'T: A Story of the Scars | hyprZona</title>
+    
+    <!-- External Dependencies -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Local Stylesheets -->
+    <link rel="stylesheet" href="css/tnt.css">
+<!-- 🎯 SEO juice that makes Google-chan blush -->
+    <meta name="description" content="Welcome to hyprZona - Where gaming meets insanity! Experience 'Beyond the Illusions', a psychological horror game that will make you question reality. Created by the chaotic mind of dVlpr.">
+    <meta name="keywords" content="hyprZona, indie games, Beyond the Illusions, psychological horror games, indie game developer, dVlpr games, comedy horror games">
+    <meta name="author" content="dVlpr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- 🌐 Social media tags because we're attention seekers -->
+    <meta property="og:site_name" content="hyprZona">
+    <meta property="og:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta property="og:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter stuff because Elon needs engagement -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyprZona">
+    <meta name="twitter:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta name="twitter:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+
+    <!-- 🎨 Icons that make us look legit -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0">
+    <link rel="canonical" href="https://hyprzona.github.io">
+
+    <!-- 🌙 Dark mode because light burns our vampire eyes -->
+    <meta name="color-scheme" content="dark">
+
+    <!-- 🤖 Structured data for Google's robot overlords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "hyprZona",
+      "url": "https://hyprzona.github.io",
+      "description": "Home of Beyond the Illusions and other chaotic creations",
+      "creator": {
+        "@type": "Person",
+        "name": "dVlpr"
+      }
+    }
+    </script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+<body>
+    <!-- Add this right after <main> tag in tnt.html -->
+<nav class="section-navigator">
+    <a class="nav-item" data-section="hero">Introduction</a>
+    <a class="nav-item" data-section="preview">Prologue</a>
+    <a class="nav-item" data-section="status">Live Status</a>
+    <a class="nav-item" data-section="chapters">Chapters</a>
+    <a class="nav-item" data-section="characters">Characters</a>
+    <a class="nav-item" data-section="about">About</a>
+    <a class="nav-item" data-section="final">Final</a>
+</nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="rain-overlay"></div>
+        <div class="smoke-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-silhouette">
+                <div class="burning-building"></div>
+                <div class="silhouettes">
+                    <div class="silhouette tom"></div>
+                    <div class="silhouette tim"></div>
+                </div>
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">THE T'N'T</span>
+                    <span class="title-subtitle">A Story of the Scars</span>
+                </h1>
+                <div class="hero-tagline">
+                    <span class="tagline-glitch" data-text="Justice. Vengeance. Scars you don't see.">
+                        Justice. Vengeance. Scars you don't see.
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- After hero section and before status section -->
+<section id="preview" class="preview-section">
+    <div class="container">
+        <h2 class="section-title">
+            <span class="glitch-text" data-text="READ THE PROLOGUE">READ THE PROLOGUE</span>
+        </h2>
+        <div class="notepad-container">
+            <div class="notepad-header">
+                <div class="notepad-controls">
+                    <span class="control red"></span>
+                    <span class="control yellow"></span>
+                    <span class="control green"></span>
+                </div>
+                <div class="notepad-title">Prologue: The Beginning of an End</div>
+            </div>
+            <div class="notepad-content-wrapper">
+            <div class="notepad-content">
+                <!-- Add your prologue text here -->
+                <div class="chapter-text">
+  <p class="pdate">Present</p>
+  <p class="ploca">The Mantalia Mansion</p>
+
+  <p>Tom stood in a dimly lit room, his grip steady around the gun—its barrel trained on the trembling figure before him. The silence was suffocating, broken only by the ragged breaths of his enemy.</p>
+
+  <p>Then, a single shot.</p>
+
+  <p>The bullet tore through flesh. A body crumpled.</p>
+
+  <p>Smoke curled lazily from the muzzle, warm against Tom’s hand. The pristine white room was now drenched in red—blood pooling across the marble like a river of death. Everything slowed. For one fleeting moment, his mind basked in the bitter taste of victory. Hollow, but victory nonetheless.</p>
+
+  <p>"Is this what justice tastes like?" The thought cut through the stillness, sour and sharp.</p>
+
+  <p>Then the world unraveled.</p>
+
+  <p>As the corpse collapsed, its body slumped sideways into a control console. A limp hand landed squarely on the mansion’s emergency fail-safe—a small red button embedded beside a biometric scanner. A cold mechanical beep sliced through the silence.</p>
+
+  <p>Red lights blazed.</p>
+
+  <p>Warning sirens shrieked to life. The mansion groaned beneath him, trembling like a dying beast. Explosives embedded in its very bones had awakened.</p>
+
+  <p>A countdown had begun.</p>
+
+  <p>Every exit slammed shut. Steel barriers locked every door, sealed every corridor.</p>
+
+  <p>Tom’s breath hitched. He was trapped.</p>
+
+  <p>No way out.</p>
+
+  <p>Pulling out his communicator, he locked onto Tim’s frequency. Somewhere in the blackened sky, north of the mansion, his partner circled in a chopper—clueless.</p>
+
+  <p>"Tom?" Tim’s voice crackled through static.</p>
+
+  <p>Tom exhaled; his voice tight. "Mission accomplished."</p>
+
+  <p>A beat. Then relief.</p>
+
+  <p>"That’s what I fucking like to hear, man. One step closer. The Empire’s bleeding. Every last pawn—soon gone."</p>
+
+  <p>But the timer ticked faster. The bombs were accelerating.</p>
+
+  <p>"Yeah... Tim." Tom's voice dipped, the weight of finality hanging in each word. "I need you to finish this. Take care of Phil... like you did Chris. Promise me."</p>
+
+  <p>A heavy silence.</p>
+
+  <p>"Tom?" The tension crept into Tim’s voice. "What’s going on?"</p>
+
+  <p>But before Tom could answer—</p>
+
+  <p>—BOOM.</p>
+
+  <p>Fire swallowed the room.</p>
+
+  <p>A deafening blast tore through the mansion, flames ripping through steel and glass. The shockwave hurled him backward as searing heat turned air into agony.</p>
+
+  <p>Static.</p>
+
+  <p>And then—Tim’s voice. Panicked. Cracked.</p>
+
+  <p>"Tom? Are you there? TOM?!"</p>
+
+  <p>The chopper dove toward the chaos. Smoke blanketed the night sky. Tim’s eyes widened.</p>
+
+  <p>Where the grand estate once stood— Where Tom once stood—</p>
+
+  <p>There was only ruin.</p>
+
+  <p>Infernos danced through the skeletal remains. A shattered chandelier glinted in the flames, its crystal shards falling like broken dreams. Debris fell like dying stars. Ash rained from above, slow and cruel.</p>
+
+  <p>Tim’s knuckles whitened on the controls. Pulse hammering.</p>
+
+  <p>"No... no... NOOO!"</p>
+ </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Live Transmission (Status Panel) -->
+    <section id="status" class="status-section">
+        <div class="container">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="btn red"></span>
+                        <span class="btn yellow"></span>
+                        <span class="btn green"></span>
+                    </div>
+                    <div class="terminal-title">LIVE_TRANSMISSION.exe</div>
+                </div>
+                <div class="terminal-content">
+                    <div class="terminal-line">
+                        <span class="prompt">hyprZona@tnt:~$</span> 
+                        <span class="command typing-effect">status --book="T'N'T" --live</span>
+                    </div>
+                    
+                    <div class="status-grid">
+                        <div class="status-card">
+                            <h3>📡 PLATFORMS</h3>
+                            <div class="platform-links">
+                                <a href="https://www.wattpad.com/story/393712716-the-t%27n%27t-a-story-of-the-scars" class="platform-btn wattpad">
+                                    <i class="fab fa-wattpad"></i> Wattpad
+                                </a>
+                                <a href="https://www.quotev.com/story/17012459/The-TNT-A-Story-of-the-Scars/6" class="platform-btn quotev">
+                                    <i class="fas fa-book"></i> Quotev
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <h3>⏰ UPDATE SCHEDULE</h3>
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <span class="part">Part I</span>
+                                    <span class="days">MON & THURS</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="part">Part II</span>
+                                    <span class="days">THURS & SUN</span>
+                                    <span class="tentative">(tentative)</span>
+                                </div>
+                                <div class="schedule-item">
+                                    <span class="part">Remaining</span>
+                                    <span class="days">CYCLE TBD</span>
+                                </div>
+                            </div>
+                            <div class="update-time">
+                                🕛 Midnight - London Time
+                            </div>
+                        </div>
+
+                        <div class="status-card">
+                            <h3>📊 CURRENT STATUS</h3>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <span class="label">Current Chapter:</span>
+                                    <span class="value">Ch. 5</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">Total Planned:</span>
+                                    <span class="value">4 Parts, 31 Chapters</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="label">+ Prologue + Post-Credits</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="status-card release-cycle">
+                            <h3>🔥 RELEASE CYCLE</h3>
+                            <div class="cycle-warning">
+                                "Each new part drops after a month-long cooldown.<br>
+                                <strong>July. September. November.</strong><br>
+                                <span class="no-mercy">No mercy.</span>"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chapter Timeline -->
+    <section id="chapters" class="chapters-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="glitch-text" data-text="CHAPTER ARCHIVE">CHAPTER ARCHIVE</span>
+            </h2>
+            <div class="chapter-grid" id="chapterGrid">
+                <!-- Chapters will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Character Profiles -->
+    <section id="characters" class="characters-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="glitch-text" data-text="THE MAIN DUO">THE MAIN DUO</span>
+            </h2>
+            <div class="characters-grid">
+                <div class="character-card tom-card">
+                    <div class="character-image">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczMVTik5VE-kCh9CwFH-AXZkV2V_BfUqRC6W80Atc1kt43JOQSJOlXSFWoGaUdDy45SDS4AtEoEpCY5y5RxZHR6xWRNYmTnNSdVeezHewgdS6IcfYvmxaz0W8gTK8g5gfWi1PagHg-e2BBsOxRvGPTWb=w869-h869-s-no-gm?authuser=0" alt="Tom silhouette">
+                        <div class="character-overlay"></div>
+                    </div>
+                    <div class="character-info">
+                        <h3 class="character-name">TOM</h3>
+                        <div class="character-quote">
+                            "Some men chase peace.<br> I chase ghosts.<br> And when I catch them… I bury them."
+                        </div>
+                        <button class="profile-btn">
+                            <i class="fas fa-file-alt"></i> Full Profile
+                        </button>
+                    </div>
+                </div>
+
+                <div class="character-card tim-card">
+                    <div class="character-image">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPVNIlQadbVEMfnYHwIR2Qpr75dbtkolH9x74xKRQ_UFeMDRJ-_bktwQRYg4c3nv7tX1lCLJJZtFgAhXuocRFfhuywjkYHV-Qex2pCAh7dZc9JcokfYNZgYXq41zRyb3U24DY1aZA59BcFLS0QNBxWa=w869-h869-s-no-gm?authuser=0" alt="Tim silhouette">
+                        <div class="character-overlay"></div>
+                    </div>
+                    <div class="character-info">
+                        <h3 class="character-name">TIM</h3>
+                        <div class="character-quote">
+                            "I don’t need an army.<br> Just silence, a blade, and a reason."
+                        </div>
+                        <button class="profile-btn">
+                            <i class="fas fa-file-alt"></i> Full Profile
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Character Profile Modal -->
+<div id="profileModal" class="profile-modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close-modal">&times;</span>
+        </div>
+        <div class="profile-grid">
+            <div class="profile-image">
+                <img id="modalImage" src="" alt="Character Profile">
+                <div class="profile-overlay"></div>
+            </div>
+            <div class="profile-details">
+                <h2 id="modalName" class="profile-name"></h2>
+                <div class="profile-stats">
+                    <div class="stat-group">
+                        <h3>CODENAME</h3>
+                        <p id="modalCodename">Ghost Protocol</p>
+                    </div>
+                    <div class="stat-group">
+                        <h3>STATUS</h3>
+                        <p id="modalStatus" class="status-badge"></p>
+                    </div>
+                    <div class="stat-group">
+                        <h3>AFFILIATION</h3>
+                        <p id="modalAffiliation"></p>
+                    </div>
+                </div>
+                <div class="profile-description">
+                    <h3>BACKGROUND</h3>
+                    <p id="modalBackground"></p>
+                </div>
+                <div class="profile-traits">
+                    <div class="trait-group">
+                        <h3>STRENGTHS</h3>
+                        <ul id="modalStrengths"></ul>
+                    </div>
+                    <div class="trait-group">
+                        <h3>WEAKNESSES</h3>
+                        <ul id="modalWeaknesses"></ul>
+                    </div>
+                </div>
+                <div class="profile-quote">
+                    <blockquote id="modalQuote"></blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- About the Book -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="manifesto-title">ABOUT THE BOOK</h2>
+                <div class="manifesto-text">
+                    <p class="manifesto-quote">
+    Step into the shadows of the United Islands of the Pacific — where loyalty dies quick, and trust dies quicker. <strong>The T'N'T</strong> aren’t heroes. They’re ghosts with guns, operatives forged in betrayal, running missions no one else survives. In a war-torn nation on the edge of collapse, every choice cuts deep, and the only way out... is through hell. This isn’t about saving the world. It’s about finishing what never should’ve started.
+                    </p>
+                </div>
+                
+                <div class="book-details">
+                    <div class="genre-tags">
+                        <span class="tag">Neo-Noir</span>
+                        <span class="tag">Thriller</span>
+                        <span class="tag">Crime</span>
+                        <span class="tag">Action</span>
+                    </div>
+                    
+                    <div class="warnings">
+                        <h4>⚠️ CONTENT WARNINGS</h4>
+                        <p>Violence, Strong Language,Mature Themes</p>
+                    </div>
+                    
+                    <div class="audience">
+                        <h4>🎯 TARGET AUDIENCE</h4>
+                        <p>M+ readers who like pain with their plot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="final" class="final-section">
+    <!-- Roadmap -->
+    <div id="roadmap" class="roadmap-section roadmap-content">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="glitch-text" data-text="RELEASE ROADMAP">RELEASE ROADMAP</span>
+            </h2>
+            <div class="timeline-container">
+                <div class="timeline-track">
+                    <div class="timeline-progress" id="timelineProgress"></div>
+                    
+                    <div class="milestone active" data-status="complete">
+                        <div class="milestone-marker">
+                            <div class="blood-drop"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Prologue</h4>
+                            <span class="date">May 2025</span>
+                            <span class="status-badge complete">LIVE</span>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone active" data-status="current">
+                        <div class="milestone-marker">
+                            <div class="blood-drop pulsing"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Part I</h4>
+                            <span class="chapters">7 chapters</span>
+                            <span class="date">May 2025</span>
+                            <span class="status-badge current">IN PROGRESS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-status="pending">
+                        <div class="milestone-marker">
+                            <div class="crack"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Part II</h4>
+                            <span class="chapters">9 chapters</span>
+                            <span class="date">July 2025</span>
+                            <span class="status-badge pending">PENDING</span>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-status="pending">
+                        <div class="milestone-marker">
+                            <div class="crack"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Part III</h4>
+                            <span class="chapters">7-9 chapters</span>
+                            <span class="date">Sept 2025</span>
+                            <span class="status-badge pending">PENDING</span>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-status="pending">
+                        <div class="milestone-marker">
+                            <div class="crack"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Part IV</h4>
+                            <span class="chapters">7-9 chapters</span>
+                            <span class="date">Nov 2025</span>
+                            <span class="status-badge pending">PENDING</span>
+                        </div>
+                    </div>
+                    
+                    <div class="milestone" data-status="pending">
+                        <div class="milestone-marker">
+                            <div class="crack"></div>
+                        </div>
+                        <div class="milestone-content">
+                            <h4>Epilogue</h4>
+                            <span class="date">Nov 2025</span>
+                            <span class="status-badge pending">PENDING</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Author's Note -->
+    <div id="author-note" class="author-note-section author-note-content">
+        <div class="container">
+            <div class="note-container">
+                <h3 class="note-title">Author's Note</h3>
+                <div class="note-content">
+                    <p class="note-text">
+                        "This reboot wasn't planned. It was necessary. The old story? Dead in a gutter with a hole in its chest. This one? It came back pissed and rewritten in gasoline."
+                    </p>
+                    <div class="signature">
+                        <span class="signature-text">- dVlpr & dakindahood on chains</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="glitched-title">
+                        <span class="glitch-layer" data-text="T H E  T ' N ' T">T H E  T'N'T</span>
+                        <span class="glitch-layer" data-text="T H E  T ' N ' T">T H E  T'N'T</span>
+                        <span class="glitch-layer" data-text="T H E  T ' N ' T">T H E  T'N'T</span>
+                    </div>
+                    <div class="footer-tagline">nobody walks out clean</div>
+                </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 hyprZona. All rights reserved. Some scars never heal.
+                </div>
+            </div>
+        </div>
+    </footer>
+</section>
+
+    <!-- JavaScript -->
+    <script src="js/tnt.js"></script>
+    <script src="js/smarty-loader.js"></script>
+    <!-- Add this to other HTML pages -->
+<script src="js/nav-loader.js"></script>
+</body>
+</html>

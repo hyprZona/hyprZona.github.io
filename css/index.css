@@ -1,0 +1,640 @@
+/* Base Styles & Variables */
+:root {
+  --black: #000000;
+  --dark-gray: #0a0a0a;
+  --neon-cyan: #00FFFF;
+  --neon-cyan-glow: 0 0 5px #00FFFF, 0 0 10px #00FFFF;
+  --neon-red: #FF0033;
+  --neon-red-glow: 0 0 5px #FF0033, 0 0 10px #FF0033;
+  --warning-yellow: #FFCC00;
+  --warning-yellow-glow: 0 0 5px #FFCC00, 0 0 10px #FFCC00;
+  --monospace: 'Space Mono', 'Roboto Mono', monospace;
+  --terminal: 'VT323', monospace;
+
+  /* Responsive font sizes */
+  --fs-xxl: clamp(1.5rem, 3vw, 2.5rem);    /* Logo */
+  --fs-xl: clamp(1.2rem, 2.5vw, 2rem);     /* Main warning */
+  --fs-lg: clamp(1rem, 2vw, 1.4rem);       /* Subheadings */
+  --fs-md: clamp(0.875rem, 1.5vw, 1rem);   /* Warning items */
+  --fs-sm: clamp(0.75rem, 1.2vw, 0.9rem);  /* Small text */
+}
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--black);
+  color: white;
+  font-family: var(--monospace);
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Noise & CRT Effects */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.15'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.08;
+  z-index: 100;
+  animation: noise 0.2s infinite alternate-reverse;
+}
+
+.scanline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  pointer-events: none;
+  z-index: 101;
+  animation: scanline 8s linear infinite;
+}
+
+/* Container Styles */
+.glitch-container {
+  max-width: min(90%, 800px);
+  width: clamp(300px, 90vw, 800px);
+  margin: 2vh auto;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  height: auto;
+  max-height: 96vh; /* Ensure container fits viewport */
+  overflow-y: auto; /* Add scrollbar only if needed */
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--neon-cyan);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.glitch-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, var(--neon-cyan) 0%, transparent 100%);
+  opacity: 0.03;
+  z-index: -1;
+}
+
+/* Logo Styles */
+header {
+  margin-bottom: 1rem; /* Reduced from 2rem */
+}
+
+.logo {
+  text-align: center;
+  font-size: var(--fs-xxl);
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: var(--neon-cyan);
+  text-shadow: var(--neon-cyan-glow);
+}
+
+/* Warning Header Styles */
+.warning-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  border-bottom: 1px solid var(--neon-red);
+  padding-bottom: 0.5rem; /* Reduced from 1rem */
+}
+
+.warning-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  animation: warning-pulse 2s infinite;
+}
+
+.warning-header h1 {
+  color: var(--warning-yellow);
+  font-size: var(--fs-xl);
+  text-shadow: var(--warning-yellow-glow);
+  font-family: var(--terminal);
+  letter-spacing: 1px;
+}
+
+/* Warning Content Styles */
+.warning-message p {
+  font-size: var(--fs-lg);
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  color: var(--warning-yellow);
+}
+
+.warning-list {
+  list-style-type: none;
+  margin-bottom: 1rem; /* Reduced from 2rem */
+}
+
+.warning-list li {
+  margin-bottom: 0.5rem; /* Reduced from 1rem */
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: var(--fs-md);
+  line-height: 1.3; /* Reduced from 1.5 */
+}
+
+.marker {
+  position: absolute;
+  left: 0;
+  color: var(--neon-red);
+  font-weight: bold;
+}
+
+/* Form Styles */
+.consent-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem; /* Reduced from 2rem */
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 1rem; /* Reduced from 1.5rem */
+  -webkit-user-select: none;
+  user-select: none;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.checkbox-container:hover {
+  transform: scale(1.05);
+}
+
+.checkbox-container:hover .checkmark {
+  border-color: var(--neon-red);
+  box-shadow: 0 0 10px var(--neon-red);
+}
+
+.checkbox-container:hover .checkbox-text {
+  color: var(--neon-red);
+  text-shadow: 0 0 10px var(--neon-red);
+}
+
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  height: 25px;
+  width: 25px;
+  background-color: #252525;
+  border: 1px solid var(--neon-cyan);
+  margin-right: 10px;
+  position: relative;
+}
+
+.checkbox-container:hover .checkmark {
+  background-color: #333;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+  background-color: var(--neon-red);
+  animation: checkbox-glitch 0.3s;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-text {
+  font-size: 1.1rem;
+  color: var(--neon-cyan);
+}
+
+.cta-button {
+  background-color: var(--dark-gray);
+  color: var(--neon-red);
+  border: 2px solid var(--neon-red);
+  font-family: var(--terminal);
+  font-size: var(--fs-md);
+  padding: 8px 25px; /* Reduced from 12px 35px */
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:not([disabled]):hover {
+  background-color: var(--neon-red);
+  color: var(--black);
+  box-shadow: var(--neon-red-glow);
+  transform: translateY(-2px);
+}
+
+.cta-button[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.cta-button:not([disabled]):active {
+  transform: translateY(1px);
+}
+
+.button-text {
+  margin-right: 8px;
+}
+
+.button-icon {
+  font-size: 1.3rem;
+}
+
+/* Text Effects */
+.glitch-text {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.glitch-text::before {
+  color: var(--neon-cyan);
+  z-index: -1;
+}
+
+.glitch-text::after {
+  color: var(--neon-red);
+  z-index: -2;
+}
+
+.glitch-item {
+  position: relative;
+  transition: all 0.2s;
+}
+
+.glitch-item:hover {
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  transform: translateX(3px);
+}
+
+.flicker-text {
+  animation: flicker 4s infinite;
+}
+
+/* Animations */
+@keyframes noise {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1px);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  92% {
+    opacity: 0.8;
+  }
+  94% {
+    opacity: 0.9;
+  }
+  96% {
+    opacity: 0.2;
+  }
+  98% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes warning-pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes checkbox-glitch {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-2px);
+  }
+  50% {
+    transform: translateX(2px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .glitch-container {
+    margin: 1vh auto;
+    padding: 1rem;
+    height: 98vh;
+  }
+  
+  .logo {
+    font-size: 2rem;
+  }
+  
+  .warning-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .warning-message p {
+    font-size: 1rem;
+  }
+  
+  .warning-list li {
+    font-size: 0.9rem;
+  }
+  
+  .checkbox-text {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 10px 30px;
+  }
+  
+  .warning-icon {
+    font-size: 1.5rem; /* Reduced from 2rem */
+  }
+  
+  .warning-header {
+    margin-bottom: 0.8rem;
+  }
+  
+  .checkbox-container {
+    margin-bottom: 1rem; /* Reduced from 1.5rem */
+  }
+}
+
+@media (max-width: 480px) {
+  .glitch-container {
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.8rem;
+  }
+  
+  .warning-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .warning-icon {
+    margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+  
+  .warning-header h1 {
+    font-size: 1.3rem;
+  }
+  
+  .warning-list li {
+    font-size: 0.85rem;
+  }
+  
+  .checkbox-container {
+    align-items: flex-start;
+  }
+  
+  .checkmark {
+    margin-top: 3px;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 8px 25px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dark-gray: #0a0a0a;
+  }
+}
+
+/* Background Pattern */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: 
+        linear-gradient(90deg, transparent 99%, var(--neon-cyan) 99.5%),
+        linear-gradient(0deg, transparent 99%, var(--neon-cyan) 99.5%);
+    background-size: 40px 40px;
+    opacity: 0.05;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Lawyer Cat Easter Egg */
+.lawyer-cat {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.lawyer-cat-gif {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: clamp(150px, 30vw, 200px); /* Responsive width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 30vh; /* Prevent too large height on small screens */
+    background: var(--black);
+    border: 1px solid var(--neon-cyan);
+    border-radius: 8px;
+    padding: 5px;
+    transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden; /* Prevent image overflow */
+}
+
+.lawyer-cat-gif img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio while filling container */
+    display: block;
+}
+
+.lawyer-cat:hover .lawyer-cat-gif {
+    transform: translateX(-50%) scale(1);
+}
+
+/* Adjust positioning for different screen sizes */
+@media (max-width: 768px) {
+    .lawyer-cat-gif {
+        width: clamp(120px, 25vw, 150px);
+        left: auto;
+        right: 0;
+        transform: translateX(0) scale(0);
+    }
+    
+    .lawyer-cat:hover .lawyer-cat-gif {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .lawyer-cat-gif {
+        width: clamp(100px, 20vw, 120px);
+        bottom: 120%; /* Move slightly higher on mobile */
+    }
+}
+
+/* Handle viewport edges */
+.lawyer-cat:first-child .lawyer-cat-gif {
+    left: 0;
+    transform-origin: left bottom;
+    transform: translateX(0) scale(0);
+}
+
+.lawyer-cat:first-child:hover .lawyer-cat-gif {
+    transform: translateX(0) scale(1);
+}
+
+.lawyer-cat:last-child .lawyer-cat-gif {
+    left: auto;
+    right: 0;
+    transform-origin: right bottom;
+    transform: translateX(0) scale(0);
+}
+
+.lawyer-cat:last-child:hover .lawyer-cat-gif {
+    transform: translateX(0) scale(1);
+}
+
+/* Sound Toggle */
+.sound-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    padding: 8px;
+    font-family: var(--terminal);
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.sound-toggle:hover {
+    background: var(--neon-cyan);
+    color: var(--hz-black);
+}
+
+.sound-toggle.muted {
+    border-color: var(--neon-red);
+    color: var(--neon-red);
+}
+
+/* Add custom scrollbar styling if needed */
+.glitch-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.glitch-container::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+}
+
+.glitch-container::-webkit-scrollbar-thumb {
+    background: var(--neon-cyan);
+    border-radius: 3px;
+}
+
+/* Update mobile styles */
+@media (max-height: 600px) {
+    .glitch-container {
+        margin: 0.5vh auto;
+        padding: 0.8rem;
+    }
+    
+    header {
+        margin-bottom: 0.5rem;
+    }
+    
+    .warning-list li {
+        margin-bottom: 0.3rem;
+    }
+}

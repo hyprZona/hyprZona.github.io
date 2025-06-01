@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond the Illusions | hyprZona</title>
+    <link rel="stylesheet" href="css/btio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 🎯 SEO juice that makes Google-chan blush -->
+    <meta name="description" content="Welcome to hyprZona - Where gaming meets insanity! Experience 'Beyond the Illusions', a psychological horror game that will make you question reality. Created by the chaotic mind of dVlpr.">
+    <meta name="keywords" content="hyprZona, indie games, Beyond the Illusions, psychological horror games, indie game developer, dVlpr games, comedy horror games">
+    <meta name="author" content="dVlpr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- 🌐 Social media tags because we're attention seekers -->
+    <meta property="og:site_name" content="hyprZona">
+    <meta property="og:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta property="og:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter stuff because Elon needs engagement -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyprZona">
+    <meta name="twitter:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta name="twitter:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+
+    <!-- 🎨 Icons that make us look legit -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0">
+    <link rel="canonical" href="https://hyprzona.github.io">
+
+    <!-- 🌙 Dark mode because light burns our vampire eyes -->
+    <meta name="color-scheme" content="dark">
+
+    <!-- 🤖 Structured data for Google's robot overlords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "hyprZona",
+      "url": "https://hyprzona.github.io",
+      "description": "Home of Beyond the Illusions and other chaotic creations",
+      "creator": {
+        "@type": "Person",
+        "name": "dVlpr"
+      }
+    }
+    </script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+<body>
+    <!-- Ambient Background -->
+    <div class="ambient-bg">
+        <div class="mist-layer mist-1"></div>
+        <div class="mist-layer mist-2"></div>
+        <div class="mist-layer mist-3"></div>
+        <div class="forest-shadows"></div>
+    </div>
+
+    <!-- Landing Visual -->
+    <section id="Landing" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="title-main">BEYOND THE ILLUSIONS</span>
+                    <span class="title-sub">A 0.25-Hour Descent into the Uncanny</span>
+                </h1>
+                <div class="whisper-glitch" id="whisper">Dan?</div>
+            </div>
+        </div>
+        <div class="forest-silhouette" id="silhouette"></div>
+        <audio id="ambient-whisper" preload="auto" loop>
+            <source src="https://www.soundjay.com/misc/sounds/bell-ringing-05.wav" type="audio/wav">
+        </audio>
+    </section>
+
+    <!-- About the Game -->
+<section id="About" class="about-game">
+    <div class="container">
+        <h2 class="section-title">Into the Woods</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="opening-quote">"It was just a breakup. Why does it feel like I died?"</p>
+                
+                <div class="story-fragments">
+                    <p>Dan thought a walk in the forest would clear his head. He was wrong.</p>
+                    
+                    <div class="memory-fragments">
+                        <div class="fragment" data-memory="lake">
+                            <span class="fragment-trigger">Forest & Lake</span>
+                            <div class="fragment-content">
+                                The calm and soothing spots for anyone. But why does peace feel so loud?
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" data-memory="orbs">
+                            <span class="fragment-trigger">Orbs</span>
+                            <div class="fragment-content">
+                                Fragments of memories, glowing and floating. They don’t lead forward—only back.
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" data-memory="cave">
+                            <span class="fragment-trigger">Cave</span>
+                            <div class="fragment-content">
+                                A mysterious spot in the mountains. No map shows it. No memory explains it.
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" data-memory="lava">
+                            <span class="fragment-trigger">Lava River</span>
+                            <div class="fragment-content">
+                                A freaking river of lava—inside a cave! And above it? A whole damn galaxy.
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" data-memory="zipline">
+                            <span class="fragment-trigger">Zipline</span>
+                            <div class="fragment-content">
+                                From lava river to... a void? Who rigged this thing and why does it work?
+                            </div>
+                        </div>
+                        
+                        <div class="fragment" data-memory="ghostface">
+                            <span class="fragment-trigger">Hole of Ghostface?</span>
+                            <div class="fragment-content">
+                                <span class="redacted">Not the butthole. The *mouth* hole. A gateway to void? A new reality? No clue, bro.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-visual">
+                <div class="game-screenshot">
+                    <div class="screenshot-placeholder">
+                        <img src="https://lh3.googleusercontent.com/pw/AP1GczPfa2pdy4h-JRdbmAQJuliw3GAPahA2GRTk5KU2SW2UHyVcu6B22TV8Ttuh8xCjV0Tn-FsjbK-qYMIhUggKA7Mq5PYE1XnYOGHZ3b7f-100w3wWJ9EdG-FcvA7Sg0EehlQVuYxqsJeDeySmzfObLQkb=w1470-h828-s-no-gm?authuser=0" alt="Game screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Dan's Descent Timeline -->
+    <section id="Screens" class="dans-descent">
+    <div class="container">
+        <h2 class="section-title">The Descent</h2>
+        <div class="timeline">
+            <div class="timeline-item" data-step="1">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Dan's Room</h3>
+                    <p>Where everything spirals down to shit. One text. One betrayal. BOOM — Dan having a weird forest experience.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDM0Mi5wbmc=/original/x4GHeY.png" alt="Dan's Room"></div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-step="2">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Foggy Path</h3>
+                    <p>The one way leading to the forest — creepy, cold, and lonely. Nothing bad can happen, right? Unless you don’t pay attention.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDMzMC5wbmc=/original/oqqPv9.png" alt="Foggy Path"></div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-step="3">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Forest in Calm</h3>
+                    <p>The sunset, the lake, the golden hues — just so relaxing and peaceful. Birds chirp. Nature heals. Too good to last.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzY0MzM5My5wbmc=/original/BLfTvD.png" alt="Forest in Calm"></div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-step="4">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Forest in Chaos</h3>
+                    <p>The forest mutates into a surreal nightmare. Oversized trees, breathing rocks, and things watching from the shadows.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDMzNy5wbmc=/original/yzYcSc.png" alt="Forest in Chaos"></div>
+                </div>
+            </div>
+            
+            <div class="timeline-item" data-step="5">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Ritual Disrupt</h3>
+                    <p>Some demonic cult crap? Real monsters? Whatever it is, they’re doing *something*, and Dan’s not supposed to be here.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDMyNy5wbmc=/original/iQv1ux.png" alt="Ritual Disrupt"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-step="6">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Lava River</h3>
+                    <p>The whole ass river made of LAVA?! In a cave?? With the sky above showing the universe?? Nah this is peak unreality.</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDMzMi5wbmc=/original/WMls9d.png" alt="Lava River"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-step="7">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Zipline</h3>
+                    <p>It was supposed to be a normal-ass zipline. Why are there fireballs, swinging pickaxes, and booby-trapped chaos??</p>
+                    <div class="timeline-image"><img src="https://img.itch.zone/aW1hZ2UvMjgxNDg2MS8xNzYzNDM0NC5wbmc=/original/WiZDR9.png" alt="Zipline"></div>
+                </div>
+            </div>
+
+            <div class="timeline-item" data-step="8">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <h3>Truth Revealed</h3>
+                    <div class="redacted-text" id="ending-spoiler">
+                        <span class="blur-text">[FILE UNLOCKED — ENDING_F] // A nightmare? A shift in reality? Or something else entirely?</span>
+                    </div>
+                    <div class="unblur-hint">Hover to reveal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Features That Slap -->
+    <section id="Features" class="features">
+        <div class="container">
+            <h2 class="section-title">What Awaits</h2>
+            <div class="polaroid-grid">
+                <div class="polaroid" data-feature="psychological">
+                    <div class="polaroid-image">🧠</div>
+                    <div class="polaroid-caption">First-Person Psychological <strike>Horror</strike> Terror</div>
+                    <div class="polaroid-hover">The mind is the maze. You are the mouse.</div>
+                </div>
+                
+                <div class="polaroid" data-feature="puzzles">
+                    <div class="polaroid-image">💀</div>
+                    <div class="polaroid-caption">Procedurally Generated Fragment Hunts</div>
+                    <div class="polaroid-hover">Collect Orbs. Relive the Memories. Try not to question what’s real.</div>
+                </div>
+                
+                <div class="polaroid" data-feature="parkour">
+                    <div class="polaroid-image">🏃‍♂️</div>
+                    <div class="polaroid-caption">Zipline + Parkour Escapes</div>
+                    <div class="polaroid-hover">Run. Jump. Dodge. Survive. Repeat.</div>
+                </div>
+                
+                <div class="polaroid" data-feature="endings">
+                    <div class="polaroid-image">🎭</div>
+                    <div class="polaroid-caption">Multiple Endings — Your Choices and Actions Matter</div>
+                    <div class="polaroid-hover">Six fates. One shot. Good luck not screwing it up.</div>
+                </div>
+                
+                <div class="polaroid" data-feature="atmosphere">
+                    <div class="polaroid-image">🌲</div>
+                    <div class="polaroid-caption">Cursed Forest Vibes & Rituals</div>
+                    <div class="polaroid-hover">The trees remember everything.</div>
+                </div>
+                
+                <div class="polaroid" data-feature="visuals">
+                    <div class="polaroid-image">📸</div>
+                    <div class="polaroid-caption">Surreal Visuals and Eerie Cutscenes</div>
+                    <div class="polaroid-hover">Reality is negotiable here. With Cartoonishly shit graphics and models bleeded with 0 color coding knowledge.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dev Diary -->
+    <section id="Devlog" class="dev-diary">
+        <div class="container">
+            <h2 class="section-title">50 Hours in Hell</h2>
+            <div class="diary-content">
+                <div class="diary-text">
+    <blockquote class="dev-quote">
+        "I built this in 50 hours. Slept like a baby, procrastinated like a legend (certified developer energy). Ended up with 5 different levels. Still dropped a masterpiece—with exactly zero formal game dev knowledge. Cut me some cheese!"
+    </blockquote>
+
+    <div class="diary-entry">
+        <p>What started as a sweet little “Memories Demo” spiraled into my personal psychological hellscape. The whole story? Yeah, it's actually based on a post-breakup nightmare. So if any of it feels nonsensical, now you know—trauma writes the script.</p>
+
+        <p>Fun fact: the orb segment was originally a full-on maze. But the logic was so cursed it fried my brain harder than when a <strike>bitch barks in my ears</strike> baby goes ham on a pacifier.</p>
+
+        <p>I hit peak boredom. Procrastinated like a goddamn pro. Modeling and coding became torture. I ended up cutting a boss fight and scrapping two whole levels after the “void” sequence. Instead, I slapped on a copyrighted ghost image and tacked a post-credits scene that links to extra lore on my site—to <strike>calm my nerves</strike> keep that sweet ambiguity alive.</p>
+
+        <p>Thought this would take, what, 10 to 20 hours max? Ha. The base game? Done in 10. But debugging? Raging over a missing semicolon? And oh—burning my hand to hell on my “extremely hot” <strike>big, fat hoe chocobar</strike> cup of coffee? That’s what really took me out. Yes, it happened during dev time. Yes, it counts. Shut up.</p>
+    </div>
+</div>          
+                <div class="diary-visuals">
+                    <div class="sketch-grid">
+                        <div class="sketch-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczMnUwigWwM99qVosI4YYMX5QrFP7L_wL5puYejny7eLh0d2JyojXI6fzUqFYvadmr6s9GTDzrjx92_cHyWF5KRpRwHISoQXa0wbdnmob8KZUXsJN2nOP5oHFyOFpaH6CEOQ_Ba27GK5xgdPFZ7Bi4n6=w610-h394-s-no-gm?authuser=1" alt="fireball development model"></div>
+                        <div class="sketch-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPoh7JEIp5_w1s1-V_6eLw1RYcGte4_UJKC7ICC5qu4PNsPB1zNG-9uDhfjtvwsYNNN6mL_KGa_BKxbB0dsjtBFcdE3JdvIkH3vfrcBbRjTGy8HJ2Tl-pIL_oZFy2WFNAxUNZW79zytrYexoWoQTFXS=w1292-h702-s-no-gm?authuser=0" alt="intial color grading for foggy path"></div>
+                        <div class="sketch-item"><img src="https://lh3.googleusercontent.com/pw/AP1GczPCnPc43wFSbhLZRE1OQOtfx8URKA_-LYfHie861xbRdFrzpY0S8nmd93gT4NiwNy-kxjIKMeyiesoF_JSTkmbGK33DilSutseU8l_LIzZzy9lMfwvLUlo_7BBNS66tnFfxD3lzf9FmDAEqCtfmNxyB=w1470-h803-s-no-gm?authuser=1" alt="Editor view, cave design"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Update Sound & Atmosphere section -->
+<section id="Reviews" class="sound-atmosphere">
+    <div class="container">
+        <h2 class="section-title">Listen Closely</h2>
+        <div class="audio-section">
+            <div class="audio-quote">
+                <p>"Did you hear that? No? Then who's breathing down your neck?"</p>
+            </div>
+            
+            <div class="audio-player">
+                <button class="play-btn" id="atmospherePlay">▶ Experience the Atmosphere</button>
+                <div class="audio-warning">Headphones recommended. The forest is listening.</div>
+            </div>
+            
+            <audio id="atmosphere-track" preload="auto" loop>
+                <source src="https://soundjay.com/nature/sounds/wind-howl-01.mp3" type="audio/mpeg">
+            </audio>
+        </div>
+
+        <!-- Add Fan Reactions Here -->
+        <div class="reactions-section">
+            <h3 class="reactions-title">What Players Are Saying</h3>
+            <div class="reactions-grid">
+                <div class="reaction">
+                    <p>"I screamed at a BUSH."</p>
+                    <cite>— Sarah, 23</cite>
+                </div>
+                
+                <div class="reaction">
+                    <p>"That ending BROKE ME."</p>
+                    <cite>— Mike, 31</cite>
+                </div>
+                
+                <div class="reaction">
+                    <p>"Never trusting a forest again."</p>
+                    <cite>— Alex, 19</cite>
+                </div>
+                
+                <div class="reaction cursed">
+                    <p>"He never came back from the forest..."</p>
+                    <cite>— [USER NOT FOUND]</cite>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Endings Breakdown -->
+    <section id="Endings" class="endings">
+    <div class="container">
+        <h2 class="section-title">Six Paths Diverge</h2>
+        <div class="endings-grid">
+            <div class="ending-card" data-ending="carcrash">
+                <div class="ending-icon">🚴‍♂️💥🚗</div>
+                <div class="ending-name">Indian Car Crash</div>
+                <div class="ending-hint">A Pune teen. A Cavallo 911. Dan on a bike. Physics did the rest.</div>
+            </div>
+            
+            <div class="ending-card" data-ending="coward">
+                <div class="ending-icon">🏠</div>
+                <div class="ending-name">Coward</div>
+                <div class="ending-hint">Dan noped out. Sometimes survival looks like quitting.</div>
+            </div>
+            
+            <div class="ending-card" data-ending="surrender">
+                <div class="ending-icon">🙇‍♂️👹</div>
+                <div class="ending-name">Surrender</div>
+                <div class="ending-hint">He gave in. The monsters were waiting.</div>
+            </div>
+            
+            <div class="ending-card" data-ending="tooslow">
+                <div class="ending-icon">🏃‍♂️💀</div>
+                <div class="ending-name">Too Slow</div>
+                <div class="ending-hint">One missed step. One dead Dan.</div>
+            </div>
+            
+            <div class="ending-card" data-ending="drowned">
+                <div class="ending-icon">🌋</div>
+                <div class="ending-name">Drowned</div>
+                <div class="ending-hint">He slipped into the lava. Gravity took the wheel.</div>
+            </div>
+            
+            <div class="ending-card" data-ending="redacted">
+                <div class="ending-icon">🔒</div>
+                <div class="ending-name">[Redacted]</div>
+                <div class="ending-hint">He wakes up. Or thinks he does. Was it ever real?</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="Cast" class="characters">
+    <div class="container">
+        <h2 class="section-title">The Cast</h2>
+        <div class="character-grid">
+            <div class="character-card" data-character="dan">
+                <div class="character-image">👦🏻</div>
+                <h3>Dan</h3>
+                <div class="character-role">Protagonist</div>
+                <p>A heartbroken teenager boy who should've just stayed home. Now trapped between reality and nightmare.</p>
+            </div>
+            
+            <div class="character-card" data-character="ghostface">
+                <div class="character-image">👻</div>
+                <h3>Ghostface</h3>
+                <div class="character-role">The Entity</div>
+                <p>Ancient being of pure manipulation. Collector of broken souls, architect of despair.</p>
+            </div>
+            
+            <div class="character-card" data-character="six">
+                <div class="character-image">👺</div>
+                <h3>The Six</h3>
+                <div class="character-role">The Hunters</div>
+                <p>Ghostface's servants. They watch. They wait. They take.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Add this before the download section -->
+<section id="Folklore" class="folklore">
+    <div class="container">
+        <h2 class="section-title">Ghostface and The Six</h2>
+        <div class="scroll-container">
+            <div class="scroll-ornament left"></div>
+            <div class="scroll-content">
+                <div class="folklore-text">
+                    <h3 class="folklore-title">The Tale of Ghostface and The Six</h3>
+
+                    <div class="chapter">
+                        <span class="chapter-number">I</span>
+                        <p>Long ago, in a time when the world bled ignorance and fear, there was a being—neither man nor beast, neither living nor dead. It had no body, no arms to hold nor legs to walk. Only a face—white, smooth, and void of emotion. This entity, known only as Ghostface, was a prodigy of deception, a whisperer of madness, a craftsman of manipulation.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">II</span>
+                        <p>But for all its cunning, Ghostface was incomplete. It could not take human form, could not taste suffering the way humans did. It could only watch from the abyss, envious of the creatures it sought to rule. And so, from the depths of its endless existence, it created them.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">III</span>
+                        <p>Six monsters, sculpted from the shadows of despair and stitched together with lies. Each one a masterpiece of deception, a puppet of Ghostface’s will. They bore no names, for names were for the living. Instead, they were simply The Six, bound by a single purpose: to find a worthy human—not just any, but one who had lived through every emotion in its purest, rawest form.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">IV</span>
+                        <p>The lake was their bait. It did not exist on any map, and no traveler ever remembered how they had found it. Its waters were still, reflecting the sky like a frozen mirror—silent, unassuming, yet waiting. Those who wandered too close felt an unsettling pull, as if something unseen had reached into their very soul.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">V</span>
+                        <p>And when the chosen one arrived—the human strong enough, pure enough, worthy enough—fate would strike. A rock, as if hurled by an unseen hand, would crash into their skull. Not enough to kill, just enough to disorient. They would stumble, their balance lost. And then the lake, still as death, would swallow them whole.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">VI</span>
+                        <p>Drowning never came. Instead, the victim awoke in The Territory of the Lost and Damned, a world that mocked reality yet obeyed no laws of it. Here, shadows moved without light. The wind whispered things in voices too familiar. The victim would feel disoriented, broken, but never truly afraid—not yet.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">VII</span>
+                        <p>Their memories would be shattered, scattered into pieces—fragments of a past they could no longer grasp. And then, they would see them. The orbs. Faint, glowing, floating through the void. They must be collected—a natural instinct, a silent command burned into their mind. Each orb returned a sliver of memory, but something was wrong.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">VIII</span>
+                        <p>The past felt… altered. The horrors they had witnessed, the suffering they had endured—softened, warped, stripped of their weight. Their pain became fiction, their reality a dream. Escape? Unnecessary. Nothing had ever happened. And if they took too long? If doubt whispered in their mind?</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">IX</span>
+                        <p>The Six would begin to appear. At first, as nothing but figures in the distance, watching. Then, as whispers in the dark. Then, closer. If the victim strayed too far from the path, the illusion would shatter, and the purgatory would collapse upon them. Then, they would awaken again. By the lake. Whole. Safe. Unharmed.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">X</span>
+                        <p>And they would believe—without a doubt—that it had all been a dream. But the pull would remain. The lake would still call to them. And the next time they returned, they would not escape. If the victim entered the cave, the deception would end.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XI</span>
+                        <p>The alley stretched long, longer than it should. The deeper they walked, the more the walls seemed to breathe. Shadows twisted unnaturally, whispering in a language that had no words. The air grew thick, damp, suffocating with a scent not of earth, but of rot. And then, at last, they would see it.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XII</span>
+                        <p>The cauldron. Massive, iron-clad, covered in symbols that pulsed with sickly light. The air shimmered above it, thick with heat. Inside, something writhed—a bubbling, seething blend of past victims—flesh melted into liquid, their essence still trapped, still screaming.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XIII</span>
+                        <p>The Six would stand in a circle, motionless, waiting. Then, the voice would come. Not from the cave. Not from the monsters. But from behind them. Ghostface. White. Expressionless. Watching. No words were needed. The Six knew what was required. The victim, dazed, confused, unable to understand the horror unfolding before them—would be taken.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XIV</span>
+                        <p>Held down. Arms. Legs. Chopped. First, the brain. Squeezed of its fluids, drained into the cauldron, the thick secretion turning the liquid into something more. The brain itself, crushed, broken apart, swallowed by the roiling mass. Then, the rest. Every piece of the victim’s body would be stripped away, layer by layer, until nothing but a memory remained.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XV</span>
+                        <p>And in that moment, Ghostface would grow stronger. The Six, once beasts, would begin to change. Flesh stretching, twisting, warping into human forms—imperfect at first, but better with each sacrifice. They would learn to mimic emotion, to deceive perfectly, to infiltrate the world Ghostface could never touch.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XVI</span>
+                        <p>Even if, by some impossible chance, the victim escaped the cave, fled back to their reality, they would never be free. Ghostface was patient. The Six were relentless. The moment they neared the lake again, they would be taken. Harder. Faster. With no mercy.</p>
+                    </div>
+
+                    <div class="chapter">
+                        <span class="chapter-number">XVII</span>
+                        <p>And this time, when the stone struck them, when the water pulled them under, there would be no more dreams. No more illusions. No more escape. Only the cave. And the cauldron. And the whisper of Ghostface, forever watching, forever waiting.</p>
+                    </div>
+
+                    <div class="folklore-warning">
+                        <p>Beware the lake that calls your name. Ghostface is watching. And The Six are waiting.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-ornament right"></div>
+        </div>
+    </div>
+</section>
+
+<section id="Trailers" class="trailers">
+    <div class="container">
+        <h2 class="section-title">Watch & Fear</h2>
+        <div class="trailer-grid">
+            <div class="trailer-card">
+                <h3>Announcement Trailer</h3>
+                <div class="video-container">
+                    <iframe title="Announcement Trailer" src="https://www.youtube.com/embed/gZ-8F3-EpMM" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="trailer-card">
+                <h3>Trailer-2</h3>
+                <div class="video-container">
+                    <iframe title="Trailer two" src="https://www.youtube.com/embed/KhvNSGrmowE" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div class="trailer-card">
+                <h3>Launch Trailer</h3>
+                <div class="video-container">
+                    <iframe title="Launch Trailer" src="https://www.youtube.com/embed/Icl6jUXm89Y" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Download Section -->
+    <section id="Download" class="download">
+    <div class="container">
+        <div class="download-content">
+            <h2 class="download-title">Ready to Enter?</h2>
+            
+            <div class="age-rating">
+                <div class="rating-badge">T+</div>
+                <div class="rating-details">
+                    <p>May Contain: Unsettling Visuals, Creepy Atmosphere, Mature Theme, Crude Humor</p>
+                </div>
+            </div>
+            
+            <div class="download-platforms">
+                <div class="platform windows">
+                    <h3>🪟 Windows</h3>
+                    <ol class="install-steps">
+                        <li>Click the 'Download'(select windows file) button to begin your journey into the unknown. (Button will lead to itch.io)</li>
+                        <li>Locate the downloaded file, usually found in your Downloads folder.</li>
+                        <li>Double-click the executable to start the installation. Follow the on-screen instructions, and you're just moments away from diving into the game!</li>
+                        <li class="windows-warning"><strong>Note for Windows Users:</strong> If Windows prevents the file from running, this is because I haven't verified myself as a publisher yet. If you see a 'Run Anyway' option, click it. If not, click 'More Info' and then select 'Run Anyway.' The file is safe—this is only happening because the game isn't on Steam yet.</li>
+                    </ol>
+                </div>
+                
+                <div class="platform mac">
+                    <h3>🍎 MacOS</h3>
+                    <ol class="install-steps">
+                        <li>Click the 'Download'(select MacOS file) button to begin your journey. (Button will lead to itch.io)</li>
+                        <li>Locate the downloaded zip file and unpack it.</li>
+                        <li>Open the unpacked folder and navigate to Beyond The Illusions.app -> Contents -> MacOS.</li>
+                        <li>Run the Beyond The Illusions file located in the MacOS folder.</li>
+                        <li class="mac-warning"><strong>In case of a security error:</strong> Go to System Preferences -> Security & Privacy -> click "Open Anyways" and type in your password when prompted.</li>
+                    </ol>
+                </div>
+            </div>
+            
+            <div class="download-cta">
+                <a href="https://hyprZona.itch.io/bti-o" class="download-btn">
+                    🎮 Play Now — It's Just a Forest... Right?
+                </a>
+            </div>
+                
+                <div class="download-warning">
+                    <p>⚠️ Warning: May cause lingering unease, forest paranoia, and emotional re-evaluation of your last breakup. Viewer discretion is advised.</p>
+                </div>
+                
+                <div class="system-requirements">
+                    <h3>Minimum System Requirements</h3>
+                    <ul>
+                        <li>Windows 7 / macOS 10.15</li>
+                        <li>2GB RAM</li>
+                        <li>x86_32 with SSE2, x86_64 or ARM (Apple Silicon)/ARMv8 (Windows Mobile) CPU</li>
+                        <li>Integrated Vulkan graphics sufficient</li>
+                        <li>500 mb free disk space</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Elements -->
+    <div class="floating-crows" id="crows"></div>
+    <div class="static-glitch" id="staticGlitch"></div>
+    <script src="js/smarty-loader.js"></script>
+    <script src="js/btio.js"></script>
+    <!-- Add this to other HTML pages -->
+<script src="js/nav-loader.js"></script>
+</body>
+</html>

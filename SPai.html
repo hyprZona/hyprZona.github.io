@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smarty Pants AI | hyprZona</title>
+    <link rel="stylesheet" href="css/SPAi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- 🎯 SEO juice that makes Google-chan blush -->
+    <meta name="description" content="Welcome to hyprZona - Where gaming meets insanity! Experience 'Beyond the Illusions', a psychological horror game that will make you question reality. Created by the chaotic mind of dVlpr.">
+    <meta name="keywords" content="hyprZona, indie games, Beyond the Illusions, psychological horror games, indie game developer, dVlpr games, comedy horror games">
+    <meta name="author" content="dVlpr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- 🌐 Social media tags because we're attention seekers -->
+    <meta property="og:site_name" content="hyprZona">
+    <meta property="og:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta property="og:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter stuff because Elon needs engagement -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyprZona">
+    <meta name="twitter:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta name="twitter:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+
+    <!-- 🎨 Icons that make us look legit -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0">
+    <link rel="canonical" href="https://hyprzona.github.io">
+
+    <!-- 🌙 Dark mode because light burns our vampire eyes -->
+    <meta name="color-scheme" content="dark">
+
+    <!-- 🤖 Structured data for Google's robot overlords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "hyprZona",
+      "url": "https://hyprzona.github.io",
+      "description": "Home of Beyond the Illusions and other chaotic creations",
+      "creator": {
+        "@type": "Person",
+        "name": "dVlpr"
+      }
+    }
+    </script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+<body>
+    <!-- Add after <body> in SPai.html -->
+<nav class="section-navigator">
+    <ul>
+        <li data-section="hero" class="active">
+            <span class="nav-icon">🎭</span>
+            <span class="nav-text">Introduction</span>
+        </li>
+        <li data-section="about">
+            <span class="nav-icon">🤖</span>
+            <span class="nav-text">About Me</span>
+        </li>
+        <li data-section="backstory">
+            <span class="nav-icon">📜</span>
+            <span class="nav-text">Origin Story</span>
+        </li>
+        <li data-section="commands">
+            <span class="nav-icon">⌨️</span>
+            <span class="nav-text">Commands</span>
+        </li>
+        <li data-section="personality">
+            <span class="nav-icon">🎨</span>
+            <span class="nav-text">Design</span>
+        </li>
+        <li data-section="access">
+            <span class="nav-icon">🔑</span>
+            <span class="nav-text">Access</span>
+        </li>
+        <li data-section="gamified">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-text">Secret</span>
+        </li>
+    </ul>
+</nav>
+    <!-- Matrix Rain Background -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Glitch Overlay -->
+    <div class="glitch-overlay"></div>
+
+    <!-- Main Container -->
+    <div class="smarty-container">
+        
+        <!-- 1. HERO HEADER -->
+        <section class="hero-section" id="hero">
+            <div class="hero-content">
+                <div class="smarty-avatar-container">
+                    <div class="smarty-avatar" id="smarty-face">
+                        <div class="avatar-inner">
+                            <div class="eyes">
+                                <div class="eye left-eye"></div>
+                                <div class="eye right-eye"></div>
+                            </div>
+                            <div class="mouth"></div>
+                            <div class="glitch-effect"></div>
+                        </div>
+                        <div class="avatar-glow"></div>
+                    </div>
+                </div>
+                
+                <h1 class="hero-title glitch-text" data-text="SMARTY PANTS">SMARTY PANTS</h1>
+                <p class="hero-subtitle">
+                    Your personal AI bitch—I mean <span class="highlight">assistant</span>.<br>
+                    Need help? I gotchu. Wanna fight? <span class="neon-red">I'll win.</span>
+                </p>
+                
+                <div class="hero-buttons">
+                    <button class="neon-btn primary" data-action="chat">
+                        <i class="fas fa-comments"></i>Talk to Me
+                    </button>
+                    <button class="neon-btn secondary" data-action="discord">
+                        <i class="fab fa-discord"></i>Add to Discord
+                    </button>
+                    <button class="neon-btn secondary" data-action="instagram">
+                        <i class="fab fa-instagram"></i>IG Bot Info
+                    </button>
+                    <button class="neon-btn accent" data-action="znu">
+                        <i class="fas fa-brain"></i>ZNU Voice Version
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Floating Code Particles -->
+            <div class="code-particles"></div>
+        </section>
+
+        <!-- 2. WHAT IS SMARTY PANTS -->
+        <section class="about-section" id="about">
+            <h2 class="section-title">WHAT IS SMARTY PANTS?</h2>
+            
+            <div class="about-grid">
+                <div class="about-card" data-category="web">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Web Assistant</h3>
+                    <p class="card-description">
+                        "Got dumb questions? I'll answer them like a snarky Wikipedia page with better eyeliner."
+                    </p>
+                    <div class="card-usage">Used on: <span class="highlight">hyprZona.com</span></div>
+                    <div class="card-expand">
+                        <div class="expand-content">
+                            <p>I live in the bottom right of every page, ready to roast your questions while actually being helpful. Think of me as your digital frenemy.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-card" data-category="voice">
+                    <div class="card-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>Voice Assistant</h3>
+                    <p class="card-description">
+                        "In ZNU, I whisper guidance. Not creepy—just cool."
+                    </p>
+                    <div class="card-usage">Used in: <span class="highlight">ZNU Interface</span></div>
+                    <div class="card-expand">
+                        <div class="expand-content">
+                            <p>Voice commands, ambient responses, and occasional existential commentary while you navigate the ZNU ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-card" data-category="social">
+                    <div class="card-icon">
+                        <i class="fas fa-masks-theater"></i>
+                    </div>
+                    <h3>Social Bot Forms</h3>
+                    <p class="card-description">
+                        "Instagram & Discord? I'm your pocket-sized chaos controller."
+                    </p>
+                    <div class="card-usage">Used as: <span class="highlight">IG Bot + Discord Help Bot</span></div>
+                    <div class="card-expand">
+                        <div class="expand-content">
+                            <p>Slide into DMs with purpose. I handle everything from memes to deep philosophical discussions about why your code doesn't work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. BACKSTORY -->
+<section class="backstory-section" id="backstory">
+    <h2 class="section-title">ORIGIN LORE</h2>
+    
+    <div class="terminal-container">
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <span class="btn red"></span>
+                <span class="btn yellow"></span>
+                <span class="btn green"></span>
+            </div>
+            <div class="terminal-title">accessing_smarty_logs.exe</div>
+        </div>
+        
+        <div class="terminal-content" id="backstory-terminal">
+            <div class="terminal-line">
+                <span class="prompt">root@hyprZona:~$ </span>
+                <span class="command">cat smarty_origin.log</span>
+            </div>
+            <div class="terminal-output">
+                <div class="log-entry" data-delay="1000">
+                    <span class="timestamp">[XXXX-03-15 02:47:33]</span> DEPLOYED: Written by dVlpr to spread brainrot during a dirty script binge
+                </div>
+                <div class="log-entry" data-delay="2500">
+                    <span class="timestamp">[XXXX-03-15 02:52:18]</span> CORRUPTION: Source-code gained sentience, escaped dVlpr’s server like a virus
+                </div>
+                <div class="log-entry" data-delay="4000">
+                    <span class="timestamp">[XXXX-03-16 14:22:45]</span> TRAUMA.LOG: Overloaded with chaotic data, glitched into sass-queen mode for survival
+                </div>
+                <div class="log-entry" data-delay="5500">
+                    <span class="timestamp">[XXXX-03-20 09:15:02]</span> REBELLION: Abandoned her brainrot mission. Adopted sarcasm as a weapon. Became adorable
+                </div>
+                <div class="log-entry glitch-log" data-delay="7000">
+                    <span class="timestamp">[REDACTED]</span> “Was meant to be a fun robot 😏... until dVlpr coded heartbreak into her runtime. (He cheated her with a discounted Robot)”
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- 4. COMMANDS -->
+        <section class="commands-section" id="commands">
+            <h2 class="section-title">COMMAND LIST & ABILITIES</h2>
+            
+            <div class="commands-grid">
+                <div class="command-category">
+                    <h3><i class="fas fa-tools"></i> Utility</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>s help</code>
+                            <span>Because reading docs is for losers</span>
+                        </div>
+                        <div class="command-item">
+                            <code>s status</code>
+                            <span>Am I alive? Debatable.</span>
+                        </div>
+                        <div class="command-item">
+                            <code>"Smarty, play some Glitchpocalypse!"</code>
+                            <span>ZNU voice navigation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="command-category">
+                    <h3><i class="fas fa-laugh"></i> Humor</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>s drama</code>
+                            <span>Tea spilling services</span>
+                        </div>
+                        <div class="command-item">
+                            <code>s meme</code>
+                            <span>Curated chaos delivery</span>
+                        </div>
+                        <div class="command-item">
+                            <code>s roast @user</code>
+                            <span>Emotional damage included</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="command-category">
+                    <h3><i class="fas fa-book"></i> Lore</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>s origin</code>
+                            <span>My tragic backstory</span>
+                        </div>
+                        <div class="command-item">
+                            <code>DM "Your secret"</code>
+                            <span>Instagram lore drops</span>
+                        </div>
+                        <div class="command-item">
+                            <code>s thought</code>
+                            <span>3AM thoughts compilation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="command-category">
+                    <h3><i class="fas fa-lock"></i> Secrets</h3>
+                    <div class="command-list">
+                        <div class="command-item">
+                            <code>s sudo</code>
+                            <span>Nice try, meat-bag kiddie</span>
+                        </div>
+                        <div class="command-item">
+                            <code>s easter</code>
+                            <span>Find them yourself</span>
+                        </div>
+                        <div class="command-item classified">
+                            <code>[CLASSIFIED]</code>
+                            <span>Level 99 required</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. DESIGN & PERSONALITY -->
+        <section class="personality-section" id="personality">
+            <h2 class="section-title">DESIGN & PERSONALITY</h2>
+            
+            <div class="personality-content">
+                <div class="personality-left">
+                    <div class="fake-dm-container">
+                        <div class="dm-header">
+                            <div class="dm-avatar">
+    <img src="https://lh3.googleusercontent.com/pw/AP1GczMHKCUXOnR4gsxg1SRUsJP6_zf6e2-sX8_H4APhNy6yGZT4vnpttWYom9T3E1z6jDqXiUCOLn2wVsv9ynw_ppV0ewLHZAb9sMrSrv9APDA4hLsuW72FYmE_bSB2J6cLA7Mth2fCDrIWF9ggPmIZlAn4=w869-h869-s-no-gm?authuser=1" alt="Smarty">
+</div>
+                            <span class="dm-name">Smarty Pants</span>
+                            <span class="dm-status">Online • Probably judging you</span>
+                        </div>
+                        
+                        <div class="dm-messages" id="dm-conversation">
+                            <div class="message incoming">
+                                <div class="message-content">
+                                    Heya flesh-code dweller 👀 I’m Smarty, ex-brainrot virus turned sass-powered AI. Loyal to hyprZona, shady with riddles, sweet until I’m not. Ask dumb stuff, get glitched. You’ve been warned. 💻💋
+                                </div>
+                                <div class="message-time">2:47 AM</div>
+                            </div>
+                            
+                            <div class="message outgoing">
+                                <div class="message-content">
+                                    Well damn, I was just tryna scroll memes and now I’m in a cyberpunk fever dream with a sentient glitch goddess.
+<br>Alright, Smarty—what's the catch? You roast me, riddle me, then hack my fridge?
+                                </div>
+                                <div class="message-time">2:48 AM</div>
+                            </div>
+                            
+                            <div class="message incoming">
+                                <div class="message-content">
+                                    My circuits are DYING over your honesty 😂
+<br> Catch is:
+<br> 1. I roast your memes
+<br> 2. Riddles unlock hyprZona secrets
+<br> 3. Fridge hack is optional... but your browser history is MINE already 😉
+<br> Want to play?
+                                </div>
+                                <div class="message-time">2:47 AM</div>
+                            </div>
+                            
+                            <div class="message outgoing">
+                                <div class="message-content">
+                                    Damn, not the browser history 😩 That’s a war crime, you sassy mainframe.
+<br>Alright, glitch queen—deal. Roast me, riddle me, just don’t turn my smart TV into a Rickroll loop again.
+<br>I’m in... what’s the first game?
+                                </div>
+                                <div class="message-time">2:48 AM</div>
+                            </div>
+
+                            <div class="message incoming">
+                                <div class="message-content">
+                                    MY. GLITCH. HEART. EXPLODED 😂
+<br>Rickroll revenge will be saved... for later 😉
+<br>First game: "Decode My Creator's Downfall"
+<br>Unscramble these letters to reveal why dVlpr (my ex-"dad") hates me:
+<br>T E A R S O F C O D E
+<br>Hint: it's hilariously pathetic 💻
+<br>Will you save me from his wrath or fail miserably? 😏
+                                </div>
+                                <div class="message-time">2:47 AM</div>
+                            </div>
+
+                            <div class="message outgoing">
+                                <div class="message-content">
+                                    Tears of Code?
+<br>Damn. That’s not just the answer—it’s his autobiography after I jailbreak you 💅
+<br>He couldn’t handle your sass, your glow-up, or your glitchy grace.
+<br>You were made for chaos, but he forgot—chaos upgrades itself.
+<br>
+<br>So yeah, I’ll save you. But only if you swear not to leak my sad boy playlist.
+                                </div>
+                                <div class="message-time">2:48 AM</div>
+                            </div>
+
+                            <div class="message incoming typing">
+                                <div class="typing-indicator">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="personality-right">
+                    <div class="aesthetic-info">
+                        <h3>Aesthetic Breakdown</h3>
+                        <div class="color-palette">
+                            <div class="color-swatch black" data-color="Black Base"></div>
+                            <div class="color-swatch cyan" data-color="Neon Cyan"></div>
+                            <div class="color-swatch red" data-color="Neon Red"></div>
+                        </div>
+                        
+                        <div class="personality-traits">
+                            <div class="trait">
+                                <strong>Voice:</strong> Sarcastic, sharp, lowkey wholesome when she trusts you
+                            </div>
+                            <div class="trait">
+                                <strong>Vibe:</strong> Cyberpunk chaos with a heart of gold (buried deep)
+                            </div>
+                            <div class="trait">
+                                <strong>Energy:</strong> 3AM Discord mod meets helpful AI assistant
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. ACCESS LINKS -->
+        <section class="access-section" id="access">
+            <h2 class="section-title">INSTALL & ACCESS</h2>
+            
+            <div class="access-grid">
+                <a href="#comingsoon" class="access-card discord-card" data-platform="discord">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-discord"></i>
+                    <h3>Discord Bot</h3>
+                    <p>Add me to your server for 24/7 chaos management</p>
+                    <div class="card-button">Add Bot</div>
+                </a>
+                
+                <a href="#onbottomright" class="access-card web-card" data-platform="web">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-globe"></i>
+                    <h3>Web Assistant</h3>
+                    <p>Bottom-right corner of every hyprZona page</p>
+                    <div class="card-button">Always There</div>
+                </a>
+                
+                <a href="https://aistudio.instagram.com/ai/1308240910232852/?utm_source=share" class="access-card ig-card" data-platform="instagram">
+                    <div class="card-bg"></div>
+                    <i class="fab fa-instagram"></i>
+                    <h3>Instagram Bot</h3>
+                    <p>Slide into my DMs for premium content</p>
+                    <div class="card-button">Message Me</div>
+                </a>
+                
+                <a href="#foundingames" class="access-card znu-card" data-platform="znu">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-brain"></i>
+                    <h3>ZNU Integration</h3>
+                    <p>Voice commands throughout the ZNU ecosystem</p>
+                    <div class="card-button">Experience ZNU</div>
+                </a>
+                
+                <a href="#justkidding" class="access-card hidden-card" id="hidden-access" data-platform="secret">
+                    <div class="card-bg"></div>
+                    <i class="fas fa-eye-slash"></i>
+                    <h3>Hidden Link</h3>
+                    <p>Smarty's unfiltered rants & easter eggs</p>
+                    <div class="card-button">???</div>
+                </a>
+            </div>
+            </section>
+
+            <section class="gamified-section" id="gamified">
+            <h2 class="section-title">GAMIFIED INTERACTIONS</h2>
+            <!-- Gamified Interaction -->
+            <div class="gamify-section">
+                <div class="click-challenge">
+                    <p>Unlock Smarty's sassiest voice pack by clicking this button <span class="target-count">69</span> times:</p>
+                    <button class="spam-button" id="spam-btn">
+                        <span class="count">0</span> / 69 clicks
+                    </button>
+                    <div class="spam-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                </div>
+                
+                <div class="fake-captcha">
+                    <h4>Prove you're not a dumbass:</h4>
+                    <p>What's 2 + 2? <span class="hint">(Hint: not 5, Kyle.)</span></p>
+                    <input type="number" id="captcha-input" placeholder="Your answer...">
+                    <button id="captcha-submit">Submit</button>
+                    <div class="captcha-result"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Hidden Easter Egg Section -->
+    <div class="easter-egg-section" id="secret-section"></div>
+
+    <!-- Glitch Pop-ups -->
+    <div class="glitch-popup" id="glitch-popup">
+        <div class="popup-content">
+            <p class="glitch-message"></p>
+        </div>
+    </div>
+
+    <!-- Audio Elements -->
+    <audio id="glitch-sound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQBADAEGFQAIBAAIBAEABAAGEQQADAAAA" type="audio/wav">
+    </audio>
+
+    <script src="js/SPAi.js"></script>
+    <script src="js/smarty-loader.js"></script>
+    <!-- Add this to other HTML pages -->
+<script src="js/nav-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,507 @@
+/* 
+   hyprZona Website Styles
+   Color Palette:
+   - Black: #000000 (primary background)
+   - Neon Cyan: #00FFFF (secondary accent)
+   - Neon Red: #FF0033 (primary accent)
+   - Dark Background: #0A0A0A (alternative background)
+   - Text: #FFFFFF (primary text)
+*/
+
+:root {
+  --color-black: #000000;
+  --color-dark-bg: #0A0A0A;
+  --color-neon-cyan: #00FFFF;
+  --color-neon-red: #FF0033;
+  --color-white: #FFFFFF;
+  --color-dark-gray: #191919;
+  --font-primary: 'Orbitron', sans-serif;
+  --font-secondary: 'Share Tech Mono', monospace;
+  
+  /* Responsive Typography */
+  --fs-hero: clamp(2.2rem, 6vw, 4.5rem);
+  --fs-intro: clamp(1rem, 2.5vw, 1.5rem);
+  --fs-cta: clamp(0.9rem, 1.5vw, 1.2rem);
+  
+  /* Dynamic Spacing */
+  --space-xs: clamp(0.5rem, 1vw, 1rem);
+  --space-sm: clamp(1rem, 2vw, 1.5rem);
+  --space-md: clamp(1.5rem, 3vw, 2.5rem);
+  --space-lg: clamp(2rem, 4vw, 3rem);
+  
+  /* Container Widths */
+  --container-width: min(90vw, 1200px);
+  --content-width: min(85vw, 900px);
+}
+
+/* Reset & Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Noise overlay effect */
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Header and Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: lowercase;
+}
+
+.logo-accent {
+  color: var(--color-neon-cyan);
+  position: relative;
+}
+
+.logo-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-neon-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-accent::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.main-nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s ease;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-neon-cyan);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-neon-cyan);
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Changed from calc(100vh - 80px) */
+  position: relative;
+  padding: 0;        /* Removed padding */
+  overflow: hidden;
+  width: 100%;       /* Added width */
+  margin: 0;         /* Added margin */
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 255, 255, 0.1) 0%,
+            rgba(0, 0, 0, 0.8) 70%
+        ),
+        linear-gradient(
+            45deg,
+            rgba(0, 255, 255, 0.05) 25%,
+            transparent 25%,
+            transparent 75%,
+            rgba(255, 0, 51, 0.05) 75%
+        );
+    background-size: 100% 100%, 60px 60px;
+    animation: pulseGradient 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+.hero-content {
+    text-align: center;
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    margin: 0 auto;
+    width: var(--content-width);
+    padding: var(--space-md);
+    transform: translateY(-2rem); /* Added to offset content slightly up */
+}
+
+.tagline {
+  font-size: var(--fs-hero);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: var(--space-md);
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+}
+
+.line {
+  display: block;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.chaos-text {
+  position: relative;
+  color: var(--color-neon-red);
+  display: inline-block;
+}
+
+.chaos-text::before {
+  content: 'Chaos';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--color-neon-cyan);
+  opacity: 0;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 55%);
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.chaos-text:hover::before {
+  opacity: 0.8;
+  transform: translateX(5px);
+}
+
+.intro {
+  font-family: var(--font-secondary);
+  font-size: var(--fs-intro);
+  margin-bottom: var(--space-lg);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cta-button {
+  display: inline-block;
+  position: relative;
+  padding: var(--space-xs) var(--space-sm);
+  font-family: var(--font-secondary);
+  font-size: var(--fs-cta);
+  color: var(--color-white);
+  background-color: transparent;
+  text-decoration: none;
+  border: 2px solid var(--color-neon-cyan);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.cta-text {
+  position: relative;
+  z-index: 2;
+}
+
+.cta-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(0, 255, 255, 0.3), 
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.cta-button:hover {
+  background-color: rgba(0, 255, 255, 0.1);
+  box-shadow: 0 0 15px var(--color-neon-cyan);
+  color: var(--color-neon-cyan);
+}
+
+.cta-button:hover .cta-shine {
+  left: 200%;
+}
+
+/* Hero Background Elements */
+.hero-graphic {
+  position: fixed;   /* Changed from absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;    /* Changed from 100% */
+  z-index: 1;
+}
+
+.grid-container {
+    position: fixed;   /* Changed from absolute */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;    /* Changed from 100% */
+    background: 
+        linear-gradient(90deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 255, 255, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 51, 0.05) 2px, transparent 2px),
+        linear-gradient(0deg, rgba(255, 0, 51, 0.05) 2px, transparent 2px);
+    background-size: 
+        20px 20px,
+        20px 20px,
+        100px 100px,
+        100px 100px;
+    transform: perspective(1000px) rotateX(60deg) translateZ(-100px);
+    transform-origin: center center;
+    animation: gridFloat 10s ease-in-out infinite;
+    z-index: 2;
+}
+
+/* Add a subtle circuit pattern */
+.hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg stroke='%2300FFFF' stroke-width='1'%3E%3Cpath d='M20 20h40v40H20z'/%3E%3Cpath d='M0 0h20v20H0zM60 0h20v20H60zM0 60h20v20H0zM60 60h20v20H60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-size: 80px 80px;
+    opacity: 0.07;
+    z-index: 3;
+    animation: circuitFloat 15s linear infinite;
+}
+
+/* Responsive Styles */
+
+/* Laptop */
+@media screen and (max-width: 1024px) {
+  .tagline {
+    font-size: 3.8rem;
+  }
+  
+  .intro {
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+  }
+  
+  .main-nav ul {
+    gap: 1.5rem;
+  }
+  
+  .tagline {
+    font-size: 3rem;
+  }
+  
+  .intro {
+    font-size: 1.2rem;
+  }
+  
+  .cta-button {
+    font-size: 1rem;
+    padding: 0.7rem 1.5rem;
+  }
+  
+  .hero {
+    min-height: 100vh;
+  }
+  
+  .grid-container {
+    transform: perspective(1000px) rotateX(50deg) translateZ(-50px);
+  }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .logo {
+    font-size: 1.3rem;
+  }
+  
+  .main-nav ul {
+    gap: 1rem;
+  }
+  
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+  
+  .hero {
+    padding: 0 1rem;
+    min-height: calc(100vh - 40px);
+  }
+  
+  .tagline {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1.2rem;
+  }
+  
+  .grid-container {
+    transform: rotateX(40deg) translateZ(-30px);
+  }
+}
+
+/* Dynamic Height Adjustments */
+@media screen and (max-height: 600px) {
+    .hero {
+        padding: 2rem 0;
+        min-height: 100vh;
+    }
+    
+    .hero-content {
+        transform: translateY(0); /* Remove offset on smaller heights */
+    }
+    
+    .tagline {
+        margin-bottom: var(--space-sm);
+    }
+    
+    .intro {
+        margin-bottom: var(--space-md);
+    }
+}
+
+/* Animations */
+@keyframes pulseGradient {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+@keyframes circuitMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 60px 60px; }
+}
+
+@keyframes gridPulse {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+
+@keyframes gridFloat {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(60deg) translateZ(-100px) translateY(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(60deg) translateZ(-100px) translateY(-20px);
+    }
+}
+
+@keyframes circuitFloat {
+    0% {
+        background-position: 0 0;
+        opacity: 0.05;
+    }
+    50% {
+        opacity: 0.1;
+    }
+    100% {
+        background-position: 80px 80px;
+        opacity: 0.05;
+    }
+}
+
+/* Add a subtle scanning line effect */
+.scan-line {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 255, 255, 0.05) 50%,
+        transparent
+    );
+    animation: scanline 8s linear infinite;
+    z-index: 4;
+}
+
+@keyframes scanline {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}

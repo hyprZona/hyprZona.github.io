@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories (Demo) | hyprZona</title>
+    <link rel="stylesheet" href="css/memories.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<!-- 🎯 SEO juice that makes Google-chan blush -->
+    <meta name="description" content="Welcome to hyprZona - Where gaming meets insanity! Experience 'Beyond the Illusions', a psychological horror game that will make you question reality. Created by the chaotic mind of dVlpr.">
+    <meta name="keywords" content="hyprZona, indie games, Beyond the Illusions, psychological horror games, indie game developer, dVlpr games, comedy horror games">
+    <meta name="author" content="dVlpr">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+
+    <!-- 🌐 Social media tags because we're attention seekers -->
+    <meta property="og:site_name" content="hyprZona">
+    <meta property="og:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta property="og:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+    <meta property="og:url" content="https://hyprzona.github.io">
+    <meta property="og:type" content="website">
+
+    <!-- 🐦 Twitter stuff because Elon needs engagement -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:creator" content="@hyprZona">
+    <meta name="twitter:title" content="hyprZona | Games That Will Question Your Sanity">
+    <meta name="twitter:description" content="Dive into a world of psychological horror and comedy with Beyond the Illusions. Warning: May cause existential crises and uncontrollable laughter.">
+    <meta name="twitter:image" content="https://lh3.googleusercontent.com/pw/AP1GczM8rnVjAHbRJLSry5CJp96b_phvCEcx3Sjp3hn_UnkInkFPkwS5XfIdMvg6Ll-JUN9rvMCAX-oMFx5sYn05i1P1wV1QTZFgfekrDE2TfqyRAWbWLtJD1SqVW6_m2swHpvDcitxF7JjysjDU7znnlQgG=w1500-h435-s-no-gm">
+
+    <!-- 🎨 Icons that make us look legit -->
+    <link rel="icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0" type="image/x-icon">
+    <link rel="apple-touch-icon" href="https://lh3.googleusercontent.com/pw/AP1GczPmyxlG7yFjNHDaOfFslAYeQh9Zd5fyhzkIif4Rjt9lOgRLct62WxL9sdWCdL1YR6ycXwjKM6X4ciIEC8myRpIL0S_W8cxh-YusDPFy7-W2imfsTH44x_IFzGqi4yLbaR712vycaWpfp9LLDl0a_lk6=w913-h913-s-no-gm?authuser=0">
+    <link rel="canonical" href="https://hyprzona.github.io">
+
+    <!-- 🌙 Dark mode because light burns our vampire eyes -->
+    <meta name="color-scheme" content="dark">
+
+    <!-- 🤖 Structured data for Google's robot overlords -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "hyprZona",
+      "url": "https://hyprzona.github.io",
+      "description": "Home of Beyond the Illusions and other chaotic creations",
+      "creator": {
+        "@type": "Person",
+        "name": "dVlpr"
+      }
+    }
+    </script>
+</head>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FW17RSLYQ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-FW17RSLYQ9');
+</script>
+<body>
+        <nav class="section-navigator">
+        <ul>
+            <li data-section="hero" class="active">
+                <span class="nav-icon">⚔️</span>
+                <span class="nav-text">Battle</span>
+            </li>
+            <li data-section="lore">
+                <span class="nav-icon">📜</span>
+                <span class="nav-text">Scriptures</span>
+            </li>
+            <li data-section="characters">
+                <span class="nav-icon">👥</span>
+                <span class="nav-text">Guardians</span>
+            </li>
+            <li data-section="gameplay">
+                <span class="nav-icon">🎮</span>
+                <span class="nav-text">Journey</span>
+            </li>
+            <li data-section="folklore">
+                <span class="nav-icon">📖</span>
+                <span class="nav-text">Tales</span>
+            </li>
+            <li data-section="disclaimer">
+                <span class="nav-icon">⚠️</span>
+                <span class="nav-text">Notes</span>
+            </li>
+            <li data-section="final-cta">
+                <span class="nav-icon">🎯</span>
+                <span class="nav-text">Join</span>
+            </li>
+        </ul>
+    </nav>
+    <!-- Ambient Background Effects -->
+    <div class="ambient-background">
+        <div class="floating-runes"></div>
+        <div class="ember-particles"></div>
+        <div class="fog-layer"></div>
+    </div>
+
+    <!-- Hero Section - The Stand Before the Storm -->
+<section class="hero-section" id="hero">
+    <div class="sigil-divider">
+        <div class="sigil-glyph">
+            <i class="fas fa-dragon"></i>
+        </div>
+    </div>
+    <h1 class="section-title"> Memories (Demo): The Supreme Six vs Aaryan</h1>
+    <div class="battlefield-split">
+        <div class="supreme-six-side">
+            <div class="six-silhouettes">
+                <h2 class="faction-title">The Supreme Six</h2>
+                <div class="divine-glow"></div>
+                <p class="faction-subtitle">Guardians of the Sanctum. Bound by legacy.</p>
+            </div>
+        </div>
+        
+        <div class="aaryan-side">
+            <div class="corruption-tendrils">
+                <h2 class="faction-title corrupted">Aaryan</h2>
+                <div class="shadow-crown"></div>
+                <p class="faction-subtitle">He wasn't corrupted. He *evolved*.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-cta">
+        <button class="war-zone-btn" id="enterWarBtn">
+            <span class="btn-text">REWRITE DESTINY</span>
+            <span class="btn-hover-text">But you’ll pay the price for knowing.</span>
+        </button>
+        <p class="demo-disclaimer">
+            <em>Playable Demo — Prologue to the Fall. Truth may distort. Sanity not promised.</em>
+        </p>
+    </div>
+</section>
+
+    <!-- Lore + Teaser Story -->
+    <section class="lore-section" id="lore">
+    <div class="section-container">
+        <h2 class="section-title">THE SCRIPTURES SPEAK</h2>
+
+        <div class="cracked-scrolls">
+            <div class="scroll-fragment active" data-scroll="1">
+                <div class="scroll-content">
+                    <p class="prophecy-text">Before Dan. Before the manipulation. Before Aria laughed at magic...</p>
+                    <p class="prophecy-text">There was <span class="highlight-word">peace and silence</span>.</p>
+                    <div class="redacted-line" data-reveal="The Supreme Six were guardians of balance.">████████████████████</div>
+                    <p class="prophecy-text">Then Aaryan took over, tore order from reality.</p>
+                </div>
+            </div>
+
+            <div class="scroll-fragment" data-scroll="2">
+                <div class="scroll-content">
+                    <p class="prophecy-text changing-text" data-texts='[
+                        "The sixth was never lost",
+                        "She walked away unseen",
+                        "One lives, in silence"
+                    ]'>The sixth was never lost</p>
+                    <div class="rune-lock" data-unlock="supreme-lore">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-fragment glitch-scroll" data-scroll="3">
+                <div class="scroll-content">
+                    <p class="prophecy-text">The world before the Book was—</p>
+                    <div class="glitch-text">A D̷E̷A̵F̸ ̸V̶O̸I̸D̸</div>
+                    <p class="prophecy-text">It was the Book that spoke the world into being. A voice, then form, then life.</p>
+                    <p class="prophecy-text">It remembers... everything.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Update rune HTML in memories.html -->
+<div class="hidden-runes">
+    <div class="rune-circle" data-rune="earth" title="Magnus - Earth">
+        <i class="fas fa-earth"></i>
+    </div>
+    <div class="rune-circle" data-rune="water" title="Lyralei - Water">
+        <i class="fas fa-water"></i>
+    </div>
+    <div class="rune-circle" data-rune="fire" title="Pyrion - Fire">
+        <i class="fas fa-fire"></i>
+    </div>
+    <div class="rune-circle" data-rune="nature" title="Sylvana - Nature">
+        <i class="fas fa-leaf"></i>
+    </div>
+    <div class="rune-circle" data-rune="wind" title="Zephyr - Wind">
+        <i class="fas fa-wind"></i>
+    </div>
+    <div class="rune-circle" data-rune="shadow" title="Umbria - Shadow">
+        <i class="fas fa-moon"></i>
+    </div>
+</div>
+    </div>
+</section>
+
+    <!-- Characters Section -->
+    <section class="characters-section" id="characters">
+    <div class="section-container">
+        <h2 class="section-title">THE GUARDIANS OF THE SANCTUM</h2>
+        
+        <div class="character-banners">
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="earth">
+                <div class="character-portrait">
+                    <div class="portrait-effects earth-fx"></div>
+                </div>
+                <h3 class="character-name">Magnus</h3>
+                <p class="character-title">Pillar of Stone</p>
+                <p class="character-quote">"The foundation must be strong, young ones."</p>
+            </div>
+            </div>
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="water">
+                <div class="character-portrait">
+                    <div class="portrait-effects ice-fx"></div>
+                </div>
+                <h3 class="character-name">Lyralei</h3>
+                <p class="character-title">The Flowing Healer</p>
+                <p class="character-quote">"Magic flows like water — guide it, don't force it."</p>
+            </div>
+            </div>
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="fire">
+                <div class="character-portrait">
+                    <div class="portrait-effects fire-fx"></div>
+                </div>
+                <h3 class="character-name">Pyrion</h3>
+                <p class="character-title">Disciplined Flame</p>
+                <p class="character-quote">"Power without discipline burns everything you love."</p>
+            </div>
+            </div>
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="nature">
+                <div class="character-portrait">
+                    <div class="portrait-effects nature-fx"></div>
+                </div>
+                <h3 class="character-name">Sylvana</h3>
+                <p class="character-title">Voice of Life</p>
+                <p class="character-quote">"All magic comes from life itself."</p>
+            </div>
+            </div>
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="storm">
+                <div class="character-portrait">
+                    <div class="portrait-effects storm-fx"></div>
+                </div>
+                <h3 class="character-name">Zephyr</h3>
+                <p class="character-title">Whispering Wind</p>
+                <p class="character-quote">"The winds carry whispers of what's to come."</p>
+            </div>
+            </div>
+            <div class="character-banner-container">
+            <div class="character-banner" data-element="shadow">
+                <div class="character-portrait">
+                    <div class="portrait-effects shadow-fx"></div>
+                </div>
+                <h3 class="character-name">Umbria</h3>
+                <p class="character-title">Keeper of Shadows</p>
+                <p class="character-quote">"Not all darkness is evil, child."</p>
+            </div>
+            </div>
+            <!-- Aaryan - The Corrupted -->
+            <div class="character-banner-container">
+            <div class="character-banner corrupted-banner" data-element="corruption">
+                <div class="character-portrait">
+                    <div class="portrait-effects corruption-fx"></div>
+                </div>
+                <h3 class="character-name glitch-name">Aaryan</h3>
+                <p class="character-title">The Rewriter</p>
+                <p class="character-quote">"He did not fall. He chose."</p>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Gameplay Preview -->
+    <section class="gameplay-section" id="gameplay">
+  <div class="section-container">
+    <h2 class="section-title">WHAT YOU'LL BLEED THROUGH</h2>
+    
+    <div class="gameplay-grid">
+      <div class="gameplay-feature">
+        <div class="feature-icon">🔥</div>
+        <h3>War Magic</h3>
+        <p>Master the six primal forces. Sculpt fire, earth, shadow, and more into weapons of survival—or destruction.</p>
+      </div>
+      
+      <div class="gameplay-feature">
+        <div class="feature-icon">⚔️</div>
+        <h3>God-tier Combat</h3>
+        <p>Fight as legends. Command elemental chaos in cinematic clashes against illusions, monsters, and corrupted demigods.</p>
+      </div>
+      
+      <div class="gameplay-feature">
+        <div class="feature-icon">🧠</div>
+        <h3>Strategic Warfare</h3>
+        <p>Stealth, puzzles, timing—survival isn't just about power. It's about outsmarting a world built to break you.</p>
+      </div>
+      
+      <div class="gameplay-feature">
+        <div class="feature-icon">🕯️</div>
+        <h3>Playable Flashbacks</h3>
+        <p>Relive the fall. Control multiple characters across timelines as Dan pieces together his shattered past.</p>
+      </div>
+    </div>
+    
+    <div class="memory-disclaimer">
+      <p><em>"Memories aren't lies. They're just a... curse." — Dan</em></p>
+    </div>
+  </div>
+</section>
+
+    <!-- Folklore Section -->
+<section class="folklore-section" id="folklore">
+    <div class="section-container">
+        <h2 class="section-title">TALES FROM BEFORE THE BOOK</h2>
+
+        <div class="folklore-grid">
+            <!-- Entry 1: The Flame of Betrayal -->
+            <div class="folklore-entry locked" data-riddle="betrayal">
+                <div class="entry-lock">🔐</div>
+                <div class="entry-content hidden">
+                    <p class="folklore-text">
+                        "He swore fire would protect the realm. Instead, it lit the path to ruin. Pyrion’s flames weren’t the first to burn... but they were the first to lie."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Entry 2: The Shattered Oath -->
+            <div class="folklore-entry locked" data-riddle="sixfold">
+                <div class="entry-lock">🔐</div>
+                <div class="entry-content hidden">
+                    <p class="folklore-text">
+                        "Before the Six stood Supreme, they were Seven, divine and dumb. But dVlpr rewrote their fate with a drunken keystroke. The sexy became sacred. The oath? Forgotten."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Entry 3: The Shadowed Tome -->
+            <div class="folklore-entry locked" data-riddle="origin">
+                <div class="entry-lock">🔐</div>
+                <div class="entry-content hidden">
+                    <p class="folklore-text">
+                        "The Book was no gift. It was a leftover relic from a cosmic frat party — a divine shitpost turned sacred scripture. Now mortals bleed over its pages."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add this after the folklore-grid in the folklore section -->
+<div class="hidden-truth hidden" id="hiddenTruth">
+    <div class="secret-content">
+        <h2>The Hidden Truth</h2>
+        <p>
+            Long before the wars, the rebels, and even the so-called "Supreme Six," there was a far more twisted reality behind this world.  
+            <br><br>
+            This entire planet? Just a side project — a late-night troll creation by *dVlpr*, a cosmic-level maniac and certified chaos god from Universe Z-69. His goal? Not peace, not progress — nah, he just wanted a playground to summon hot chicks and vibe with his squad: the *Sexy Seven*.
+            <br><br>
+            Yeah, they partied hard — rewriting laws of magic, spawning booze oceans, turning trees into strip poles, the whole cosmic frat house fantasy. But dVlpr, being the unpredictable meme-lord he is, got bored. Poof. He dipped.
+            <br><br>
+            Before vanishing, he wiped the minds of the remaining six and slapped them with fake identities, leaving them to believe they were chosen guardians — the *Supreme Six*. To keep things "balanced," he even gender-flipped three of his bros into baddies. No one remembered the truth. No one escaped.
+            <br><br>
+            The magical book? Just a leftover tool from their thirst-fueled escapades. But now it's seen as sacred… lol.
+            <br><br>
+            You weren't supposed to find this. But now that you have — just know, your world was born from brain rot, lust, and troll energy. And dVlpr…? He's still watching. Somewhere in the multiverse, shitposting your fate.
+        </p>
+        <button id="closeHiddenTruth">Close</button>
+    </div>
+</div>
+
+        <div class="riddle-interface">
+            <p>Unlock the forbidden truths that led to the rise of the Supreme Six. Whisper the riddles they swore never to speak again...</p>
+            <input type="text" id="riddleInput" placeholder="Enter the word that unlocks truth...">
+        </div>
+    </div>
+</section>
+
+<!-- Dev Disclaimer -->
+<section class="disclaimer-section" id="disclaimer">
+    <div class="section-container">
+        <div class="dev-diary">
+            <h2 class="diary-title">⚠️ THIS IS JUST THE BEGINNING</h2>
+            <div class="handwritten-note">
+                <p>This demo is a *canon* prologue to the full journey. Everything you see—every character, every choice, every scream—matters. But remember, it's still a work in progress.</p>
+                
+                <p>Visual bugs, broken animations, or occasional AI jank? Yeah, they might haunt you. But the heart of the story? That's locked in. This is Dan’s beginning. Aaryan’s rise. The fall of the Sanctum. And none of it’s a joke.</p>
+
+                <div class="bug-notes">
+                    <p class="bug-note">• Zephyr still floats upside down mid-monologue 😅</p>
+                    <p class="bug-note">• Some shadows... aren't behaving. Might be possessed.</p>
+                    <p class="bug-note">• Emotional damage.exe triggered too early once</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="final-wrapper" id="final-cta">
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="section-container">
+            <h2 class="cta-title">Play the Demo. Remember the War. Forget who you are.</h2>
+            
+            <div class="cta-buttons">
+                <button class="cta-btn primary">
+                    <i class="fas fa-download"></i>
+                    DOWNLOAD DEMO
+                </button>
+                <button class="cta-btn secondary">
+                    <i class="fas fa-bell"></i>
+                    SUBSCRIBE TO UPDATES
+                </button>
+                <button class="cta-btn chaos" id="prepareBtn">
+                    <i class="fas fa-tornado"></i>
+                    PREPARE FOR THE LOOP
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hidden Secret Page -->
+    <div class="secret-page hidden" id="secretPage">
+        <div class="secret-content">
+            <h2>THE SEVENTH TRUTH</h2>
+            <p>You have awakened what was meant to sleep...</p>
+            <button class="close-secret" id="closeSecret">FORGET</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mystical-footer">
+        <div class="footer-container">
+            <div class="company-brand">
+                <span class="company-name">hyprZona</span>
+                <p>Crafting realities. Breaking illusions.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="js/memories.js"></script>
+    <script src="js/smarty-loader.js"></script>
+    <!-- Add this to other HTML pages -->
+<script src="js/nav-loader.js"></script>
+</body>
+</html>
